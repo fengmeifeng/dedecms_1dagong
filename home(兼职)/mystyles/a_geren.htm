@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<title>
+			发布简历 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+
+		<link href="/files/css/all.css" rel="stylesheet">
+        <link href="/files/css/home.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+	<body>
+
+	<?php include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+
+    <div class="container">
+
+		<!-- mobile -->
+		
+
+		<!-- computer -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+
+				<div class="panel panel-info"><!-- s -->
+					<div class="panel-heading">
+						<h3 class="panel-title">您好，您的号码为“<?php echo $cfg_ml->M_LoginID; ?>”&nbsp;&nbsp;<font color="#000000" class="pull-right hidden-xs">全国免费求职热线：400-118-5188</font></h3>
+					</div>
+                    
+          <div class="panel-body">
+			
+          <form class="form-horizontal hui_yuan">
+            <fieldset>
+      		<h2>发布简历<p>请如实填写以下信息</p></h2>
+            
+                <div class="control-group">
+                  <!-- Text input-->
+				<div class="control-group">
+                  <label class="control-label" for="input01">姓 名：<span>*</span></label>
+                  <div class="controls">
+                    <input type="text" placeholder="填写你的姓名" class="input-xlarge xingming">
+                  </div>
+                </div>
+                
+                <div class="control-group">
+                  <label class="control-label">性 别：<span>*</span></label>
+                  <div class="controls">
+                  <!-- Inline Radios -->
+                  <label class="radio inline hui_fl">
+                    <input type="radio" value="1" name="group" checked="checked">
+                    男
+                  </label>
+                  <label class="radio inline hui_fl">
+                    <input type="radio" value="2" name="group">
+                    女
+                  </label>
+                  </div>
+                </div>
+            
+        
+                <div class="control-group">
+                  <!-- Text input-->
+                  <label class="control-label" for="input01">期望职位：<span>*</span></label>
+                  <div class="controls">
+                    <input type="text" placeholder="期望职位" class="input-xlarge">
+                  </div>
+                </div>
+        
+            
+        
+                <div class="control-group">
+            
+                  <!-- Select Basic -->
+                  <label class="control-label">最高学历：<span>*</span></label>
+                  <div class="controls">
+                    <select class="input-xlarge hui_wis">
+                    <option>最高学历</option>
+                    <option>最高学历</option>
+                    <option>最高学历</option>
+                    <option>最高学历!</option>
+                    </select>
+                  </div>
+        
+                </div>
+        
+                <div class="control-group">
+        
+                  <!-- Select Multiple -->
+                  <label class="control-label">期望月薪：<span>*</span></label>
+                  <div class="controls">
+                    <select class="input-xlarge hui_wis" multiple="multiple">
+                    <option>期望月薪</option>
+                    <option>期望月薪</option>
+                    <option>期望月薪</option>
+                    <option>期望月薪!</option></select>
+                  </div>
+                </div>
+        
+                <div class="control-group">
+                  <label class="control-label">工作经验：<span>*</span></label>
+                  <div class="controls">
+                  <select class="input-xlarge hui_wis">
+                  <option>工作经验</option>
+                  <option>工作经验</option>
+                  <option>工作经验</option>
+                  <option>工作经验!</option></select>
+                  </div>
+                </div>
+            
+        
+                <div class="control-group">
+                  <!-- Select Basic -->
+                  <label class="control-label">期望地区：<span>*</span></label>
+                  <div class="controls">
+                    <select class="input-xlarge hui_wis">
+                    <option>期望地区</option>
+                    <option>期望地区</option>
+                    <option>期望地区</option>
+                    <option>期望地区!</option></select>
+                  </div>
+                </div>
+        
+                <div class="control-group">
+                  <label class="control-label">籍贯：<span>*</span></label>
+                  <div class="controls">
+                    <input type="text" placeholder="您的所在地。例：安徽合肥。" value="" class="input-xlarge">
+                  </div>
+                </div>
+        
+                <div class="control-group">
+                  <label class="control-label">工作经验：</label>
+                  <div class="controls">
+                    <div class="textarea">
+                          <textarea type="" class="tinxie" ></textarea>
+                          <span>详细填写您的工作经验。能帮助您更快速的找到工作。</span>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="control-group">
+                  <label class="control-label">自我评价：</label>
+                  <div class="controls">
+                    <div class="textarea">
+                          <textarea type="" class="tinxie"> </textarea>
+                          <span>填写您的自我评价，将有助于您获得更多的	面试机会。</span>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="control-group">
+                  <label class="control-label">&nbsp;</label>
+                  <div class="controls">
+                    <div class="textarea">
+                          <button class="btn btn-lg btn-primary wancheng" type="submit">完成发布</button>
+                    </div>
+                  </div>
+                </div>
+                
+            </fieldset>
+          </form>
+
+
+
+
+					</div>
+
+				</div><!-- e -->
+
+			</div>
+		</div>
+		
+
+		
+
+
+	
+
+    </div> <!-- /container -->
+
+
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

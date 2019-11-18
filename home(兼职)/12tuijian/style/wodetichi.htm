@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<title>
+			全部梯次图表 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+	<body>
+
+	<?php include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+
+    <div class="container">
+
+		<!-- mobile -->
+		
+
+		<!-- computer -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+
+				<div class="panel panel-info"><!-- s -->
+					<div class="panel-heading">
+						<h3 class="panel-title">全部梯次图表</h3>
+					</div>
+					<div class="panel-body">
+					
+			<!-------------不要改动---------------------------------------------------------------------------->
+            		<style>
+                    .bdha th,.bdha td{ text-align:center;}
+					.bdha td ul{ padding:0px; margin:0px;}
+					.bdha td li{ float:left; list-style:none; line-height:16px; margin:7px 2px;}
+					.bdha td p{ width:100px; float:right; line-height:45px; margin-bottom:0px; color:#f60;}
+					.backnd{ color:#660099; background:#d9edf7; font-weight:bold;}
+					.bordls{ border-radius:4px; padding:4px 5px;}
+					.bordls:hover{ background:#428bca;}
+                    </style>
+                    <div class="bs-example">
+                        <table class="table table-bordered bdha">
+                            <thead>
+                                <tr>
+                                <th class="col-md-1 bdha">梯队</th>
+                                <th class="col-md-10"><?php if($_GET['dopost']=='user'){ $user=$db->getone("select id,name,jiangjin from tuijian where id='".$pid."' "); echo $user['name'];; }else{ echo $user['name']; }?>推荐的会员</th>
+                                <th class="col-md-1 bdha">详情</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+								<?php
+								//$dy 他的下线等级	
+								for ($i = 1; $i <= $dy; $i++) {
+									$ua='';		//人员变量
+									$slh='';
+									$num=0;		//多少成员
+									//成员姓名
+									foreach($use[$i]['name'] as $k => $v){
+										//最多显示6个元素
+										if($k < 6){
+											$ua.='<li><a href="wodetichi.php?dopost=user&pid='.$use[$i]['id'][$k].'" class="btn btn-default">'.$v.' </a></li>';
+										}else{
+											$slh='<li><a href="wodetichi.php?dopost=dj&pid='.$i.'" class="btn btn-default">....</a></li>';
+										}
+										$num++;
+									}
+									
+									echo '
+										<tr>
+										<td class="backnd">'.$i.'</td>
+										<td>
+											<ul>
+												'.$ua.$slh.'
+												<P>(共'.$num.'人)</P>
+											</ul>
+										</td>
+										<td><a href="wodetichi.php?dopost=dj&pid='.$i.'" class="badge bordls">(详情)</a></td>
+										</tr>
+									';	
+								}
+								?>
+                            </tbody>
+                        </table>
+                    </div>                
+                
+            <!----------------------不要改动------------------------------------------------------------------------>
+					</div>
+
+				</div><!-- e -->
+
+			</div>
+		</div>
+		
+
+		
+
+
+	
+
+    </div> <!-- /container -->
+
+
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

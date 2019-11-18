@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			提现纪录 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">提现记录</h3>
+					</div>
+					<div class="panel-body">
+                        <style>
+							  @media (max-width: 767px){
+								  .table-responsive{width:auto; overflow:auto;/* winphone8和android4+ */
+								  -webkit-overflow-scrolling: touch; /* ios5+ */}
+								
+							.table > thead > tr > th,
+							.table > tbody > tr > th,
+							.table > tfoot > tr > th,
+							.table > thead > tr > td,
+							.table > tbody > tr > td,
+							.table > tfoot > tr > td {
+							  padding: 1px;}
+													}		
+						</style>
+                        
+						<table class="table table-bordered">
+						  <thead>
+							<tr>
+							  <th nowrap>姓名</th>
+							  <th nowrap>提现金额</th>
+							  <th nowrap>申请时间</th>
+							  <th nowrap>审核状态</th>
+							  <th nowrap>支付状态</th>
+							</tr>
+						  </thead>
+						  
+						  <tbody>
+						  
+							<?php
+							
+							foreach($tujiandata as $k => $v){
+								//审核状态
+								if($v['txzhuangtai']=='2'){	$sh="<font color='green'>审核成功(每月10号支付)</font>";	}elseif($v['txzhuangtai']=='3'){	$sh="<font color='red'>审核失败</font>";	}else{	$sh="<font color='green'>已提交</font>";	}
+								//支付状态
+								if($v['fafangzhangtai']=='2'){	$zf="<font color='green'><b>已支付</b></font>";	}elseif($v['fafangzhangtai']=='3'){	$zf="<font color='red'><b>支付不成功</b></font>";	}else{	$zf="<font color='red'><b>未支付</b></font>";	}
+								
+								echo "
+									<tr>
+									  <td>".$v['username']."</td>
+									  <td>".$v['txmoney']."元</td>
+									  <td>".date('Y-m-d H:i:s',$v['add_time'])."</td>
+									  <td>".$sh."</td>
+									  <td>".$zf."</td>
+									</tr>
+								";
+							}
+							
+							?>
+							
+							<tr>
+								<td align="left" colspan="20">
+								<?php echo $page->fpage(); ?>
+								</td>
+							</tr>
+							
+						  </tbody>
+						  
+						</table>
+						<div class="hidden-xs">
+							<?php echo $page->pcfenye(); ?>
+						</div>
+						
+						<div class="hidden-sm hidden-md hidden-lg">
+							<?php echo $page->shoujifenye(); ?>
+						</div>
+							
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		
+
+    </div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

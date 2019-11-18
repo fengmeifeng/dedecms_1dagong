@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<title>
+			个人会员注册 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+		<script type="text/javascript">
+        //--检查 
+	function check() 
+	{
+		
+		//------mobile
+	 if(form1.userid.value == null || form1.userid.value == "") 
+	{
+		alert("填写用户名或者手机号码！");
+		form1.userid.focus();
+	 	return false;
+	 }
+	 //检测email
+	var reg = /(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/;
+	if(!reg.exec(form1.userid.value)) {
+		alert("请输入有效的用户名或者手机号码！");
+		form1.userid.focus();
+	 	return false;
+	}
+
+		//------选择性别
+	if(form1.sex.value == null || form1.sex.value == "0") 
+	{
+		alert("请选择性别！");
+		form1.sex.focus();
+	 	return false;
+	 }
+	 
+	 	//------填写姓名
+	if(form1.uname.value == null || form1.uname.value == "") 
+	{
+		alert("请填写姓名！");
+		form1.uname.focus();
+	 	return false;
+	 }
+	  	//------填写姓名
+	if(form1.syear.value == null || form1.syear.value == "0") 
+	{
+		alert("请选择哪一年出生年份");
+		form1.syear.focus();
+	 	return false;
+	 } 
+		//------选择省份
+	if(form1.nativeplace_top.value == null || form1.nativeplace_top.value == "0") 
+	{
+		alert("请选择省份！");
+		form1.nativeplace_top.focus();
+	 	return false;
+	 } 
+	
+	//------选择市
+	if(form1.nativeplace_son.value == null || form1.nativeplace_son.value == "0") 
+	{
+		alert("请选择市！");
+		form1.nativeplace_son.focus();
+	 	return false;
+	 }
+		
+	 return true;
+	 }
+	
+
+	function inp(obj){	
+		var regStrs = [ 
+		 ['^0(\\d+)', '$1'], //禁止录入整数部分两位以上，但首位为0 
+		['[^0-9\]', ''] //禁止录入任何非数字和点 
+		]; 
+		for(i=0; i<regStrs.length; i++){ 
+		var reg = new RegExp(regStrs[i][0]); 
+		obj.value = obj.value.replace(reg, regStrs[i][1]); 
+			} 
+		}
+       </script>
+	</head>
+	<body>
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+
+    <div class="container">
+
+
+
+      <div id="" class="row">
+
+		<form class="form-signin" role="form" method="post" action="p_register.php" name="form1" onsubmit="return check();">
+			<input type="hidden" value="regbase" name="dopost"/>
+			<input type="hidden" value="2" name="step"/>
+			<input type="hidden" value="个人" name="mtype"/>
+			<h2 class="form-signin-heading">个人会员注册</h2>
+
+			请填写您的相关简单信息：<br /><br />
+			<span class="help-block">手机号/用户名称:</span>
+			<div class="lform1">
+			<input type="text" class="form-control"  placeholder="手机号/用户名称(必须填写手机号码)" required autofocus name="userid" value="<?php echo $shouye; ?>" MaxLength=11 onKeyUp="inp(this)">
+			</div>
+			<div class="lform1"></div>
+			<br />
+
+			<span class="help-block">性别：</span>
+			<div class="lform1">
+				<select class="form-control" name='sex' id='sex'>
+					<option value="0">请选择</option>
+					<option value="男">男</option>
+					<option value="女">女</option>
+					<option value="保密">保密</option>
+				</select>
+			</div>
+			<br />
+
+			<span class="help-block">姓名/怎么称呼您？</span>
+			<div class="lform1">
+			<input type="text" class="form-control" placeholder="姓名"  autofocus name="uname">
+			</div>
+			<br />
+
+			<span class="help-block">哪一年出生的?</span>
+			<div class="lform1">
+				<select class="form-control" name='syear' id='syear'>
+					 <option value="0">请选择</option>
+					 <option value="1998">1998年</option>
+					 <option value="1997">1997年</option>
+					 <option value="1996">1996年</option>
+					 <option value="1995">1995年</option>
+					 <option value="1994">1994年</option>
+					 <option value="1993">1993年</option>
+					 <option value="1992">1992年</option>
+					 <option value="1991">1991年</option>
+					 <option value="1990">1990年</option>
+					 <option value="1989">1989年</option>
+					 <option value="1988">1988年</option>
+					 <option value="1987">1987年</option>
+					 <option value="1986">1986年</option>
+					 <option value="1985">1985年</option>
+					 <option value="1984">1984年</option>
+					 <option value="1983">1983年</option>
+					 <option value="1982">1982年</option>
+					 <option value="1981">1981年</option>
+					 <option value="1980">1980年</option>
+					 <option value="1979">1979年</option>
+					 <option value="1978">1978年</option>
+					 <option value="1977">1977年</option>
+					 <option value="1976">1976年</option>
+					 <option value="1975">1975年</option>
+					 <option value="1974">1974年</option>
+					 <option value="1973">1973年</option>
+					 <option value="1972">1972年</option>
+					 <option value="1971">1971年</option>
+					 <option value="1970">1970年</option>
+					 <option value="1969">1969年</option>
+					 <option value="1968">1968年</option>
+					 <option value="1967">1967年</option>
+					 <option value="1966">1966年</option>
+					 <option value="1965">1965年</option>
+					 <option value="1964">1964年</option>
+					 <option value="1963">1963年</option>
+					 <option value="1962">1962年</option>
+					 <option value="1961">1961年</option>
+					 <option value="1960">1960年</option>
+					 <option value="1959">59年之前</option>
+				</select>
+			</div>
+			<br />
+			
+			<span class="help-block">地区：</span>
+			<input type="hidden" id="hidden_nativeplace" name="nativeplace" value="0">
+			<input type="hidden" id="hidden_diqushengtext" name="diqushengtext" value="">
+			<input type="hidden" id="hidden_diqushitext" name="diqushitext" value="">
+			<span id="span_nativeplace"></span>
+			<span id="span_nativeplace_son"></span>
+			<!--<span id="span_nativeplace_sec"></span>--> <!--如果需要3级地区-注释去了就行了-->
+
+			<script language="javascript" type="text/javascript" src="/files/js/diqu.js"></script>
+			<script language="javascript" type="text/javascript" src="/data/enums/nativeplace.js"></script>
+			<script language="javascript" type="text/javascript">MakeTopSelect("nativeplace", 0);</script>
+
+
+			<br />
+			<!------------------------------------------------------------------------------------->
+			<span class="help-block">备用手机号</span>
+			<div class="lform1">
+			<input type="text" class="form-control" placeholder="备用手机号可不填"  autofocus name="sphone2" id="sphone2" maxlength="11" onKeyUp="inp(this) />
+			<div style="height:10px;" ></div>
+			<br/><br/>
+			<!------------------------------------------------------------------------------------->
+			<button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+      </form>
+      </div>
+
+    </div> <!-- /container -->
+
+
+
+
+	<?php include(DEDEMEMBER."/templets/inc/footer.htm"); ?>
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

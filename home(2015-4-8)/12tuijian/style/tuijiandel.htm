@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			企业中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">我推荐的会员表</h3>
+					</div>
+					<div class="panel-body">
+					
+						<div class="btn-group btn-group-justified" style="margin: 0px 0px 10px 0px;">
+						  <div class="btn-group">
+							<a type="button" class="btn btn-default" href="/home/12tuijian/tuijianbiao.php" >我推荐的会员</a>
+						  </div>
+						  <div class="btn-group">
+							<a type="button" class="btn btn-primary" href="/home/12tuijian/tuijianbiao.php?do=shibaiuser" >无效会员</a>
+						  </div>
+						</div>
+					
+					
+                        <style>
+							  @media (max-width: 767px){
+								  .table-responsive{width:auto; overflow:auto;/* winphone8和android4+ */
+								  -webkit-overflow-scrolling: touch; /* ios5+ */}
+								
+							.table > thead > tr > th,
+							.table > tbody > tr > th,
+							.table > tfoot > tr > th,
+							.table > thead > tr > td,
+							.table > tbody > tr > td,
+							.table > tfoot > tr > td {
+							  padding: 4px;}
+													}		
+						</style>
+						
+						<table class="table table-bordered">
+						  <thead>
+							<tr>
+								<td align="left" colspan="20">
+								无效会员（<font color="red">注：您的所有梯队会员，离职60天、未入职及入职未满30天者，均会被系统认定为无效会员。</font>）
+								</td>
+							</tr>
+							<tr>
+							  <th nowrap>姓名</th>
+							  <th nowrap>推荐人</th>
+							  <th nowrap>联系电话</th>
+							  <th nowrap>状态</th>
+							</tr>
+						  </thead>
+						  
+						  <tbody>
+						  
+							<?php
+							foreach($tujiandata as $k => $v){
+							
+								if($user['bianhao']==$v['f_bianghao']){
+									$dianhuahaoma=$v['sphone'];
+								}else{
+									$dianhuahaoma=substr($v['sphone'],0,3)."****".substr($v['sphone'],7,4);
+								}
+								
+								//内容
+								echo "
+									<tr>
+									  <td>".$v['name']."</td>
+									  <td>".$v['f_name']."</td>
+									  <td>".$dianhuahaoma."</td>
+									  <td> 已删除 </td>
+									</tr>
+								";
+								
+							}
+							
+							?>	
+								<tr>
+									<td align="left" colspan="20">
+									<?php echo $page->fpage(); ?>
+								</td>
+							</tr>							
+						  </tbody>
+						  
+						</table>
+						<div class="hidden-xs">
+							<?php echo $page->pcfenye(); ?>
+						</div>
+						
+						<div class="hidden-sm hidden-md hidden-lg">
+							<?php echo $page->shoujifenye(); ?>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		
+
+    </div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

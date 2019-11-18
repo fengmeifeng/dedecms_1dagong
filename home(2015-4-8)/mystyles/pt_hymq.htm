@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			发布行业名企 - 审核员中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+
+
+
+		<link href="<{$puc}>/css/zp_index.css" rel="stylesheet"><!-- 招聘会 -->
+
+<!--冯每逢-->	
+        <script language="javascript" src="../include/js/dedeajax2.js"></script>
+		<script language='javascript' src="mystyles/js/main.js"></script>
+		<script type="text/javascript" src="mystyles/js/calendar/calendar.js"></script>
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+		<script language="javascript">
+<!--
+function checkSubmit()
+{
+   if(document.form1.title.value==""){
+	 alert("标题不能为空！");
+	 document.form1.title.focus();
+	 return false;
+  }
+}
+-->
+</script>
+
+<!-- textarea 加效果 -->
+<!-- <script language="javascript" src="txtarea/kindeditor-min.js"></script>
+<script>
+	var editor;
+	KindEditor.ready(function(K) {
+		editor = K.create('#shouru,#gongzuo,#yaoqiu,#chizun,#daiyu', {
+			resizeType : 1,
+			allowPreviewEmoticons : false,
+			allowImageUpload : false,
+			items : [
+				'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+				'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', '|', 'link']
+		});
+	});
+</script> -->
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+
+			</div>
+			<div class="col-xs-12 col-sm-8">
+            <style>
+				.form-signin .form-control{ font-size:14px;}
+			</style>
+			  <div class="panel panel-info">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">发布行业名企职位</h3>
+		        </div>
+			    <div class="panel-body">
+			      <form class="form-signin" role="form" method="post"  enctype="multipart/form-data" action="pt_hymq.php" name="addjianzhi" onsubmit="return check();">
+			        <input type="hidden" value="save" name="dopost"/>
+			        <input type="hidden" name="channelid" value="66" />
+			        <input type="hidden" name="typeid" value="1" />
+			        <h2 class="form-signin-heading">发布行业名企职位</h2>
+			        <br/>
+			        <span class="help-block">公司名称：</span>
+			        <div class="lform1">
+			          <input type="text" class="form-control" placeholder="填写公司名称" required autofocus name="title" >
+		            </div>
+			        <br>
+
+					<span class="help-block">Tag标签：</span>
+			        <div class="lform1">
+			          <input type="text" class="form-control" placeholder="填写Tag标签,以逗号隔开" required autofocus name="tags" id="tags" >
+					</div>
+			        <br>
+                    
+                    <span class="help-block">简略标题：</span>
+			        <div class="lform1">
+					  <input type='text' name='shorttitle' id='shorttitle'  class='form-control' placeholder="请写简略标题" required autofocus />
+		            </div>
+			        <br>
+					<?php if($cInfos['needpic'] == 1) {?>
+					<span class="help-block">缩略图：</span>
+			          <div class="lform1">
+						  <input class="file" name="litpic" type="file" id="litpic"  onchange="SeePicNew('divpicview',this);"  />
+		              </div>
+                      <br>
+                      <!-- <input  name="litpic"  id="litpic" value="<?php echo $row_company['comface'];?>"  type="hidden"  /> -->
+                    <?php }?>
+
+			        <span class="help-block">选择企业所在地区：</span>
+			        <div class="css_select1">
+			       <!--<input type='hidden' id='hidden_nativeplace' name='category' value='0' />
+                        <span id='span_category'></span>
+                        <span id='span_category_son'></span>
+                        <span id='span_category_sec'></span>
+                        <script language="javascript" type="text/javascript" src="/images/enums.js"></script>
+                        <script language='javascript' type='text/javascript' src='/data/enums/category.js'></script>
+                        <script language="javascript" type="text/javascript">MakeTopSelect("category", 0);</script>-->
+					
+                    <!--动态调用-->
+                    <?php
+						$typeOptions = GetOptionList(0,$channelid,1);
+						echo "<select name='typeid' size='1' style='width:300px;'>\r\n";
+						echo "<option value='0' selected>选择企业所在地区...</option>\r\n";
+						echo $typeOptions;
+						echo "</select>";
+					?>
+            
+		            </div>
+					<br>
+
+					<span class="help-block">SEO标题：</span>
+			        <div class="lform1">
+					  <input type='text' name='seotitle' id='seotitle'  class='form-control' placeholder="请写SEO标题" required autofocus />
+		            </div>
+			        <br>
+
+					<span class="help-block">综合工资：</span>
+			        <div class="lform1">
+					  <input type='text' name='gongzi' id='gongzi'  class='form-control' placeholder="请写综合工资" required autofocus />
+		            </div>
+			        <br>
+
+					<span class="help-block">工作描述：</span>
+			        <div class="lform1">
+					  <input type='text' name='miaoshu' id='miaoshu'  class='form-control' placeholder="请写工作描述" required autofocus />
+		            </div>
+			        <br>
+					
+					<span class="help-block">工作地区：</span>
+			          <div class="css_select">
+					  <!-- 默认地区是企业注册地区 -->
+                        <input type='hidden' id='hidden_nativeplace' name='nativeplace' value='0' />
+                        <span id='span_nativeplace'></span>
+                        <span id='span_nativeplace_son'></span>
+                        <!-- <span id='span_nativeplace_sec'></span> -->
+                        <script language="javascript" type="text/javascript" src="/images/enums.js"></script>
+                        <script language='javascript' type='text/javascript' src='/data/enums/nativeplace.js'></script>
+                        <script language="javascript" type="text/javascript">MakeTopSelect("nativeplace",0);</script>
+
+		              </div>
+			          <br>
+
+					<span class="help-block">性别要求：</span>
+                    <div class="lform1" style="overflow:hidden;">
+						<input type='radio' name='xingbie' class='np' value='不限' checked='checked' />不限
+						<input type='radio' name='xingbie' class='np' value='男' />男
+						<input type='radio' name='xingbie' class='np' value='女' />女
+                    </div>
+                    <br>
+
+					 <span class="help-block">学历要求</span>
+                    <div class="lform1" style="overflow:hidden;">
+						<select class="form-control" name="xueli"  id="xueli" >
+							<option value="不限">不限</option>
+							<option value="小学">小学</option>
+							<option value="初中">初中</option>
+							<option value="高中">高中</option>
+							<option value="大专">大专</option>
+							<option value="本科">本科</option>
+							<option value="本科以上">本科以上</option>
+						 </select>
+                    </div>
+                    <br>
+					
+					<span class="help-block">接站：</span>
+			        <div class="lform1">
+					  <input type='text' name='jiezhan' id='jiezhan'  class='form-control' placeholder="请写工作描述" required autofocus />
+		            </div>
+			        <br>
+
+					<span class="help-block">招聘人数：</span>
+			        <div class="lform1">
+					  <input type='text' name='zhaopinshu' id='zhaopinshu'  class='form-control' placeholder="请写招聘人数" required autofocus />
+		            </div>
+			        <br>
+
+					<span class="help-block">报名人数：</span>
+			        <div class="lform1">
+					  <input type='text' name='baomingshu' id='baomingshu'  class='form-control' placeholder="请写报名人数" required autofocus />
+		            </div>
+			        <br>
+
+					<span class="help-block">报名时间：</span>
+			        <div class="lform1">
+					  <input type='text' name='shijian' id='shijian'  class='form-control' placeholder="请写报名时间" required autofocus />
+		            </div>
+			        <br>
+
+					<span class="help-block">收入情况：</span>
+			        <div class="lform1">
+					  <textarea name='shouru' id='shouru' style='width:100%;height:100px;'></textarea>
+		            </div>
+			        <br>
+
+					<span class="help-block">工作情况：</span>
+			        <div class="lform1">
+					  <textarea name='gongzuo' id='gongzuo' style='width:100%;height:100px;'></textarea>
+		            </div>
+			        <br>
+
+					<span class="help-block">要求：</span>
+			        <div class="lform1">
+					  <textarea name='yaoqiu' id='yaoqiu' style='width:100%;height:100px;'></textarea>
+		            </div>
+			        <br>
+
+					<span class="help-block">吃住情况：</span>
+			        <div class="lform1">
+					  <textarea name='chizun' id='chizun' style='width:100%;height:100px;'></textarea>
+		            </div>
+			        <br>
+					
+					<span class="help-block">待遇情况：</span>
+			        <div class="lform1">
+					  <textarea name='daiyu' id='daiyu' style='width:100%;height:100px;'></textarea>
+		            </div>
+			        <br>
+
+			          <span class="help-block">公司简介：</span>
+			          <div class="lform1" style="overflow:hidden;">
+			           <textarea name='qiye' id='qiye' style='width:100%;height:300px;'></textarea>
+		              </div>
+			          <br>
+					  <!-- 添加字段 -->
+					    <input type='hidden' name='dede_addonfields' value="seotitle,textchar;gongzi,text;miaoshu,text;nativeplace,stepselect;xingbie,radio;xueli,select;jiezhan,text;zhaopinshu,text;baomingshu,text;shijian,text;shouru,multitext;gongzuo,multitext;yaoqiu,multitext;chizun,multitext;daiyu,multitext;qiye,htmltext">
+<input type="hidden" name="dede_fieldshash" value="299786943e89b8ad0755612d9647066c" />
+
+			          <div style="height:1px; background:#3276b1; margin-bottom:25px; margin-top:10px;"></div>
+			          <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+		            </div>
+		          </form>
+		        </div>
+		      </div>
+		  </div>
+		</div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		
+	</body>
+
+</html>

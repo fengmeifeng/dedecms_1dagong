@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+
+.hui_yuan{ max-width:80%; margin:0 auto;}
+.hui_yuan h2{ margin-bottom:40px;}
+.hui_yuan h2 p{ color:#F60; font-size:14px; font-weight:bold; margin-top:10px;}
+
+
+.control-group{ overflow:hidden; margin-top:25px;}
+
+.hui_yuan .control-label{ float:left; width:17%; font-weight:100; text-align:right; font-size:16px; color:#666; padding-top:0px; margin-right:10px;}
+.hui_yuan .control-label span{ color:#F00; font-size:16px;}
+.hui_yuan .controls{ float:left; width:70%;}
+
+.hui_yuan .xingming{ width:35%;}
+
+.hui_yuan .controls .hui_fl{ float:left; margin-right:30px;}
+.hui_yuan .controls .hui_fl input{ width:30px; height:auto}
+
+.hui_wis{ padding:0px;}
+
+input,.hui_wis{ border:1px solid #e5e5e5; line-height:45px; height:45px; color:#999; width:100%; border-radius:5px; padding:5px 10px;}
+
+.tinxie{ height:8em; font-size:1em;border:1px solid #e5e5e5; color:#666; width:100%; border-radius:5px; padding:5px 10px;}
+
+input:hover,select:hover,textarea:hover{ border:1px solid #ffdeb0; color:#000;}
+
+.wancheng{ padding:10px 30px;}
+
+
+.hui_yuan .controls span{ color:#acacac;}
+@media (max-width: 767px) { 
+.hui_yuan{ max-width:100%; margin:0 auto;}
+.hui_yuan .control-label{width:100% !important; color:#666; padding-top:0px; text-align:left !important;}
+.hui_yuan .controls{width:100%;}
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

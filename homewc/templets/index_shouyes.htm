@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			登录 - 要工作网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+	<body>
+
+	<?php include('templets/inc/head.htm'); ?>
+
+
+    <div class="container">
+
+		<!-- mobile -->
+		<div class="row visible-xs">
+			<div class="col-xs-12">
+				<ul class="nav nav-pills pull-right">
+					<li class="active"><a href="index.php">会员中心</a></li>
+					<li><a href="info.php">资料修改</a></li>
+					<li><a href="password.php">密码修改<span class="badge">改</span></a></li>
+					<li><a href="snw.php">省内200元，省外300元<span class="badge pull-right">参</span></a></li>
+					<li><a href="index_do.php?fmdo=login&dopost=exit#">退出</a></li>
+				</ul>
+			</div>
+
+			<div class="col-xs-12">
+
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">欢迎进入要工作网会员中心 - 手机版</h3>
+					</div>
+					<div class="panel-body">
+						全国免费求职热线：400-118-5188
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- computer -->
+		<div class="row hidden-xs">
+			<div class="col-xs-12 col-sm-4">
+				<ul class="nav nav-pills nav-stacked">
+
+					<?php include('mystyles/menuleft.php'); ?>
+
+				</ul>
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">欢迎进入要工作网会员中心</h3>
+					</div>
+					<div class="panel-body">
+						<?php
+							if($_COOKIE['displayd']==1){
+								echo '
+									<div class="alert alert-warning fade in">
+										<button type="button"class="close"data-dismiss="alert"aria-hidden="true" onClick="gb(\'displayd\');">&times;</button>
+										欢迎登录，第一次登录会员中心，请<strong><a href="password.php">修改密码</a>。</strong>
+									</div>
+								';
+							}
+							//验证密码是否为后4位
+							$pwd=MD5(substr($cfg_ml->fields['sphone'], -4));
+							$pwd2=$cfg_ml->fields['pwd'];
+							if($pwd==$pwd2){
+								echo '
+									<div class="alert alert-warning fade in">
+										<button type="button"class="close"data-dismiss="alert"aria-hidden="true">&times;</button>
+										你的密码是默认的，请立即<strong><a href="password.php">修改密码</a>。</strong>
+									</div>
+								';
+							}
+						?>						
+						全国免费求职热线：400-118-5188
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		
+	<!-- 删除cookie -->
+		<script type="text/javascript">
+			function gb(name){
+				var date=new Date();
+				date.setTime(date.getTime()-10000);
+				document.cookie=name+"=; expire="+date.toGMTString()+"; path=/member";
+			}
+		</script>
+	<!-- /删除cookie -->
+	
+
+    </div> <!-- /container -->
+
+
+
+
+	<?php include('templets/inc/footer.htm'); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			企业中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<form class="form-signin" role="form" method="post" action="tj.php" name="form1">
+			<input type="hidden" value="save" name="dopost"/>
+			<input type="hidden" value="<?php echo $_GET['bh']; ?>" name="bianhao" />
+			
+			<h2 class="form-signin-heading">推荐注册会员</h2>
+			<br/>
+			<span class="help-block">和推荐人的关系：</span>
+			<div class="lform1">
+				<select class="form-control" name="guanxi" >
+					<option value="">请选择</option>
+					<option value="朋友">朋友</option>
+					<option value="亲戚">亲戚</option>
+					<option value="同学">同学</option>
+					<option value="同事">同事</option>
+					<option value="老乡">老乡</option>
+					<option value="网友">网友</option>
+					<option value="他人介绍">他人介绍</option>
+				</select>
+			</div>
+			<br>
+			<span class="help-block">姓名</span>
+			<div class="lform1">
+			<input type="text" class="form-control" placeholder="姓名" required autofocus name="name" >
+			</div>
+			<br>
+			<span class="help-block">性别：</span>
+			<div class="lform1">
+			<select class="form-control" name="sex" id="sex">
+				<option value="男">男</option>
+				<option value="女">女</option>
+			</select>
+			</div>
+			<br>
+			<span class="help-block">联系电话</span>
+			<div class="lform1">
+			<input type="text" class="form-control" placeholder="联系电话" required autofocus name="sphone" >
+			</div>
+			<br>
+			<span class="help-block">QQ/微信号：</span>
+			<div class="lform1">
+			<input type="text" class="form-control" placeholder="qq" required autofocus name="qq" >
+			</div>
+			<br>
+			<span class="help-block">身份证号码：</span>
+			<div class="lform1">
+			<input type="text" class="form-control" placeholder="身份证号码" required autofocus name="id_number" >
+			</div>
+			<br>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+			
+			</form>
+			
+		</div>
+
+    </div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

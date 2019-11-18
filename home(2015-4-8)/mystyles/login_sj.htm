@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			企业会员注册 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<link href="<{$puc}>/css/zp_index.css" rel="stylesheet"><!-- 招聘会 -->
+
+		<script src="/files/style/js/jquery.min.js" language="JavaScript" type="text/javascript" ></script>
+		<script src="/files/style/js/bootstrap.min.js" language="JavaScript" type="text/javascript" ></script>
+
+		
+		<script src="/files/js/formValidation.min.js" language="JavaScript" type="text/javascript" ></script>
+
+		<script src="/files/js/bootstrapform.min.js" language="JavaScript" type="text/javascript" ></script>
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+		
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head_company.htm"); ?>
+
+
+	<div class="container">
+
+<div class="panel panel-info">
+  <div class="panel-heading">欢迎加入壹打工网</div>
+  <div class="panel-body">
+		<div class="row">
+		    <div class="col-md-9">
+
+					<div role="tabpanel row">
+
+					  <!-- Nav tabs -->
+					  <ul class="nav nav-tabs nav_sj col-sm-6 row col-md-offset-2 role="tablist">
+						<li role="presentation" class="active col-sm-6"><a class="" href="#home" aria-controls="home" role="tab" data-toggle="tab">个人会员登录</a></li>
+						<li role="presentation" class=" col-sm-6"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">企业会员登录</a></li>
+					  </ul>
+
+					  <!-- Tab panes -->
+					  <div class="tab-content col-sm-12">
+						<div role="tabpanel" class="tab-pane active" id="home">
+						
+							<form id="registerform" method="post" class="form-horizontal" role="form" action='index_do.php'>
+								
+								<input type="hidden" name="fmdo" value="login">
+								<input type="hidden" name="dopost" value="login">
+								<input type="hidden" name="gourl" value="<?php if(!empty($gourl)) echo $gourl;?>">
+								<input type="hidden" name="keeptime" value="25900000">
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label"></label>
+									<div class="col-sm-4">
+										<br />
+										<h2 class="form-signin-heading">个人会员登录</h2>
+									</div>
+								</div>
+
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label">手机号/用户名:</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" required name="userid" id="phone" MaxLength=11 onKeyUp="inp(this)">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label">密码:</label>
+									<div class="col-sm-4">
+										<input type="password" class="form-control col-sm-4" required name="pwd">
+                                        <br/><br/>
+										<p class="form-control-static">首次登录，默认密码为您手机号码的后四位。</p>
+										<p class="form-control-static"><a href="/home/12tuijian/zhaohuimima.php">忘记密码？点击找回</a></p>
+
+									</div>
+								</div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-4 col-sm-offset-3">
+                                        <button class="btn btn-lg btn-primary btn-block" name="signup" type="submit">点击登录</button>
+                                    </div>
+                                </div>
+
+								
+							</form>
+						
+						</div>
+						<div role="tabpanel" class="tab-pane" id="profile">
+							
+
+							<form id="registerform" method="post" class="form-horizontal" role="form" action='index_do.php'>
+								
+								<input type="hidden" name="fmdo" value="login">
+								<input type="hidden" name="dopost" value="login">
+								<input type="hidden" name="gourl" value="<?php if(!empty($gourl)) echo $gourl;?>">
+								<input type="hidden" name="keeptime" value="25900000">
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label"></label>
+									<div class="col-sm-4">
+										<br />
+										<h2 class="form-signin-heading">企业会员登录</h2>
+									</div>
+								</div>
+
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label">用户名/会员名:</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" required name="userid" id="phone"  onKeyUp="inp(this)">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label">密码:</label>
+									<div class="col-sm-4">
+										<input type="password" class="form-control col-sm-4" required name="pwd">										
+										<br/><br/>
+										<p class="form-control-static"><a href="/home/12tuijian/zhaohuimima.php">忘记密码？点击找回</a></p>
+
+									</div>
+								</div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-4 col-sm-offset-3">
+                                        <button class="btn btn-lg btn-primary btn-block" name="signup" type="submit">点击登录</button>
+                                    </div>
+                                </div>
+
+								
+							</form>
+
+						</div>
+					  </div>
+
+					</div>
+			</div>
+
+
+
+
+
+                <div class="col-xs-12 col-md-3 pull-right">
+                        
+                        <div class="h_anniu anniu_sj">
+						<p>您还不是会员？</p>
+						<a href="/home/index_do.php?fmdo=user&dopost=regnew&step=2" class="btn btn-warning">注册个人会员</a>
+                        <p></p>
+						<a href="/home/index_do.php?fmdo=user&dopost=regnew1&step=2" class="btn btn-success">注册企业会员</a>
+						</div>
+
+						<div class="h_tishi tishi_sj">
+							<p>全国免费服务热线：</p>
+                            <a href="tel:400-118-5188">400-118-5188</a>
+						</div>
+
+				</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+
+	</body>
+
+</html>

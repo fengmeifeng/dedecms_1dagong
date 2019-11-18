@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			企业中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<link href="<{$puc}>/css/zp_index.css" rel="stylesheet"><!-- 招聘会 -->
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/../wang/mystyles/menuleft.php"); ?>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">欢迎加入壹打工网</h3>
+					</div>
+					<div class="panel-body">
+						
+						<form class="form-signin" role="form" method="post" action="addtuijian.php" name="form1">
+						<input type="hidden" value="save" name="dopost"/>
+						<h2 class="form-signin-heading">企业注册</h2>
+						<br/><br/>
+						<span class="help-block">邮      箱：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="邮 箱" required autofocus name="name" >
+						</div>
+						<br>
+                        
+						<span class="help-block">密 码：</span>
+						<div class="lform1">
+						<input type="password"  class="form-control" placeholder="密 码" required autofocus name="name" >
+						</div>
+						<br>
+                        
+						<span class="help-block">真实姓名：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="请用真实姓名填写，方便好友查找" required autofocus name="name" >
+						</div>
+						<br>
+                        
+						<span class="help-block">性  别：</span>
+						<div class="lform1" style="overflow:hidden;">
+							<select class="form-control" name="guanxi" style="width:160px; float:left;" >
+								<option value="男">男</option>
+                                <option value="女">女</option>
+							</select>
+						</div>
+                        
+						<span class="help-block">目前状态：</span>
+						<div class="lform1">
+							<select class="form-control" name="guanxi" >
+								<option value="">请选择目前身份</option>
+                                <option value="在校学生">在校学生</option>
+                                <option value="自由人士">自由人士</option>
+							</select>
+						</div>
+						<br>
+                        
+						<span class="help-block">手机号码：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="请填写常用的手机号码" required autofocus name="name" >
+						</div>
+						<br>
+                        
+                        
+                        <div style=" margin-bottom:25px; margin-top:10px;">注册即接受 <a href="#" style="color:#606;">壹打工网用户使用条款</a></div>
+                        
+						<button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+						
+                        
+                        </form>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		
+
+    </div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

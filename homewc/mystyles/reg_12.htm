@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<title>
+			申请加入“1+2事业平台” - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+	<body>
+
+	<?php include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+
+    <div class="container">
+
+		<!-- mobile -->
+		
+
+		<!-- computer -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+
+				<div class="panel panel-info"><!-- s -->
+					<div class="panel-heading">
+						<h3 class="panel-title">壹打工网1+2事业平台&nbsp;&nbsp;<font color="#000000" class="pull-right">全国免费求职热线：400-118-5188</font></h3>
+					</div>
+					<div class="panel-body">
+					
+			<!-------------不要改动---------------------------------------------------------------------------->
+            
+            	<style>
+					.form-signin .red{ color:#F00; float:left; line-height:20px; margin-top:8px;}
+					.form-signin .jdsa{ float:left;}
+				</style>
+            
+            
+				<form class="form-signin" role="form" action="reg_12.php" enctype="multipart/form-data" method="post" style="max-width:360px;">
+					<input type="hidden" value="save" name="dopost"/>
+					
+					<input type="hidden" value="<?php echo $cfg_ml->fields['sex']; ?>" name="sex"/>	<!--性别-->
+					
+					<h2 class="form-signin-heading">申请加入<br />1+2事业平台</h2>
+					为保证您的成功加入，<br /><b><font color="#ff3300">请确保您的资料准确无误</font></b>：<br /><br />
+					
+                    <span class="help-block jdsa">选择所在打工区域：</span>
+					<select class="form-control" name="guanxi">
+						<option value="">请选择</option>
+						<?php foreach ($baodanzhongxin as $k => $v){	echo "<option value='".$v['user']."'>".$v['name']."</option>"; }	?>
+					</select>
+					<br>
+					<span class="help-block jdsa">姓名：</span> <span class="red">*</span>
+                    <input class="form-control" type="text" name="hyname" size="30" id="hyname" value="<?php echo $cfg_ml->fields['uname']; ?>" readonly>
+                    <br>
+					<span class="help-block jdsa">详细地址：</span> <span class="red">*</span>
+                    <input class="form-control" type="text" name="hyaddress" size="50" id="hyaddress" value="<?php echo $row['address']; ?>" readonly>
+                    <br>
+                    <span class="help-block jdsa">联系电话：</span> <span class="red">* 正在使用的手机号码，如果不是请<a style="color:#F00;" href="/home/info.php"><b>立即修改</b></a></span>
+                    <input class="form-control" type="text" name="hytel" size="30" id="hytel" value="<?php echo $cfg_ml->fields['sphone']; ?>" readonly>
+                    <br>
+                    <span class="help-block jdsa">身份证号：</span> <span class="red">* 本人身份证号码 </span>
+                    <input class="form-control" type="text" name="hycardno" size="30" id="hycardno" value="<?php echo $cfg_ml->fields['shengfenid']; ?>" readonly>
+                    <br>
+                    <span class="help-block jdsa">QQ/微信：</span>
+                    <input class="form-control" type="text" name="hyqqmsn" size="30" id="hyqqmsn">
+                    <br>
+					<font color="#ff3300">以上资料准确无误，请点击提交！</font>
+					<br>
+                    <input type="submit" name="Submit" class="btn btn-lg btn-primary btn-block" >
+				</form>
+				
+				<!----------------------不要改动------end------------------------------------------------------------------>
+				</div>
+
+				</div><!-- e -->
+
+			</div>
+		</div>
+
+    </div> <!-- /container -->
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

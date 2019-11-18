@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<title>
+			投稿 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+        <link href="/files/css/zt/zhengwen.css" rel="stylesheet" />  <!--------1打工征文页面-------->        
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+	<body>
+
+	<?php include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+
+    <div class="container">
+
+		<!-- computer -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+				<div class="panel panel-info ">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                        欢迎进入壹打工网征文发布  
+                        <font class="pull-right  hidden-xs" color="#000000">全国免费求职热线：400-118-5188</font>
+                        </h3>
+                    </div>                    
+                    <div class="pale col-xs-offset-1">
+                     
+                        <form name="addcontent" action="tj_zhengwen.php" method="post" enctype="multipart/form-data" onsubmit="return checkSubmit();">
+                          <input type="hidden" name="dopost" value="save" />
+							<input type="hidden" name="channelid" value="-68" />
+                          <h1 class="form-signin-heading in-toph-lzw">投稿文章</h1>
+                          <br>
+                          <span class="help-block">征文标题 ： </span>
+                          <div class="lform1">
+                            <input class="form-control form-tew" name="title" type="text" maxlength="100" autofocus required placeholder="征文标题">
+							
+                          </div>
+						  <p style="display:none;"><select name='typeid'><option value='20' selected>─征文活动</option></select></p>
+                          <br>
+                          <span class="help-block">您的署名 ： </span>
+                          <div class="lform1">
+                            <input class="form-control form-width" type="text" name='xingming' id='xingming' maxlength="50" autofocus required placeholder="作者姓名">
+                          </div>
+                          <div style="height:20px;"></div>
+                          <span class="help-block">文章内容 ： </span>
+                          <div class="lform1">
+                            <textarea class="form-control form-tew" name='neirong' id='neirong' rows="10" cols="60"></textarea>
+
+							<!-- textarea 加效果 -->
+						<script language="javascript" src="/home/txtarea/kindeditor-min.js"></script>
+						<script>
+							var editor;
+							KindEditor.ready(function(K) {
+								editor = K.create('#neirong', {
+									resizeType : 1,
+									allowPreviewEmoticons : false,
+									allowImageUpload : false,
+									items : [
+										'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+										'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', '|', 'link']
+								});
+							});
+						</script>
+
+                          </div>
+						   <?php
+									//自定义字段
+									PrintHuiyuan($cInfos['fieldset'],'autofield');
+								?>
+
+
+                          <div style="height:20px;"></div>
+                          <button class="btn btn-lg btn-primary btn-block  form-width" type="submit">发布文章</button>
+                          <div style="height:20px;"></div>
+                        </form>
+                    
+                    </div>
+                </div>
+			</div>
+		</div>
+		
+
+		
+
+
+	
+
+    </div> <!-- /container -->
+
+
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

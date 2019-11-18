@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			企业中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<script src="/files/js/jquery.min.js"></script>
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">欢迎进入壹打工网会员中心&nbsp;&nbsp;<font color="#000000" class="pull-right hidden-sm hidden-xs">全国免费求职热线：400-118-5188</font></h3>
+					</div>
+					<div class="panel-body">
+						
+					<script>
+						$(function(){
+						
+							$('#xianshia').click(function(){
+								if($(".xiaxian").is(":visible")){
+									$("#xianshia").attr("src","/files/image/off.gif");
+									$(".xiaxian").hide();
+								}else{
+									$("#xianshia").attr("src","/files/image/on.gif");
+									$(".xiaxian").show();
+								}
+							});
+ 
+						});
+					</script>
+					
+						<div class="btn-group btn-group-justified" style="margin: 0px 0px 10px 0px;">
+						  <div class="btn-group">
+							<a type="button" class="btn btn-primary" href="/home/12tuijian/xianshifangshi.php" >我的推荐表</a>
+						  </div>
+						  <div class="btn-group">
+							<a type="button" class="btn btn-default" href="/home/12tuijian/xianshifangshi.php?dopost=tu" >我的推荐图</a>
+						  </div>
+						</div>
+
+						<table class="table table-bordered">
+						  <thead>
+							<tr>
+								<td align="left" colspan="20">
+								<span style="float:left;">&nbsp;<font color="green"> [<?php echo $user['name']; ?>] </font> 的推荐列表</span> <?php if($nummc==2){ echo "<img id='xianshia' style='float:left; cursor:pointer;' src='/files/image/off.gif' alt='显示' height='22' />(是否显示下线的下线)"; } ?>
+								</td>
+							</tr>
+							<tr>
+							  <th nowrap>姓名</th>
+							  <th>推荐人</th>
+							  <th>获得</th>
+							  <th>人数</th>
+							</tr>
+						  </thead>
+						  
+						  <tbody>
+						  
+							<?php
+
+							
+							foreach($tujiandata as $k => $v){
+								if($v['m'] < 13){
+									echo "
+										<tr class='khbox tab' id='dengji".$v['id']."'>
+										  <td nowrap><font color='green'>".$v['kg']." </font>".$v['name']."</td>
+										  <td>".$v['f_name']."</td>
+										  <td>".$v['q']."元</td>
+										  <td>".$v['tj_num']."人</td>
+										</tr>
+										<script type='text/javascript'>
+										var m= ". $v['m'].";
+										if(m > 1){
+											$('#dengji".$v['id']."').css('display','none');
+											$('#dengji".$v['id']."').attr('class','khbox tab xiaxian');
+										}
+										</script> 
+									";
+								}
+							}
+							
+							?>
+							
+							<tr>
+								<td align="left" colspan="20">
+								<?php echo $page->fpage(); ?>
+								</td>
+							</tr>
+							
+						  </tbody>
+						  
+						</table>
+						<div class="hidden-xs">
+							<?php echo $page->pcfenye(); ?>
+						</div>
+						
+						<div class="hidden-sm hidden-md hidden-lg">
+							<?php echo $page->shoujifenye(); ?>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		
+
+    </div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		
+		
+		<script src="/files/js/bootstrap.min.js"></script>
+		
+		
+	</body>
+
+</html>

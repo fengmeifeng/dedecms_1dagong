@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			企业中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<link href="<{$puc}>/css/zp_index.css" rel="stylesheet"><!-- 招聘会 -->
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/../wang/mystyles/menuleft.php"); ?>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">欢迎加入壹打工网</h3>
+					</div>
+					<div class="panel-body">
+						<form class="form-signin" role="form" method="post" action="register.php" id="regUser">
+                        <input type="hidden" value="regbase" name="dopost"/>
+				<input type="hidden" value="2" name="step"/>
+				<input type="hidden" value="企业" name="mtype"/>
+						<h2 class="form-signin-heading">企业注册</h2>
+						<br/>
+                        
+                        <span class="help-block">用户名称：</span>
+                        <div class="lform1">
+                          <input type="text" class="form-control" placeholder="名称" required autofocus name="userid" >
+                        </div>
+                        <br/>
+                        
+                        <span class="help-block">密      码：</span>
+						<div class="lform1">
+						<input type="password"  class="form-control" placeholder="密 码" required autofocus name="pwd" >
+						</div>
+						<br>
+
+                        
+                        <span class="help-block">确认密码：</span>
+						<div class="lform1">
+						<input type="password"  class="form-control" placeholder="密 码" required autofocus name="pwdc" >
+						</div>
+                        <br />
+                        
+						<span class="help-block">公司名称：</span>
+                        <div class="lform1">
+                          <input type="text" class="form-control" placeholder="请用真实公司名称，方便查找" required autofocus name="uname" >
+                        </div>
+                        <br/>
+                        
+                        <!--<span class="help-block">帐号类型：</span>
+						<div class="lform1">
+						 <?php
+         if(!file_exists(DEDEDATA.'/cache/member_model.inc'))
+         {
+         	   $dsql->SetQuery("SELECT * FROM `#@__member_model` WHERE state='1'");
+	           $dsql->Execute();
+	           while($row=$dsql->GetObject())
+	           {
+		             $_MemberMod[$row->id]=array($row->name,$row->table);
+           	 }
+          } else {
+           	     require_once DEDEDATA.'/cache/member_model.inc';
+          }
+            foreach ($_MemberMod as $type)
+            {
+                if($type[0] == '个人') echo ' <label><input type="radio" name="mtype" class="usermtype" value="'.$type[0].'" checked/>';
+                elseif($type[0] == '企业') echo ' <label><input type="radio" name="mtype" class="usermtype2" value="'.$type[0].'" />';
+                else echo ' <label><input type="radio" name="mtype" class="usermtype" value="'.$type[0].'" />';
+                echo $type[0], '</label> &nbsp;';
+            }
+        ?>
+						</div>
+						<br>-->
+						     
+                       <!-- <span class="help-block">用户笔名：</span>
+						<div class="lform1">
+						<input type="text" class="intxt w200" size="20" id="uname" name="uname"/>
+						 <i class="red">*</i> <em id="_uname"/>
+                         </div>
+						<br>-->
+
+                        
+                        <span class="help-block">邮      箱：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="邮 箱" required autofocus name="email" >
+						</div>
+						<br>
+						<br>
+                        
+						<span class="help-block">手机号码：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="请填写常用的手机号码" required autofocus name="sphone" >
+						</div>
+						<br>
+                        
+                        
+                        <div style=" margin-bottom:25px; margin-top:10px;">注册即接受 <a href="#" style="color:#606;">壹打工网用户使用条款</a></div>
+                        
+						<button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+						
+                        
+                        </form>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		
+
+    </div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

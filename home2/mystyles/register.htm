@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			企业中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<link href="<{$puc}>/css/zp_index.css" rel="stylesheet"><!-- 招聘会 -->
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<!--<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/../wang/mystyles/menuleft.php"); ?>
+
+			</div>
+-->
+			<!--<div class="col-xs-12 col-sm-8">-->
+            <div class="col-xs-12">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">欢迎加入壹打工网</h3>
+					</div>
+					<div class="panel-body">
+						<style>
+							.form-signin .form-control{ font-size:14px;}
+						</style>
+
+						<form class="form-signin" role="form" method="post" action="register.php" name="form1">
+                        <input type="hidden" value="regbase" name="dopost"/>
+						<input type="hidden" value="2" name="step"/>
+						<input type="hidden" value="企业" name="mtype"/>
+						<h2 class="form-signin-heading">企业注册</h2>
+						<br/><br/>
+						<span class="help-block">用户名：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="企业用户登录名称" required autofocus name="userid" >
+						</div>
+						<br>
+                        
+						<span class="help-block">密 码：</span>
+						<div class="lform1">
+						<input type="password"  class="form-control" placeholder="密 码" required autofocus name="pwd" >
+						</div>
+						<br>
+                        
+                         <span class="help-block">确认密码：</span>
+						<div class="lform1">
+						<input type="password"  class="form-control" placeholder="密 码" required autofocus name="pwdc" >
+						</div>
+                        <br />
+                        
+						<span class="help-block">邮      箱：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="邮 箱" required autofocus name="email" >
+						</div>
+						<br>
+                        
+						<span class="help-block">联系人姓名：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="请用真实姓名填写，以方便联系" required autofocus name="uname" >
+						</div>
+						<br>
+                        
+						<span class="help-block">性  别：</span>
+						<div class="lform1" style="overflow:hidden;">
+							<select class="form-control" name="sex" style="width:160px; float:left;" >
+								<option value="保密">保密</option>
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+							</select>
+						</div>
+                        <br>
+                        
+                        <span class="help-block" style="width:118px; float:left;">所在城市：</span>
+                       <!-- <div style="clear:both; float:none;"
+                        
+                        <div class="lform1" style="overflow:hidden;">
+                            <select class="form-control" name="guanxi" style="width:140px; float:left; margin-right:20px;" >
+                            	<option value="">选择省份</option>
+                                <option value="安徽">安徽</option>
+                                <option value="湖北">湖北</option>
+                            </select>
+                        </div>-->
+                        
+                    <!--    <div class="lform1" style="overflow:hidden;">
+                            <select class="form-control" name="guanxi" style="width:140px; float:left; margin-right:20px;" >
+                           		<option value="">选择城市</option>
+                                <option value="无">无</option>
+                                <option value="有">有</option>
+                            </select>
+                        </div>-->
+                        
+                        <input type="hidden" id="hidden_nativeplace" name="nativeplace" value="0">
+						<input type="hidden" id="hidden_nativeplace" name="nativeplace" value="0">
+						<input type="hidden" id="hidden_diqushengtext" name="diqushengtext" value="">
+						<input type="hidden" id="hidden_diqushitext" name="diqushitext" value="">
+						<span id="span_nativeplace"></span>
+						<span id="span_nativeplace_son"></span>
+						<!--<span id="span_nativeplace_sec"></span>--> <!--如果需要3级地区-注释去了就行了-->
+
+						<script language="javascript" type="text/javascript" src="/files/js/diqu.js"></script>
+						<script language="javascript" type="text/javascript" src="/data/enums/nativeplace.js"></script>
+						<script language="javascript" type="text/javascript">MakeTopSelect("nativeplace", 0);</script>
+						<br>
+                        
+						<span class="help-block">所在公司：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="填写公司名称需要和营业执照的名称相同" required autofocus name="qym" >
+						</div>
+						<br>
+                        
+						<span class="help-block">所处职位：</span>
+						<div class="lform1">
+							<select class="form-control" name="zhiwei" >
+								<option value="不知道">选择职位</option>
+                                <option value="企业高管">企业高管</option>
+                                <option value="企业HR">企业HR</option>
+                                <option value="其他职位">其他职位</option>
+							</select>
+						</div>
+						<br>
+                        
+						<span class="help-block">手机号码：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="请填写常用的手机号码" required autofocus name="sphone" >
+						</div>
+						<br>
+                        
+                        
+                        <div style=" margin-bottom:25px; margin-top:10px;">注册即接受 <a href="#" style="color:#606;">壹打工网用户使用条款</a></div>
+                        
+						<button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+						
+                        
+                        </form>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		
+
+    </div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

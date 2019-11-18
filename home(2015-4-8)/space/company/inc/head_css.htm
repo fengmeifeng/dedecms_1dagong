@@ -1,0 +1,41 @@
+<link href="/files/style/css/bootstrap.css" type="text/css" rel="stylesheet" /> 
+
+	<link href="/files/style/css/all.css" type="text/css" rel="stylesheet" />
+
+	<script src="/files/style/js/jquery.min.js" language="JavaScript" type="text/javascript" ></script>
+	<script src="/files/style/js/bootstrap.min.js" language="JavaScript" type="text/javascript" ></script>
+    <script src="/files/style/js/a_modal.js" language="JavaScript" type="text/javascript" ></script>
+	<script language="javascript" type="text/javascript" src="/include/login.js"></script>
+	<script language="javascript" type="text/javascript">
+		<!--
+			
+			function CheckLogin(){
+			  var taget_obj = document.getElementById('headlogin');
+			  myajax = new DedeAjax(taget_obj,false,false,'','','');
+			  myajax.SendGet2("/home/headlogin.php");
+			  DedeXHTTP = null;
+			}
+		-->
+		<!--
+			function Checkbaoming(){
+				var checkbaoming= document.getElementById('checkbaoming');
+				var aid= document.getElementById('aid');
+				var mid= document.getElementById('mid');
+				var type= document.getElementById('type');
+				//alert(type.value);
+				myajax = new DedeAjax(checkbaoming,false,false,'','','');
+				myajax.SendGet2("/home/checkbaoming.php?aid="+aid.value+"&mid="+mid.value+"&type="+type.value);
+				DedeXHTTP = null;
+			}
+		-->
+
+	</script>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->

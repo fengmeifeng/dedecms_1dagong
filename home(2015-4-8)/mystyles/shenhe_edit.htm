@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			审核员中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<link href="<{$puc}>/css/zp_index.css" rel="stylesheet"><!-- 招聘会 -->
+<!--冯每逢-->	
+        <script language="javascript" src="../include/js/dedeajax2.js"></script>
+		<script language='javascript' src="mystyles/js/main.js"></script>
+		<script type="text/javascript" src="mystyles/js/calendar/calendar.js"></script>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+		 <!-- textarea 加效果 -->
+<script language="javascript" src="txtarea/kindeditor-min.js"></script>
+<script>
+	var editor;
+	KindEditor.ready(function(K) {
+		editor = K.create('#zwmiaoshu', {
+			resizeType : 1,
+			allowPreviewEmoticons : false,
+			allowImageUpload : false,
+			items : [
+				'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+				'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', '|', 'link']
+		});
+	});
+</script>
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head_company.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">修改企业会员发布的职位信息</h3>
+					</div>
+					<div class="panel-body">
+			<style>
+				.form-signin .form-control{ font-size:14px;}
+			</style>
+						 <form class="form-signin" role="form" method="post"  enctype="multipart/form-data" action="shenhe_edit.php?aid=<?php echo $aid;?>&mid=<?php echo $mid?>" name="addjianzhi">
+			        <!-- <input type="hidden" name="typeid" value="41" /> -->
+					<input type="hidden" name="dopost" value="save" />
+					<input type="hidden" name="channelid" value="<?php echo $channelid; ?>" />
+					<input type="hidden" name="idhash" value="<?php echo md5($aid.$cfg_cookie_encode); ?>" />
+			        <h2 class="form-signin-heading">修改会员发布的职位</h2>
+			        <br/>
+			        <br/>
+			        <span class="help-block">职位名称：</span>
+			        <div class="lform1">
+			          <input type="text" class="form-control" placeholder="填写职位名称" required autofocus name="title"  value="<?php echo $row['title']?>">
+		            </div>
+			        <br>
+                    
+                    <!-- <span class="help-block">公司名称：</span>
+			        <div class="lform1">
+			          <input type="text" class="form-control" placeholder="<?php if($row_company['company'] == ''){echo $row['writer'];}else{echo $row_company['company'];}?>" required autofocus name="gzname"  value="<?php if($row_company['company'] == ''){echo $row['writer'];}else{echo $row_company['company'];}?>">
+		            </div>
+			        <br> -->
+					<input type="hidden" name="gzname"  value="<?php if($row_company['company'] == ''){echo $row['writer'];}else{echo $row_company['company'];}?>">
+					
+
+					<?php  if($cInfos['needpic']==1) {?>
+					<!--	<span class="help-block">上传企业标志：</span>
+			          <div class="lform1">
+                          <input class="file" name="litpic" type="file" id="litpic" onchange="SeePicNew('divpicview',this);" readonly />
+		              </div>
+                      <br>-->
+                       <input  name="litpic"  id="litpic" value="<?php echo $row_company['comface'];?>"  type="hidden"  />
+						
+                    <?php }?>
+					
+
+                    <?php
+            			//自定义字段
+     		   			// PrintAutoFieldsEdit($cInfos['fieldset'],$addRow,'autofield');
+      	   			?>
+			        <span class="help-block">选择工作类型：</span>
+			        <div class="lform1 css_select1">
+			       <!--<input type='hidden' id='hidden_nativeplace' name='category' value='0' />
+                        <span id='span_category'></span>
+                        <span id='span_category_son'></span>
+                        <span id='span_category_sec'></span>
+                        <script language="javascript" type="text/javascript" src="/images/enums.js"></script>
+                        <script language='javascript' type='text/javascript' src='/data/enums/category.js'></script>
+                        <script language="javascript" type="text/javascript">MakeTopSelect("category", 0);</script>-->
+					
+                    <!--动态调用-->
+                    <?php
+				 $typeOptions = GetOptionList($row["typeid"],$row["channel"],41);
+    			 echo "<select name='typeid' size='1' style='width:300px;'>\r\n";
+    			 echo $typeOptions;
+   				 echo "</select>";
+				?>
+            
+		            </div>
+			        <br>
+                    
+                    <span class="help-block">招聘截至日期：</span>
+                     <div class="lform1" style="overflow:hidden;">
+					<input name="lasttime" value="<?php echo date('Y-m-d H:i',$addRow['lasttime']);?>" type="text" id="lasttime" style="width:300px;height:38px;"  />   
+					<script language="javascript" type="text/javascript">
+                    Calendar.setup({
+                        inputField     :    "lasttime",
+                        ifFormat       :    "%Y-%m-%d %H:%M",
+                        showsTime      :    true,
+                        timeFormat     :    "24"
+                    });
+                 </script>
+                 </div>
+                    
+                    
+                    <span class="help-block">职位类型：</span>
+                     <div class="lform1" style="overflow:hidden;">
+                    <input type='radio' name='zwleibie' class='np' value='全职' <?php if($arcRow["ismake"]!=-1) echo " checked";?> >全职
+                    <input type='radio' name='zwleibie' class='np' value='兼职' <?php if($arcRow["ismake"]!=-1) echo " checked";?> >兼职
+					
+                    </div>
+                    <br>
+					 <span class="help-block">性别要求</span>
+                    
+                     <div class="lform1" style="overflow:hidden;">
+                    <input type='radio' name='sex' class='np' value='不限' <?php if($arcRow["ismake"]!=-1) echo " checked";?> />不限
+					<input type='radio' name='sex' class='np' value='男' <?php if($arcRow["ismake"]!=-1) echo " checked";?> />男
+					<input type='radio' name='sex' class='np' value='女' <?php if($arcRow["ismake"]!=-1) echo " checked";?> />女
+                    
+                    </div>
+                    <br>
+
+                    
+			        <span class="help-block">薪资待遇：</span>
+			        <div class="lform1" style="overflow:hidden;">
+			          <select class="form-control" name="gongzi">
+					<?php
+						$dsql->SetQuery("Select * from `#@__addgongzuo81` where aid='$aid'");
+						
+						$dsql->Execute();
+						while($row = $dsql->GetObject()){
+							echo "<option value='".$row->gongzi."'>".$row->gongzi."元/天</option>\r\n";
+						}
+					  ?>
+						<option value="面议">面议</option>
+			            <option value="1000-2000">1000-2000元/天</option>
+			            <option value="2000-3000">2000-3000元/天</option>
+			            <option value="3000-5000">3000-5000元/天</option>
+                        <option value="5000-8000">5000-8000元/天</option>
+			            <option value="8000以上">8000以上</option>
+		              </select>
+		            </div>
+                    <br>
+                   
+			        <span class="help-block">学历要求：</span>
+			        <div style="clear:both; float:none;">
+			          <div class="lform1" style="overflow:hidden;">
+			            <select class="form-control" name="edu" >
+						<?php
+						$dsql->SetQuery("Select * from `#@__addgongzuo81` where aid='$aid'");
+						$dsql->Execute();
+						while($row = $dsql->GetObject()){
+							echo "<option value='".$row->edu."'>".$row->edu."</option>\r\n";
+						}
+					  ?>
+			              <option value="不限">不限</option>
+			              <option value="初中以下">初中以下</option>
+			              <option value="初中">初中</option>
+                          <option value="中专">中专</option>
+                          <option value="高中">高中</option>
+                          <option value="大专">大专</option>
+                          <option value="本科">本科</option>
+                          <option value="本科以上">本科以上</option>
+		                </select>
+		              </div>
+			          <br>
+			          
+                      <span class="help-block">工作经验：</span>
+			           <div class="lform1" style="overflow:hidden;">
+			          <select class="form-control" name="gongzuojy"  >
+                       <?php
+						$dsql->SetQuery("Select * from `#@__addgongzuo81` where aid='$aid'");
+						$dsql->Execute();
+						while($row = $dsql->GetObject()){
+							echo "<option value='".$row->gongzuojy."'>".$row->gongzuojy."</option>\r\n";
+						}
+					  ?>
+					   <option value="不限">不限</option>
+			            <option value="1年以下">1年以下</option>
+			            <option value="1-3年">1-3年</option>
+			            <option value="3-5年">3-5年</option>
+                        <option value="5-10年">5-10年</option>
+			            <option value="10年以上">10年以上</option>
+		              </select>
+		            </div>
+                      
+                      
+			          <br>
+			       
+                 
+			          <span class="help-block">工作地点：</span>
+			          <div class="lform1 css_select">
+                        <input type='hidden' id='hidden_nativeplace' name='nativeplace' value='<?php echo $addRow['nativeplace']?>' />
+                        <span id='span_nativeplace'></span>
+                        <span id='span_nativeplace_son'></span>
+                        <!-- <span id='span_nativeplace_sec'></span> -->
+                        <script language="javascript" type="text/javascript" src="/images/enums.js"></script>
+                        <script language='javascript' type='text/javascript' src='/data/enums/nativeplace.js'></script>
+                        <script language="javascript" type="text/javascript">MakeTopSelect("nativeplace", <?php echo $addRow['nativeplace']?>);</script>
+		              </div>
+			         
+					 <br>
+					<span class="help-block">招聘人数：</span>
+			          <div class="lform1" style="overflow:hidden;">
+						<input type='text' name='zprenshu' id='zprenshu' class='form-control' placeholder="招聘人数" value="<?php echo $addRow['zprenshu']?>" required autofocus />
+		              </div>
+
+			          <!-- <br>
+			          <span class="help-block">报名人数：</span>
+			          <div class="lform1" style="overflow:hidden;">
+			            <input type="text" class="form-control"  placeholder="报名人数" required autofocus name="bmrenshu"  value="<?php echo $addRow['bmrenshu']?>">
+		              </div> -->
+			          <br>
+                      
+			          <span class="help-block">职位描述：</span>
+			          <div class="lform1" style="overflow:hidden;">
+			            <textarea style="width:100%; height:200px;" name="zwmiaoshu" id="zwmiaoshu"><?php echo $addRow['zwmiaoshu']?></textarea>
+		              </div>
+			          <br>
+                      
+                      <!-- <span class="help-block">验证码：</span>
+			          <div class="lform1" style="overflow:hidden;">
+			            <input name="vdcode" type="text" id="vdcode"    maxlength="100" class="intxt" style='width:50px;text-transform:uppercase;' />  
+            <img src="../include/vdimgck.php" align="absmiddle" alt="看不清？点击更换" style="cursor:pointer" onclick="this.src=this.src+'?'" />
+		              </div>
+			          <br> -->
+<input type='hidden' name='dede_addonfields' value="gzname,text;gongzi,select;zwleibie,radio;sex,radio;edu,select;zprenshu,text;bmrenshu,text;zwmiaoshu,htmltext;nativeplace,stepselect;shuaxintime,datetime;lasttime,datetime;gongzuojy,select">
+ <!-- <input type="hidden" name="dede_fieldshash" value="7a4b04403ba53739ef9f43c80e4a78a8" />  -->
+
+
+
+			          <div style="height:1px; background:#3276b1; margin-bottom:25px; margin-top:10px;"></div>
+			          <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+		            </div>
+
+					
+
+		          </form>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+    </div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			企业中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<link href="<{$puc}>/css/zp_index.css" rel="stylesheet"><!-- 招聘会 -->
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head_company.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/mystyles/menuleft_qy.php"); ?>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">修改您发布的信息</h3>
+					</div>
+					<div class="panel-body">
+			<style>
+				.form-signin .form-control{ font-size:14px;}
+			</style>
+						<form class="form-signin" role="form" method="post"  enctype="multipart/form-data" action="jianzhi_edit.php" name="editjianzhi">
+						<input type="hidden" name="dopost" value="save" />
+						  <input type="hidden" name="aid" value="<?php echo $addRow['aid']; ?>" />
+						  <input type="hidden" name="idhash" value="<?php echo md5($addRow['aid'].$cfg_cookie_encode); ?>" />
+						  <input type="hidden" name="channelid" value="<?php echo $channelid; ?>" />
+						  <input type="hidden" name="sortrank" value="<?php echo $addRow['senddate']; ?>" />
+                          <input type="hidden" name="typeid" value="<?php echo $addRow['typeid']; ?>" />
+						<h2 class="form-signin-heading">修改发布的信息</h2>
+						<br/><br/>
+						<span class="help-block">工作名称：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="填写工作名称" required autofocus name="title" value="<?php echo $row['title']?>" >
+						</div>
+						<br>
+						<span class="help-block">选择工作类型：</span>
+						<div class="lform1">
+							<select class="form-control" name="jz_leixing" >
+								<option value="">请选择</option>
+								<option value="促销/导购" <?php if(trim($addRow['jz_leixing']) == "促销/导购"){?> selected <?php }?> >促销/导购</option>
+								<option value="传单/举牌" <?php if(trim($addRow['jz_leixing']) == "传单/举牌"){?> selected <?php }?> >传单/举牌</option>
+								<option value="市调/宣传" <?php if(trim($addRow['jz_leixing']) == "市调/宣传"){?> selected <?php }?> >市调/宣传</option>
+								<option value="模特/礼仪" <?php if(trim($addRow['jz_leixing']) == "模特/礼仪"){?> selected <?php }?> >模特/礼仪</option>
+								<option value="表演/主持" <?php if(trim($addRow['jz_leixing']) == "表演/主持"){?> selected <?php }?> >表演/主持</option>
+								<option value="翻译/编辑" <?php if(trim($addRow['jz_leixing']) == "翻译/编辑"){?> selected <?php }?> >翻译/编辑</option>
+                                <option value="文员/客服" <?php if(trim($addRow['jz_leixing']) == "文员/客服"){?> selected <?php }?> >文员/客服</option>
+                                <option value="销售/业务" <?php if(trim($addRow['jz_leixing']) == "销售/业务"){?> selected <?php }?> >销售/业务</option>
+                                <option value="美工/设计" <?php if(trim($addRow['jz_leixing']) == "美工/设计"){?> selected <?php }?> >美工/设计</option>
+								<option value="会计/出纳" <?php if(trim($addRow['jz_leixing']) == "会计/出纳"){?> selected <?php }?> >会计/出纳</option>
+                                <option value="IT类" <?php if(trim($addRow['jz_leixing']) == "IT类"){?> selected <?php }?> >IT类</option>
+                                <option value="店员/营业员" <?php if(trim($addRow['jz_leixing']) == "店员/营业员"){?> selected <?php }?> >店员/营业员</option>
+                                <option value="技工/工人" <?php if(trim($addRow['jz_leixing']) == "技工/工人"){?> selected <?php }?> >技工/工人</option>
+                                <option value="老师/家教" <?php if(trim($addRow['jz_leixing']) == "老师/家教"){?> selected <?php }?> >老师/家教</option>
+							</select>
+						</div>
+						<br>
+                        
+						<span class="help-block">薪资待遇：</span>
+						<div class="lform1" style="overflow:hidden;">
+                            <input type="text" class="form-control" style="width:118px; float:left; margin-right:20px;" placeholder="" required autofocus name="yuan" value="<?php echo $addRow['yuan']?>" >
+                        
+							<select class="form-control" name="jz_daiyu" style="width:160px; float:left;" >
+								<option value="元/天" <?php if(trim($addRow['jz_daiyu']) == "元/天"){?> selected <?php }?> >元/天</option>
+                                <option value="元/单" <?php if(trim($addRow['jz_daiyu']) == "元/单"){?> selected <?php }?> >元/单</option>
+                                <option value="元/月" <?php if(trim($addRow['jz_daiyu']) == "元/月"){?> selected <?php }?> >元/月</option>
+                                <option value="元/小时" <?php if(trim($addRow['jz_daiyu']) == "元/小时"){?> selected <?php }?> >元/小时</option>
+                                <option value="元/份" <?php if(trim($addRow['jz_daiyu']) == "元/份"){?> selected <?php }?> >元/份</option>
+                                <option value="元/周" <?php if(trim($addRow['jz_daiyu']) == "元/周"){?> selected <?php }?> >元/周</option>
+                                <option value="元/次" <?php if(trim($addRow['jz_daiyu']) == "元/次"){?> selected <?php }?> >元/次</option>
+                                <option value="元/本" <?php if(trim($addRow['jz_daiyu']) == "元/本"){?> selected <?php }?> >元/本</option>
+                                <option value="%/绩效"<?php if(trim($addRow['jz_daiyu']) == "%/绩效"){?> selected <?php }?> >%/绩效</option>
+                                <option value="元/场" <?php if(trim($addRow['jz_daiyu']) == "元/场"){?> selected <?php }?> >元/场</option>
+                                <option value="元/栋" <?php if(trim($addRow['jz_daiyu']) == "元/栋"){?> selected <?php }?> >元/栋</option>
+                                <option value="元/半天" <?php if(trim($addRow['jz_daiyu']) == "元/半天"){?> selected <?php }?> >元/半天</option>
+                                <option value="元/课" <?php if(trim($addRow['jz_daiyu']) == "元/课"){?> selected <?php }?> >元/课</option>
+
+							</select>
+						</div>
+						<br>
+                        
+						<span class="help-block">结算方式：</span>
+						<div class="lform1" style="overflow:hidden;">
+							<select class="form-control" name="jz_jiesuan" >
+								<option value="">选择结算方式</option>
+                                <option value="日结现金" <?php if(trim($addRow['jz_jiesuan']) == "日结现金"){?> selected <?php }?> >日结现金</option>
+                                <option value="周结打卡" <?php if(trim($addRow['jz_jiesuan']) == "周结打卡"){?> selected <?php }?> >周结打卡</option>
+                                <option value="周结现金" <?php if(trim($addRow['jz_jiesuan']) == "周结现金"){?> selected <?php }?> >周结现金</option>
+                                <option value="日结打卡" <?php if(trim($addRow['jz_jiesuan']) == "日结打卡"){?> selected <?php }?> >日结打卡</option>
+                                <option value="月结现金" <?php if(trim($addRow['jz_jiesuan']) == "月结现金"){?> selected <?php }?> >月结现金</option>
+                                <option value="月结打卡" <?php if(trim($addRow['jz_jiesuan']) == "月结打卡"){?> selected <?php }?> >月结打卡</option>
+                                <option value="活动结现金" <?php if(trim($addRow['jz_jiesuan']) == "活动结现金"){?> selected <?php }?> >活动结现金</option>
+                                <option value="活动结打卡" <?php if(trim($addRow['jz_jiesuan']) == "活动结打卡"){?> selected <?php }?> >活动结打卡</option>
+							</select>
+						</div>
+						<br>
+                        
+                        <span class="help-block" style="width:118px; float:left;">性别要求：</span>
+                        <span class="help-block" style="width:118px; float:left;">身高要求：</span>
+                        <div style="clear:both; float:none;">
+                        <div class="lform1" style="overflow:hidden;">
+                            <select class="form-control" name="jz_sex" style="width:100px; float:left; margin-right:20px;" >
+                                <option value="不限" <?php if(trim($addRow['jz_sex']) == "不限"){?> selected <?php }?> >不限</option>
+                                <option value="男"  <?php if(trim($addRow['jz_sex']) == "男"){?> selected <?php }?> >男</option>
+                                <option value="女"  <?php if(trim($addRow['jz_sex']) == "女"){?> selected <?php }?> >女</option>
+                            </select>
+
+                            <input type="text" class="form-control" style="width:118px; float:left;" placeholder="厘米（cm）" required autofocus name="jz_shengao" value="<?php echo $addRow['jz_shengao']?>" >
+                        </div>
+						<br>
+                        
+                        <span class="help-block" style="width:118px; float:left;">健康证：</span>
+                        <span class="help-block" style="width:118px; float:left;">有无任务量：</span>
+                        
+                        <div style="clear:both; float:none;"></div>
+                        <div class="lform1" style="overflow:hidden;">
+                            <select class="form-control" name="jz_jiankangzheng" style="width:100px; float:left; margin-right:20px;" >
+                                <option value="不需要" <?php if(trim($addRow['jz_jiankangzheng']) == "不需要"){?> selected <?php }?> >不需要</option>
+                                <option value="需要" <?php if(trim($addRow['jz_jiankangzheng']) == "需要"){?> selected <?php }?> >需要</option>
+                            </select>
+                             <select class="form-control" name="jz_renwu" style="width:122px; float:left; margin-right:20px;" >
+                                <option value="无" <?php if(trim($addRow['jz_renwu']) == "无"){?> selected <?php }?> >无</option>
+                                <option value="有" <?php if(trim($addRow['jz_renwu']) == "有"){?> selected <?php }?> >有</option>
+                            </select>
+                        </div>
+                       
+						<br>
+                        
+                        <div style="height:1px; background:#3276b1; margin-bottom:25px; margin-top:10px;"></div>
+<script src="mystyles/js/laydate/laydate.js"></script>
+                        
+						<span class="help-block">工作日期：</span>
+						<div class="lform1" style="overflow:hidden;">
+                            <input type="text" class="form-control" onclick="laydate()" style="width:130px; float:left;" name="jz_firsttime"  value="<?php echo $addRow['jz_firsttime']?>">
+                            <P style="float:left; margin:0 10px; font-weight:bold; margin-top:10px;">&mdash;</P>
+                            <input type="text" class="form-control" id="demo" value="<?php echo $addRow['jz_lasttime']?>" style="width:130px; float:left;" name="jz_lasttime" >
+                        </div>
+                        <script>
+                        ;!function(){
+                        laydate({
+                           elem: '#demo'
+                        })
+                        }();
+                        </script>
+                        
+                        <br>
+                        
+                        <span class="help-block">工作地点：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="工作地点" required name="jz_didian" value="<?Php echo $addRow['jz_didian']; ?>" readonly>
+						</div>
+						<br>
+                        
+						<span class="help-block">修改工作地点：</span>
+						<div class="lform1">
+						<!--<input type="text" class="form-control" placeholder="工作地点" required autofocus name="jz_didian" value="<?php echo $addRow['jz_didian']?>" >-->
+						 <input type="hidden" id="hidden_nativeplace" name="nativeplace" value="0">
+						<input type="hidden" id="hidden_nativeplace" name="nativeplace" value="0">
+						<input type="hidden" id="hidden_diqushengtext" name="diqushengtext" value="">
+						<input type="hidden" id="hidden_diqushitext" name="diqushitext" value="">
+						<span id="span_nativeplace"></span>
+						<span id="span_nativeplace_son"></span>
+						<!--<span id="span_nativeplace_sec"></span>--> <!--如果需要3级地区-注释去了就行了-->
+
+						<script language="javascript" type="text/javascript" src="/files/js/diqu.js"></script>
+						<script language="javascript" type="text/javascript" src="/data/enums/nativeplace.js"></script>
+						<script language="javascript" type="text/javascript">MakeTopSelect("nativeplace", 0);</script>
+                        </div>
+						<br>
+						<span class="help-block">工作时间：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="工作时间" required autofocus name="jz_gzshijian"  value="<?php echo $addRow['jz_gzshijian']?>">
+						</div>
+						<br>
+						
+                        
+						<span class="help-block">报名人数：</span>
+						<div class="lform1" style="overflow:hidden;">
+                            <input type="text" class="form-control" style="width:118px;" placeholder="报名人数" required autofocus name="jz_bmrenshu" value="<?php echo $addRow['jz_bmrenshu']?>">
+                        
+						</div>
+						<br>
+                        
+                        
+                        
+						<span class="help-block">工作方式：</span>
+						<div class="lform1" style="overflow:hidden;">
+                            <textarea style="width:300px; height:100px;" name="jz_gzfangshi"><?php echo $addRow['jz_gzfangshi']?></textarea>
+                        
+						</div>
+						<br>
+                        
+                         <span class="help-block">验证码：</span>
+			          <div class="lform1" style="overflow:hidden;">
+			            <input name="vdcode" type="text" id="vdcode"    maxlength="100" class="intxt" style='width:50px;text-transform:uppercase;' />  
+            <img src="../include/vdimgck.php" align="absmiddle" alt="看不清？点击更换" style="cursor:pointer" onclick="this.src=this.src+'?'" />
+		              </div>
+			          <br>
+                        
+                        <div style="height:1px; background:#3276b1; margin-bottom:25px; margin-top:10px;"></div>
+                        
+						<button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+						
+					</div>
+                    </form>
+
+				</div>
+
+			</div>
+		</div>
+		
+
+    </div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

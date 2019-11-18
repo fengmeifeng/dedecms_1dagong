@@ -1,0 +1,43 @@
+<form class="form-signin" role="form" method="post" action="snw.php" name="form1">
+	<input type="hidden" value="snw" name="dopost"/>
+	<input type="hidden" value="<?php echo $cfg_ml->fields['mid']; ?>" name="modid"/>
+	<input type="hidden" value="<?php echo $cfg_ml->M_JoinTime; ?>" name="baoming_time"/>
+	<h2 class="form-signin-heading">路费报销活动</h2>
+	入职满15天后，请主动填写你的工资卡信息，<b>(注：一定要是工资卡)</b> 以确保路费及时到账：<br /><br />
+	<span class="help-block">工资卡开户行全称？(注：精确到工资卡银行的支行全称)</span>
+	<div class="lform1">
+		<input type="text" class="form-control" placeholder="开户行" required autofocus name="kaihuhang" value="<?php  echo $datas['yinhangming']; ?>">
+	</div>
+	<br>
+	<span class="help-block">工资卡卡号？</span>
+	<div class="lform1">
+	<input type="text" class="form-control" placeholder="卡号" required autofocus name="kahao"  value="<?php echo $datas['yinghaohao']; ?>">
+	</div>
+	<br>
+	<span class="help-block">持卡人姓名？</span>
+	<div class="lform1">
+	<input type="text" class="form-control" placeholder="姓名" required autofocus name="fullname" value="<?php if(!empty($datas['xingming'])){echo $datas['xingming']; }else{echo $cfg_ml->fields['uname'];} ?>">
+	</div>
+	<br>
+	<span class="help-block">手机号？</span>
+	<div class="lform1">
+	<input type="text" class="form-control" placeholder="手机号" required autofocus name="sphone" value="<?php echo $datas['dianhua']; ?>">
+	</div>
+	<br>
+	<span class="help-block">身份证号码？</span>
+	<div class="lform1">
+	<input type="text" class="form-control" placeholder="身份证号码" required autofocus name="nameid" value="<?php echo $datas['nameid']; ?>">
+	</div>
+	<br>
+	<span class="help-block">入职企业？</span>
+	<div class="lform1">
+	<input type="text" class="form-control" placeholder="入职企业" required autofocus name="company" value="<?php echo $datas['gongshiming']; ?>">
+	</div>
+	<br>
+	<span class="help-block">入职时间？ (如：2014-01-01) </span>
+	<div class="lform1">
+	<input type="text" class="form-control" placeholder="入职时间" required autofocus name="addtime" value="<?php echo date("Y-m-d",$datas['rztime']); ?>">
+	</div>
+	<br>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">重新参与活动</button>
+</form>

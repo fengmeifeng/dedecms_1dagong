@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			企业中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<link href="<{$puc}>/css/zp_index.css" rel="stylesheet"><!-- 招聘会 -->
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/../wang/mystyles/menuleft.php"); ?>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">发布工作</h3>
+					</div>
+					<div class="panel-body">
+						
+						<form class="form-signin" role="form" method="post" action="addtuijian.php" name="form1">
+						<input type="hidden" value="save" name="dopost"/>
+						<h2 class="form-signin-heading">发布工作</h2>
+						<br/><br/>
+						<span class="help-block">工作名称：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="填写工作名称" required autofocus name="name" >
+						</div>
+						<br>
+						<span class="help-block">选择工作类型：</span>
+						<div class="lform1">
+							<select class="form-control" name="guanxi" >
+								<option value="">请选择</option>
+								<option value="促销/导购">促销/导购</option>
+								<option value="传单/举牌">传单/举牌</option>
+								<option value="市调/宣传">市调/宣传</option>
+								<option value="模特/礼仪">模特/礼仪</option>
+								<option value="表演/主持">表演/主持</option>
+								<option value="翻译/编辑">翻译/编辑</option>
+                                <option value="文员/客服">文员/客服</option>
+                                <option value="销售/业务">销售/业务</option>
+                                <option value="美工/设计">美工/设计</option>
+								<option value="会计/出纳">会计/出纳</option>
+                                <option value="IT类">IT类</option>
+                                <option value="店员/营业员">店员/营业员</option>
+                                <option value="技工/工人">技工/工人</option>
+                                <option value="老师/家教">老师/家教</option>
+							</select>
+						</div>
+						<br>
+                        
+						<span class="help-block">薪资待遇：</span>
+						<div class="lform1" style="overflow:hidden;">
+                            <input type="text" class="form-control" style="width:118px; float:left; margin-right:20px;" placeholder="" required autofocus name="sphone" >
+                        
+							<select class="form-control" name="guanxi" style="width:160px; float:left;" >
+								<option value="元/天">元/天</option>
+                                <option value="元/单">元/单</option>
+                                <option value="元/月">元/月</option>
+                                <option value="元/小时">元/小时</option>
+                                <option value="元/份">元/份</option>
+                                <option value="元/周">元/周</option>
+                                <option value="元/次">元/次</option>
+                                <option value="元/本">元/本</option>
+                                <option value="%/绩效">%/绩效</option>
+                                <option value="元/场">元/场</option>
+                                <option value="元/栋">元/栋</option>
+                                <option value="元/半天">元/半天</option>
+                                <option value="元/课">元/课</option>
+
+							</select>
+						</div>
+						<br>
+                        
+						<span class="help-block">结算方式：</span>
+						<div class="lform1" style="overflow:hidden;">
+							<select class="form-control" name="guanxi" >
+								<option value="">选择结算方式</option>
+                                <option value="日结现金">日结现金</option>
+                                <option value="周结打卡">周结打卡</option>
+                                <option value="周结现金">周结现金</option>
+                                <option value="日结打卡">日结打卡</option>
+                                <option value="月结现金">月结现金</option>
+                                <option value="月结打卡">月结打卡</option>
+                                <option value="活动结现金">活动结现金</option>
+                                <option value="活动结打卡">活动结打卡</option>
+							</select>
+						</div>
+						<br>
+                        
+                        <span class="help-block" style="width:118px; float:left;">性别要求：</span>
+                        <span class="help-block" style="width:118px; float:left;">身高要求：</span>
+                        <div style="clear:both; float:none;">
+                        <div class="lform1" style="overflow:hidden;">
+                            <select class="form-control" name="guanxi" style="width:100px; float:left; margin-right:20px;" >
+                                <option value="">不限</option>
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>
+
+                            <input type="text" class="form-control" style="width:118px; float:left;" placeholder="厘米（cm）" required autofocus name="sphone" >
+                        </div>
+						<br>
+                        
+                        <span class="help-block" style="width:118px; float:left;">健康证：</span>
+                        <span class="help-block" style="width:118px; float:left;">有无任务量：</span>
+                        <div style="clear:both; float:none;"
+                        <div class="lform1" style="overflow:hidden;">
+                            <select class="form-control" name="guanxi" style="width:100px; float:left; margin-right:20px;" >
+                                <option value="不需要">不需要</option>
+                                <option value="需要">需要</option>
+                            </select>
+                        </div>
+                        
+                        <div class="lform1" style="overflow:hidden;">
+                            <select class="form-control" name="guanxi" style="width:100px; float:left; margin-right:20px;" >
+                                <option value="无">无</option>
+                                <option value="有">有</option>
+                            </select>
+                        </div>
+						<br>
+                        
+                        <div style="height:1px; background:#3276b1; margin-bottom:25px; margin-top:10px;"></div>
+<script src="mystyles/js/laydate/laydate.js"></script>
+                        
+						<span class="help-block">工作日期：</span>
+						<div class="lform1" style="overflow:hidden;">
+                            <input type="text" class="form-control" onclick="laydate()" style="width:130px; float:left;">
+                            <P style="float:left; margin:0 10px; font-weight:bold; margin-top:10px;">&mdash;</P>
+                            <input type="text" class="form-control" id="demo" value="" style="width:130px; float:left;">
+                        </div>
+                        <script>
+                        ;!function(){
+                        laydate({
+                           elem: '#demo'
+                        })
+                        }();
+                        </script>
+                        
+                        <br>
+                        
+						<span class="help-block">工作地点：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="工作地点" required autofocus name="qq" >
+						</div>
+						<br>
+						<span class="help-block">工作时间：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="工作时间" required autofocus name="id_number" >
+						</div>
+						<br>
+						
+                        
+						<span class="help-block">报名人数：</span>
+						<div class="lform1" style="overflow:hidden;">
+                            <input type="text" class="form-control" style="width:118px;" placeholder="报名人数" required autofocus name="sphone" >
+                        
+						</div>
+						<br>
+                        
+                        
+                        
+						<span class="help-block">工作方式：</span>
+						<div class="lform1" style="overflow:hidden;">
+                            <textarea style="width:300px; height:100px;"></textarea>
+                        
+						</div>
+						<br>
+                        
+                        <div style="height:1px; background:#3276b1; margin-bottom:25px; margin-top:10px;"></div>
+                        
+						<button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+						
+					</div>
+                    </form>
+
+				</div>
+
+			</div>
+		</div>
+		
+
+    </div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

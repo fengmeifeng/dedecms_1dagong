@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			我的个人信息 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+		
+		<style>
+.regwrap {
+	margin-top: -15px;
+	padding: 10px;
+	text-align: left;
+}
+.regwrap h3 {
+	display: block;
+	color: #025db3;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 40px;
+	height: 40px;
+	border-top: 1px solid #eee;
+	margin-bottom: 5px;
+}
+.regwrap ul {
+	display: block;
+	padding-left: 10px;
+}
+ul {
+	list-style-image: none;
+	list-style-type: none;
+}
+.regwrap li {
+	display: block;
+	clear: both;
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #111;
+}
+.regwrap label {
+	width: 120px;
+	text-align: left;
+	display: block;
+	float: left;
+	margin-right: 5px;
+	font-size: 14px;
+	font-weight: normal;
+	color: #999;
+}
+.ipt {
+	height: 18px;
+	line-height: 18px;
+	padding: 3px 4px;
+	font-family: Verdana,宋体,微软雅黑;
+	background: url(/public/images/ipt.gif) 0 0 no-repeat;
+	border: 1px solid #9A9A9A;
+	border-bottom: 1px solid #CDCDCD;
+	border-right: 1px solid #CDCDCD;
+}
+.regwrap span.red {
+	font-family: 宋体;
+	color: red;
+	font-size: 12px;
+}
+.bt {
+	height: 28px;
+	line-height: 28px;
+	width: 88px;
+	background: url(/public/images/bt.gif) no-repeat;
+	border: 0px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+}
+
+.zbox{
+	position: absolute; 
+	top:90px;
+	left:530px;
+}
+
+@media (min-width: 992px){
+	.zbox{
+		top:80px;
+		left:500px;
+	}
+	.zbox img{
+		width:120px
+	}
+}
+
+@media (min-width: 1200px){
+	.zbox{
+		
+		top:90px;
+		left:560px;
+	}
+	.zbox img{
+		width:180px
+	}
+}
+
+.fiks li{ margin:12px 0; overflow:hidden;}
+.fiks label,.fiks span{ display:inline-blockl; float:left; margin-right:8px;}
+.fiks input{ display:block;} 
+</style>
+
+
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">重置提现密码</h3>
+					</div>
+					<div class="panel-body">
+
+
+	 <form class="form-signin" role="form" method='POST' action='gettxmima.php'>
+		<input type="hidden" name="dopost" value="save">
+        <h2 class="form-signin-heading">重置提现密码</h2>
+        手机号码：<br/>
+		<input type="text" class="form-control" placeholder="手机号码" required autofocus name="sphone" value="<?php echo $user['sphone']; ?>" readonly>
+		<br />
+        <button class="btn btn-lg btn-primary btn-block" type="submit">点击找回</button	>
+	</form>
+	
+</div>
+</div>
+</div></div></div>
+ <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>
