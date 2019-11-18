@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			个人会员中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+<script type="text/javascript">
+  function viewArc(aid){
+	  window.open("{dede:global.cfg_phpurl /}/view.php?aid="+aid);
+  }
+  function editArc(aid,channelid){
+	  location = "jianzhi_do.php?dopost=edit&channelid="+channelid+"&aid="+aid;
+  }
+  function delArc(aid){
+	  if(window.confirm('你确定要删除你所投递的工作信息?')) location="toudi_do.php?aid="+aid+"&dopost=delArc";
+  }
+</script>
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">投递简历信息</h3>
+					</div>
+                    
+                     <div class="panel-body">
+                    
+                        <div class="bs-example">
+                            <table class="table table-bordered bdha">
+                                <thead>
+                                    <tr>
+                                    <th width="48%" class="col-md-3">职位名称</th>
+                                    <th class="col-md-2">所属企业</th>
+                                    <th width="21%" class="col-md-3">投递时间</th>
+                                    <th width="31%" class="col-md-2">操作</th>
+                                    </tr>
+                                </thead>
+   	 	 		                               
+                                <tbody>
+                                {dede:datalist titlelen='1'}
+                                    <tr>
+                                    <td style="color:green"><a href="/plus/view.php?aid={dede:field.aid/}" target='_blank'><?php echo $fields['title']; ?></a></td>
+                                    <td><a href="/home/index.php?uid={dede:field.company_id/}&action=archives&channelid=81" target="_blank"><?php echo $fields['company']; ?></a></td>
+                                    <td><?php echo MyDate('Y-m-d H:i', $fields['addtime']); ?></td>
+                                    <td><!-- <a href="javascript:editArc(<?php echo $fields['id']?>,<?php echo $fields['channel']?>);" >修改</a>| --><a href="archives_do.php?dopost=delStow&type={dede:field.type/}&aid={dede:field.aid/}" >删除</a></td>
+                                    </tr>
+                                {/dede:datalist}   
+                                 
+                                   
+                                    
+							<tr>
+								<td align="left" colspan="20">
+                                <!--    <div style="font:12px '\5B8B\4F53',san-serif; display:inline-block;">
+                                     共
+                                    <b> 25 </b>
+                                    条记录  本页
+                                    <b>20</b>
+                                    条  
+                                    <b>1/2</b>
+                                    页  
+                                    <a href="javascript:alert("已到第一页了");">上一页</a>
+                                    <a href="?page=2">下一页</a>
+                                    </div>-->
+                                    {dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="1"/}
+								</td>
+							</tr>
+                                </tbody>
+                            </table>
+                        </div>                
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+
+    </div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

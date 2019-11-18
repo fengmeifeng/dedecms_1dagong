@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			审核员中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+		<script type="text/javascript" src="mystyles/js/calendar/calendar.js"></script>
+<script type="text/javascript">
+  function viewArc(mid){
+	  window.open("{dede:global.cfg_phpurl /}/view.php?mid="+mid);
+  }
+  function editArc(mid,mtype){
+	  location = "sh_doc.php?dopost=edit&mtype="+mtype+"&mid="+mid;
+  }
+  function delArc(mid){
+	  if(window.confirm('你确定要删除企业会员的信息?')) location="sh_doc.php?mid="+mid+"&dopost=delArc";
+  }
+  function shenheArc(mid,spacesta){
+	  if(window.confirm('你确定设置审核权限?')) location="sh_doc.php?mid="+mid+"&dopost=shenheArc&spacesta="+spacesta;
+  }
+</script>
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">企业会员审核</h3>
+					</div>
+                <!--搜索框开始 By Z-->
+                        	<style type="text/css">
+								.overdf{ overflow:hidden; padding-top:20px;}
+								.bcnx{ margin-bottom:5px; line-height:36px; padding:0px;}
+								.bcnx .col-md-8,input[type="submit"].btn-block{ width:66.66666666666666% !important;}
+								.bcnx .col-md-2{ width:16.666666666666664% !important;}
+								.bcnx .col-md-3{ width:25% !important;}
+								.bcnx .col-md-4{ width:33.33333333333333% !important; text-align:right;}
+							</style>
+                            
+                <div class="panel-heading">
+                	<form method="get" action="sh_company.php" class="overdf">
+                        <div class="col-md-8 row bcnx col-md-offset-1">
+                		<span class="col-md-4">公司名称：</span>
+                        <input class="col-md-8 form-control"  name="company_name" placeholder="{dede:global.company_name/}" />
+                        </div>
+                        
+                        <div class="col-md-8 row bcnx col-md-offset-1">
+                		<span class="col-md-4">起始时间：</span>
+							<input class="col-md-3 form-control" name="start" value="" type="text" id="start" />   
+							<script language="javascript" type="text/javascript">
+		                    Calendar.setup({
+		                        inputField     :    "start",
+		                        ifFormat       :    "%Y-%m-%d %H:%M",
+		                        showsTime      :    true,
+		                        timeFormat     :    "24"
+		                    });
+		                 	</script>
+                            
+                            
+		                 	<span style=" display:block; text-align:right;  padding:0px;" class="col-md-2">结束时间：</span>
+		                 	<input class="col-md-3 form-control" name="end" value="" type="text" id="end" />   
+							<script language="javascript" type="text/javascript">
+		                    Calendar.setup({
+		                        inputField     :    "end",
+		                        ifFormat       :    "%Y-%m-%d %H:%M",
+		                        showsTime      :    true,
+		                        timeFormat     :    "24"
+		                    });
+		                 	</script>
+		                 	</div>
+                            
+                            
+                        <div class="col-md-8 row bcnx col-md-offset-1">    
+                		<span class="col-md-4">审核状态：</span>
+                		<select class="col-md-8 form-control" name="shenhe_sta" class="form-control">
+                			<option value="0">审核状态</option>
+                			<option value="2">已审核</option>
+                			<option value="-1">未审核</option>
+                		</select>
+                        </div>
+                        
+                        <div class="col-md-8 row bcnx col-md-offset-1">
+                		<span class="col-md-4">有无营业执照：</span>
+                		<select class="col-md-8 form-control" name="zhizhao_sta" class="form-control">
+                			<option value="-1">有无营业执照</option>
+                			<option value="1">有营业执照</option>
+                			<option value="0">无营业执照</option>
+                		</select>
+                		</div>
+                        
+                        <div class="col-md-8 row bcnx col-md-offset-1">
+                		<span class="col-md-4">客户经理姓名：</span>
+                        <input class="form-control col-md-8" name="xiaoshou" />
+                		</div>
+                        
+                        <div class="col-md-8 row bcnx col-md-offset-1">
+                        <span class="col-md-4">&nbsp;</span>
+                		<input class="btn btn-lg btn-primary btn-block col-md-8 " type="submit" value="搜索" />
+                		</div>
+                        
+                        <div class="col-md-8 row bcnx col-md-offset-1">
+                        <span class="col-md-4">&nbsp;</span> 
+                		<a href="sh_company.php" class="col-md-8" style=" text-align:right;">重置所有条件</a>
+                        </div>
+                	</form>
+                </div>    
+                     <div class="panel-body">
+                    
+                        <div class="bs-example">
+                            <table class="table table-bordered bdha">
+                                <thead>
+                                    <tr>
+                                    <th width="13%">用户名</th>
+                                     <th width="28%">公司名称</th>
+                                     <th width="12%">客户经理</th>
+                                    <th width="12%" >营业执照</th>
+                                    <th width="15%">注册时间</th>
+                                    <th width="20%">操作</th>
+                                    </tr>
+                                </thead>
+   	 	 		                               
+                                <tbody>
+                                {dede:datalist titlelen='1'}
+                                    <tr>
+                                    <td style="color:green"><a href="index.php?uid=<?php echo $fields['mid']; ?>&action=archives&channelid=81" target="_blank"><?php echo $fields['userid']; ?></a></td>
+                                    <td style="color:green"><a href="index.php?uid=<?php echo $fields['mid']; ?>&action=archives&channelid=81" target="_blank"><?php echo $fields['company']; ?></a></td>
+                                    <td style="color:green"><?php if(empty($fields['xiaoshou'])){echo "无";}else{echo $fields['xiaoshou'];}?></td>
+                                    <td><?php if($fields['zhizhao'] ==""){?>无<?php }else{ ?><a href="<?php echo $fields['zhizhao'];?>" target="_blank">查看</a><?php }?></td>
+                                    <td><?php echo GetDateMk($fields['jointime']); ?></td>
+                                    <td><a href="javascript:shenheArc(<?php echo $fields['mid']?>,<?php echo $fields['spacesta']?>);"><font <?php if($fields['spacesta'] == '-1'){?>style="color:#F00;"<?PHP }else{?>style="color:blue;"<?php }?>><?php if($fields['spacesta'] == '-1'){?>未审核<?php }elseif($fields['spacesta'] == '2'){?>已审核<?php }?></font></a>|<a href="javascript:editArc(<?php echo $fields['mid']?>,'<?php echo $fields['mtype']?>');" >修改</a>|<a href="javascript:delArc(<?php echo $fields['mid']?>);" >删除</a></td>
+                                    </tr>
+                                {/dede:datalist}   
+                                 
+                                   
+                                    
+							<tr>
+								<td align="left" colspan="20">
+                                <!--    <div style="font:12px '\5B8B\4F53',san-serif; display:inline-block;">
+                                     共
+                                    <b> 25 </b>
+                                    条记录  本页
+                                    <b>20</b>
+                                    条  
+                                    <b>1/2</b>
+                                    页  
+                                    <a href="javascript:alert("已到第一页了");">上一页</a>
+                                    <a href="?page=2">下一页</a>
+                                    </div>-->
+                                    {dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="1"/}
+								</td>
+							</tr>
+                                </tbody>
+                            </table>
+                        </div>                
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+
+    </div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

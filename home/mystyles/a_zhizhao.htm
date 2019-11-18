@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<title>
+			修改资料 - 企业会员 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+   
+	</head>
+	<body>
+
+	<?php include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+
+    <div class="container">
+
+		<!-- mobile -->
+		
+
+		<!-- computer -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+
+				<div class="panel panel-info"><!-- s -->
+					<div class="panel-heading">
+						<h3 class="panel-title">欢迎进入壹打工网会员中心&nbsp;&nbsp;<font color="#000000" class="pull-right hidden-sm hidden-xs">全国免费求职热线：400-118-5188</font></h3>
+					</div>
+					<div class="panel-body">
+					<style>
+						.form-signin .red{ color:#F00; float:left; line-height:20px; margin-top:8px;}
+						.form-signin .jdsa{ float:left;}
+					</style>
+			<!-------------不要改动---------------------------------------------------------------------------->
+				<form class="form-signin" role="form" method="post" action="zhizhao.php" name="form1"  enctype="multipart/form-data">
+					<input type="hidden" value="save" name="dopost"/>
+                     <!--<input type="hidden" name="mid" value="<?php echo $cfg_ml->M_ID;?>" />-->
+					<!--<input type="hidden" value="<?php echo $membermodel->modid;?>" name="modid"/>-->
+					<h2 class="form-signin-heading">上传执照</h2>
+					为了帮助您推荐更合适的工作，并且更快速入职，<b><font color="#ff3300">请确保您的资料准确无误</font></b>：<br /><br />
+					<span class="help-block jdsa">上传营业执照</span><br>
+						<!------------------------------->
+                        <!-- <img src="<?php echo $row_zhizhao['zhizhao'];?>" /> -->
+                        <input class="file" name="zhizhao" type="file" id="zhizhao"  onchange="SeePicNew('divpicview',this);"  />
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">上传</button>
+				</form>
+				
+				<!----------------------不要改动------end------------------------------------------------------------------>
+					</div>
+
+				</div><!-- e -->
+
+			</div>
+		</div>
+		
+
+		
+
+
+	
+
+    </div> <!-- /container -->
+
+
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

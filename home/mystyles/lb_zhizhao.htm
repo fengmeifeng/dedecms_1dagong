@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<title>
+			修改营业执照 - 企业会员- 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+        <link href="/files/css/zt/zhengwen.css" rel="stylesheet" />  <!--------1打工征文页面-------->        
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+
+<script type="text/javascript">
+  function viewArc(aid){
+	  window.open("{dede:global.cfg_phpurl /}/view.php?aid="+aid);
+  }
+  
+  function delzhizhao(id){
+	  if(window.confirm('你确定要删除上传的图片?')) location="archives_do.php?id="+id+"&dopost=delzhizhao";
+  }
+</script>
+
+	</head>
+	<body>
+
+	<?php include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+
+    <div class="container">
+
+
+
+		<!-- computer -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+				<div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">营业执照审核情况</h3>
+                    </div>
+                     
+                     <div class="bs-example">
+                            <table class="table table-bordered bdha">
+                                <thead>
+                                    <tr>
+                                    <th width="30%" class="col-md-3">图片</th>
+                                    <th width="30%">审核状态</th>
+                                    <th width="20%" class="col-md-2">操作</th>
+                                    </tr>
+                                </thead>
+   	 	 		                               
+                                <tbody>
+                                    <tr>
+                                    <td style="color:green"><a href="<?php echo $row_zhizhao['zhizhao'];?>" target='_blank'>查看</a></td>
+                                    <td><?php if($row['spacesta'] == '-1'){ ?><font style="color:#F00;">未审核</font><?php }elseif($row['spacesta']=='2'){?><font style="color:#090;">已审核</font><?php }?></td>
+                                    <td><a href="/home/lb_zhizhao.php">重新上传</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="javascript:delzhizhao(<?php echo $row_zhizhao['id'];?>);">删除</a></td>
+                                    </tr>
+							
+                                </tbody>
+                            </table>
+                        </div>                    
+                </div>
+			</div>
+		</div>
+		
+
+		
+
+
+	
+
+    </div> <!-- /container -->
+
+
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

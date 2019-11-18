@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			发布职位 - 企业会员中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<link href="<{$puc}>/css/zp_index.css" rel="stylesheet"><!-- 招聘会 -->
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+        <script type="text/javascript">
+        //--检查 
+	function check() 
+	{
+		//------选择省份
+	if(form1.nativeplace_top.value == null || form1.nativeplace_top.value == "0") 
+	{
+		alert("请选择省份！");
+		form1.nativeplace_top.focus();
+	 	return false;
+	 } 
+	
+	//------选择市
+	if(form1.nativeplace_son.value == null || form1.nativeplace_son.value == "0") 
+	{
+		alert("请选择市！");
+		form1.nativeplace_son.focus();
+	 	return false;
+	 }
+
+	 return true;
+	 }  
+       </script>
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head_company.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+
+			</div>
+			<div class="col-xs-12 col-sm-8">
+            <style>
+				.form-signin .form-control{ font-size:14px;}
+			</style>
+			  <div class="panel panel-info">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">发布职位</h3>
+		        </div>
+			    <div class="panel-body">
+			      <form class="form-signin" role="form" method="post"  enctype="multipart/form-data" action="pt_gongzuo.php" name="addjianzhi" onsubmit="return check();">
+			        <input type="hidden" value="save" name="dopost"/>
+			        <input type="hidden" name="channelid" value="81" />
+			        <input type="hidden" name="typeid" value="41" />
+			        <h2 class="form-signin-heading">发布职位</h2>
+			        <br/>
+			        <br/>
+			        <span class="help-block">工作名称：</span>
+			        <div class="lform1">
+			          <input type="text" class="form-control" placeholder="填写工作名称" required autofocus name="title" >
+		            </div>
+			        <br>
+                    
+                    <span class="help-block">公司名称：</span>
+			        <div class="lform1">
+					  <input type='text' name='gzname' id='gzname'  class='form-control' placeholder="<?php echo $row_company['company']?>" required autofocus value="<?php echo $row_company['company']?>" readonly/>
+		            </div>
+			        <br>
+					
+					<!-- 如果有执照就调用执照没有为空 -->
+					<?php if($cInfos['needpic'] == '１') {?>
+					<span class="help-block">上传企业标志：</span>
+			          <div class="lform1">
+                          <!-- <input name="picname" type="text" id="picname" style="width:110px; float:left; " /> -->
+						  <input class="file" name="litpic" type="file" id="litpic"  onchange="SeePicNew('divpicview',this);"  />
+		              </div>
+                      <br>
+                    <?php }?>
+
+			        <span class="help-block">选择工作类型：</span>
+			        <div class="css_select1">
+			       <!--<input type='hidden' id='hidden_nativeplace' name='category' value='0' />
+                        <span id='span_category'></span>
+                        <span id='span_category_son'></span>
+                        <span id='span_category_sec'></span>
+                        <script language="javascript" type="text/javascript" src="/images/enums.js"></script>
+                        <script language='javascript' type='text/javascript' src='/data/enums/category.js'></script>
+                        <script language="javascript" type="text/javascript">MakeTopSelect("category", 0);</script>-->
+					
+                    <!--动态调用-->
+                    <?php
+						$typeOptions = GetOptionList(0,$channelid);
+						echo "<select name='typeid' size='1'>\r\n";
+						echo "<option value='0' selected>请选择栏目...</option>\r\n";
+						echo $typeOptions;
+						echo "</select>";
+					?>
+            
+		            </div>
+			        <br>
+                    
+                    <span class="help-block">职位类型：</span>
+                     <div class="lform1" style="overflow:hidden;">
+                    <input type='radio' name='zwleibie' class='np' value='全职'checked >全职
+                    <input type='radio' name='zwleibie' class='np' value='兼职' >兼职
+					
+                    </div>
+                    <br>
+					 <span class="help-block">性别要求</span>
+                    
+                     <div class="lform1" style="overflow:hidden;">
+                    <input type='radio' name='sex' class='np' value='不限' checked='checked' />不限
+					<input type='radio' name='sex' class='np' value='男' />男
+					<input type='radio' name='sex' class='np' value='女' />女
+                    
+                    </div>
+                    <br>
+
+					 <span class="help-block">职位优势</span>
+                    <div class="lform1" style="overflow:hidden;">
+                    <input type='checkbox' name='fulidy[]' class='np' value='技能培训' />技能培训
+					<input type='checkbox' name='fulidy[]' class='np' value='带薪年假' />带薪年假
+					<input type='checkbox' name='fulidy[]' class='np' value='绩效奖金'  />绩效奖金
+                    </div>
+                    <br> 
+                    
+                    
+			        <span class="help-block">月薪：</span>
+			        <div class="lform1" style="overflow:hidden;">
+			          <select class="form-control" name="gongzi"  id="gongzi" >
+                      <option value="面议">面议</option>
+			            <option value="1000-2000">1000-2000元/月</option>
+			            <option value="2000-3000">2000-3000元/月</option>
+			            <option value="3000-5000">3000-5000元/月</option>
+                        <option value="5000-8000">5000-8000元/月</option>
+			            <option value="8000以上">8000以上</option>
+		              </select>
+		            </div>
+                    <br>
+                   
+			        <span class="help-block">学历要求：</span>
+			        <div style="clear:both; float:none;">
+			          <div class="lform1" style="overflow:hidden;">
+			            <select name="edu" id="edu"  class="form-control">
+			              <option value="不限" selected>不限</option>
+			              <option value="初中以下">初中以下</option>
+			              <option value="初中">初中</option>
+                          <option value="中专">中专</option>
+                          <option value="高中">高中</option>
+                          <option value="大专">大专</option>
+                          <option value="本科">本科</option>
+                          <option value="本科以上">本科以上</option>
+		                </select>
+		              </div>
+			          <br>
+			          
+                      <span class="help-block">工作经验：</span>
+			           <div class="lform1" style="overflow:hidden;">
+			          <select  name='gongzuojy' id="gongzuojy" class="form-control">
+                       <option value="不限">不限</option>
+			            <option value="1年以下">1年以下</option>
+			            <option value="1-3年">1-3年</option>
+			            <option value="3-5年">3-5年</option>
+                        <option value="5-10年">5-10年</option>
+			            <option value="10年以上">10年以上</option>
+		              </select>
+		            </div>
+                      
+                      
+			          <br>
+			          <div style="height:1px; background:#3276b1; margin-bottom:25px; margin-top:10px;"></div>
+			          <script src="/mystyles/js/laydate/laydate.js"></script>
+			          <span class="help-block">截至日期：</span>
+			          <div class="lform1" style="overflow:hidden;">
+						<input type='text' name='lasttime' id='lasttime'  class='form-control' onclick="laydate()" />
+			          </div>
+			          <script>
+                        ;!function(){
+                        laydate({
+                           elem: '#demo'
+                        })
+                        }();
+                        </script>
+			          <br>
+			          <span class="help-block">工作地点：</span>
+			          <div class="css_select">
+					  <!-- 默认地区是企业注册地区 -->
+                        <input type='hidden' id='hidden_nativeplace' name='nativeplace' value='<?php echo $row_company['nativeplace']?>' />
+                        <span id='span_nativeplace'></span>
+                        <span id='span_nativeplace_son'></span>
+                        <span id='span_nativeplace_sec'></span>
+                        <script language="javascript" type="text/javascript" src="/images/enums.js"></script>
+                        <script language='javascript' type='text/javascript' src='/data/enums/nativeplace.js'></script>
+                        <script language="javascript" type="text/javascript">MakeTopSelect("nativeplace", <?php echo $row_company['nativeplace']?>);</script>
+
+		              </div>
+			         
+			          <br>
+						
+					<span class="help-block">招聘人数：</span>
+			          <div class="lform1" style="overflow:hidden;">
+						<input type='text' name='zprenshu' id='zprenshu'  class='form-control' placeholder="招聘人数" required autofocus />
+		              </div>
+			          <br>
+
+			          <span class="help-block">报名人数：</span>
+			          <div class="lform1" style="overflow:hidden;">
+						<input type='text' name='bmrenshu' id='bmrenshu' class='form-control' placeholder="报名人数"  autofocus />
+		              </div>
+			          <br>
+			          <br>
+                      
+			          <span class="help-block">职位描述：</span>
+			          <div class="lform1" style="overflow:hidden;">
+			            <textarea style="width:300px; height:100px;" name="zwmiaoshu" id="zwmiaoshu"></textarea>
+		              </div>
+			          <br>
+
+                      <!-- <span class="help-block">验证码：</span>
+			          <div class="lform1" style="overflow:hidden;">
+			            <input name="vdcode" type="text" id="vdcode"    maxlength="100" class="intxt" style='width:50px;text-transform:uppercase;' />  
+            <img src="../include/vdimgck.php" align="absmiddle" alt="看不清？点击更换" style="cursor:pointer" onclick="this.src=this.src+'?'" />
+		              </div>
+			          <br> -->
+					  <!-- 添加字段 -->
+                      <input type='hidden' name='dede_addonfields' value="gzname,text;gongzi,select;zwleibie,radio;sex,radio;edu,select;zprenshu,text;bmrenshu,text;zwmiaoshu,multitext;nativeplace,stepselect;shuaxintime,text;lasttime,text;gongzuojy,select">
+					<input type="hidden" name="dede_fieldshash" value="7a4b04403ba53739ef9f43c80e4a78a8" />
+
+			          <div style="height:1px; background:#3276b1; margin-bottom:25px; margin-top:10px;"></div>
+			          <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+		            </div>
+		          </form>
+		        </div>
+		      </div>
+		  </div>
+		</div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

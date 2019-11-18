@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<title>
+			会员中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js"></script>
+			<script src="/files/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+	<?php include(DEDEMEMBER."/mystyles/inc/head_company.htm"); ?>
+
+
+    <div class="container">
+
+		<!-- mobile -->
+		<div class="row visible-xs">
+			<div class="col-xs-12">
+				
+					<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+				
+			</div>
+
+			<div class="col-xs-12">
+
+				<div class="panel panel-info" style="height:500px;">
+					<div class="panel-heading">
+						<h3 class="panel-title">欢迎进入壹打工网会员中心 - 手机版</h3>
+					</div>
+					<div class="panel-body">
+						全国免费热线：400-118-5188
+					</div>
+                    
+                    <div class="mbott mbott_mo"></div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- computer -->
+		<div class="row hidden-xs">
+			<div class="col-xs-12 col-sm-4">
+				
+					<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">欢迎进入壹打工网会员中心</h3>
+                        
+					</div>
+                    
+					<div class="panel-body" style="height:500px;">
+					  <?php
+							//验证密码是否为后4位
+							$pwd=MD5(substr($cfg_ml->fields['userid'], -4));
+							$pwd2=$cfg_ml->fields['pwd'];
+							if($pwd==$pwd2){
+								echo '
+									<div class="alert alert-warning fade in">
+										<button type="button"class="close"data-dismiss="alert"aria-hidden="true">&times;</button>
+										你的密码是默认的，请立即<strong><a href="password.php">修改密码</a>。</strong>
+									</div>
+								';
+							}
+						?>
+						<br />
+						全国免费求职热线：400-118-5188
+						<br /><br />
+                        
+                      
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+    </div> <!-- /container -->
+
+
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			  审核员中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<link href="<{$puc}>/css/zp_index.css" rel="stylesheet"><!-- 招聘会 -->
+
+		<script>
+			<script type="text/javascript">
+			window.onload=function()//用window的onload事件，窗体加载完毕的时候
+			{
+			   //do something
+
+			}
+		</script>
+
+	</script>
+<!--冯每逢-->	
+        <script language="javascript" src="../include/js/dedeajax2.js"></script>
+		<script language='javascript' src="mystyles/js/main.js"></script>
+		<script type="text/javascript" src="mystyles/js/calendar/calendar.js"></script>
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+        <script type="text/javascript">
+        //--检查 
+	function check() 
+	{
+	
+	 //------email
+	 if(form1.email.value == null || form1.email.value == "") 
+	{
+		alert("填写email！");
+		form1.email.focus();
+	 	return false;
+	 }
+	 //检测email
+	var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+	var value = form1.email.value;
+	if(!reg.test(value)) {
+   // alert("请输入有效的邮箱地址！");
+		alert("请输入有效的邮箱地址！");
+		form1.email.focus();
+	 	return false;
+	}
+	
+	//------选择省份
+	if(form1.nativeplace_top.value == null || form1.nativeplace_top.value == "0") 
+	{
+		alert("请选择省份！");
+		form1.nativeplace_top.focus();
+	 	return false;
+	 } 
+	
+	//------选择市
+	if(form1.nativeplace_son.value == null || form1.nativeplace_son.value == "0") 
+	{
+		alert("请选择市！");
+		form1.nativeplace_son.focus();
+	 	return false;
+	 }
+
+	 return true;
+	 }  
+    </script>
+	<!--无刷新上传-->
+<link rel="stylesheet" type="text/css" href="uploadbing/uploadify.css">
+<script language="javascript" src="uploadbing/jquery.js"></script>
+<script language="javascript" src="uploadbing/jquery.uploadify.min.js"></script>
+<!--无刷新上传-end--->
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+
+			</div>
+			<div class="col-xs-12 col-sm-8">
+            <style>
+				.form-signin .form-control{ font-size:14px;}
+			</style>
+			  <div class="panel panel-info">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">修改已发布的职位</h3>
+		        </div>
+			    <div class="panel-body">
+			      <form class="form-signin" role="form" method="post"  enctype="multipart/form-data" action="hymq_edit.php?aid=<?php echo $aid;?>" name="addjianzhi">
+			        <!-- <input type="hidden" name="typeid" value="41" /> -->
+					<input type="hidden" name="dopost" value="save" />
+					<input type="hidden" name="channelid" value="<?php echo $channelid; ?>" />
+					<input type="hidden" name="idhash" value="<?php echo md5($aid.$cfg_cookie_encode); ?>" />
+			        <h2 class="form-signin-heading">修改已发布的职位</h2>
+			        <br/>
+			        <br/>
+			        <span class="help-block">职位名称：</span>
+			        <div class="lform1">
+			          <input type="text" class="form-control" placeholder="填写职位名称" required autofocus name="title"  value="<?php echo $row['title']?>">
+		            </div>
+			        <br>
+                    
+					<span class="help-block">Tag标签：</span>
+			        <div class="lform1">
+			          <input type="text" class="form-control"  placeholder="填写Tag标签" required autofocus name="tags" id="tags" value="<?php echo $row['keywords']; ?>" >
+					</div>
+			        <br>
+
+			         <span class="help-block">简略标题：</span>
+			        <div class="lform1">
+					  <input type='text' name='shorttitle' id='shorttitle'  class='form-control' placeholder="请写简略标题" required autofocus value="<?php echo $row['shorttitle']?>" />
+		            </div>
+			        <br>
+					<?php if($cInfos['needpic'] == 1) {?>
+					<span class="help-block">缩略图：</span>
+			          <div class="lform1">
+						  <input class="file" name="litpic" type="file" id="litpic"  onchange="SeePicNew('divpicview',this);"  />
+		              </div>
+                      <br>
+					  <input type="hidden" name="oldlitpic" value="<?php echo $row['litpic'];?>" />
+                      <!-- <input  name="litpic"  id="litpic" value="<?php echo $row_company['comface'];?>"  type="hidden"  /> -->
+                    <?php }?>
+					
+
+                    <?php
+            			//自定义字段
+     		   			// PrintAutoFieldsEdit($cInfos['fieldset'],$addRow,'autofield');
+      	   			?>
+			        <span class="help-block">选择工作类型：</span>
+			        <div class="lform1 css_select1">
+			       <!--<input type='hidden' id='hidden_nativeplace' name='category' value='0' />
+                        <span id='span_category'></span>
+                        <span id='span_category_son'></span>
+                        <span id='span_category_sec'></span>
+                        <script language="javascript" type="text/javascript" src="/images/enums.js"></script>
+                        <script language='javascript' type='text/javascript' src='/data/enums/category.js'></script>
+                        <script language="javascript" type="text/javascript">MakeTopSelect("category", 0);</script>-->
+					
+                    <!--动态调用-->
+                    <?php
+				 $typeOptions = GetOptionList($row["typeid"],$row["channel"],1);
+    			 echo "<select name='typeid' size='1' style='width:300px;'>\r\n";
+				 echo "<option value='0' selected>请选择栏目...</option>\r\n";
+    			 echo $typeOptions;
+   				 echo "</select>";
+				?>
+            
+		            </div>
+			        <br>
+                    
+                    <span class="help-block">SEO标题：</span>
+			        <div class="lform1">
+					  <input type='text' name='seotitle' id='seotitle'  class='form-control' placeholder="请写SEO标题" required autofocus  value="<?php echo $addRow['seotitle']?>"/>
+		            </div>
+			        <br>
+
+					<span class="help-block">综合工资：</span>
+			        <div class="lform1">
+					  <input type='text' name='gongzi' id='gongzi'  class='form-control' placeholder="请写综合工资" required autofocus value="<?php echo $addRow['gongzi']?>" />
+		            </div>
+			        <br>
+
+					<span class="help-block">工作描述：</span>
+			        <div class="lform1">
+					  <input type='text' name='miaoshu' id='miaoshu'  class='form-control' placeholder="请写工作描述" required autofocus  value="<?php echo $addRow['miaoshu']?>"/>
+		            </div>
+			        <br>
+					
+					<span class="help-block">工作地区：</span>
+			          <div class="css_select">
+					  <!-- 默认地区是企业注册地区 -->
+                        <input type='hidden' id='hidden_nativeplace' name='nativeplace' value='<?php echo $addRow['nativeplace']?>' />
+                        <span id='span_nativeplace'></span>
+                        <span id='span_nativeplace_son'></span>
+                        <!-- <span id='span_nativeplace_sec'></span> -->
+                        <script language="javascript" type="text/javascript" src="/images/enums.js"></script>
+                        <script language='javascript' type='text/javascript' src='/data/enums/nativeplace.js'></script>
+                        <script language="javascript" type="text/javascript">MakeTopSelect("nativeplace",<?php echo $addRow['nativeplace']?>);</script>
+
+		              </div>
+			          <br>
+
+					<span class="help-block">性别要求：</span>
+                    <div class="lform1" style="overflow:hidden;">
+						<input type='radio' name='xingbie' class='np' value='不限' checked='checked' />不限
+						<input type='radio' name='xingbie' class='np' value='男' />男
+						<input type='radio' name='xingbie' class='np' value='女' />女
+                    </div>
+                    <br>
+
+					 <span class="help-block">学历要求</span>
+                    <div class="lform1" style="overflow:hidden;">
+						<select class="form-control" name="xueli"  id="xueli" >
+						<?php
+						$dsql->SetQuery("Select * from `#@__addwork6` where aid='$aid'");
+						
+						$dsql->Execute();
+						while($row = $dsql->GetObject()){
+							echo "<option value='".$row->xueli."'>".$row->xueli."</option>\r\n";
+						}
+					  ?>
+							<option value="不限">不限</option>
+							<option value="小学">小学</option>
+							<option value="初中">初中</option>
+							<option value="高中">高中</option>
+							<option value="大专">大专</option>
+							<option value="本科">本科</option>
+							<option value="本科以上">本科以上</option>
+						 </select>
+                    </div>
+                    <br>
+					
+					<span class="help-block">接站：</span>
+			        <div class="lform1">
+					  <input type='text' name='jiezhan' id='jiezhan'  class='form-control' placeholder="请写工作描述" required autofocus  value="<?php echo $addRow['jiezhan']?>"/>
+		            </div>
+			        <br>
+
+					<span class="help-block">招聘人数：</span>
+			        <div class="lform1">
+					  <input type='text' name='zhaopinshu' id='zhaopinshu'  class='form-control' placeholder="请写招聘人数" required autofocus  value="<?php echo $addRow['zhaopinshu']?>"/>
+		            </div>
+			        <br>
+
+					<span class="help-block">报名人数：</span>
+			        <div class="lform1">
+					  <input type='text' name='baomingshu' id='baomingshu'  class='form-control' placeholder="请写报名人数" required autofocus  value="<?php echo $addRow['baomingshu']?>"/>
+		            </div>
+			        <br>
+
+					<span class="help-block">报名时间：</span>
+			        <div class="lform1">
+					  <input type='text' name='shijian' id='shijian'  class='form-control' placeholder="请写报名时间" required autofocus  value="<?php echo $addRow['shijian']?>"/>
+		            </div>
+			        <br>
+
+					<span class="help-block">收入情况：</span>
+			        <div class="lform1">
+					  <textarea name='shouru' id='shouru' style='width:100%;height:100px;'><?php echo $addRow['shouru']?></textarea>
+		            </div>
+			        <br>
+
+					<span class="help-block">工作情况：</span>
+			        <div class="lform1">
+					  <textarea name='gongzuo' id='gongzuo' style='width:100%;height:100px;'><?php echo $addRow['gongzuo']?></textarea>
+		            </div>
+			        <br>
+
+					<span class="help-block">要求：</span>
+			        <div class="lform1">
+					  <textarea name='yaoqiu' id='yaoqiu' style='width:100%;height:100px;'><?php echo $addRow['yaoqiu']?></textarea>
+		            </div>
+			        <br>
+
+					<span class="help-block">吃住情况：</span>
+			        <div class="lform1">
+					  <textarea name='chizun' id='chizun' style='width:100%;height:100px;'><?php echo $addRow['chizun']?></textarea>
+		            </div>
+			        <br>
+					
+					<span class="help-block">待遇情况：</span>
+			        <div class="lform1">
+					  <textarea name='daiyu' id='daiyu' style='width:100%;height:100px;'><?php echo $addRow['daiyu']?></textarea>
+		            </div>
+			        <br>
+
+			          <span class="help-block">公司简介：</span>
+			          <div class="lform1" style="overflow:hidden;">
+			            <textarea name='qiye' id='qiye' style='width:100%;height:300px;'><?php echo $addRow['qiye']?></textarea>
+		              </div>
+			          <br>
+<!---图片集-===================================================================start-->
+<script>
+//删除图片
+function delimg(id){	
+	if(id!=""){
+		$.post("uploadbing/uploadify.php", {del:"d",id:id},
+		function(data){
+			if(data=='0'){
+				alert("删除图片失败！");
+			}else{
+				$("#albold"+id).remove();
+			}
+		});
+	}
+}
+//更新图片
+function genxin(id){
+	var title=$("#albold"+id).find("#title").val();
+	if(title!=""){
+		$.post("uploadbing/uploadify.php", {gx:"g",id:id,title:title},
+		function(data){
+			if(data=='0'){
+				alert("更新标题失败！");
+			}else{
+				alert("更新标题成功！");
+			}
+		});
+	}else{
+		alert("请输入标题");
+	}
+}
+//选择图片类别
+function dqForm(data){
+	var value=data.value;
+	$(".tp").empty();
+	//当改变图片类别的时候在调用下图片上传
+	var id='<?php echo $aid; ?>';
+	if(value!=""){
+		$.post("uploadbing/uploadify.php", {tp:"t",id:id,sort:value},
+		function(data){
+			if(data==0){
+				$("#thumbnailsEdit").empty();
+				$("#thumbnailsEdit").append("没有找到此类别的图片");
+			}else{
+				if(typeof data == 'object'){
+					$("#thumbnailsEdit").empty();
+					var l=data.length;
+					for(var i=0; i<l; i++){
+						var html="<div class='albCt albEdit' id='albold"+data[i].id+"'><a href='javascript:void(0)' onclick=\"delimg(\'"+data[i].id+"\')\">[删除]</a><img src='swfupload.php?dopost=ddimg&img="+data[i].imgurl+"' width='150' /><input type='text' name='review' id='title' value='"+data[i].imgtitle+"'/> <a href='javascript:void(0)' onclick=\"genxin(\'"+data[i].id+"\')\" >[更新]</a></div>"
+						$("#thumbnailsEdit").append(html);
+					}
+				}else{
+					$("#thumbnailsEdit").empty();
+					$("#thumbnailsEdit").append("没有找到此类别的图片");
+				}
+			}
+		},"json");
+	}
+	//重新调用图片上传函数
+	shangchutp(value);
+}
+/*************************************/
+$(function(){
+	//加载完成调用上传图片函数
+	shangchutp(1);
+	//加载这个文章的所有图片
+	var id='<?php echo $aid; ?>';
+	if(id!=""){
+		$.post("uploadbing/uploadify.php", {tp:"t",id:id},
+		function(data){
+			if(data==0){
+				$("#thumbnailsEdit").empty();
+				$("#thumbnailsEdit").append("没有找到此文章的图片");
+			}else{
+				if(typeof data == 'object'){
+					var l=data.length;
+					for(var i=0; i<l; i++){
+						var html="<div class='albCt albEdit' id='albold"+data[i].id+"'><a href='javascript:void(0)' onclick=\"delimg(\'"+data[i].id+"\')\">[删除]</a><img src='swfupload.php?dopost=ddimg&img="+data[i].imgurl+"' width='150' /><input type='text' name='review' id='title' value='"+data[i].imgtitle+"'/> <a href='javascript:void(0)' onclick=\"genxin(\'"+data[i].id+"\')\" >[更新]</a></div>"	
+						$("#thumbnailsEdit").append(html);
+					}
+				}
+			}
+		},"json");
+	}
+	
+});
+
+//上传图片函数
+function shangchutp(a){
+	$("#tppic").uploadify({
+		'swf'		: 'uploadbing/uploadify.swf',
+		'uploader'	: 'uploadbing/uploadify.php',
+		'cancelImage': 'uploadbing/uploadify-cancel.png',
+		'buttonText': '上传图片',
+		'fileObjName':'Filedata',
+		'formData': {
+			'sc' : 's',
+			'uid' : '<?php echo $aid; ?>',
+			'sort': a
+		},
+		//回调函数
+		'onUploadSuccess': function(file,data,response){
+			if(data!="0"){
+				var img="<div class='albCt albEdit' id='albold"+data.split("|")[1]+"'><a href='javascript:void(0)' onclick=\"delimg(\'"+data.split("|")[1]+"\')\">[删除]</a><img src='swfupload.php?dopost=ddimg&img="+data.split("|")[0]+"' width='150' /><input type='text' name='review' id='title' /> <input type='hidden' name='id' value='"+data.split("|")[1]+"'><a href='javascript:void(0)' onclick=\"genxin(\'"+data.split("|")[1]+"\')\" >[更新]</a></div>"
+				$(".tp").append(img);
+			}else if(data=="0"){
+				alert("图片删除失败！");
+			}else{
+				alert(data);
+			}
+		}
+	});
+}
+</script>
+  <table width="98%"  border="0" align="center" cellpadding="2" cellspacing="2" id="adset1" style="border:1px solid #cfcfcf;background:#ffffff;">
+    <tr>
+	  <td height="24" colspan="4" class="bline" style="background:#F9FCEF;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="90">&nbsp;<b>原有图片：</b></td>
+            <td></td>
+          </tr>
+        </table>
+	  </td>
+	</tr>
+	
+	<tr>
+		<td height="24" colspan="4" class="bline">
+			<table width='100%'>
+				<tr><td>
+					<div id="thumbnailsEdit">
+					</div>
+				</td></tr>
+			</table>
+		</td>
+	</tr>
+	
+	<tr>
+	  <td height="24" colspan="4" class="bline" style="background:#F9FCEF;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="90">&nbsp;<b>属于类别：</b></td>
+            <td>
+				<select id="typeid" style="width:200px" onchange="dqForm(this)">
+					<option value="">请选择类别...</option>
+					<option value="1" selected="selected">保送接站</option>
+					<option value="2" class="option3">工作环境</option>
+					<option value="3" class="option3">入职现场</option>
+					<option value="4" class="option3">生活娱乐</option>
+				</select>
+			</td>
+          </tr>
+        </table>
+	  </td>
+	</tr>
+	<tr>
+      <td height="24" colspan="4" class="bline" style="background:#F9FCEF;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="90">&nbsp;<b>增加新图片：</b></td>
+            <td>  <input type="file" id="tppic" />  <input type="hidden" id="sort" value="1"/>  </td>
+          </tr>
+        </table>
+	  </td>
+    </tr>
+    <tr>
+      <td colspan="4" style="background:#fff url(images/albviewbg.gif) 0 20px no-repeat;"><table width='100%' height='160' style="margin:0 0 20px 0">
+          <tr>
+            <td><div id="divFileProgressContainer" style="height:75px;"><div class="tp"> </div></div>
+              <div id="thumbnails"></div></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+<!---图片集-======================================end====================-->
+
+                      
+                      <!-- <span class="help-block">验证码：</span>
+			          <div class="lform1" style="overflow:hidden;">
+			            <input name="vdcode" type="text" id="vdcode"    maxlength="100" class="intxt" style='width:50px;text-transform:uppercase;' />  
+            <img src="../include/vdimgck.php" align="absmiddle" alt="看不清？点击更换" style="cursor:pointer" onclick="this.src=this.src+'?'" />
+		              </div>
+			          <br> -->
+<input type='hidden' name='dede_addonfields' value="seotitle,textchar;gongzi,text;miaoshu,text;nativeplace,stepselect;xingbie,radio;xueli,select;jiezhan,text;zhaopinshu,text;baomingshu,text;shijian,text;shouru,multitext;gongzuo,multitext;yaoqiu,multitext;chizun,multitext;daiyu,multitext;qiye,htmltext">
+
+			          <div style="height:1px; background:#3276b1; margin-bottom:25px; margin-top:10px;"></div>
+			          <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+		            </div>
+
+		          </form>
+		        </div>
+		      </div>
+		  </div>
+		</div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+	</body>
+
+</html>

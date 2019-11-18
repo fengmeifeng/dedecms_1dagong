@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<title>
+			企业合作 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+<script language="javascript">
+    function frmreset(){
+        document.getElementById('form1').reset();
+    }
+    function frmlogin(frm){
+        if (frm.UserName.value==''){
+            alert('请输入用户名');
+            return false;
+        }
+        if (frm.Password.value==''){
+            alert('请输入密码');
+            return false;
+        }
+        if (frm.verifycode.value==''){
+            alert('请输入验证码');
+            return false;
+        }
+    }
+</script>
+        
+	</head>
+	<body>
+
+	<?php include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+
+
+    <div class="container">
+
+
+
+      <div class="row">
+
+			<form action="http://12.1dagong.com/?act=userlogin" name="form1" id="form1" onsubmit="return frmlogin(this);" AUTOCOMPLETE="OFF" enctype="multipart/form-data" method="post" class="form-signin" style="max-width: 380px;">
+				<input type="hidden" name="action" value="post" />
+				<input type="hidden" name="diyid" value="4" />
+				<input type="hidden" name="do" value="2" />
+
+				<h2 class="form-signin-heading">登录
+                <br/><p style="font-size:26px; margin-top:10px; margin-bottom:-10px;">壹打工网“1+2”事业平台</p></h2>
+				
+				
+				<br/>
+				<span class="help-block">编&nbsp;&nbsp;号：</span>
+                <input type="text" name="UserName"  id="txtUserName" class="form-control" size="24" maxlength="50" check="Require" warning="请输入帐号" AUTOCOMPLETE="OFF" />				
+				<br/>
+				<span class="help-block">密&nbsp;&nbsp;码：</span>
+                <input type="password" name="Password" id="txtUserPass" class="form-control" size="24" maxlength="50" check="Require" warning="请输入密码" AUTOCOMPLETE="OFF" />                
+
+                <br/>
+				<span class="help-block">验证码：</span>
+                <input type="text" name="verifycode"  id="verifycode" class="form-control" style="width:122px; float:left;" size="5" maxlength="4"  warning="请输入验证码"/>&nbsp;<img class="img-responsive" style="cursor:pointer; float:left; margin-left:15px; border:1px solid #b0b0b0; vertical-align:middle; height:35px;" title="刷新验证码" id="refresh2" border='0' src='http://12.1dagong.com/include/captcha.inc.php'onclick="document.getElementById('refresh2').src='http://12.1dagong.com/include/captcha.inc.php?t='+Math.random()"/>&nbsp;点击图片刷新<br/>
+				
+                <div style="clear:both; overflow:hidden;"></div>
+				<button class="btn btn-lg btn-primary btn-block" type="submit" style="margin-top:20px;">登录</button>
+		  </form>
+      </div>
+
+    </div> <!-- /container -->
+
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

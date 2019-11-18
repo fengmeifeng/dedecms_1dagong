@@ -1,0 +1,101 @@
+
+		 <script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/login.js"></script>
+
+		<script language="javascript" type="text/javascript">
+		<!--
+			
+			function CheckLogin(){
+			  var taget_obj = document.getElementById('headlogin');
+			  myajax = new DedeAjax(taget_obj,false,false,'','','');
+			  myajax.SendGet2("/home/headlogin.php");
+			  DedeXHTTP = null;
+			}
+		-->
+		</script>
+
+
+	<div class="top">
+		<div class="container">
+			<div class="row">
+				
+				<ul class="nav footer-nav pull-left">
+					<li>					
+						<a href="http://www.1dagong.com" target="_blank">首页</a>
+						<a class="hidden-xs" href="/home/baoming.php" target="_blank">手机报名</a>
+						<a class="hidden-xs" href="/help/" target="_blank">帮助</a>
+						<a class="hidden-xs" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.1dagong.com');" href="javascript:">设为首页</a>
+						<a class="hidden-xs" href="javascript:" onclick="window.external.addFavorite(parent.location.href,document.title);">加入收藏</a>
+						<a class="hidden-xs" href="/plus/shortcut.php" style="color:#ff6600" class="lia">保存到桌面</a>
+					</li>
+				</ul>
+
+				<div id="headlogin" class="nav footer-nav pull-right">
+					<a href="/home/baoming.php" target="_blank"><font color="#ff6600">[免费注册报名]</font></a><a href="/home/index.php" target="_blank">[会员登录]</a>
+				</div>
+				<script language="javascript" type="text/javascript">CheckLogin();</script>
+			</div>
+		</div>
+		<!-- /container -->
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3 hidden-xs">
+				<a href="http://www.1dagong.com"><img src="/files/img/logo.png" alt="壹打工网" /></a>
+			</div>
+			<div class="col-sm-6 visible-xs">
+				<a href="http://www.1dagong.com"><img src="/files/img/logo-phone.jpg" class="img-responsive" alt="壹打工网" /></a>
+			</div>
+			<div class="col-sm-6 imgintro">
+				<a href="/neijian/" target="_blank"><img src="/files/image/headban.jpg" class="img-responsive" alt="一份工作  两份收入" /></a>
+			</div>
+			<div class="col-sm-3 hidden-xs">
+				<img src="/files/image/phone.png" class="img-responsive" alt="全国免费求职热线" />
+			</div>
+		</div>
+	</div>
+		
+	
+	
+	<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div>
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         		  <a class="navbar-logo visible-xs" href="http://www.1dagong.com">400-118-5188</a>
+		  </ul>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://www.1dagong.com">首页</a></li>
+            <li><a href="/gongzuo">企业库</a></li>
+            <li><a href="/home/baoming.php">报名直通车</a></li>
+					
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">帮助<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/home/index.php">登录</a></li>
+				<li><a href="/help/shijian.html">客服工作时间</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">我们的优势</li>
+                <li><a href="/help/aboutus.html">关于我们</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/home/tuijian.php" style="color:#FFff00;">我要推荐</a></li>
+            <li><a href="/weiping/">微 评</a></li>
+			<li><a href="/zhengwen/">征文大赛</a></li>
+			<li class="hidden-sm"><a href="/home/index.php">会员中心</a></li>	
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+

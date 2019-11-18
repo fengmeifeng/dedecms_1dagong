@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="keywords" content="{dede:field.keywords/}" />
+	<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+	<title>{dede:var.company /}</title>
+	<!-- head_css-->
+	<?php	include(DEDETEMPLATE."/dgstyle/inc/head_css.htm"); ?>
+	<!--head_css end -->	
+</head>
+<body>
+<!-- head -->
+<?php	include(DEDETEMPLATE."/dgstyle/head_3.htm"); ?>
+<!--head end -->
+
+
+
+<!--            列表                  -->
+
+<div class="container">
+    <ol class="breadcrumb mt_20">
+        <li class="active">{dede:var.company /}</li>
+    </ol>
+</div>
+  
+
+<div class="container">
+	<div class="row">
+    	<div class="col-md-9">
+        	<div class="find mr_20">
+              <div class="row toubc">
+                <div class="col-md-12">
+                
+                    <div class="row">
+                        <div class="col-md-4">
+
+                            <?php if($_vars['comface'] != ''){?><img src="{dede:var.comface /}" alt="{dede:var.company /}照片" class="img-thumbnail" /><?php }else{?><img src="/images/defaultpic.gif" alt="暂无图片" class="img-thumbnail" /><?php }?>
+
+                        </div>
+                        <div class="col-md-6 mp">
+                            <h2 style="float:left;">{dede:var.company /}</h2><span><?php if($_vars['zhizhao'] != "" && $_vars['spacesta'] == '2'){?><img  src="../../../files/image/2.gif" alt="营业执照已验证" title="营业执照已验证"/><?php }else{?><img  src="../../../files/image/3.gif" alt="营业执照未验证" title="营业执照未验证"/><?php }?></span>
+                            <div style="clear:both;"></div>
+                            <p> <span>规模：{dede:var.cosize /}</span> <span>性质：<?php if(!empty($_vars['gsxingzhi'])){?>{dede:var.gsxingzhi /}<?php }else{?>其他<?php }?></span> <span>所在地：<!-- {dede:var.nativeplace /} --><?php echo GetEnumsValue2('nativeplace',$_vars['nativeplace']);?></span> </p>
+                        </div>
+                        <div class="col-md-2 mp i_bans full-right">
+                        	<p></p>
+                        </div>
+                        
+                    </div>
+                    
+                    <ul class="mp mt_10">
+                    {dede:tag sort='new' getall='0'}
+                      <a class="btn btn-warning ptii" href='[field:link/]'>[field:tag /]</a>
+                    {/dede:tag}
+                  	</ul>
+
+                </div>
+              </div>
+              
+              <div class="d_led ">
+                  <h4>招聘职位</h4>
+                  <!--begin-->
+				{dede:datalist}
+				<?php
+					if($fields['channel']==1) {
+					$fields['arcurl'] = "index.php?uid={$_vars['userid_e']}&action=viewarchives&aid={$fields['id']}";
+					}
+				?>
+                  <a href="/plus/view.php?aid={dede:field.id/}" class="aish jz_lisd jusa bak_ff" style="padding:10px 0px;">
+                      <div class="col-md-6 ands">{dede:field.title/}</div>
+                      <div class="col-md-3"><strong>{dede:field.gongzi/}</strong><?php if($fields['gongzi'] != "面议"){?>元/月<?php }?><!-- 元/月 --></div>
+                      <div class="col-md-3 riqi">{dede:field.pubdate function="MyDate('Y-m-d',@me)"/}<!-- {dede:field.pubdate function="MyDate('y-m-d',@me)"/} --></div>
+                  </a>
+                  {/dede:datalist}
+                  <!-- <a href="#" class="aish jz_lisd jusa">
+                      <div class="col-md-6 ands">高薪招聘胶管工</div>
+                      <div class="col-md-3"><strong>3000～14000</strong> 元/月</div>
+                      <div class="col-md-3 riqi">2015-2-12</div>
+                     </a> -->
+					 
+			  </div>
+              
+              <div class="d_led ">
+                  <h4>企业简介</h4>
+                 <?php if(!empty($_vars['introduce'])){?><p>{dede:var.introduce/}</p><?php }else{?><h5 style="color:#f00;">暂无公司简介</h5><?php }?>
+
+			  </div>
+
+            </div>   
+        </div>
+        
+        <div class="col-md-3 col-sm-12 rcon">
+            
+            <div class=" mr_10 d_led lndk">
+                  <h4>关于我们</h4>
+            	<ul>
+                	<li><span>地点：</span><span><?php echo GetEnumsValue2('nativeplace',$_vars['nativeplace']);?><!-- {dede:var.nativeplace /} --></span></li>
+                    <li><span>领域：</span><span>{dede:var.vocation /}</span></li>
+                    <li><span>规模：</span><span>{dede:var.cosize /}</span></li>
+            	</ul>
+                
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                
+                  <!-- Wrapper for slides -->
+                  <!-- <div class="carousel-inner" role="listbox">
+                  
+                    <div class="item active leftban">
+                      <img src="/files/style/image/banner_da.jpg" alt="">
+                    </div>
+                    
+                    <div class="item leftban">
+                      <img src="/files/style/image/banner_da.jpg" alt="">
+                    </div>
+                    
+                    <div class="item leftban">
+                      <img src="/files/style/image/banner_da.jpg" alt="" >
+                    </div>
+
+                  </div> -->
+<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"> </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"></a>        
+                </div>
+                
+                  <h4 class="mt_30">公司详细地址</h4>
+                  <?php if(!empty($_vars['address'])){?><P>{dede:var.address/}</P><?php }else{?>暂无公司详细地址<?php }?>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<!--            列表                  -->    
+
+
+<!-------baoming------->   
+<?php	include(DEDETEMPLATE."/dgstyle/baoming.htm"); ?>
+<!--------baoming------->
+
+
+
+<!-- /footer -->
+<?php	include(DEDETEMPLATE."/dgstyle/footer_3.htm"); ?>
+<!-- /footer -->
+
+
+</body>
+</html>

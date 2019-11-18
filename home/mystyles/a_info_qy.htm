@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<title>
+			修改基本资料 - 企业会员中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+		<!-- 冯 -->
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+        
+        
+	</head>
+	<body>
+
+	<?php include(DEDEMEMBER."/mystyles/inc/head_company.htm"); ?>
+
+
+    <div class="container">
+
+		<!-- mobile -->
+		
+
+		<!-- computer -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+
+				<div class="panel panel-info"><!-- s -->
+					<div class="panel-heading">
+						<h3 class="panel-title">欢迎进入壹打工网会员中心&nbsp;&nbsp;<font color="#000000" class="pull-right hidden-sm hidden-xs">全国免费求职热线：400-118-5188</font></h3>
+					</div>
+					<div class="panel-body">
+					<style>
+						.form-signin .red{ color:#F00; float:left; line-height:20px; margin-top:8px;}
+						.form-signin .jdsa{ float:left;}
+					</style>
+			<!-------------不要改动---------------------------------------------------------------------------->
+				<form class="form-signin" role="form" method="post" action="info_qy.php" name="form1"  enctype="multipart/form-data">
+					<input type="hidden" value="save" name="dopost"/>
+					<input type="hidden" value="<?php echo $membermodel->modid;?>" name="modid"/>
+					<h2 class="form-signin-heading">修改资料</h2>
+					为了帮助您推荐更合适的人员入职，<b><font color="#ff3300">请确保您的资料准确无误</font></b>：<br /><br />
+                    
+                    <span class="help-block jdsa">所在公司</span> <span class="red">* 真实公司名称</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="所在公司" required autofocus name="company" value="<?Php echo $row['company']; ?>">
+						</div>
+						<br>
+                    
+						<span class="help-block">上传企业标志：</span>
+			          <div class="lform1">
+                          <!-- <input name="picname" type="text" id="picname" style="width:110px; float:left; " /> -->
+							<?php if($row['comface'] != ''){?>
+						  <img src="<?php echo $row['comface'] ?>" style="width:110px; float:left; ">
+							<?php }?>
+						   <!--<input class="file" name="comface" type="file" id="comface"  onchange="SeePicNew('divpicview',this);"  />-->
+                           <input class="file" name="comface" type="file" id="comface"  onchange="SeePicNew('divpicview',this);"  value="<?php if($row['comface'] !='' ){ echo  $row['comface'];}?>" />
+                           
+						  <!-- style="width:175px; border:none; height:40px; padding:0px; float:right; cursor:pointer;" -->
+						  
+		              </div>
+                      <br>
+
+						<span class="help-block jdsa">客户经理</span> <span class="red">* 当时联系你的客户经理，如果没有可以不填</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="客户经理"  autofocus name="xiaoshou" value="<?Php echo $row['xiaoshou']; ?>">
+						</div>
+						<br>
+
+					
+						<span class="help-block jdsa">联系人姓名/怎么称呼您？</span> <span class="red">* 真实姓名 </span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="姓名" required autofocus name="linkman" value="<?Php echo $row['linkman']; ?>">
+						</div>
+						<br>
+                        
+                    	<span class="help-block jdsa">性别：</span> <span class="red">*</span>
+						<div class="lform1">
+						<select class="form-control" name='sex' id='sex'>
+                            <option value="<?Php echo $row['sex']; ?>"><?Php if($row['sex']!=""){ echo $row['sex']; }else{ echo "请选择"; } ?></option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                            <option value="保密">保密</option>
+						</select>
+						</div>
+						<br>
+						
+                        <span class="help-block jdsa">邮箱</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="邮箱" required autofocus name="email" value="<?Php echo $row['email']; ?>">
+						</div>
+						<br>
+                        
+						<span class="help-block jdsa">联系方式：</span> <!-- <span class="red">* 用于短信通知</span> -->
+						<!-- <input type="hidden" value="<?php echo $cfg_ml->fields['sphone']; ?>" name="ylphone"/> -->
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="手机号" required autofocus name="sphone" id="sphone" maxlength="20" value=" <?php echo $cfg_ml->fields['sphone'];  ?>" >
+						</div>
+						<br>
+
+						<span class="help-block jdsa">手机号码：</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="手机号" required autofocus name="mobile" id="mobile" maxlength="11" value=" <?php echo $row['mobile'];  ?>" >
+						</div>
+						<br>
+						<!-- <span class="help-block jdsa">所在职位：</span> <span class="red">* 能准确的找到您</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="所在职位" required name="zhiwei" value="<?Php echo $row['zhiwei']; ?>" >
+						</div>
+						<br> -->
+						<span class="help-block" style="width:118px;">公司所在城市：</span>
+						<input type="hidden" id="hidden_nativeplace" name="nativeplace" value="<?Php echo $row['nativeplace']; ?>">
+                        <div class="css_select">
+						<span id="span_nativeplace"></span>
+						<span id="span_nativeplace_son"></span>
+						<span id="span_nativeplace_sec"></span> <!--如果需要3级地区-注释去了就行了-->
+						</div>
+						<!--<script language="javascript" type="text/javascript" src="/files/js/diqu.js"></script>-->
+                        <script language="javascript" type="text/javascript" src="/images/enums.js"></script>
+						<script language="javascript" type="text/javascript" src="/data/enums/nativeplace.js"></script>
+						<script language="javascript" type="text/javascript">MakeTopSelect("nativeplace", <?Php echo $row['nativeplace']; ?>);</script>
+						<br>
+
+						<span class="help-block jdsa">公司详细地址</span>
+						<div class="lform1">
+						<input type="text" class="form-control" placeholder="公司详细地址"  autofocus name="address" value="<?Php echo $row['address']; ?>">
+						</div>
+						<br>
+						
+						<style>#vocation_top,#vocation_son,#vocation_sec{width:300px;}</style>
+						<span class="help-block" style="width:118px;">所属行业：</span>
+						<input type="hidden" id="hidden_vocation" name="vocation" value="<?Php echo $row['vocation']; ?>">
+                        <div class="css_select">
+						<span id="span_vocation"></span>
+						<span id="span_vocation_son"></span>
+						<!-- <span id="span_vocation_sec"></span> --> <!--如果需要3级地区-注释去了就行了-->
+						</div>
+						<!--<script language="javascript" type="text/javascript" src="/files/js/diqu.js"></script>-->
+                        <script language="javascript" type="text/javascript" src="/images/enums.js"></script>
+						<script language="javascript" type="text/javascript" src="/data/enums/vocation.js"></script>
+						<script language="javascript" type="text/javascript">MakeTopSelect("vocation", <?Php echo $row['vocation']; ?>);</script>
+						<br>
+
+						<span class="help-block">规模：</span>
+                        <div class="css_select">
+						<select name='cosize' id='cosize' class='enumselect' style="width:300px;">
+							<option value='0' <?php if($row['cosize'] == '0'){?>selected='selected'<?php }?>>--请选择--</option>
+							<option value='1' <?php if($row['cosize'] == '1'){?>selected='selected'<?php }?>>50人以下</option>
+							<option value='2' <?php if($row['cosize'] == '2'){?>selected='selected'<?php }?>>50-200人</option>
+							<option value='3' <?php if($row['cosize'] == '3'){?>selected='selected'<?php }?>>200-500人</option>
+							<option value='4' <?php if($row['cosize'] == '4'){?>selected='selected'<?php }?>>500-2000人</option>
+							<option value='5' <?php if($row['cosize'] == '5'){?>selected='selected'<?php }?>>2000-5000人</option>
+							<option value='6' <?php if($row['cosize'] == '6'){?>selected='selected'<?php }?>>5000人以上</option>
+						</select>
+						</div>
+						<br>
+						<span class="help-block" style="width:118px;">公司性质：</span>
+                        <div class="css_select">
+						<select name='gsxingzhi' id='gsxingzhi' style="width:300px;">	
+							<option value="其他" <?php if($row['gsxingzhi'] == '其他'){?>selected='selected'<?php }?>>—其他</option>
+							<option value="国有" <?php if($row['gsxingzhi'] == '国有'){?>selected='selected'<?php }?>>—国有</option>
+							<option value="私营" <?php if($row['gsxingzhi'] == '私营'){?>selected='selected'<?php }?>>—私营</option>
+							<option value="联营" <?php if($row['gsxingzhi'] == '联营'){?>selected='selected'<?php }?>>—联营</option>
+							<option value="三资" <?php if($row['gsxingzhi'] == '三资'){?>selected='selected'<?php }?>>—三资</option>
+							<option value="集体所有制" <?php if($row['gsxingzhi'] == '集体所有制'){?>selected='selected'<?php }?>>—集体所有制</option>
+						</select>
+						</div>
+						<br>
+						<span class="help-block jdsa">公司简介</span>
+						<div class="lform1">
+						<textarea name="introduce"  style="width:100%; height:200px;" id="introduce"><?php echo $row['introduce'];?></textarea>
+						</div>
+						<br>
+
+						
+						<br>
+						<input type="hidden" value="<?php echo $row['qym']; ?>" name="qym">		<!--意向企业-->
+						<input type="hidden" value="<?php echo $cfg_ml->fields['verify']; ?>" name="verify">	<!--手机是否验证通过-->
+						<button class="btn btn-lg btn-primary btn-block" type="submit">保存更新的资料</button>
+				</form>
+				
+				<!----------------------不要改动------end------------------------------------------------------------------>
+					</div>
+
+				</div><!-- e -->
+
+			</div>
+		</div>
+	
+
+    </div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+	
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+	</body>
+
+</html>

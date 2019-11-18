@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			发布职位 - 企业会员中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		<link href="<{$puc}>/css/zp_index.css" rel="stylesheet"><!-- 招聘会 -->
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head_company.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+
+			</div>
+			<div class="col-xs-12 col-sm-8">
+            <style>
+				.form-signin .form-control{ font-size:14px;}
+			</style>
+			  <div class="panel panel-info">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">发布职位</h3>
+		        </div>
+			    <div class="panel-body">
+			      <form class="form-signin" role="form" method="post"  enctype="multipart/form-data" action="cs.php" name="addjianzhi">
+			        <input type="hidden" name="dopost" value="save" />
+          <input type="hidden" name="channelid" value="<?php echo $channelid; ?>" />
+		   <input type="hidden" name="typeid" value="136" />
+			        <h2 class="form-signin-heading">发布职位</h2>
+			        <br/>
+			        <br/>
+			        <span class="help-block">标题：</span>
+			        <div class="lform1">
+			          <input type="text" class="form-control" placeholder="填写工作名称" required autofocus name="title" >
+		            </div>
+			        <br>
+                     <span class="help-block">测试：</span>
+			        <div class="lform1">
+			         <?php 
+						//自定义字段
+						PrintAutoFieldsAdd($cInfos['fieldset'],'autofield');
+					?>
+		            </div>
+			        <br>
+			       
+			          <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+		            </div>
+		          </form>
+		        </div>
+		      </div>
+		  </div>
+		</div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>
