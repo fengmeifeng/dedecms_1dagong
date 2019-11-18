@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<title>
+			企业合作 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+	<body>
+
+	<?php include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+
+
+    <div class="container">
+
+
+
+      <div class="row">
+
+			<form action="/plus/diy.php" enctype="multipart/form-data" method="post" class="form-signin" style="max-width: 380px;">
+				<input type="hidden" name="action" value="post" />
+				<input type="hidden" name="diyid" value="4" />
+				<input type="hidden" name="do" value="2" />
+
+				<h2 class="form-signin-heading">申请<br />企业战略合作伙伴</h2>
+				
+				
+				<br/>
+				<span class="help-block">企业全称：</span>
+				<input type='text' name='qiyeming' id='qiyeming' class="form-control" placeholder="企业的全称" required autofocus maxlength="80">
+				
+				<br/>
+				<span class="help-block">联系人：</span>
+				<input type='text' name='xingming' id='xingming' class="form-control" placeholder="联系人" required  maxlength="8">
+				
+				<br/>
+				<span class="help-block">联系电话：</span>
+				<input type='text' name='dianhua' id='dianhua' class="form-control" placeholder="联系电话" required  maxlength="18">
+				
+				<br/>
+				<span class="help-block">详细地址：</span>
+				<input type='text' name='xiangxidizhi' id='xiangxidizhi' class="form-control" placeholder="企业的地址"  maxlength="128">
+				
+				<br/>
+				<span class="help-block">企业性质：</span>
+				<input type='text' name='qiyexingzhi' id='qiyexingzhi' class="form-control" placeholder="企业的性质，如：制造类，电子类等"  maxlength="80">
+				
+				<br/>
+				<span class="help-block">需求人数：</span>
+				<input type='text' name='renshu' id='renshu' class="form-control" placeholder="需求人数"  maxlength="10">
+				
+				<br/>
+				<span class="help-block">需求岗位：</span>
+				<input type='text' name='gangwei' id='gangwei' class="form-control" placeholder="岗位"  maxlength="60">
+
+				<br/>
+				<span class="help-block">到岗时间：</span>
+				<input type='text' name='daogangshijian' id='daogangshijian' class="form-control" placeholder="员工到岗时间"  maxlength="60">
+				
+				<input type="hidden" name="dede_fields" value="qiyeming,text;dianhua,text;xiangxidizhi,text;xingming,text;qiyexingzhi,text;renshu,text;gangwei,text;daogangshijian,text" />
+				<input type="hidden" name="dede_fieldshash" value="232359c0c486597865add6c876d39816" /></table>
+
+				<br/><br/>
+				
+				<button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+		  </form>
+      </div>
+
+    </div> <!-- /container -->
+
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

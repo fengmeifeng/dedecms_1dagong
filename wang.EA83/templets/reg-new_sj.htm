@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			会员中心 - 要工作网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+	<body>
+
+	<?php include(DEDEMEMBER."/templets/inc/head.htm"); ?>
+
+
+
+    <div class="container">
+
+
+
+      <div class="row">
+
+			<form class="form-signin" role="form" method="post" action="baoming.php" id="regUser">
+				<input type="hidden" value="regbase" name="dopost"/>
+				<input type="hidden" value="1" name="step"/>
+				<input type="hidden" value="个人" name="mtype"/>
+
+				<h2 class="form-signin-heading">免费报名 </h2>
+
+				<span class="help-block">填写您的手机号码：</span>
+
+				<input type="text" class="form-control" placeholder="手机号码" required autofocus  name="userid" maxlength="13">
+				<label class="checkbox">
+				 仅仅只需一步，让工作来找你。
+				</label>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+		  </form>
+      </div>
+
+    </div> <!-- /container -->
+
+
+
+	<?php include(DEDEMEMBER."/templets/inc/footer.htm"); ?>
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

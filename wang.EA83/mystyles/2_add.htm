@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<title>
+			企业中心 - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+		
+		<style>
+.regwrap {
+	margin-top: -15px;
+	padding: 10px;
+	text-align: left;
+}
+.regwrap h3 {
+	display: block;
+	color: #025db3;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 40px;
+	height: 40px;
+	border-top: 1px solid #eee;
+	margin-bottom: 5px;
+}
+.regwrap ul {
+	display: block;
+	padding-left: 10px;
+}
+ul {
+	list-style-image: none;
+	list-style-type: none;
+}
+.regwrap li {
+	display: block;
+	clear: both;
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #111;
+}
+.regwrap label {
+	width: 120px;
+	text-align: left;
+	display: block;
+	float: left;
+	margin-right: 5px;
+	font-size: 14px;
+	font-weight: normal;
+	color: #999;
+}
+.ipt {
+	height: 18px;
+	line-height: 18px;
+	padding: 3px 4px;
+	font-family: Verdana,宋体,微软雅黑;
+	background: url(/public/images/ipt.gif) 0 0 no-repeat;
+	border: 1px solid #9A9A9A;
+	border-bottom: 1px solid #CDCDCD;
+	border-right: 1px solid #CDCDCD;
+}
+.regwrap span.red {
+	font-family: 宋体;
+	color: red;
+	font-size: 12px;
+}
+.bt {
+	height: 28px;
+	line-height: 28px;
+	width: 88px;
+	background: url(/public/images/bt.gif) no-repeat;
+	border: 0px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+}
+
+.zbox{
+	position: absolute; 
+	top:90px;
+	left:560px;
+	border: 0px solid #9A9A9A;
+}
+.fiks li{ margin:12px 0; overflow:hidden;}
+.fiks label,.fiks span{ display:inline-blockl; float:left; margin-right:8px;}
+.fiks input{ display:block;} 
+</style>
+
+
+	</head>
+
+	<body>
+	
+<?php	include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+<div class="container">
+
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-4">
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">个人推荐信息</h3>
+					</div>
+					<div class="panel-body">
+						<form class="" role="form" method="post" action="gereninfo.php" name="form1">
+						<input type="hidden" value="save" name="dopost"/>	
+						<input type="hidden" value="<?php echo $user['id']; ?>" name="useruid"/>
+						<div class="regwrap">					
+						<h3>推荐信息</h3>
+						<ul class="">
+						  <li><label>姓名：</label> <?php echo $user['name']; ?> </li>
+						  <li><label>入职状态：</label> <?php if($user['status']=='1'){	echo '<font color="green">已入职</font>';	}elseif($user['status']=='0'){ 	echo '<font color="red">未入职</font> <font color="green">（只有入职后才可以推荐别人参加1+2推荐活动）</font>';	}else{ 	echo '无'; 	} ?></li>
+						  <li><label>激活状态：</label> <?php if($user['jihuo']=='1'){	echo '<font color="green">已激活</font>';	}elseif($user['jihuo']=='0'){ 	echo '<font color="red">未激活</font> <font color="green">（只有激活后才可以申请提现）</font>';	}else{ 	echo '无'; 	} ?></li>
+						  <li><label>推荐链接：</label><a href="<?php echo $userurl; ?>" > <?php echo $userurl; ?> </a> &nbsp; </li>
+						  <li><label>推荐人数：</label>  <?php echo $user['tj_num']; ?>人&nbsp; </li>
+						  <li><label>获得的奖金：</label>  <?php echo $user['jiangjin']; ?>元 &nbsp; <div style=""></div> </li>
+						</ul>
+							
+						<div class="hidden-md hidden-xs zbox">
+						<p style="margin-left:10px;">推荐二维码</p>
+						<img style="margin-top:-10px;" src="http://qr.liantu.com/api.php?text=<?php echo $userurl; ?>&w=180&m=10"/>
+						</div>
+						
+						<h3>银行信息 </h3>
+						<ul class="fiks">
+						  <li><label>开户银行： <span class="red">*</span></label><input type="text" class="form-control" name="bank" value="<?php echo $user['bank']; ?>"  style="width:160px; display:inline-block;" /></li>
+						  <li><label>开户所在支行： <span class="red">*</span></label><input type="text" class="form-control" name="subbranch" value="<?php echo $user['subbranch']; ?>" style="width:230px; display:inline-block;" /></li>
+						  <li><label>银行账号： <span class="red">*</span></label><input type="text" class="form-control" name="bank_account" value="<?php echo $user['bank_account']; ?>" style="width:230px; display:inline-block;" /></li>
+						</ul>
+                        <br/>
+						<ul class="">
+						  <li><label class=" hidden-xs">&nbsp;</label> <button class="btn btn-lg btn-primary " type="submit">保存更新的资料</button> </li>
+						</ul>
+						</form>
+						<br>
+						<!---------------------------------------------------------->
+						<form method="post" action="gereninfo.php" >
+						<input type="hidden" name="dopost" value="pass" >
+						<input type="hidden" name="useruid" value="<?php echo $user['id']; ?>" >
+                        
+						<h3>提现密码设置</h3>
+						<ul class="fiks">
+							<?php echo $bd; ?>
+							<li><label>新提现密码： <span class="red">*</span></label><input class='form-control' type="password" name="txmima1" size="30" style="width:230px; display:inline-block;"></li>
+							<li><label>确认提现密码： <span class="red">*</span></label><input class='form-control' type="password" name="txmima2" size="30" style="width:230px; display:inline-block;" ></li>
+						</ul>
+						<br/>
+						<ul class="">
+						  <li><label class=" hidden-xs">&nbsp;</label> <button class="btn btn-lg btn-primary " type="submit">提交</button> </li>
+						</ul>
+
+						</form>
+						
+						</div>
+						
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		
+
+    </div> <!-- /container -->
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>

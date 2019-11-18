@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<title>
+			申请激活“1+2内荐平台” - 壹打工网
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+	<body>
+
+	<?php include(DEDEMEMBER."/mystyles/inc/head.htm"); ?>
+
+
+    <div class="container">
+
+		<!-- mobile -->
+		
+
+		<!-- computer -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">
+				
+				<?php include(DEDEMEMBER."/mystyles/menuleft.php"); ?>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-8">
+
+				<div class="panel panel-info"><!-- s -->
+					<div class="panel-heading">
+						<h3 class="panel-title">壹打工网1+2内荐平台&nbsp;&nbsp;<font color="#000000" class="pull-right">全国免费求职热线：400-118-5188</font></h3>
+					</div>
+					<div class="panel-body">
+					
+			<!-------------不要改动---------------------------------------------------------------------------->
+            
+            	<style>
+					.form-signin .red{ color:#F00; float:left; line-height:20px; margin-top:8px;}
+					.form-signin .jdsa{ float:left;}
+				</style>
+            
+            
+				<form class="form-signin" role="form" action="/plus/regneijian.php" enctype="multipart/form-data" method="post">
+					<input type="hidden" name="action" value="post" />
+					<input type="hidden" name="diyid" value="5" />
+					<input type="hidden" name="do" value="2" />
+					<h2 class="form-signin-heading">申请激活<br />1+2内荐平台</h2>
+					为保证您的成功激活，<br /><b><font color="#ff3300">请确保您的资料准确无误</font></b>：<br /><br />
+                    
+                    
+					<span class="help-block jdsa">姓名：</span> <span class="red">*</span>
+                    <input class="form-control" type="text" name="hyname" size="30" id="hyname" value="<?php echo $cfg_ml->fields['uname']; ?>" AUTOCOMPLETE="OFF">
+                    <br>
+					<!-- <span class="help-block jdsa">编号：</span> <span class="red">* 以后登录用</span>
+                    <input class="form-control" type="text" name="HyNumber" size="30" onblur="ShowIsHaveName(this.value)" id="" AUTOCOMPLETE="OFF" value="s310910">
+                    <br> -->
+                    <!-- <span class="help-block jdsa">登录密码：</span> <span class="red">*</span>
+                    <input class="form-control" type="password" name="HyPassword1" size="30" id="" value="">
+                    <br>
+                    <span class="help-block jdsa">确认登录密码：</span> <span class="red">*</span>
+                    <input class="form-control" type="password" name="HyPassword11" size="30" id="" value="" AUTOCOMPLETE="OFF">
+                    <br>
+                    <span class="help-block jdsa">提现密码：</span> <span class="red">*</span>
+                    <input class="form-control" type="password" name="HyPassword2" size="30" id="" value="" AUTOCOMPLETE="OFF">
+                    <br>
+                    <span class="help-block jdsa">确认提现密码：</span> <span class="red">*</span>
+                    <input class="form-control" type="password" name="HyPassword22" size="30" id="" value="" AUTOCOMPLETE="OFF"> -->
+                    <span class="help-block jdsa hidden-lg">报名地区：</span>
+                    <select class="form-control hidden-lg" name="shenheren" id="ShenHeRen">
+							<option value="000001">壹打工网</option>
+                    </select>   
+                             
+                    <span class="help-block jdsa">推荐人：</span> <span class="red">*请准确填写，没有则不填写</span>
+                    <input class="form-control" type="text" name="hytjnumber" value="" size="30" id="hytjnumber" onblur="ShowRealJdName(this.value)">
+                    <br>
+<!--                    <span class="help-block jdsa">入职时间：</span>
+                    <input class="form-control" type="text" name="ruzhitime" value="" onclick="SelectDate(this,'yyyy-MM-dd')" size="30" id="ruzhitime" >
+                    <br>-->
+                    <span class="help-block jdsa">入职单位：</span>
+                    <input class="form-control" type="text" name="ruzhidanwei" value="" size="30" id="ruzhidanwei" >
+                    <br>
+                    <span class="help-block jdsa">性别：</span> <span class="red">*</span>
+                    <div style="clear:both; display:block;"></div>
+                    <input name="hysex" type="radio" value="男"  <?php if($cfg_ml->fields['sex']=='男'){ echo "checked"; }else{ echo "checked"; } ?> >男 &nbsp;&nbsp; 
+                    <input type="radio" name="hysex" value="女" <?php if($cfg_ml->fields['sex']=='女'){ echo "checked"; } ?> > 女
+                    <br><br>
+                    <span class="help-block jdsa">生日：</span>
+                    <input class="form-control" type="text" name="hybirth" size="30" id="hybirth" onclick="SelectDate(this,'yyyy-MM-dd')">
+                    <br>
+                    <span class="help-block jdsa">详细地址：</span> <span class="red">*</span>
+                    <input class="form-control" type="text" name="hyaddress" size="50" id="hyaddress" value="详细地址" onFocus='this.value="";'>
+                    <br>
+                    <span class="help-block jdsa">联系手机：</span> <span class="red">* 用于奖金发放确认，请准确填写</span>
+                    <input class="form-control" type="text" name="hytel" size="30" id="hytel" value="<?php echo $cfg_ml->M_LoginID; ?>" >
+                    <br>
+                    <span class="help-block jdsa">身份证号：</span> <span class="red">*</span>
+                    <input class="form-control" type="text" name="hycardno" size="30" id="hycardno" value="身份证号" onFocus='this.value="";'>
+                    <br>
+                    <span class="help-block jdsa">QQ/MSN：</span>
+                    <input class="form-control" type="text" name="hyqqmsn" size="30" id="hyqqmsn">
+                    <br>
+					<input type="hidden" name="dede_fields" value="hyname,text;hynumber,text;shenheren,select;hytjnumber,text;ruzhitime,text;ruzhidanwei,text;hyrealname,text;hysex,radio;hybirth,text;hyaddress,text;hytel,text;hycardno,text;hyqqmsn,text" />
+<input type="hidden" name="dede_fieldshash" value="aff683caf2cad4ce3afab9e907d3bb3d" />
+                    <input type="submit" name="Submit" value="提交激活" ID="Submit1" class="btn btn-lg btn-primary btn-block" >
+				</form>
+				
+				<!----------------------不要改动------end------------------------------------------------------------------>
+					</div>
+
+				</div><!-- e -->
+
+			</div>
+		</div>
+		
+
+		
+
+
+	
+
+    </div> <!-- /container -->
+
+
+
+
+	<?php include(DEDEMEMBER."/mystyles/inc/footer.htm"); ?>
+
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+	</body>
+
+</html>
