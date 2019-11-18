@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="keywords" content="打工网,手机招聘网,招工网,壹打工网" />
+	<meta name="description" content="壹打工网是专业提供各大企业招聘招工信息的大型普工类网站。我们致力于为普工提供更好的工作,为企业输送更多的普工." />
+	<title>壹打工网-工作让生活更精彩</title>
+	<!-- head_css-->
+	<link href="/files/style/css/bootstrap.css" type="text/css" rel="stylesheet" /> 
+
+	<link href="/files/style/css/all.css" type="text/css" rel="stylesheet" />
+
+	<script src="/files/style/js/jquery.min.js" language="JavaScript" type="text/javascript" ></script>
+	<script src="/files/style/js/bootstrap.min.js" language="JavaScript" type="text/javascript" ></script>
+    <script src="/files/style/js/a_modal.js" language="JavaScript" type="text/javascript" ></script>
+	<script language="javascript" type="text/javascript" src="/include/login.js"></script>
+	<script language="javascript" type="text/javascript">
+		<!--
+			
+			function CheckLogin(){
+			  var taget_obj = document.getElementById('headlogin');
+			  myajax = new DedeAjax(taget_obj,false,false,'','','');
+			  myajax.SendGet2("/home/headlogin.php");
+			  DedeXHTTP = null;
+			}
+		-->
+	</script>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	<!--head_css end -->	
+</head>
+<body>
+<!-- head-->
+
+<div class=" beijing">
+<div class="container" >
+<div class="top_sh row">
+
+     <div class="col-xs-12 col-md-6 mp">
+        <ul class="login jidns pull-left">
+       	  <li class="pr_10 hotline dropwnd"><a data-trigger="modal" href="http://www.1dagong.com/ajax/number.html" data-title="Modal title">免费咨询</a></li>
+          <li class="phone pr_10"><a data-trigger="modal" href="http://www.1dagong.com/ajax/qrcode.html" data-title="Modal title">手机壹打工</a></li>
+        </ul>
+     </div>
+     
+     <div class="col-xs-12 col-md-6 mp">
+     	<div class="free">
+        全国免费求职热线： 
+        <a href="tel:400-118-5188">400-118-5188</a>
+        </div>
+     </div>
+</div>    
+</div>
+</div>
+
+
+<nav class="navbar navbar-default top">
+
+  <div class="container">
+    
+    <div class="navbar-header col-xs-5 col-md-2">
+      <a href="/" class="logo"><img src="/files/style/image/logo.png" height="90" width="190" class="img-responsive hidden-xs" />
+      <img src="/files/style/image/logo.jpg" class="img-responsive visible-xs sjlogo" /></a>
+    </div>
+    
+    
+    <div  id="headlogin" class="col-md-3 logint pull-right mp">
+     
+        <ul class="login pull-right bcsa">
+          <li class="pr_10 hogin dropwnd"><a href="/home/"  data-target="#denglu">登录</a></li>
+          <li><a href="/home/p_register.php" class="#denglu">注册 </a></li>
+        </ul>
+		<script language="javascript" type="text/javascript">CheckLogin();</script>
+    </div>
+    
+    
+    <div class="navbar-header pull-left" >
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse col-md-7" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav ">
+      	<li class="active"><a href="/">首页</a></li>
+        <li><a href="/plus/search.php?typeid=41&starttime=-1&areacode=-1">工作库</a></li>
+        <li><a href="/gongzuo/">行业名企</a></li>
+      </ul>
+    
+    </div><!-- /.navbar-collapse -->
+    
+
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!--head end -->
+        
+<!-- Carousel
+    ================================================== -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators qihuna hidden-xs">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+      
+            <div class="item active">
+              <img src="/files/style/image/banner_da3.jpg" alt="First slide">
+              <div class="container">
+                <div class="carousel-caption col-md-6">
+                  <h1>壹打工网全国巡回招聘会</h1>
+                  <p>垂直、精准化的招聘平台，专为蓝领设计。<br />我们为您打造平台，您为大家创造精彩。</p>
+                  <br />
+                  <p><a href="#" class="btn btn-primary" role="button" style="width:260px;">招聘会详情 >> (即将开始，敬请关注)</a></p>
+                  <p class="fl">
+                      <a href="#" class="btn btn-default" role="button">3月21日 安徽站</a>
+                      
+                      <a href="#" class="btn btn-default" role="button">3月28日 苏州站</a>
+                      
+                      <a href="#" class="btn btn-default" role="button">4月11日 上海站</a>
+                   </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="item">
+              <img src="/files/style/image/banner_da.jpg" alt="First slide">
+              <div class="container">
+                <div class="carousel-caption col-md-6">
+                  <h1>打造国内第一蓝领求职服务平台</h1>
+                  <br />
+                  <ul>
+                    <li><span>专</span>：专业的求职招聘网站，最了解蓝领需求，专为蓝领服务</li>
+                    <li><span>快</span>：求职快、入职快</li>
+                    <li><span>优</span>：精心审核、优质企业，更有保障</li>
+                    <li><span>简</span>：简约但不简单。找工作更方便</li>
+                    <li><span>奖</span>："1+2事业平台"，赢奖金活动送不停</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          
+            <div class="item">
+              <img src="/files/style/image/banner_da2.jpg" alt="First slide">
+              <div class="container">
+                <div class="carousel-caption col-md-6">
+                  <h1>壹打工网“1+2”事业平台</h1>
+                  <p>全球行销之神—杰.亚伯拉罕<br/>专为中国蓝领设计，帮助中国普通工人实现财富梦想！</p>
+                  <br />
+                  <p><a href="/neijian/" class="btn btn-primary" style="width:200px;" role="button">了解“1+2”事业平台 >></a></p>
+                </div>
+              </div>
+            </div>
+            
+        
+        
+            <div class="item">
+              <img src="/files/style/image/banner_da1.jpg" alt="First slide" class="img-responsive">
+              <div class="container">
+                <div class="carousel-caption col-md-6">
+                  <ul class="banner_xiao row">
+                  <li><a href="/zt/jiyu/index.html"><img src="/file/1401/1411/1-14111916013LK.jpg" alt="致广大普通劳动者的一封" ></a></li>
+<li><a href="http://www.1dagong.com/jiezhan/"><img src="/file/1401/1409/1-140Z910355ba.jpg" alt="接站" ></a></li>
+<li><a href="http://www.1dagong.com/neijian/"><img src="/file/1401/1406/1-140616135019108.jpg" alt="1+2内荐行动" ></a></li>
+<li><a href="http://www.1dagong.com/zhengwen/"><img src="/file/allimg/1404/1-140415123H10-L.jpg" alt="一起为梦想打工" ></a></li>
+  
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+        
+        <a class="left carousel-control visible-xs" href="#carousel-example-generic" role="button" data-slide="prev" style="z-index:1000">
+          </a>
+          <a class="right carousel-control visible-xs" href="#carousel-example-generic" role="button" data-slide="next" style="z-index:1000">
+          </a>
+          
+      </div>
+      <div class="row mp">
+      		
+<!--           <div class="erweima"><a href="#" style="height:30px; width:30px; background:#999; display:inline-block;"></a></div>
+-->            
+          <form class="form-signin zhuce col-md-3 col-xs-12 pull-right" role="form" method="post" action="/home/p_register.php" id="regUser">
+                <div class="pull-right mren"><a type="button" href="/home/" class="btn btn-info">企业招聘服务入口</a></div>
+                <input type="hidden" value="regbase" name="dopost"/>
+                <input type="hidden" value="1" name="step"/>
+                <input type="hidden" value="个人" name="mtype"/>
+    
+                <h3 class="form-signin-heading">免费报名 </h3>
+    
+                <span class="help-block">填写您的手机号码：</span>
+    
+                <input type="text" class="form-control" placeholder="手机号码" required autofocus  name="shouye" maxlength="13">
+                <span class="checkbox">
+                 仅仅只需一步，让工作来找你。
+                </span>
+                <button class="btn btn-lg btn-purple btn-block" type="submit">提交</button>
+                
+           </form>
+           
+               
+       
+       
+    </div>
+</div>  
+        
+      
+<!--By Z首页搜索开始-->       
+<div class="container">
+  <div class="row in_bac">
+        <div class="col-xs-12 col-md-6" style="z-index:999;">
+          <form action="/plus/search.php" method="get">
+              <input type="hidden" name="typeid" value="41">
+              <input type="hidden" name="starttime" value="-1">
+              <div class="search row">
+              
+                  <div class="left col-xs-3 col-md-2 mp" style="position:relative;">
+                    <label class="change_area" style="margin-bottom:0;">
+                      <span href="javascript:;">地区</span><b class="caret"></b>
+                      <input type="hidden" name="areacode" value="-1">
+                    </label>
+                    <div class="sou_down col-md-12" style="display: none;">
+                      <ul>
+                        <li><a rel="0" href="javascript:;">不限</a></li>
+                        <li><a rel="1" href="javascript:;">合肥</a></li>
+                        <li><a rel="2" href="javascript:;">上海</a></li>
+                        <li><a rel="3" href="javascript:;">重庆</a></li>
+                        <li><a rel="4" href="javascript:;">江苏</a></li>
+                        <li><a rel="5" href="javascript:;">湖北</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <input type="text" class="col-xs-6 col-md-8 text" placeholder="职位搜索..." name="q">
+                  <input class="col-xs-3 col-md-2 btn btn-yellow pdsf mp" type="submit" value="搜 索" />
+              </div>
+          </form>
+        </div>
+
+        <div class="col-xs-12 col-md-6 heis">热门搜索：     
+            <a href="/plus/search.php?typeid=45">技工</a>
+            <a href="/plus/search.php?typeid=53">销售</a>
+            <a href="/plus/search.php?typeid=50">仓储</a>
+            <a href="/plus/search.php?typeid=46">服务员</a>
+            <a href="/plus/search.php?typeid=49">家政服务</a>
+            <a href="/plus/search.php?typeid=51">汽车修理</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+/*$('#jingxuanku').find('li').mouseover(function(){
+$('#jingxuanku').find('.licon').attr('class', 'licon hide');
+$(this).find('.licon').removeClass('hide');
+});*/
+
+$('.change_area').mouseover(function(){
+$('.sou_down').show();
+}).mouseout(function(){
+$('.sou_down').hide();
+});
+
+$('.sou_down').mouseover(function(){
+$('.sou_down').show();
+}).mouseout(function(){
+$('.sou_down').hide();
+});
+
+$('.sou_down li a').click(function(){
+$('.change_area input[name=areacode]').val($(this).attr('rel'));
+$('.change_area span').text($(this).text());
+$('.sou_down').hide();
+});
+
+});
+</script>
+<!--By Z首页搜索结束-->
+
+<div class="container">
+      <div class="over toue">
+          热门行业
+      </div>
+      <div class="newre row">
+       <div class="col-md-4 mt_20">
+          <ul>
+           <h3><a href="/plus/search.php?typeid=45">技工</a><span><a href="/plus/search.php?typeid=45">更多</a></span></h3>
+            
+            <li><a href="/plus/search.php?typeid=55">综合维修工</a></li>
+            
+            <li><a href="/plus/search.php?typeid=68">化验/检验工</a></li>
+            
+            <li><a href="/plus/search.php?typeid=67">铸造/注塑/模具</a></li>
+            
+            <li><a href="/plus/search.php?typeid=66">铲车/叉车工</a></li>
+            
+            <li><a href="/plus/search.php?typeid=65">车床/磨床/铣床</a></li>
+            
+            <li><a href="/plus/search.php?typeid=64">切割/焊工</a></li>
+            
+            <li><a href="/plus/search.php?typeid=63">制冷/水暖工</a></li>
+            
+           
+          </ul>
+          
+        </div><div class="col-md-4 mt_20">
+          <ul>
+           <h3><a href="/plus/search.php?typeid=53">销售/市场</a><span><a href="/plus/search.php?typeid=53">更多</a></span></h3>
+            
+            <li><a href="/plus/search.php?typeid=121">市场营销</a></li>
+            
+            <li><a href="/plus/search.php?typeid=122">销售代表</a></li>
+            
+            <li><a href="/plus/search.php?typeid=123">房产经纪人</a></li>
+            
+            <li><a href="/plus/search.php?typeid=124">房产经理人</a></li>
+            
+            <li><a href="/plus/search.php?typeid=125">电话销售</a></li>
+            
+            <li><a href="/plus/search.php?typeid=126">医药代表</a></li>
+            
+            <li><a href="/plus/search.php?typeid=127">其他销售职位</a></li>
+            
+           
+          </ul>
+          
+        </div><div class="col-md-4 mt_20">
+          <ul>
+           <h3><a href="/plus/search.php?typeid=50">物流/仓储</a><span><a href="/plus/search.php?typeid=50">更多</a></span></h3>
+            
+            <li><a href="/plus/search.php?typeid=97">仓库管理员</a></li>
+            
+            <li><a href="/plus/search.php?typeid=98">快递员</a></li>
+            
+            <li><a href="/plus/search.php?typeid=99">单证员</a></li>
+            
+            <li><a href="/plus/search.php?typeid=100">装卸/搬运工</a></li>
+            
+            <li><a href="/plus/search.php?typeid=101">物流专员/助理</a></li>
+            
+            <li><a href="/plus/search.php?typeid=102">物流经理/主管</a></li>
+            
+           
+          </ul>
+          
+        </div><div class="col-md-4 mt_20">
+          <ul>
+           <h3><a href="/plus/search.php?typeid=46">服务员</a><span><a href="/plus/search.php?typeid=46">更多</a></span></h3>
+            
+            <li><a href="/plus/search.php?typeid=70">厨师/厨师长</a></li>
+            
+            <li><a href="/plus/search.php?typeid=71">后厨</a></li>
+            
+            <li><a href="/plus/search.php?typeid=72">传菜员</a></li>
+            
+            <li><a href="/plus/search.php?typeid=73">配菜/打荷</a></li>
+            
+            <li><a href="/plus/search.php?typeid=74">洗碗工</a></li>
+            
+            <li><a href="/plus/search.php?typeid=75">面点师</a></li>
+            
+            <li><a href="/plus/search.php?typeid=76">茶艺师</a></li>
+            
+           
+          </ul>
+          
+        </div><div class="col-md-4 mt_20">
+          <ul>
+           <h3><a href="/plus/search.php?typeid=49">家政服务</a><span><a href="/plus/search.php?typeid=49">更多</a></span></h3>
+            
+            <li><a href="/plus/search.php?typeid=89">保洁</a></li>
+            
+            <li><a href="/plus/search.php?typeid=90">保姆</a></li>
+            
+            <li><a href="/plus/search.php?typeid=91">月嫂</a></li>
+            
+            <li><a href="/plus/search.php?typeid=92">育婴师</a></li>
+            
+            <li><a href="/plus/search.php?typeid=93">洗衣工</a></li>
+            
+            <li><a href="/plus/search.php?typeid=94">钟点工</a></li>
+            
+            <li><a href="/plus/search.php?typeid=95">保育员</a></li>
+            
+           
+          </ul>
+          
+        </div><div class="col-md-4 mt_20">
+          <ul>
+           <h3><a href="/plus/search.php?typeid=47">店员/营业员</a><span><a href="/plus/search.php?typeid=47">更多</a></span></h3>
+            
+            <li><a href="/plus/search.php?typeid=79">收银员</a></li>
+            
+            <li><a href="/plus/search.php?typeid=80">促销/导购员</a></li>
+            
+            <li><a href="/plus/search.php?typeid=81">理货员</a></li>
+            
+            <li><a href="/plus/search.php?typeid=82">防损员/内保</a></li>
+            
+            <li><a href="/plus/search.php?typeid=83">店长/卖场经理</a></li>
+            
+            <li><a href="/plus/search.php?typeid=84">招商经理/主管</a></li>
+            
+           
+          </ul>
+          
+        </div>
+      
+      </div>
+</div>
+
+
+<!--111111111111111-->
+<div class="container">
+  <div class="mb_30 over">
+    <div class="col-md-2 bac hotdoor hotd"><strong>热门招聘</strong></div>
+    <div class="col-md-10 hotdoor door">行业名企，让您更放心的工作！</div>
+  </div>
+  <ul  class="nav nav-tabs mb1" role="tablist">
+    <li role="presentation" class="active"><a href='/gongzuo/'>全国招聘企业</a></li>
+    
+    
+    <li role='presentation'><a href='/hefei/'>合肥</a></li>
+    
+    <li role='presentation'><a href='/wuhu/'>芜湖</a></li>
+    
+    <li role='presentation'><a href='/bangbu/'>蚌埠</a></li>
+    
+    <li role='presentation'><a href='/chongqing/'>重庆</a></li>
+    
+    <li role='presentation'><a href='/shanghai/'>上海</a></li>
+    
+    <li role='presentation'><a href='/changshu/'>常熟</a></li>
+    
+    <li role='presentation'><a href='/hubei/'>湖北</a></li>
+    
+    <li role='presentation'><a href='/suzhou/'>苏州</a></li>
+    
+    <li role='presentation'><a href='/wuxi/'>无锡</a></li>
+    
+    <!--/hangye/suzhou/-->
+    <!--<li role='presentation'><a href='/hefei/'>合肥</a></li>
+		<li role='presentation' class='active'><a href='/wuhu/'>芜湖</a> </li>
+        <li role='presentation'><a href='/bangbu/'>蚌埠</a></li>
+        <li role='presentation'><a href='/chongqing/'>重庆</a></li>
+        <li role='presentation'><a href='/shanghai/'>上海</a></li>
+        <li role='presentation'><a href='/changshu/'>常熟</a></li>
+        <li role='presentation'><a href='/hubei/'>湖北</a></li>
+        <li role='presentation'><a href='/suzhou/'>苏州</a></li>-->
+  </ul>
+  
+  <div class="pt_20 over" style="border:1px solid #eee; border-top:none;">
+    
+    <div class="col-md-3">
+      <div class="bac_hui">
+        <p><a href="/hefei/012432014.html"><img src="/file/images/1401/1-14012P922101H.jpg" class="img-responsive" /></a></p>
+        <ul>
+          <li> <a target="_blank" href="/hefei/012432014.html" class="fon">合肥联宝电子科技有限公司</a> </li>
+          <li> 月综合工资：<font color="ff6600" size="3">2800～3800元</font> </li>
+          <li> 接站：经开区寅特尼人才市场 </li>
+          <li> <font color="#999">待遇丰厚</font></li>
+          <li> <span class="btn btn-default ptii">736人报名</span> <a class="btn btn-yellow ptii pull-right"  target="_blank" href="/hefei/012432014.html">去看看</a> </li>
+        </ul>
+      </div>
+    </div>
+<div class="col-md-3">
+      <div class="bac_hui">
+        <p><a href="/shanghai/0125H014.html"><img src="/file/images/1401/1-14012P92043N4.jpg" class="img-responsive" /></a></p>
+        <ul>
+          <li> <a target="_blank" href="/shanghai/0125H014.html" class="fon">英华达(上海)科技有限公司</a> </li>
+          <li> 月综合工资：<font color="ff6600" size="3">3000~4000元</font> </li>
+          <li> 接站：松江火车站</li>
+          <li> <font color="#999">待遇丰厚、吃住全免、班车接</font></li>
+          <li> <span class="btn btn-default ptii">983人报名</span> <a class="btn btn-yellow ptii pull-right"  target="_blank" href="/shanghai/0125H014.html">去看看</a> </li>
+        </ul>
+      </div>
+    </div>
+<div class="col-md-3">
+      <div class="bac_hui">
+        <p><a href="/chongqing/0125122014.html"><img src="/file/images/1401/1-14012P91924K4.jpg" class="img-responsive" /></a></p>
+        <ul>
+          <li> <a target="_blank" href="/chongqing/0125122014.html" class="fon">广达重庆制造城重庆达丰电脑</a> </li>
+          <li> 月综合工资：<font color="ff6600" size="3">2500-3500元</font> </li>
+          <li> 接站：大学城轻轨站</li>
+          <li> <font color="#999">五险一金、吃住全免</font></li>
+          <li> <span class="btn btn-default ptii">465人报名</span> <a class="btn btn-yellow ptii pull-right"  target="_blank" href="/chongqing/0125122014.html">去看看</a> </li>
+        </ul>
+      </div>
+    </div>
+<div class="col-md-3">
+      <div class="bac_hui">
+        <p><a href="/changshu/0213262014.html"><img src="/file/images/1402/1-140221110330X3.jpg" class="img-responsive" /></a></p>
+        <ul>
+          <li> <a target="_blank" href="/changshu/0213262014.html" class="fon">达明电子（常熟）有限公司</a> </li>
+          <li> 月综合工资：<font color="ff6600" size="3">3000-3800元</font> </li>
+          <li> 接站：常熟汽车南站、北站 </li>
+          <li> <font color="#999">年终奖、年度旅游、节假日</font></li>
+          <li> <span class="btn btn-default ptii">334人报名</span> <a class="btn btn-yellow ptii pull-right"  target="_blank" href="/changshu/0213262014.html">去看看</a> </li>
+        </ul>
+      </div>
+    </div>
+
+   
+    </div>
+    <div class="over"></div>
+    <!--最低-->
+   <!-- 工作库里-->
+	
+    <!----------------------------------------------c-------------------------------------------------------------->
+    
+    
+  </div>
+</div>
+<!--111111111111111-->
+
+<div class="container">
+  <div class="row mt_30 mp pb_20" style="border:1px solid #eee">
+       <div class="newzui"><h4>最新招聘职位</h4><a href="/plus/search.php?typeid=41">查看更多</a></div>
+       <div class="over"></div>
+      <!------------------------------------->
+       
+       <!-----------h---------------->
+       
+       <div class="pt_20 over"></div>
+       <!-----------------c-------------------------->
+       <div class="col-md-3 mp">
+       	 <div class="column sidk">
+            
+            <dl>
+                <dt><h4><a href="/plus/view.php?aid=1335" title="" target="_blank">销售精英置业主任</a></h4></dt>
+                <dd>
+					
+					<a href="/plus/view.php?aid=1335">上海品信房地产经纪有限公司</a>
+                    <!-- <a href="/plus/view.php?aid=1335">面议</a> -->
+                    
+                </dd>
+                <dd>招聘<strong>2</strong>发布日期：<font color="#999">2015-03-23</font></dd>
+            </dl>
+            
+         </div>
+       </div>
+<div class="col-md-3 mp">
+       	 <div class="column sidk">
+            
+            <dl>
+                <dt><h4><a href="/plus/view.php?aid=1334" title="" target="_blank">房地产销售人员</a></h4></dt>
+                <dd>
+					
+					<a href="/plus/view.php?aid=1334">上海品信房地产经纪有限公司</a>
+                    <!-- <a href="/plus/view.php?aid=1334">面议</a> -->
+                    
+                </dd>
+                <dd>招聘<strong>10</strong>发布日期：<font color="#999">2015-03-23</font></dd>
+            </dl>
+            
+         </div>
+       </div>
+<div class="col-md-3 mp">
+       	 <div class="column sidk">
+            
+            <dl>
+                <dt><h4><a href="/plus/view.php?aid=1333" title="" target="_blank">基地教官</a></h4></dt>
+                <dd>
+					
+					<a href="/plus/view.php?aid=1333">上海伟成彩弹射击运动中心</a>
+                    <!-- <a href="/plus/view.php?aid=1333">面议</a> -->
+                    
+                </dd>
+                <dd>招聘<strong>不限</strong>发布日期：<font color="#999">2015-03-23</font></dd>
+            </dl>
+            
+         </div>
+       </div>
+<div class="col-md-3 mp">
+       	 <div class="column sidk">
+            
+            <dl>
+                <dt><h4><a href="/plus/view.php?aid=1332" title="" target="_blank">出纳收银</a></h4></dt>
+                <dd>
+					
+					<a href="/plus/view.php?aid=1332">上海伟成彩弹射击运动中心</a>
+                    <!-- <a href="/plus/view.php?aid=1332">面议</a> -->
+                    
+                </dd>
+                <dd>招聘<strong>不限</strong>发布日期：<font color="#999">2015-03-23</font></dd>
+            </dl>
+            
+         </div>
+       </div>
+<div class="col-md-3 mp">
+       	 <div class="column sidk">
+            
+            <dl>
+                <dt><h4><a href="/plus/view.php?aid=1323" title="" target="_blank">小货车驾驶员/发货员/文员/普工</a></h4></dt>
+                <dd>
+					
+					<a href="/plus/view.php?aid=1323">合肥伍捌玻璃有限公司</a>
+                    <!-- <a href="/plus/view.php?aid=1323">面议</a> -->
+                    
+                </dd>
+                <dd>招聘<strong>50</strong>发布日期：<font color="#999">2015-03-21</font></dd>
+            </dl>
+            
+         </div>
+       </div>
+<div class="col-md-3 mp">
+       	 <div class="column sidk">
+            
+            <dl>
+                <dt><h4><a href="/plus/view.php?aid=1322" title="" target="_blank">电子商务客服/市场推广专员/美工设计</a></h4></dt>
+                <dd>
+					
+					<a href="/plus/view.php?aid=1322">合肥沃多电器有限公司</a>
+                    <!-- <a href="/plus/view.php?aid=1322">面议</a> -->
+                    
+                </dd>
+                <dd>招聘<strong>20</strong>发布日期：<font color="#999">2015-03-21</font></dd>
+            </dl>
+            
+         </div>
+       </div>
+<div class="col-md-3 mp">
+       	 <div class="column sidk">
+            
+            <dl>
+                <dt><h4><a href="/plus/view.php?aid=1321" title="" target="_blank">出纳</a></h4></dt>
+                <dd>
+					
+					<a href="/plus/view.php?aid=1321">合肥娃哈哈饮料有限公司</a>
+                    <!-- <a href="/plus/view.php?aid=1321">3000-5000元/月</a> -->
+                    
+                </dd>
+                <dd>招聘<strong>3</strong>发布日期：<font color="#999">2015-03-21</font></dd>
+            </dl>
+            
+         </div>
+       </div>
+<div class="col-md-3 mp">
+       	 <div class="column sidk">
+            
+            <dl>
+                <dt><h4><a href="/plus/view.php?aid=1320" title="" target="_blank">操作工</a></h4></dt>
+                <dd>
+					
+					<a href="/plus/view.php?aid=1320">常州市武进顺达精密钢管有限公司合肥分公司</a>
+                    <!-- <a href="/plus/view.php?aid=1320">3000-5000元/月</a> -->
+                    
+                </dd>
+                <dd>招聘<strong>150</strong>发布日期：<font color="#999">2015-03-21</font></dd>
+            </dl>
+            
+         </div>
+       </div>
+<div class="col-md-3 mp">
+       	 <div class="column sidk">
+            
+            <dl>
+                <dt><h4><a href="/plus/view.php?aid=1318" title="" target="_blank">销售代表 </a></h4></dt>
+                <dd>
+					
+					<a href="/plus/view.php?aid=1318">合肥斌达贸易有限公司</a>
+                    <!-- <a href="/plus/view.php?aid=1318">面议</a> -->
+                    
+                </dd>
+                <dd>招聘<strong>20</strong>发布日期：<font color="#999">2015-03-21</font></dd>
+            </dl>
+            
+         </div>
+       </div>
+<div class="col-md-3 mp">
+       	 <div class="column sidk">
+            
+            <dl>
+                <dt><h4><a href="/plus/view.php?aid=1317" title="" target="_blank">普工</a></h4></dt>
+                <dd>
+					
+					<a href="/plus/view.php?aid=1317">合肥市奥格威电气制造有限公司</a>
+                    <!-- <a href="/plus/view.php?aid=1317">面议</a> -->
+                    
+                </dd>
+                <dd>招聘<strong>50</strong>发布日期：<font color="#999">2015-03-21</font></dd>
+            </dl>
+            
+         </div>
+       </div>
+<div class="col-md-3 mp">
+       	 <div class="column sidk">
+            
+            <dl>
+                <dt><h4><a href="/plus/view.php?aid=1315" title="" target="_blank">质量检验主管/技术员/普工/银钎焊工银钎焊工/仓</a></h4></dt>
+                <dd>
+					
+					<a href="/plus/view.php?aid=1315">合肥同星制冷有限公司</a>
+                    <!-- <a href="/plus/view.php?aid=1315">面议</a> -->
+                    
+                </dd>
+                <dd>招聘<strong>20</strong>发布日期：<font color="#999">2015-03-21</font></dd>
+            </dl>
+            
+         </div>
+       </div>
+<div class="col-md-3 mp">
+       	 <div class="column sidk">
+            
+            <dl>
+                <dt><h4><a href="/plus/view.php?aid=1314" title="" target="_blank">工程技工（强电/弱电/暖通/综合维修/电梯工)/车</a></h4></dt>
+                <dd>
+					
+					<a href="/plus/view.php?aid=1314">合肥万达广场商业管理有限公司天鹅湖分公司</a>
+                    <!-- <a href="/plus/view.php?aid=1314">面议</a> -->
+                    
+                </dd>
+                <dd>招聘<strong>15</strong>发布日期：<font color="#999">2015-03-21</font></dd>
+            </dl>
+            
+         </div>
+       </div>
+
+		<!------------------------c-------------------------------------------------->
+       
+  </div>
+</div>
+
+
+<div class="container">
+	<section id="cards" class="h2" data-view="channel_cards" data-collection_params="{&amp;quot;category&amp;quot;:&amp;quot;Featured&amp;quot;}"
+	data-collection_name="channels">
+		<div class="row b3">
+        
+        <div class="container">
+            <div class="navbar-header row">
+                <h4 class="tose" >
+                    我们的优势
+                </h4>
+            </div>
+		</div>
+        
+        
+			<div class="col-sm-4">
+				<div class="card" data-name="安心">
+					<img src="/files/style/image/youshi1.png" class="img-responsive"  data-height="64" data-width="65">
+					</img>
+					<div class="count">
+						安心
+					</div>
+					<div class="description">
+						<h2>
+							世界500强合作伙伴
+						</h2>
+						<p>
+							壹打工网，世界500强企业指定招聘合作网站。在大企业工作，倍有面儿！
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card" data-name="贴心">
+					<img src="/files/style/image/youshi2.png" class="img-responsive"  data-height="64" data-width="65">
+					<div class="count">
+						贴心
+					</div>
+					<div class="description">
+						<h2>
+							全程服务
+						</h2>
+						<p>
+							我们帮助您便捷、快速的找到适合的岗位，全程全力支持您的工作。
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card" data-name="放心">
+					<img src="/files/style/image/youshi3.png" class="img-responsive" data-height="64" data-width="65">
+					<div class="count">
+						放心
+					</div>
+					<div class="description">
+						<h2>
+							大品牌，值得信赖
+						</h2>
+						<p>
+							壹打工网，遍布全国的服务网络。从此让你和坑爹的中介说拜拜。
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    
+</div>    
+    
+    
+<!-------baoming------->   
+<div class="extra">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-sm-3">
+				<h5>
+					用户帮助
+				</h5>
+				<ul class="icons-list">
+					
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="#">
+							帐户状态
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="#">
+							密码找回与修改
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /span3 -->
+			<div class="col-xs-6 col-sm-3">
+				<h5>
+					关注我们
+				</h5>
+				<ul class="icons-list">
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="/home/weixin_x.php">
+							微信
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="http://www.1dagong.com/m/index.html">
+							手机客户端
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="http://www.1dagong.com/">
+							手机网页版
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="#">
+							新浪微博
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /span3 -->
+			<div class="col-xs-12 col-sm-3">
+				<h5>
+					壹打工网相关
+				</h5>
+				<ul class="icons-list">
+					<li>
+						<i class="icon-li fa fa-twitter">
+						</i>
+						<a href="#" target="_blank">
+							友情链接
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /span3 -->
+			<div class="col-xs-12 col-sm-3">
+				<h5>
+					免费报名
+				</h5>
+				<p>
+					仅需留下您的手机或电话，我们专业的求职顾问便会迅速为您量身定制合适的职位。
+				</p>
+				<div id="mc_embed_signup">
+					<form class="form-signin" role="form" method="post" action="/home/p_register.php" id="regUser">
+						<input type="hidden" value="regbase" name="dopost"/>
+						<input type="hidden" value="1" name="step"/>
+						<input type="hidden" value="个人" name="mtype"/>
+
+						<div class="mc-field-group form-group">
+							<input type="text" class="required email form-control" placeholder="手机号码" required name="shouye" id="userid" maxlength="13">
+							<datalist id="userid">
+								<option value="0551-12345678">
+								<option value="13912345678">
+								<option value="055112345678">
+							</datalist>
+
+						</div>
+						
+						<div class="clear">
+							<button class="btn btn-primary btn-block" type="submit">免费报名</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- /row -->
+	</div>
+	<!-- /container -->
+</div>
+<!--------baoming------->
+
+<!-- /footer -->
+<div class="footer">
+	<div class="container">
+		<ul class="nav footer-nav pull-left">
+			<li>
+				© 2013-2014 Www.1dagong.Com 本站所有招聘信息及作品，未经书面授权不得转载！<br />
+				<a href="/help/aboutus.html">关于我们</a>
+			</li>
+		</ul>
+		<ul class="nav footer-nav pull-right">
+			<li>
+				最专业的求职招聘网站，致力打造人才网第一品牌！
+				<i class="fa fa-heart text-primary">
+				</i>
+				&amp;
+				<a href="http://www.1dagong.com" target="_blank">
+					壹打工网.
+				</a><br />
+				国家工业和信息化部备案号：<a href="http://www.miibeian.gov.cn/">皖ICP备13015030号-3</a>
+			</li>
+		</ul>
+	</div>
+	<!-- /container -->
+</div>
+<div class="none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb41da31689d0e576af45aaeafc3be8d8' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+<!-- /footer -->
+</body>
+</html>
