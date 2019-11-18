@@ -1,0 +1,81 @@
+
+/*============================min-width: 768px==============min-width: 768px=======min-width: 768px=======min-width: 768px=======min-width: 768px=======min-width: 768px=================*/
+@media (min-width: 768px) {
+	.container {
+		+width: 750px;
+	}
+}
+
+/*============================min-width: 992px==============min-width: 992px==========min-width: 992px=====================min-width: 992px========min-width: 992px===================*/
+@media (min-width: 992px) {
+	.container {
+		+width: 970px;
+	}
+}
+
+/*============================min-width: 1170px===============min-width: 1170px=============min-width: 1170px==============min-width: 1170px======================min-width: 1170px===*/
+
+
+@media (min-width: 1200px) {
+	.container {
+		+width: 1170px;
+	}
+
+.col-md-12 {
+    width: 100%;
+  }
+  .col-md-11 {
+    width: 91.66666666666666%;
+  }
+  .col-md-10 {
+    width: 83.33333333333334%;
+  }
+  .col-md-9 {
+    +width: 72%;
+  }
+  .col-md-8 {
+    +width: 63.66666666666666%;
+  }
+  .col-md-7 {
+    +width: 55.33333333333333%;
+  }
+  .col-md-6 {
+    +width: 47%;
+	*width: 40%;
+  }
+  .col-md-5 {
+    width: 41.66666666666667%;
+  }
+  .col-md-4 {
+    +width: 30.33333333333333%;
+	
+  }
+  .col-md-3 {
+    +width: 22%;
+  }
+  .col-md-2 {
+    +width: 13.666666666666664%;
+  }
+  .col-md-1 {
+    width: 8.333333333333332%;
+  }
+
+
+
+
+
+
+}/*========min-width: 1170px==END===min-width: 1170px==END===min-width: 1170px==END===END===END===END===END===END====*/
+.imgintro dl dd span a{
+	+margin-top:-20px;
+}
+
+.rcon dl dd u{
+	+margin-top:-30px;
+
+}
+
+#cards .row .col-sm-4  {
+	
+	+margin-right:-42px;
+}

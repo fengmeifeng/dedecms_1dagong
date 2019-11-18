@@ -1,0 +1,297 @@
+
+
+
+
+
+<div class="container">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="col-md-12 ijiezhan">
+
+				<p><a href="#">接站时刻表</a>↓</p>
+
+			</div>
+
+
+			<ul class="nav nav-tabs zph-text">
+				 <?php
+					$html="";
+					$s=date('w', strtotime('+0 day'));
+					for($i=0; $i<=6; $i++){		
+						$w=date('w', strtotime('+'.$i.' day'));
+						if($w==$s){$aa="class='active'"; }else{$aa="";}
+						if($w!=6 && $w!=0){ $html.="<li ".$aa."><a href='".str_replace(array('0','1','2','3','4','5','6'), array(' ','#first','#second','#third','#fourth','#fifth',' '), $w)."' data-toggle='tab'>周".str_replace(array('0','1','2','3','4','5','6'), array('日','一','二','三','四','五','六'), $w);}else{$html.="";}
+						if($w!=6 && $w!=0){ $html.="<br />".date('n.d',strtotime('+'.$i.' day'))."</a></li>\n";}else{$html.="";}
+					}
+					echo $html;
+				?>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+
+			  <div class="tab-pane active" id="first">
+				<ul class="media-list jzlist">
+					{dede:arclist row=4 titlelen=100 channelid=66 orderby='rand' addfields='gongzi,miaoshu,jiezhan,baomingshu'}
+				  <li class="media">
+					<a class="pull-left" href="#">
+					  <img class="media-object" src="[field:litpic/]" alt="[field:title/]">
+					</a>
+					<div class="media-body">
+					  <h6 class="media-heading"><a href="[field:arcurl/]">[field:title/]</a></h6>
+					  [field:shorttitle/]
+					</div>
+				  </li>
+					{/dede:arclist}
+				</ul>
+			  </div>
+
+			  <div class="tab-pane" id="second">
+			    <ul class="list-group">
+				{dede:arclist row=6 titlelen=100 channelid=66 orderby='rand' addfields='gongzi,miaoshu,jiezhan,baomingshu'}
+				  <li class="list-group-item"><a href="[field:arcurl/]">[field:title/]</a></li>
+				{/dede:arclist}
+				</ul>
+			  
+			  </div>
+
+			  <div class="tab-pane" id="third">
+			    <ul class="list-group">
+				  {dede:arclist row=6 titlelen=100 channelid=66 orderby='rand' addfields='gongzi,miaoshu,jiezhan,baomingshu'}
+				  <li class="list-group-item"><a href="[field:arcurl/]">[field:title/]</a></li>
+				{/dede:arclist}
+				</ul>
+			  
+			  </div>
+
+			  <div class="tab-pane" id="fourth">
+			    <ul class="list-group">
+				  {dede:arclist row=6 titlelen=100 channelid=66 orderby='rand' addfields='gongzi,miaoshu,jiezhan,baomingshu'}
+				  <li class="list-group-item"><a href="[field:arcurl/]">[field:title/]</a></li>
+				{/dede:arclist}
+				</ul>
+			  
+			  </div>
+
+			  <div class="tab-pane" id="fifth">
+			    <ul class="list-group">
+				  {dede:arclist row=6 titlelen=100 channelid=66 orderby='rand' addfields='gongzi,miaoshu,jiezhan,baomingshu'}
+				  <li class="list-group-item"><a href="[field:arcurl/]">[field:title/]</a></li>
+				{/dede:arclist}
+				</ul>
+			  
+			  </div>
+
+			</div>
+
+		</div>
+
+		<div class="col-md-6">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+				<!-- <li data-target="#carousel-example-generic" data-slide-to="2"></li> -->
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner">
+				<div class="item active">
+				   <a href="/"><img src="/files/zt/saturday/saturday.jpg" alt="精彩星期六，一起赢大奖。"></a>
+				  <!-- <div class="carousel-caption">
+					<h3>222</h3>
+					<p>333</p>
+				  </div> -->
+				</div>
+
+				<div class="item">
+				  <a href="/hefei/012432014.html"><img src="/files/image/lianbao.jpg" alt="联保电子"></a>
+				</div>
+
+				<div class="item">
+				  <img src="/files/image/lunfan1.jpg" alt="免费求职热线">
+				</div>
+
+				<div class="item">
+				  <img src="/files/image/lunfan2.jpg" alt="一流的网站">
+				</div>
+
+				<!-- 
+				<div class="item">
+				  <img src="/files/image/1.jpg" alt="...">
+				  <div class="carousel-caption">
+					<h3>111</h3>
+					<p>22222222</p>
+				  </div>
+				</div>
+				-->
+
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			  </a>
+
+			</div><!-- carousel end -->
+
+			<p class="key">
+				<a href="/tags.php?/8%E5%B0%8F%E6%97%B6%E5%B7%A5%E4%BD%9C%E6%97%B6%E9%97%B4/" class="btn btn-default">8小时工作时间</a>
+				<a href="/tags.php?/%E7%BC%B4%E7%BA%B3%E4%BF%9D%E9%99%A9/" class="btn btn-default">缴纳保险</a>
+				<a href="/tags.php?/%E5%8F%8C%E4%BC%91/" class="btn btn-default">双休</a>
+				<a href="/tags.php?/%E4%B8%96%E7%95%8C500%E5%BC%BA%E4%BC%81%E4%B8%9A/" class="btn btn-imp">世界500强企业</a>
+				<a href="/tags.php?/%E9%A3%9F%E5%AE%BF%E5%85%A8%E5%8C%85/" class="btn btn-default">食宿全包</a>
+				<a href="/tags.php?/%E6%97%A0%E8%AF%95%E7%94%A8%E6%9C%9F/" class="btn btn-default">无试用期</a>
+				<a href="/tags.php?/%E5%B7%A5%E4%BD%9C%E9%A4%90/" class="btn btn-default">工作餐</a>
+				<a href="/tags.php?/%E6%9C%88%E8%96%AA4000%E4%BB%A5%E4%B8%8A/" class="btn btn-default">月薪4000以上</a>
+				<a href="/tags.php?/%E7%A9%BA%E8%B0%83/" class="btn btn-default">空调</a>
+				<a href="/tags.php?/%E5%B7%A5%E4%BD%9C%E8%88%92%E9%80%82/" class="btn btn-default">工作舒适</a>
+				<a href="/tags.php?/%E5%B8%A6%E8%96%AA%E5%B9%B4%E5%81%87/" class="btn btn-default">带薪年假</a>
+				<a href="/tags.php?/%E6%B3%95%E5%AE%9A%E8%8A%82%E5%81%87%E6%97%A5/" class="btn btn-default">法定节假日</a>
+				<a href="/tags.php?/%E5%9F%B9%E8%AE%AD/" class="btn btn-default">培训</a>
+				<a href="/tags.php?/%E6%8E%A8%E8%8D%90%E4%BC%81%E4%B8%9A/" class="btn btn-default">推荐企业</a>
+
+			</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+
+		<div class="col-md-3">
+			<ul class="nav nav-tabs nav-justified">
+			  <li class="active"><a href="#weixin" data-toggle="tab">微信二维码</a></li>
+			  <li><a href="#web" data-toggle="tab">手机访问</a></li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+			  <div class="tab-pane active" id="weixin">
+				<a data-toggle="modal" href="#weixintext"><img src="/files/img/weixin.png" class="img-responsive" alt="1dagong.微信二维码" /></a>			
+
+			  </div>
+
+			  <div class="tab-pane" id="web">
+				
+			  </div>
+			</div>
+
+			<!-- Modal -->
+			<div class="modal fade" id="weixintext" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><font color="#ff0000">&times;</font></button>
+					<h4 class="modal-title" id="myModalLabel">“壹打工网”微信详情</h4>
+				  </div>
+				  <div class="modal-body">
+					微信号添加方法：<br />
+					<br />
+					1、登录微信&nbsp;&gt;&nbsp;扫一扫&nbsp;&gt;&nbsp;扫描二维码即可<br />
+					<br />
+					2、添加微信号：<b>yidagongwang</b><br />
+					<br />
+					3、查找公众号：<b>壹打工网</b><br />
+					<br />
+					<br />
+					<span style="color:#b22222;"><strong>关注“壹打工网”微信号，获得最新打工信息！</strong>&nbsp;轻松打工，自在壹打工！</span><br />
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				  </div>
+				</div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+
+
+			<div class="panel panel-default wxlist">
+			  <div class="panel-heading">“壹打工网”微信---每日推送</div>
+			  <div class="panel-body bse-ctr">
+
+				<div class="btn-group">
+
+				  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									查看微信订阅内容
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									{dede:arclist typeid=21 row=5 titlelen=33}
+									<li><a href="[field:arcurl/]">[field:title/]</a></li>									
+									{/dede:arclist}
+								</ul>
+
+
+				 
+				</div><!--  -->
+
+			  </div>
+			</div>
+
+
+			
+
+		</div><!-- col-md-3 -->
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			
+		</div>
+		<div class="col-sm-5">
+
+			
+			
+
+
+			
+
+		</div>
+		<!-- Optional: clear the XS cols if their content doesn't match in height
+		-->
+		<div class="clearfix visible-xs"></div>
+		<div class="col-sm-3">
+			
+
+			
+			
+
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+
+

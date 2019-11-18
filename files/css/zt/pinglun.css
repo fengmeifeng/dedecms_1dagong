@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+.kong{ margin:0px; padding:0px; clear:both; overflow:hidden;}
+
+.list_pinglun{ padding:0; margin:0;}
+.list_pinglun .anjs{ border:1px solid #ccc; margin:15px; margin-bottom:5px; height:130px; padding:10px; color:#999; border-radius:5px;}
+.anjs{ padding:0; margin:0;}
+.hrigd{ padding:2px 18px;}
+
+.also{border:1px solid #ccc; padding:15px; border-radius:5px; margin-bottom:20px;}
+.also h1{ font-size:16px; font-weight:bold; padding:0px; margin:0px; padding-bottom:15px;}
+
+.lun_list{border:1px solid #e8e8e8; padding:15px; border-radius:5px; margin-bottom:20px; overflow:hidden;}
+.lun_list i{ display:block; height:35px; width:39px; background-image:url(../../image/pinglun.jpg);}
+.lun_list .touleft{ background-position:left top;}
+.lun_list .touright{ float:right; background-position:left bottom;}
+.lun_list p{ font-size:14px; color:#333; margin:10px 25px;}
+.lun_list span{ display:block; background:#F5F5F5; padding:4px 15px; text-align:right; color:#666; margin-top:20px;}
+
+.reply{ margin:10px 25px; color:#606;}
+.reply span{ color:#606; background:none; display:inline; padding:0px; margin:0;}
+
+#wxewm{ overflow:hidden; border:none;}
+.wxewm{ margin-bottom:15px; text-align:center;}
+.wxewm a{ font-weight:bold; display:block; width:170px; margin:0 auto;}
+.wxewm img{ vertical-align:top;}
+
+/******************在评论*************************/
+.waik{ border-bottom:1px solid #e2e2e2; overflow:hidden; padding-bottom:10px; margin:25px 0 20px 0;}
+.zaimi{ font-size:16px; color:#444;}
+.zaimi font{ font-size:12px; margin-left:6px;}
+.zaimi span{ color:#FD8A00; font-size:12px; padding:0; clear:both; margin:0; float:left; display:inline; padding-right:5px; background:none;} 
+.zai_list .paos{ margin:10px 0px; font-size:15px; color:#666; line-height:26px;}
+.zai_list .paos a{ border:1px solid #486AB9; border-radius:3px; padding:1px 6px; font-size:13px;}
+.zai_list .paos a:hover{ text-decoration:none; background:#486AB9; color:#fff; }
+.paos a.yier{ border:1px solid #606; color:#606;}
+.paos a.yier:hover{ background:#606; }
+.zai_list{ border:none; border-radius:0px; padding:0px 20px; margin:0px;}

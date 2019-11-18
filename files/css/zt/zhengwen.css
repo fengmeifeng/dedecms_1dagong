@@ -1,0 +1,179 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*****************一打工征文首页面****************/
+@media (min-width: 992px){
+	.essay{
+			position:absolute;
+			top:45%;
+			left:57%;
+	}
+}
+@media (max-width: 991px) {
+	.essay{
+		position:inherit;
+		text-align:center;
+		margin:6% auto 0 auto;
+	}
+}
+.btn-red{
+	background:#fe1629;
+	border:1px solid #fb0a1e;
+	color:#fff;
+}
+.btn-red:hover{
+	background:#dc0012;
+	color:#fff;
+}
+.mto{
+	margin-top:-10px;
+}
+.essay a{
+	display:inline-block;
+	padding:13px 30px;
+	font-size:22px;
+	font-weight:bold;
+	letter-spacing:2px;
+}
+.i-top{
+	background:#ffeedd;
+	border:1px solid #ffe4ca;
+	color:#333;
+	font-weight:bold;
+	margin-top:2%;
+}
+.in-toph{
+	font-size:18px;
+	font-weight:bold;
+	padding:8px 10px;
+	margin:0px;
+}
+.in-toph-lzw{
+	font-size:30px;
+}
+.i-bottom{
+	border:1px solid #ececec;
+	border-top:none;
+	padding:20px;
+	
+}
+.i-bottom li{
+	overflow:hidden;
+	list-style:none;
+	font-size:16px;
+	line-height:28px;
+}
+/*****************一打工征文列表页**************/
+.zw-title a{
+	color:#660066;
+}
+.pad{
+	padding:8px 0;
+}
+.pad b{
+	margin-right:20px;
+	font-weight:100;
+}
+.pad span{
+	padding-left:5px;
+}
+.zw-pco{
+	color:#808080;
+	margin-bottom:10px;
+}
+.secai{
+	color:#f60;
+}
+.mar{
+	border-bottom:1px solid #d8d8d8;
+	margin-bottom:15px;
+}
+.btn-purple{
+	background:#ff822e;
+	color:#fff;
+}
+.btn-purple:hover{
+	background:#ff6600;
+	color:#fff;
+}
+.form-edge{
+	border:1px solid #d1d1d1;
+	
+}
+.toma{
+	margin-top:10px;
+}
+
+.tags{
+	padding:10px 0;
+}
+.tags img{
+	padding:0 10px 0 15px;
+}
+.tags .media{
+	margin-top:20px;
+	padding-bottom:20px;
+	border-bottom: 1px solid #f3e8ff;
+	color:#808080
+}
+.tags .media p{
+	color:#ff6600
+}
+	
+
+
+/*****************一打工征文填写页面****************/
+
+
+.form-width{
+	width:20%;
+}
+.form-tew{
+	width:80%;
+}
+
+/*****************一打工征文内容页面****************/
+
+.shtop{
+	margin:30px 0 30px 0;
+}
+
+/*****************一打工征文内容页面****************/
+
+.a-b-zhengwen{
+	padding:0 15px;
+	border:none;
+	margin:0;
+}
+.a-b-zhengwen li{
+	float:left;
+	list-style:none;
+	font-size:16px;
+	font-weight:bold; 
+	line-height:35px;
+	text-align:left;
+}
+.over{
+	overflow:hidden;
+}
+.jaue{
+	padding:0 15px;
+}
+.jaue li{
+	line-height:34px;
+	border-bottom:1px solid #ddd;
+	list-style:none;
+	font-size:14px;
+	margin:5px 0;
+	text-align:left;
+}
+
+
+
+
+
+
+
+
+

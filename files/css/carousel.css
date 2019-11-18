@@ -1,0 +1,266 @@
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 195px;
+  margin-bottom: 20px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 195px;
+  background-color: #ffffff;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 195px;
+}
+
+.carousel-indicators li.active{
+	background: #ff3300;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Remove the edge padding needed for mobile */
+.marketing {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+  /* Navbar positioning foo */
+.navbar-wrapper {
+    margin-top: 20px;
+}
+.navbar-wrapper .container {
+    padding-left:  15px;
+    padding-right: 15px;
+}
+.navbar-wrapper .navbar {
+    padding-left:  0;
+    padding-right: 0;
+}
+
+  /* The navbar becomes detached from the top, so we round the corners */
+.navbar-wrapper .navbar {
+    border-radius: 4px;
+}
+
+  /* Bump up size of carousel content */
+
+.carousel-caption{
+	float:left;
+}
+
+.carousel-caption h3{
+	color:#000000;
+	width:100%;
+	font-size:14px;
+}
+
+.carousel-caption p {	
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+	color:#ff6600;
+}
+ .carousel-caption p.intro{	
+    font-size: 16px;
+	color:#4f4f4f;
+}
+
+.featurette-heading {
+    font-size: 50px;
+}
+
+}
+
+@media (min-width: 992px) {
+.featurette-heading {
+    margin-top: 120px;
+}
+}
+
+@media (max-width: 600px) {
+
+}
+
+
+
+
+
+
+/*===========公用 e===============*/
+
+
+.icompany {
+	MARGIN-BOTTOM: 10px;margin-top:10px; HEIGHT: 100px; OVERFLOW: hidden;
+}
+.icompany IMG {
+	MAX-WIDTH: 98%;padding:0 1%;
+}
+
+.card {
+	margin:10px;
+	padding:3.5%;
+	border-radius:5px;
+	border:1px solid rgb(204,204,204);
+	display:block;
+	min-height:95px;
+	box-shadow:inset 0px 1px 0px rgba(255,255,255,0.75),0px 2px 3px rgba(0,0,0,0.05);
+	background-color:rgb(244,244,244);
+	-webkit-transition:all .2s ease-in-out;
+	transition:all .2s ease-in-out;
+	-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 2px 3px rgba(0,0,0,.05);
+	-moz-transition:all .2s ease-in-out;
+	-o-transition:all .2s ease-in-out;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 2px 3px rgba(0,0,0,.05);
+	-ms-border-radius:3px;
+	-o-border-radius:3px;
+}
+.card img {
+	height:auto;
+	float:left;
+	max-width:11.5%;
+}
+.card .description {
+	margin:0px 7.5% 0px 12.5%;
+}
+.card .description h2 {
+	margin:0px;
+	color:rgb(51,51,51);
+	font-size:16px;
+	font-weight:200;
+}
+.card .description h2 .form-control {
+	height:34px;
+	min-height:0px;
+}
+.card .description p {
+	margin:5px 0px 0px;
+	color:rgb(153,153,153);
+	font-size:14px;
+}
+.card .count {
+	color:rgb(153,153,153);
+	font-size:12px;
+	float:right;
+}
+.card:hover {
+	border-color:#ff6600;
+	text-decoration:none;
+	background-color:rgb(247,236,254);
+}
+.load-more {
+	margin:20px 0px 40px;
+	height:0px;
+	text-align:center;
+	border-top-color:rgb(221,221,221);
+	border-bottom-color:rgb(253,253,253);
+	border-top-width:1px;
+	border-bottom-width:1px;
+	border-top-style:solid;
+	border-bottom-style:solid;
+	position:relative;
+}
+.load-more a {
+	left:0px;
+	top:-10px;
+	right:0px;
+	color:rgb(204,204,204);
+	font-size:14px;
+	font-weight:700;
+	position:absolute;
+	text-shadow:0 1px 0 #fdfdfd;
+	-webkit-transition:all .2s ease-in-out;
+	transition:all .2s ease-in-out;
+	-moz-transition:all .2s ease-in-out;
+	-o-transition:all .2s ease-in-out;
+}
+.load-more a span {
+	background:rgb(246,246,246);
+	padding:0px 15px;
+}
+.load-more a:hover {
+	color:rgb(184,184,184);
+	text-decoration:none;
+}
+
+
+
+.icons-list {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.icons-list > LI {
+	POSITION: relative; LINE-HEIGHT: 1em; MARGIN-BOTTOM: 0.5em
+}
+.icons-list > LI > .icon-li {
+	POSITION: absolute; TEXT-ALIGN: center; WIDTH: 1em; FONT-SIZE: 1.25em; TOP: 0.15em; LEFT: 0px
+}
+.icons-list UL {
+	MARGIN-TOP: 3em
+}
+.icons-list-lg > LI {
+	PADDING-LEFT: 72px; MARGIN-BOTTOM: 2em
+}
+.icons-list-lg > LI > .icon-li {
+	FONT-SIZE: 42px; TOP: 0px
+}
+
+

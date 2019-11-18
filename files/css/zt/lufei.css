@@ -1,0 +1,72 @@
+
+.lfbanner{
+	margin-top:30px
+}
+
+.lfbanner dl{
+	padding: 50px 0 0 10%;
+
+}
+.lfbanner dl dt{
+	font-size:22px;
+	color:#ff6600;
+}
+
+.lfbanner dl dd{
+	font-size:16px;
+	line-height:25px;
+	color:#ff6600;
+}
+.lfbanner dl dd.other{
+	color:#808080
+}
+
+
+.myunstyled {
+	background: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 20px;
+}
+.myunstyled ul {
+	margin-top: 10px;
+}
+.myunstyled li {
+	margin-bottom: 5px !important;
+	display: block;
+	overflow: hidden;
+}
+
+.icon-bg {
+	background: #cc0000;
+	width: 50px;
+	height: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+}
+
+.features-style1 .icon-bg {
+	margin: 20px 10px 50px 0;
+	float: left;
+	overflow: hidden;
+}
+.heading-styled {
+	font-size:42px;
+	margin-bottom: 0;
+	line-height: 1.2em;
+}
+.heading-styled span {
+	font-size: 20px;
+}
+
+.lufeibg{
+}
+
+/*========下面=========*/
+.box-color {
+	background-color:#fdfee0;
+	padding: 15px;
+	margin:10px 0 20px 0;
+}

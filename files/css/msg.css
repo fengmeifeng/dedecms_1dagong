@@ -1,0 +1,107 @@
+/*=============改动开始===========改动开始===========改动开始===========改动开始===========改动开始===========改动开始===============*/
+
+body {
+  margin-top:50px;
+  font-family:"Microsoft YaHei",微软雅黑,"宋体",Verdana,Geneva,sans-serif;
+}
+
+
+hr{
+	clear:both;
+	width:100%;
+	padding:0;
+	margin:0;
+	border:0;
+}
+
+/*=============   min-width: 768px 开始开始   ===============*/
+@media (min-width: 768px) {
+	
+
+.panel {
+  margin-bottom: 20px;
+  font-size:16px;
+  width:30%;
+  background-color: #fff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.panel-body {
+  padding: 15px;
+}
+
+.panel-important {
+  border-color: #ebccd1;
+}
+.panel-important > .panel-heading {
+  color: #ffffff;
+  background-color: #990000;
+  border-color: #ebccd1;
+}
+.panel-important > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #ebccd1;
+}
+.panel-important > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #ebccd1;
+}
+
+
+
+
+
+}/*=============   min-width: 768px 结束   ===============*/
+
+
+/*=============   max-width: 768px 开始开始   ===============*/
+@media (max-width: 767px) {
+	
+
+.panel {
+  margin: 20px;
+  font-size:20px;
+  background-color: #fff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.panel-body {
+  padding: 15px;
+}
+
+.panel-important {
+  border-color: #ebccd1;
+}
+.panel-important > .panel-heading {
+  color: #ffff00;
+  background-color: #990000;
+  border-color: #ebccd1;
+}
+.panel-important > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #ebccd1;
+}
+.panel-important > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #ebccd1;
+}
+
+
+
+
+}/*=============   max-width: 768px 结束   ===============*/
+
+
+@media (min-width: 992px) {
+
+
+
+
+
+
+
+
+
+
+
+}

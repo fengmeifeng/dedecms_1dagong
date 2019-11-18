@@ -1,0 +1,71 @@
+
+/*****************一打工手机端页面****************/
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+
+}
+.sizeof{
+	font-size:22px;
+	color:#775475;
+	padding-left:17px;
+} 
+.mtop{
+	margin-top:5%;
+}
+.boer{
+	margin:3% 0;
+	border-bottom:1px solid #ccc;
+}
+.boer img{
+	margin-right:20px;
+}
+.bse-ctr{
+	padding:0 4%;
+}
+@media (min-width: 992px){
+	.parent{
+		position:relative;
+	}
+	.bertop{
+		position:absolute;
+		top:51%;
+		left:48%;
+	}
+	.bertop img{
+		max-widt:100px;
+		height:auto;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.parent{
+		position:relative;
+	}
+	.bertop{
+		position:absolute;
+		top:51%;
+		left:48%;
+	}
+	.bertop img{
+		max-width:160px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
