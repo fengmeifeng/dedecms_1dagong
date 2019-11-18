@@ -1,0 +1,28 @@
+/*=====================ajax===========*/
+
+.ajaxweb .close{
+	margin-top: -9px;
+	color:#ff3300;
+
+}
+.ajaxweb{
+	border-bottom: 1px solid #fff;
+}
+.ajaxweb .modal-body{
+	padding-top:0;
+}
+.inner h1{
+	font-size:16px;
+	margin-top:-25px;
+	font-weight:bold;
+	padding-right:40px;
+	color:#ff6600;
+}
+.ajaxwendang{
+	font-size:14px;
+	max-height:500px;
+	overflow-y:auto;
+}
+.ajaxfooter p{
+	font-size:14px;
+}

@@ -1,0 +1,66 @@
+
+<meta charset="utf-8"><!-- no -->
+
+<div class="ajaxwendang"><!--  -->
+
+
+
+    <div class="col-xs-12">
+				<div class="panel panel-info">
+                
+                <style>
+					.panel{ border:1px solid #eee;}
+					.huany{ background:#eee; line-height:50px;}
+					.huany h3{ line-height:50px;}
+					.qiye,.geren,.chenggong{ line-height:50px;display:block; font-size:16px; color:#eee; text-align:center; padding:0px;}
+					.geren:hover,.qiye:hover,.chenggong:hover{ text-decoration:none; color:#fff; background:#AAB2BD;}
+					.chenggong{ background:#3bafda;}
+					.qiye{ background:#37bc9b;}
+					.geren{ background:#f6bb42;}
+				</style>
+                
+					<div class="panel-heading row" style="overflow:hidden; background:none; border:none; margin-bottom:30px;">
+						<div class="col-md-6 huany hidden-xs"><h3 class="panel-title">欢迎加入壹打工网</h3></div>
+                        
+                       	<div class="col-md-6 row">
+                            <a  href="/home/index_do.php?fmdo=user&dopost=regnew&step=2" class="col-md-6 geren" >个人注册入口</a>
+                            <a  href="/home/index_do.php?fmdo=user&dopost=regnew1&step=2" class="col-md-6 qiye" >企业注册入口</a>
+                        </div>
+					</div>
+                    
+                    
+                    
+					<div class="panel-body">
+						<form class="form-signin" role="form" method='POST' action='/home/index_do.php'>
+						<h2 class="form-signin-heading">个人登录 / 企业登录</h2><br/>
+                        <input type="hidden" name="fmdo" value="login">
+                        <input type="hidden" name="dopost" value="login">
+                        <input type="hidden" name="gourl" value="">
+                        <input type="hidden" name="keeptime" value="25900000">
+                        手机号码/用户名：<input type="text" class="form-control" placeholder="用户名" required autofocus name="userid">
+                        <br />
+                        密码：<input type="password" class="form-control" placeholder="密码" required name="pwd">
+                        <label class="checkbox">
+                        * 个人用户默认密码为您手机号码的后四位。
+                         <a href="/home/12tuijian/zhaohuimima.php">找回密码</a>
+                        </label>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">点击登录</button>
+                      </form>
+
+                    </div>	
+				</div>
+
+			</div>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="modal-footer ajaxfooter">
+	<p class="pull-left">说明文字</p> <button class="btn btn-alert" data-dismiss="modal">关闭</button>
+</div>
