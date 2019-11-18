@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+	<meta name="description" content="{dede:global.cfg_description/}" />
+	<title>{dede:global.cfg_webname/}</title>
+	<!-- head_css-->
+	{dede:include filename="inc/head_css.htm"/}
+	<!--head_css end -->	
+</head>
+<body>
+<!-- head -->
+{dede:include filename="head_3.htm"/}
+<!--head end -->
+
+
+
+<!--            列表                  -->
+
+<!-- <div class="container">
+    <ol class="breadcrumb mt_20">
+        <li class="active">{dede:field name='position'/}</li>
+		<li>{dede:field.title/}</li>
+    </ol>
+</div> -->
+  
+
+<div class="container">
+	<div class="row">
+    	<div class="jl_mu">
+             <dl class="ji_mizi">
+             	<dt><h3>{dede:field.title/}</h3>（{dede:field.sex/}，{dede:field.age/}岁）</dt>
+                <dd>更新时间： {dede:field.pubdate function="MyDate('Y年m月d日 H:i',@me)"/}</dd>
+                <dd>浏览量：<font color="#ff6600"><script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script> </font>次</dd>
+                <!--<dd>2周内：投递<font color="#ff6600"> 25 </font>次 被下载<font color="#ff6600"> 12 </font>次</dd>-->
+             </dl>
+             
+             <ul class="ji_xi mt_30">
+             	<li class="col-md-6">期望职位：{dede:field.zhiwei/}</li>
+                <li class="col-md-6">最高学历：{dede:field.edu/}</li>
+                <li class="col-md-6">期望月薪：{dede:field.pay/}</li>
+                <li class="col-md-6">工作年限：{dede:field.gzjingyan/}</li>
+                <li class="col-md-6">期望地区：{dede:field.nativeplace/}</li>
+                <li class="col-md-6">籍　　贯：{dede:field.address/}</li>
+             </ul>
+             
+             
+             <div class="jz_mra" style="margin:0px;">
+                    <div class="col-md-7 jz_phone">
+                    {dede:field.phone/}<!-- <span>仅发布企业登录后，方可查看。</span> -->
+                    </div>
+              </div> 
+           <!--  <form action=""><button type="button" class="btn btn-warning ji_lixi"> 查看联系方式 </button></form>-->
+             
+				<!--{dede:field.phone/}-->
+                <!--{dede:phone runphp='yes'}
+
+				if  @me="<span>@me</span>"
+				else 
+					@me="<span></span>"
+					
+				{/dede:phone} -->
+			
+			 <!--<span id="_userlogin">{dede:field.phone/}</span>-->
+             
+			 <div class="ji_jing mt_30">
+             	<p>工作经验<!-- <span>（{dede:field.jingyan/}）</span> --></p>
+             	<dl>
+                	<dt>所在企业：{dede:field.gsname/}</dt>
+                    <dd>工作年限：{dede:field.gztime function="MyDate('Y-m-d',@me)"/} —— {dede:field.lasttime function="MyDate('Y-m-d',@me)/}</dd>
+                </dl>
+				<p>个人评价<!-- <span>（{dede:field.jingyan/}）</span> --></p>
+				<dl>
+					<dd><span style="color:#444;">{dede:field.pingjia runphp='yes'}if(empty(@me)) @me='暂无自我评价信息';{/dede:field.pingjia}</span></dd>
+                </dl>
+             </div>
+        </div>
+    </div>
+</div>
+    
+<!--            列表                  -->    
+
+
+
+
+<!-------baoming------->   
+{dede:include filename="baoming.htm"/}
+<!--------baoming------->
+
+<!-- /footer -->
+{dede:include filename="footer_3.htm"/}
+<!-- /footer -->
+
+<script src="/files/js/jquery.pin.js"></script>
+<script>
+			$(".pinned").pin({containerSelector: ".container", minWidth: 992});
+		</script>
+</body>
+</html>

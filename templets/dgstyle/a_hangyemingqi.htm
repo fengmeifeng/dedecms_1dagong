@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="keywords" content="{dede:field.keywords/}" />
+	<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+	<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+	<!-- head_css-->
+	{dede:include filename="inc/head_css.htm"/}
+	<!--head_css end -->	
+</head>
+<body>
+<!-- head -->
+{dede:include filename="head_3.htm"/}
+<!--head end -->
+
+<!--            列表                  -->
+
+<div class="container">
+    <ol class="breadcrumb mt_20">
+        <li class="active">{dede:field name='position'/}</li>
+		<li>{dede:field.title/}</li>
+    </ol>
+</div>
+    
+
+<div class="container">
+	<div class="row">
+    	<div class="col-md-9">
+        	<div class="find mr_20">
+                
+                <div class="d_title"><h2>{dede:field.title/}</h2> <span class="comp">{dede:field.shorttitle/}</span> </div>
+                <div class="jiao">&nbsp;</div>
+                
+                <ul class="d_nei mp row">
+                	<li class="col-md-4"><span>工资：</span><font color="#ff6600" size="+2">{dede:field.gongzi/}</font> 元/月</li>
+                    <li class="col-md-5"><span>地区：</span>{dede:field.nativeplace/}</li>
+                    <li class="col-md-3"><span>性别要求：</span>{dede:field.xingbie/}</li>
+                    
+                    <li class="col-md-4"><span>学历要求：</span>{dede:field.xueli/}</li>
+                    <li class="col-md-5"><span>招聘人数：</span>{dede:field.zhaopinshu/}人</li>
+                    <li class="col-md-3"><span>报名人数：</span>{dede:field.baomingshu/}人</li>
+                    <li class="col-md-6"><span>报名时间：</span>{dede:field.shijian /}<!-- function="MyDate('Y-m-d',@me)" --></li>
+                    
+                    <p class="over">发布时间：{dede:field.senddate function="MyDate('Y年m月d日',@me)"/}</p>
+                    
+                </ul>
+                
+                <ul class="mp">
+				 <!-- <ul class="mp">
+				 <li class="btn btn-warning ptii">技能培训</li>
+					{dede:field.tags runphp='yes'}
+						$arr = explode(",",@me);
+                        for($i=0;$i < count($arr);$i++)   @me ="<li class="btn btn-warning ptii">$arr[$i]</li>"; 
+					{/dede:field.tags}
+                 </ul>-->
+				 <!-- {dede:tag type='current'/} -->
+				 {dede:tag sort='new' getall='0'}
+					<a class="btn btn-warning ptii" href='[field:link/]'>[field:tag /]</a>
+				{/dede:tag}
+                    
+                 </ul>
+ 
+ 
+				<div class="panel panel-important mt_20" id="checkbaoming">
+					
+					<div class="panel-heading">免费报名</div>
+
+					<div class="panel-body mt_10">
+						<form class="form-horizontal form-signin" role="form" method="post" action="/home/p_register.php" id="regUser">
+          
+          
+                            <input type="hidden" value="regbase" name="dopost"/>
+                            <input type="hidden" value="1" name="step"/>
+                            <input type="hidden" value="个人" name="mtype"/>
+							<input type="hidden" value="1" id="type"/>
+							<input type="hidden" value="{dede:field.mid/}" id="mid"/>
+							<input type="hidden" value="{dede:field.id/}" id="aid"/>
+						  <div class="form-group">
+							<label for="inputEmail3" class="col-xs-12 col-sm-2 control-label">手机/电话</label>
+							<div class="col-xs-8 col-sm-4 mp">
+							  <input type="text" class="form-control"  placeholder="手机号码" required name="shouye" maxlength="13" />
+							</div>
+							<div class="col-xs-4 col-sm-2 mp">
+							  <button type="submit" class="btn btn-primary">免费报名</button>
+							</div>
+
+							<div class="col-xs-12 col-sm-3 btn-group mp">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									为什么要填写手机号码?
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="">1、用来<b>接收我们发送的预订结果短信</b>；</a></li>
+									<li><a href="">2、确认您的身份是有效的；</a></li>
+									<li><a href="">3、其它情况下方便和您联系；</a></li>
+									<li><a href="">4、仅仅为了提醒您或者和您联系，<b>不会收费、吸费</b>；</a></li>
+									<li><a href="">5、网站的一些功能手机验证后才可以使用。</a></li>
+									<li><a href="">请认真核对您的手机号码，<b>错误的手机号码将会导致账户被删除</b>。</a></li>
+								</ul>
+							</div>
+
+						  </div><!-- e -->
+
+						 
+						</form>
+				
+					</div>			
+				
+				<script language="javascript" type="text/javascript">Checkbaoming();</script>
+				 <div style="clear:both"></div>
+
+				</div>
+ 
+                
+				<div class="d_fine">
+                    <div class="over pull-left">
+                        <span style="float:left;">在线咨询：</span>
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=2967555605&site=qq&menu=yes" target="_blank" style="float:left; padding:0px; padding-right:3px;">
+                        <img border="0" title="QQ在线咨询" alt="QQ在线咨询" src="http://wpa.qq.com/pa?p=2:2967555605:51" data-bd-imgshare-binded="1">
+                        </a>
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=1905131809&site=qq&menu=yes" target="_blank" style="float:left; padding:0px;">
+                        <img border="0" title="QQ在线咨询" alt="QQ在线咨询" src="http://wpa.qq.com/pa?p=2:1905131809:51" data-bd-imgshare-binded="1">
+                        </a>
+                    </div>
+                    
+                </div>
+                
+                <div class="d_led">
+                	<h4>职位描述</h4>
+                    <dl>
+                    <ul id="7" class="nav nav-tabs" id="myTab">
+                        <li class="active">
+                            <a href="#home" data-toggle="tab">
+                                全部图片
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#profile" data-toggle="tab">
+                                接站现场
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#messages" data-toggle="tab">
+                                工作情况
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#settings" data-toggle="tab">
+                                吃住情况
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#live" data-toggle="tab">
+                                入职现场
+                            </a>
+                        </li>
+					</ul>
+
+
+				<div class="tab-content bord-top">
+					<div class="tab-pane active" id="home">
+						<ul class="nav">
+							
+							{dede:sql sql='select id,uid,imgtitle,imgurl,simgurl from `zjobs_gongzuoimg` where uid=~id~'}
+						<li class="col-xs-12 col-md-3">
+								<img src="[field:simgurl/]" alt="[field:imgtitle/]" class="img-thumbnail" />
+							</li>
+					{/dede:sql}
+						</ul>
+					</div>
+					<div class="tab-pane" id="profile">
+						<ul class="nav">
+							{dede:sql sql='select id,uid,imgtitle,imgurl,simgurl from `zjobs_gongzuoimg` where uid=~id~ and sort="1"'}
+						<li class="col-xs-12 col-md-3">
+								<img src="[field:simgurl/]" alt="[field:imgtitle/]" class="img-thumbnail" />
+							</li>
+					{/dede:sql}
+						</ul>
+					</div>
+					<div class="tab-pane" id="messages">
+						<ul class="nav">
+						{dede:sql sql='select id,uid,imgtitle,imgurl,simgurl from `zjobs_gongzuoimg` where uid=~id~ and sort="2"'}
+						<li class="col-xs-12 col-md-3">
+								<img src="[field:simgurl/]" alt="[field:imgtitle/]" class="img-thumbnail" />
+							</li>
+					{/dede:sql}
+						</ul>
+					</div>
+					<div class="tab-pane" id="settings">
+						<ul class="nav">
+							{dede:sql sql='select id,uid,imgtitle,imgurl,simgurl from `zjobs_gongzuoimg` where uid=~id~ and sort="4"'}
+						<li class="col-xs-12 col-md-3">
+								<img src="[field:simgurl/]" alt="[field:imgtitle/]" class="img-thumbnail" />
+							</li>
+					{/dede:sql}
+						</ul>
+					</div>
+					<div class="tab-pane" id="live">
+						<ul class="nav">
+							{dede:sql sql='select id,uid,imgtitle,imgurl,simgurl from `zjobs_gongzuoimg` where uid=~id~ and sort="3"'}
+						<li class="col-xs-12 col-md-3">
+								<img src="[field:simgurl/]" alt="[field:imgtitle/]" class="img-thumbnail" />
+							</li>
+					{/dede:sql}
+						</ul>
+					</div>
+				</div>
+            <div class="clear"></div>
+                      <dt>企业简介</dt>
+                        	<dd>{dede:field.qiye/}</dd>
+                        <dt>要求 </dt>
+                        	<dd>{dede:field.yaoqiu/}</dd>
+                        <dt>收入 </dt>
+                        	<dd>{dede:field.shouru/}</dd>
+                        <dt>工作情况 </dt>
+                        	<dd>{dede:field.gongzuo/}</dd>
+                        
+                    	<dt>待遇情况 </dt>
+                       		<dd>{dede:field.daiyu/}</dd>
+                        
+                    	<dt>吃住情况</dt>
+                        	<dd>{dede:field.chizun/}</dd>
+                    </dl>
+                    
+                    <div class="write">
+                    	<div class="pull-left resume">在壹打工网<a href="/home/pt_jianli.php">完善简历</a>，即有机会被企业和猎头推荐应聘</div>
+                    	<div class="delivery pull-right"></div>
+                        
+
+
+
+                    </div>
+                </div>
+                
+            </div> 
+            
+        </div>
+        
+        <div class="col-md-3 col-sm-12 rcon">
+            
+            <div class="mbott mb_30 mr_10">
+                <a href="#">
+                    <img class="img-responsive" title="1+2事业平台" src="/files/style/image/nei_12.jpg" data-bd-imgshare-binded="1">
+                </a>
+            </div>
+            <ul class="list-group mr_10">
+                <li class="list-group-item">相关的招聘企业</li>
+            </ul>
+            <dl class="mr_10">
+				{dede:arclist row='5'}
+
+					<dt><a href='[field:arcurl/]'>[field:title/]</a></dt>
+					<dd>[field:id runphp="yes"]global $dsql;
+						$query = "SELECT miaoshu FROM `zjobs_addwork6` WHERE aid='@me' ";
+						$dsql->Execute('miaoshu',$query);
+						$row = $dsql->GetArray('miaoshu');
+						$cpsurl.= $row['miaoshu'];
+						@me=$cpsurl;
+						[/field:id]</dd>
+					<dd class="bb">已有<b>[field:id runphp="yes"]global $dsql;
+						$query = "SELECT baomingshu FROM `zjobs_addwork6` WHERE aid='@me' ";
+						$dsql->Execute('baomingshu',$query);
+						$row = $dsql->GetArray('baomingshu');
+						$cpsurl.= $row['baomingshu'];
+						@me=$cpsurl;
+						[/field:id]</b>人报名<u><a href="[field:typeurl/]">我想去</a></u></dd>
+					
+				{/dede:arclist}
+            </dl>
+            </div>            
+            
+        </div>
+        
+        
+    </div>
+</div>
+    
+<!--            列表                  -->    
+
+
+<!-------baoming------->   
+{dede:include filename="baoming.htm"/}
+<!--------baoming------->
+
+
+
+<!-- /footer -->
+{dede:include filename="footer_3.htm"/}
+<!-- /footer -->
+
+
+</body>
+</html>

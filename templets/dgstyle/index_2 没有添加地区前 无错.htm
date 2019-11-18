@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/favicon.png">
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<title>
+			要工作网 - 让工作来找你！
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/navbar.css" rel="stylesheet">
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		 <link href="/files/css/carousel.css" rel="stylesheet"><!-- 仅首页 -->
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+
+
+	{dede:include filename="inc/head.htm"/}
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+     
+      <div class="carousel-inner">
+
+        <div class="item active lunfanbig1">
+          <div class="container" >
+            <div class="carousel-caption">
+              <h1>要工作网</h1>
+              <p>每个人都要工作，<br />我们帮助你，工作的更好！ </p>
+			  <p class="intro">工作是生存的需要，<br />工作是肩上无需言说的责任，<br />工作可以实现社会理想。<br />与工作所能带来的的幸福感和希望相比，<br />不工作的空虚、恐惧与绝望，谁也不能接受。</p>
+              <p><a class="btn btn-lg btn-primary" href="/member/baoming.php" role="button">立即免费报名</a></p>             
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="item lunfanbig2">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>要工作网111</h1>
+              <p>每个人都要工作，<br />我们帮助你，工作的更好！ </p>
+			  <p class="intro">工作是生存的需要，<br />工作是肩上无需言说的责任，<br />工作可以实现社会理想。<br />与工作所能带来的的幸福感和希望相比，<br />不工作的空虚、恐惧与绝望，谁也不能接受。</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">立即免费报名，让工作来找你！</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="item lunfanbig3">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>要工作网</h1>
+              <p>每个人都要工作，<br />我们帮助你，工作的更好！ </p>
+			  <p class="intro">工作是生存的需要，<br />工作是肩上无需言说的责任，<br />工作可以实现社会理想。<br />与工作所能带来的的幸福感和希望相比，<br />不工作的空虚、恐惧与绝望，谁也不能接受。</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">立即免费报名，让工作来找你！</a></p>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+	  <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <!-- <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li> -->
+      </ol>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+
+
+
+	<div class="container b4">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				我们的推荐
+			</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<div class="navbar-form navbar-right">
+				<a href="/member/baoming.php" class="btn btn-success" role="button">
+					立即报名
+				</a>
+			</div>
+		</div>
+		<!--/.navbar-collapse -->
+	</div>
+	
+			<div class="container">
+				<div class="row">
+
+					{dede:arclist flag='h,c' row=4 titlelen=100 channelid=66 addfields='gongzi,miaoshu,baomingshu'}
+					<div class="col-sm-6 col-md-3 imgintrocon">
+						<div class="thumbnail imgintro">
+							<img src="[field:litpic/]" alt="...">
+							<dl>
+								<dt><a href="[field:arcurl/]">[field:title/]</a></dt>
+								<dd>月薪：<b>[field:gongzi/]元</b></dd>
+								<dd class="intro">[field:shorttitle/]</dd>
+								<dd>已有<em>[field:baomingshu/]</em>人<span><a href="[field:arcurl/]">去看看</a></span></dd>
+							</dl>
+						</div>
+					</div>
+					{/dede:arclist}
+					<div class="clearfix visible-xs"></div>
+
+				</div>
+			</div>
+
+
+
+
+	<div class="container b4">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				我们的优势
+			</a>
+		</div>
+		<!--/.navbar-collapse -->
+	</div>
+
+
+	<section id="cards" class="container b3" data-view="channel_cards" data-collection_params="{&amp;quot;category&amp;quot;:&amp;quot;Featured&amp;quot;}"
+	data-collection_name="channels">
+		<div class="row">
+			<div class="col-sm-4">
+				<div href="/C++" class="card" data-name="C++">
+					<img src="/img/s1.gif" alt="C++" data-view="channel_image" data-name="C++"
+					data-height="24" data-width="22">
+					</img>
+					<div class="count">
+						安心
+					</div>
+					<div class="description">
+						<h2>
+							世界500强合作伙伴
+						</h2>
+						<p>
+							要工作网，世界500强企业指定招聘合作网站。在大企业工作，倍有面儿！
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div href="/java" class="card" data-name="java">
+					<img src="/img/s2.gif" alt="java" data-view="channel_image" data-name="java"
+					data-height="24" data-width="22">
+					</img>
+					<div class="count">
+						贴心
+					</div>
+					<div class="description">
+						<h2>
+							全程服务
+						</h2>
+						<p>
+							我们帮助您便捷、快速的找到适合的岗位，全程全力支持您的工作。
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div href="/Firebase" class="card" data-name="Firebase">
+					<img src="/img/s3.gif" alt="Firebase" data-view="channel_image" data-name="Firebase"
+					data-height="24" data-width="22">
+					</img>
+					<div class="count">
+						放心
+					</div>
+					<div class="description">
+						<h2>
+							大品牌，值得信赖
+						</h2>
+						<p>
+							要工作网，遍布全国的服务网络。从此让你和坑爹的中介说拜拜。
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+			<div class="container projects">
+				<div class="">
+					<h4>
+						我们的合作伙伴
+					</h4>
+					<p>
+						我们的所有合作伙伴，每一个都是由我们根据用户的工作反馈，精挑细选出来的。您可以放心的工作。
+					</p>
+				</div>
+				<div class="row">
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b1.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b2.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b3.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b4.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b5.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b6.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b7.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b8.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b9.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b10.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b11.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b12.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+		{dede:include filename="inc/footer.htm"/}
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+		<script src="/files/js/bootstrap-carousel.min.js"></script><!-- 首页幻灯js -->
+	</body>
+
+</html>

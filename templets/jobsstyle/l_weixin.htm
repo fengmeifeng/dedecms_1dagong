@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>{dede:field.title/} - {dede:global.cfg_webname/}</title>
+		<meta name="keywords" content="{dede:field.keywords/}" />
+		<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+        <link href="/files/css/zt/zhengwen.css" rel="stylesheet" />  <!--------1打工征文页面-------->        
+		 <link href="/files/css/carousel.css" rel="stylesheet"><!-- 仅首页 -->		 
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+    
+{dede:include filename="inc/head.htm"/}
+
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>
+                <a href="http://www.1dagong.com">网站首页</a>
+            </li>
+            <li>
+                <a href="/yidagong-weixin/">壹打工微信</a>
+            </li>
+            <li class="active">微信列表</li>
+        </ol>
+    </div>
+
+    <div class="container">
+        <div class="row">
+        
+                
+            <div class="col-md-9 acon">
+                 <ul class="media-list tags">
+					{dede:list pagesize='6'}
+					<li class="mar mtop-03">
+                    	<div class="row">
+                    	<div class="fl col-sm-3 col-xs-12">
+                            <a class="pull-left" href="[field:arcurl/]">
+                                <img class="img-responsive" alt="[field:title/]" src="[field:litpic/]">
+                            </a>
+                        </div>
+                        <div class="media-body full-left col-sm-9 col-xs-12">
+                            <h4 class="media-heading zw-title">
+                                <a href="[field:arcurl/]">[field:title/]</a>
+                            </h4>
+                            <div class="pad">发布时间: <b>[field:pubdate function="MyDate('Y年m月d日',@me)"/]</b>
+								
+								<div class="newdigg37" id="newdigg37" style="display:inline">
+									<div class="btn-group btn-group-xs">
+									  <a type="button" class="btn btn-purple" onclick="javascript:postDigg('good',37)">关注微信号：</a>
+									  <a type="button" class="btn btn-default"><strong>yidagongwang</strong></a>
+									</div>
+								</div>
+								
+								<script language="javascript" type="text/javascript">getDigg(37);</script>
+                            
+                             </div>
+                            <div class="zw-pco">
+								<p>[field:description function="cn_substr(@me,200)"/]</p>
+							</div>
+                             <p class="pull-right mtop-02"><a href="[field:arcurl/]" class="secai">阅读全文&gt;&gt;</a></p> 
+                		<div class="clear"></div>
+                        
+                   	</div>
+					</div>
+                    </li>
+					{/dede:list}
+                 </ul>
+
+
+				 <ul class="pagination pagination-lg">
+							{dede:pagelist listitem="index,end,pre,next,pageno" listsize="5"/}
+					</ul>
+                              
+            </div>
+                
+            <div class="col-md-3 acon">
+            	{dede:include filename="inc/neijian.htm"/}
+                <form id="regUser" class="form-signin form-edge" action="baoming.php" method="post" role="form">
+                  <input type="hidden" name="dopost" value="regbase">
+                  <input type="hidden" name="step" value="1">
+                  <input type="hidden" name="mtype" value="个人">
+                  <h1 class="form-signin-heading in-toph-lzw">免费报名进厂 </h1>
+                  <span class="help-block">填写您的手机号码：</span>
+                  <input class="form-control" type="text" maxlength="13" name="userid" required placeholder="手机号码">
+                  <label class="checkbox"> 仅仅只需一步，让工作来找你。 </label>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+                </form>
+            
+                <div class="panel panel-info toma"><!--    列表一上背景   ---->
+                    <div class="panel-heading">
+                      <h4 class="panel-title">微信一览</h4>
+                    </div>
+                    <div class="list-group">
+                    {dede:arclist row=10 titlelen="50"}
+                    <a class="list-group-item" href="[field:arcurl/]">[field:title/]</a></a>
+					{/dede:arclist}
+                    </div>
+                </div>
+				
+				<div class="panel panel-info toma bse">
+                    <img class="img-responsive" alt="" src="/files/zt/weixin/weixin.jpg">
+                </div>
+            </div>
+	</div>
+	<!-- /container -->
+</div>
+
+
+		{dede:include filename="inc/footer.htm"/}
+
+	</body>
+
+</html>

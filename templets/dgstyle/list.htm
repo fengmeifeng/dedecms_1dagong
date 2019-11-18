@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="keywords" content="{dede:field.keywords/}" />
+	<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+	<title>{dede:field.typename/}工作|{dede:field.typename/}普工|{dede:field.typename/}招聘|{dede:field.typename/}进厂 - {dede:global.cfg_webname/}</title>
+	<!-- head_css-->
+	{dede:include filename="inc/head_css.htm"/}
+	<!--head_css end -->	
+</head>
+<body>
+<!-- head -->
+{dede:include filename="head_3.htm"/}
+<!--head end -->
+<!--            列表                  -->
+<div class="container">
+    <ol class="breadcrumb mt_20">
+        <li><a href="/">网站首页</a></li>
+		<li><a href="/home/position_search_list.php">工作库</a></li>
+    </ol>
+</div>
+<div class="container">
+	<div class="row">
+    	<div class="col-md-9">
+        	<div class="find mr_20">
+                <form action="position_search_list.php" method="get">
+                <div class="input-group search">
+                  <input type="text" class="form-control" placeholder="搜索..." name="q">
+                  <span class="input-group-btn">
+                    <input class="btn btn-yellow" type="submit" value="搜 索" />
+                  </span>
+                </div>
+                </form>
+                
+                <div class="heis mb_10">热门搜索：     
+                  <a href="/home/position_search_list.php?q=技工">技工</a>
+                    <a href="/home/position_search_list.php?q=销售">销售</a>
+                    <a href="/home/position_search_list.php?q=仓储">仓储</a>
+                    <a href="/home/position_search_list.php?q=服务员">服务员</a>
+                    <a href="/home/position_search_list.php?q=家政服务">家政服务</a>
+                    <a href="/home/position_search_list.php?q=汽车修理">汽车修理</a>
+                </div>
+				<div class="over"></div>
+                <!--<dl class="reset">
+                    <dt>所在地区：</dt>
+                    <dd>
+                    <a class="active" title="" href="#">不限</a>
+                    <a title="" href="#">合肥</a>
+                    <a title="" href="#">合肥</a>
+                    <a title="" href="#">合肥</a>
+                    <a title="" href="#">合肥</a>
+                    <a title="" href="#">合肥</a>
+                    <a title="" href="#">合肥</a>
+                    </dd>
+                </dl>-->
+                
+               <dl class="reset">
+                    <dt>行业领域：</dt>
+                    <dd>
+                    <!--<a class="active" title="" href="#">不限</a>
+                    <a title="" href="#">电子商务</a>
+                    <a title="" href="#">社交/社区/媒体</a>
+                    <a title="" href="#">网游/手游</a>
+                    <a title="" href="#">iOS工程师</a>
+                    <a title="" href="#">在线广告</a>
+                    <a title="" href="#">  搜索引擎</a>
+                    <a title="" href="#">互联网金融</a>
+                    <a title="" href="#">网络招聘</a>
+                    <a title="" href="#">网络营销</a>
+                    <a title="" href="#">网络教育</a>-->
+					<a class="active" href="/home/position_search_list.php">全部</a>
+                  {dede:channel typeid=41 type='son' row='8' current}
+					
+					<a href='position_search_list.php?q={dede:global.keyword/}&professioncon={dede:field.id/}'>{dede:field.typename/}</a>
+
+				{/dede:channel}
+                   
+
+                    
+                    </dd>
+                </dl>  
+                 
+                
+                <dl class="reset">
+                    <dt>更新：</dt>
+                    <dd>
+                    <a class="active" title="" href="/home/position_search_list.php">不限</a>
+                    <a title="" href="position_search_list.php?q={dede:global.keyword/}&timecon=1">3天内</a>
+                    <a title="" href="position_search_list.php?q={dede:global.keyword/}&timecon=2">5天内</a>
+                    <a title="" href="position_search_list.php?q={dede:global.keyword/}&timecon=3">7天内</a>
+                    <a title="" href="position_search_list.php?q={dede:global.keyword/}&timecon=4">15天内</a>
+                    </dd>
+                </dl>
+                
+            </div> 
+            
+            <div class="fine mr_20 busa mt_20">     
+                <span>共为您找到 <strong>{dede:global.count/}</strong> 职位 </span>
+                <div class=" pull-right">
+                    <!--<div class="btn-group">
+                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                        &nbsp;职位类型不限 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                      </ul>
+                    </div>-->
+                    <!--<div class="btn-group">
+                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                        &nbsp;发布时间不限 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                      </ul>
+                    </div>-->
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                        &nbsp;薪酬范围不限 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">不限</a></li>
+                        <li><a href="position_search_list.php?q={dede:global.keyword/}&salarycon=1000-2000">1000-2000</a></li>
+                        <li><a href="position_search_list.php?q={dede:global.keyword/}&salarycon=2000-3000">2000-3000</a></li>
+                        <li><a href="position_search_list.php?q={dede:global.keyword/}&salarycon=3000-5000">3000-5000</a></li>
+                        <li><a href="position_search_list.php?q={dede:global.keyword/}&salarycon=5000-8000">5000-8000</a></li>
+                        <li><a href="position_search_list.php?q={dede:global.keyword/}&salarycon=8000以上">8000以上</a></li>
+                      </ul>
+                    </div>
+                </div> 
+            </div>       
+            <div class="over"></div>
+            <div class="l_list mr_20">
+                <div class="l_lie">
+                {dede:datalist} 
+                    <a href="../../plus/view.php?aid=<?php echo $fields['id']; ?>" target="_blank" class="belie">
+                        <h3><?php echo $fields['title'];?></h3>
+                        <ul class="row">
+                        	<li class="col-md-3"><?php echo $fields['writer']; ?><font color="#333"></font></li>
+                            <li class="col-md-3"><?php //echo $fields['work_place']; ?><?php echo cn_substr(trim($fields['zwmiaoshu']),30);?></li>
+                            <li class="col-md-3">发布于<?php echo date('Y-m-d H:i:s',$fields['senddate']); ?></li>
+                            <li class="col-md-3">月薪
+								<font size="+1" color="#ff6600"><?php echo $fields['gongzi']; ?></font>								
+							</li>
+                        </ul>
+                    </a> 
+                {/dede:datalist}
+                </div>
+
+            <div class="container">
+						<ul class="pagination pagination-lg">
+							{dede:pagelist listitem="index,end,pre,next,pageno" listsize="5"/}
+						</ul>
+					</div>
+            </div>
+             
+        </div>
+        
+        <div class="col-md-3 col-sm-12 rcon">
+            
+            <div class="mbott mb_30 mr_10">
+                <a href="/neijian">
+                    <img class="img-responsive" title="1+2事业平台" src="/files/style/image/nei_12.jpg" data-bd-imgshare-binded="1">
+                </a>
+            </div>
+            <ul class="list-group mr_10">
+                <li class="list-group-item"><span class="badge"> </span>相关的招聘企业</li>
+            </ul>
+            
+            	<dl class="mr_10">
+					{dede:include filename="arc_right.htm"/}									
+				</dl>
+            
+            </div>            
+            
+        </div>
+        
+        
+    </div>
+    
+<!--            列表                  -->    
+
+
+
+<!-------baoming------->   
+{dede:include filename="baoming.htm"/}
+<!--------baoming------->
+
+
+<!-- /footer -->
+{dede:include filename="footer_3.htm"/}
+<!-- /footer -->
+
+
+</body>
+</html>

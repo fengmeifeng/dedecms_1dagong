@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<title>{dede:global.cfg_webname/}</title>
+
+<link href="/files/style/css/bootstrap.css" type="text/css" rel="stylesheet" /> 
+
+<link href="/files/style/css/all.css" type="text/css" rel="stylesheet" />
+
+<script src="/files/style/js/jquery.min.js" language="JavaScript" type="text/javascript" ></script>
+<script src="/files/style/js/bootstrap.min.js" language="JavaScript" type="text/javascript" ></script>
+<script src="/files/style/js/npm.js" language="JavaScript" type="text/javascript" ></script>
+
+
+</head>
+
+<body>
+
+<!-- head -->
+{dede:include filename="head_3.htm"/}
+<!--head end -->
+
+
+
+<!--            列表                  -->
+
+<div class="container">
+    <ol class="breadcrumb mt_20">
+        <li class="active">{dede:field name='position'/}</li>
+		<li>{dede:field.title/}</li>
+    </ol>
+</div>
+    
+
+<div class="container">
+	<div class="row">
+    	<div class="col-md-9">
+        	<div class="find mr_20">
+                
+                <div class="d_title"><h2>{dede:field.title/}</h2><p class="comp col-md-6">{dede:field.gzname/}</p></div>
+                <div class="jiao">&nbsp;</div>
+                
+                <ul class="d_nei mp row">
+                	<li class="col-md-4"><span>工资：</span><font color="#ff6600" size="+2">3{dede:field.pay/}</font> 元/月</li>
+                    <li class="col-md-5"><span>地区：</span>{dede:field.nativeplace/}</li>
+                    <li class="col-md-3"><span>性别要求：</span>{dede:field.sex/}</li>
+                    
+                    <li class="col-md-3"><span>学历要求：</span>{dede:field.edu/}</li>
+                    <li class="col-md-3"><span>招聘人数：</span>{dede:field.zhaopinrenshu/}人</li>
+                    <li class="col-md-3"><span>报名人数：</span>{dede:field.baomingshu/}人</li>
+                    <li class="col-md-3"><span>报名时间：</span>{dede:field.baomingtime/}</li>
+                    
+                    <p class="over">发布时间：{dede:field.pubdate function="MyDate('Y年m月d日',@me)"/}</p>
+                    
+                </ul>
+                
+                <ul class="mp">
+                    <li class="btn btn-warning ptii">技能培训</li>
+                    <li class="btn btn-warning ptii">带薪年假</li>
+                    <li class="btn btn-warning ptii">绩效奖金</li>
+                    <li class="btn btn-warning ptii">技能培训</li>
+                    <li class="btn btn-warning ptii">带薪年假</li>
+                    <li class="btn btn-warning ptii">绩效奖金</li>
+                 </ul>
+ 
+                
+				<div class="d_fine">
+                    <div class="over pull-left">
+                        <span style="float:left;">在线咨询：</span>
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=2967555605&site=qq&menu=yes" target="_blank" style="float:left; padding:0px; padding-right:3px;">
+                        <img border="0" title="QQ在线咨询" alt="QQ在线咨询" src="http://wpa.qq.com/pa?p=2:2967555605:51" data-bd-imgshare-binded="1">
+                        </a>
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=1905131809&site=qq&menu=yes" target="_blank" style="float:left; padding:0px;">
+                        <img border="0" title="QQ在线咨询" alt="QQ在线咨询" src="http://wpa.qq.com/pa?p=2:1905131809:51" data-bd-imgshare-binded="1">
+                        </a>
+                    </div>
+                    
+                    <div class="delivery pull-right"><button type="button" class="btn btn-primary"><a href="/plus/toudi.php?aid={dede:field.id/}&job={dede:field.mid/}&c={dede:field.gzname/}" style="color:#fff;">投递简历</a> </button></div>
+                </div>
+                
+                <div class="d_led">
+                	<h4>职位描述</h4>
+                    
+                    <dl>
+                    	{dede:field.intor/}
+                    </dl>
+                    
+                    <div class="write">
+                    	<div class="pull-left resume">在壹打工网<a href="#">完善简历</a>，即有机会被企业和猎头推荐应聘</div>
+                    	<div class="delivery pull-right"><button type="button" class="btn btn-primary"> <a href="/plus/toudi.php?aid={dede:field.id/}&job={dede:field.mid/}&c={dede:field.gzname/}" style="color:#fff;">投递简历</a> </button></div>
+                    </div>
+                </div>
+                
+            </div> 
+            
+        </div>
+        
+        <div class="col-md-3 col-sm-12 rcon">
+            
+            <div class="mbott mb_30 mr_10">
+                <a href="/neijian">
+                    <img class="img-responsive" title="1+2事业平台" src="/files/style/image/nei_12.jpg" data-bd-imgshare-binded="1">
+                </a>
+            </div>
+            <ul class="list-group mr_10">
+                <li class="list-group-item"><span class="badge"> </span>相关的招聘企业</li>
+            </ul>
+            <dl class="mr_10">
+				{dede:include filename="arc_right.htm"/}
+            </dl>
+            </div>            
+            
+        </div>
+        
+        
+    </div>
+</div>
+    
+<!--            列表                  -->    
+
+
+<!-------baoming------->   
+{dede:include filename="baoming.htm"/}
+<!--------baoming------->
+
+
+
+<!-- /footer -->
+{dede:include filename="footer_3.htm"/}
+<!-- /footer -->
+
+
+</body>
+</html>

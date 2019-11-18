@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="1jobs">
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>“{dede:field.title/}”的相关企业 - {dede:global.cfg_webname/}</title>
+		<meta name="keywords" content="{dede:field.keywords/}" />
+		<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">		
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+	<body>
+
+	{dede:include filename="inc/head.htm"/}
+
+	<div class="container">
+			<ol class="breadcrumb">
+				<li><a href="http://www.1dagong.com">网站首页</a></li>
+				<li class="active">{dede:field.title /}</li>
+			</ol>
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+			
+				<a href="/zt/lufei/"><img src="/files/zt/lufei/lufei.gif" class="img-responsive mb1" alt="你找工作，我出路费" /></a>
+
+				<div class="well">“{dede:field.title /}”的相关企业</div>
+
+				<div class="row">
+					{dede:list pagesize='6'}
+					<ul class="media-list tags">
+						<li class="media">
+							<a class="pull-left" href="[field:arcurl/]"><img src="[field:litpic/]" alt="[field:title/]" class="img-responsive" /></a>
+							<div class="media-body">
+								<h4 class="media-heading"><a href="[field:arcurl/]">[field:title/]</a></h4>
+								<p>[field:shorttitle/]</p>
+								[field:description/]...
+								
+							</div>
+						</li>
+					</ul>
+					{/dede:list}	
+					
+					<hr />
+
+					<div class="container">
+						<ul class="pagination pagination-lg">
+							{dede:pagelist listitem="index,end,pre,next,pageno" listsize="5"/}
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="col-md-3 rcon">
+            	{dede:include filename="inc/neijian.htm"/}
+				<ul class="list-group">
+					<li class="list-group-item">
+						<span class="badge">
+							<!-- <a href="">我要看更多</a> -->
+						</span>
+						相关的招聘企业
+					</li>
+				</ul>
+
+
+				<dl>
+					{dede:arclist flag='c' row=6 titlelen=100 channelid=66 addfields='gongzi,baomingshu'}
+					<dt><a href="[field:arcurl/]">[field:title/]</a></dt>
+					<dd>月薪：<b>[field:gongzi/]元</b></dd>
+					<dd>说明：[field:shorttitle/]</dd>
+					<dd class="bb">已有<b>[field:baomingshu/]</b>人报名<u><a href="[field:arcurl/]">我想去</a></u></dd>
+					{/dede:arclist}										
+				</dl>
+
+
+			</div>
+		</div>
+
+
+
+    </div>
+
+
+
+
+{dede:include filename="inc/footer.htm"/}
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+
+
+		<!-- 左侧 -->
+		<script src="/files/js/jquery.pin.js"></script>
+		<script>
+			$(".pinned").pin({containerSelector: ".container", minWidth: 992});
+		</script>
+	</body>
+
+</html>

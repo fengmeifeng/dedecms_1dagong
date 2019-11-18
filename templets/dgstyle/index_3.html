@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+	<meta name="description" content="{dede:global.cfg_description/}" />
+	<title>{dede:global.cfg_webname/}</title>
+	<!-- head_css-->
+	{dede:include filename="inc/head_css.htm"/}
+	<script src="/plus/zdgx.php" language="javascript"></script>    
+	<!--head_css end -->	
+</head>
+<body>
+<!-- head-->
+{dede:include filename="head_3.htm"/}
+<!--head end -->
+        
+<!-- Carousel
+    ================================================== -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators qihuna hidden-xs">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+      
+            <div class="item active">
+              <img src="/files/style/image/banner_da3.jpg" alt="First slide">
+              <div class="container">
+                <div class="carousel-caption col-md-6" style="margin-top:10px;">
+                  <h1 style="line-height:48px;">找工作？222<br/>
+					不！我们让工作来找你</h1>
+                  <p style="font-size:18px; margin-bottom:10px;">壹打工网携手各地优质企业，带着好工作来到你家门口！<br />
+                  2015年全国最大的求职盛宴——<strong>壹打工网全国巡回招聘会已经开幕！</strong><br />
+                  我们诚邀你的加入！量身打造属于你的职业之路！<br />
+                  安徽、苏州、上海、常熟、重庆、武汉、郑州……！ 2015，不见不散
+                  ！
+                  </p>
+                  
+                  
+                  <p><a href="/zt/xunhui/" class="btn btn-primary" role="button" style="width:160px;">招聘会详情 >> </a></p>
+                  <p class="fl">
+                      <a href="#" class="btn btn-default" role="button" style="font-size:16px; color:#606">4月11日 上海站</a>
+                      
+                      <a href="#" class="btn btn-default" role="button" style="font-size:16px; color:#606">5月16日 常熟站</a>
+                      <a href="#" class="btn btn-default" role="button" style="font-size:16px; color:#606">重庆站  （筹备中）</a>
+                      
+                   </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="item">
+              <img src="/files/style/image/banner_da.jpg" alt="First slide">
+              <div class="container">
+                <div class="carousel-caption col-md-6">
+                  <h1>打造国内第一蓝领求职服务平台</h1>
+                  <br />
+                  <ul>
+                    <li><span>专</span>：专业的求职招聘网站，最了解蓝领需求，专为蓝领服务</li>
+                    <li><span>快</span>：求职快、入职快</li>
+                    <li><span>优</span>：精心审核、优质企业，更有保障</li>
+                    <li><span>简</span>：简约但不简单。找工作更方便</li>
+                    <li><span>奖</span>："1+2事业平台"，赢奖金活动送不停</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          
+            <div class="item">
+              <img src="/files/style/image/banner_da2.jpg" alt="First slide">
+              <div class="container">
+                <div class="carousel-caption col-md-6">
+                  <h1>壹打工网“1+2”事业平台</h1>
+                  <p>全球行销之神—杰.亚伯拉罕<br/>专为中国蓝领设计，帮助中国普通工人实现财富梦想！</p>
+                  <br />
+                  <p><a href="/neijian/" class="btn btn-primary" style="width:200px;" role="button">了解“1+2”事业平台 >></a></p>
+                </div>
+              </div>
+            </div>
+            
+        
+        
+            <div class="item">
+              <img src="/files/style/image/banner_da1.jpg" alt="First slide" class="img-responsive">
+              <div class="container">
+                <div class="carousel-caption col-md-6">
+                  <ul class="banner_xiao row">
+                  {dede:arclist typeid='24' limit=1,4 orderby='click' orderway='desc'}
+                  	<li><a href="[field:description/]"><img src="[field:litpic/]" alt="[field:title/]" ></a></li>
+                  {/dede:arclist}  
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+        
+        <a class="left carousel-control visible-xs" href="#carousel-example-generic" role="button" data-slide="prev" style="z-index:1000">
+          </a>
+          <a class="right carousel-control visible-xs" href="#carousel-example-generic" role="button" data-slide="next" style="z-index:1000">
+          </a>
+          
+      </div>
+      <div class="row mp">
+      		
+<!--           <div class="erweima"><a href="#" style="height:30px; width:30px; background:#999; display:inline-block;"></a></div>
+-->            
+          <form class="form-signin zhuce col-md-3 col-xs-12 pull-right" role="form" method="post" action="/home/p_register.php" id="regUser">
+                <div class="pull-right mren"><a type="button" href="/home/" class="btn btn-info">企业招聘服务入口</a></div>
+                <input type="hidden" value="regbase" name="dopost"/>
+                <input type="hidden" value="1" name="step"/>
+                <input type="hidden" value="个人" name="mtype"/>
+    
+                <h3 class="form-signin-heading">免费报名 <span>海量职位，任你挑选</span></h3>
+    
+                <span class="help-block">填写您的手机号码：</span>
+    
+                <input type="text" class="form-control" placeholder="手机号码" required autofocus  name="shouye" maxlength="13">
+                <span class="checkbox">
+                 仅仅只需一步，让工作来找你。
+                </span>
+                <button class="btn btn-lg btn-purple btn-block" type="submit">提交</button>
+                
+           </form>
+           
+               
+       
+       
+    </div>
+</div>  
+        
+      
+<!--By Z首页搜索开始-->       
+<div class="container">
+  <div class="row in_bac">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 mt_20" style="z-index:999;">
+          <form action="/plus/search.php" method="get">
+              <input type="hidden" name="typeid" value="41">
+              <input type="hidden" name="starttime" value="-1">
+              <div class="search row">
+                  
+                  <div class="left col-xs-3 col-md-1 mp" id="left1" style="position:relative;">
+                    <label class="change_area" style="margin-bottom:0;">
+                      <span href="javascript:;" style="font-weight:100">职位</span><b class="caret"></b>
+                      <input type="hidden" name="searchtype" value="-1">
+                    </label>
+                    <div class="sou_down col-md-12" style="display: none;">
+                      <ul>
+                        <li><a rel="-1" href="javascript:;">职位</a></li>
+                        <li><a rel="comtype" href="javascript:;">公司</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <input type="text" class="col-xs-6 col-md-7 text" name="q" style="color:#999" value="职位搜索 ..."  onfocus="this.value=''" onblur="if(this.value==''){this.value='职位搜索 ...'}" >
+              
+                  <div class="left col-xs-3 col-md-2 mp" id="left2" style="position:relative;">
+                    <label class="change_area" style="margin-bottom:0;">
+                      <span href="javascript:;" style="font-weight:100;">地区</span><b class="caret"></b>
+                      <input type="hidden" name="areacode" value="-1">
+                    </label>
+                    <div class="sou_down col-md-12" style="display: none;">
+                      <ul>
+                        <li><a rel="0" href="javascript:;">不限</a></li>
+                        <li><a rel="1" href="javascript:;">合肥</a></li>
+                        <li><a rel="2" href="javascript:;">上海</a></li>
+                        <li><a rel="3" href="javascript:;">重庆</a></li>
+                        <li><a rel="4" href="javascript:;">江苏</a></li>
+                        <li><a rel="5" href="javascript:;">湖北</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <input class="col-xs-3 col-md-2 btn btn-yellow pdsf mp" type="submit" value="搜 索" />
+              </div>
+          </form>
+        </div>
+
+        <div class="col-xs-12 col-md-8 heis col-md-offset-2">热门搜索：     
+            <a href="/plus/search.php?typeid=45&areacode=-1&starttime=-1&searchtype=-1">技工</a>
+            <a href="/plus/search.php?typeid=53&areacode=-1&starttime=-1&searchtype=-1">销售</a>
+            <a href="/plus/search.php?typeid=50&areacode=-1&starttime=-1&searchtype=-1">仓储</a>
+            <a href="/plus/search.php?typeid=46&areacode=-1&starttime=-1&searchtype=-1">服务员</a>
+            <a href="/plus/search.php?typeid=49&areacode=-1&starttime=-1&searchtype=-1">家政服务</a>
+            <a href="/plus/search.php?typeid=51&areacode=-1&starttime=-1&searchtype=-1">汽车修理</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+/*$('#jingxuanku').find('li').mouseover(function(){
+$('#jingxuanku').find('.licon').attr('class', 'licon hide');
+$(this).find('.licon').removeClass('hide');
+});*/
+
+$('#left2 .change_area').mouseover(function(){
+$('#left2 .sou_down').show();
+}).mouseout(function(){
+$('#left2 .sou_down').hide();
+});
+
+$('#left2 .sou_down').mouseover(function(){
+$('#left2 .sou_down').show();
+}).mouseout(function(){
+$('#left2 .sou_down').hide();
+});
+
+$('#left2 .sou_down li a').click(function(){
+$('#left2 .change_area input[name=areacode]').val($(this).attr('rel'));
+$('#left2 .change_area span').text($(this).text());
+$('#left2 .sou_down').hide();
+});
+
+//新加按公司名搜索js By Z
+$('#left1 .change_area').mouseover(function(){
+$('#left1 .sou_down').show();
+}).mouseout(function(){
+$('#left1 .sou_down').hide();
+});
+
+$('#left1 .sou_down').mouseover(function(){
+$('#left1 .sou_down').show();
+}).mouseout(function(){
+$('#left1 .sou_down').hide();
+});
+
+$('#left1 .sou_down li a').click(function(){
+$('#left1 .change_area input[name=searchtype]').val($(this).attr('rel'));
+$('#left1 .change_area span').text($(this).text());
+$('#left1 .sou_down').hide();
+});
+});
+</script>
+<!--By Z首页搜索结束-->
+
+<div class="container">
+      <div class="over toue">
+          热门行业
+          
+      </div>
+      <div class="newre row">
+       {dede:channelartlist typeid=41 row=6}
+        <div class="col-md-4 mt_20">
+          <ul>
+           <h3><a href="/plus/search.php?typeid={dede:field name='id'/}&starttime=-1&areacode=-1&searchtype=-1">{dede:field name='typename'/}</a><span><a href="/plus/search.php?typeid={dede:field name='id'/}&starttime=-1&areacode=-1&searchtype=-1">更多</a></span></h3>
+            {dede:channel type='son' row=7}
+            <li><a href="/plus/search.php?typeid=[field:id/]&starttime=-1&areacode=-1&searchtype=-1">[field:typename/]</a></li>
+            {/dede:channel}
+           
+          </ul>
+          
+        </div>
+        {/dede:channelartlist}
+      
+      </div>
+</div>
+
+
+<!--111111111111111-->
+<div class="container">
+  <div class="over">
+    <div class="col-md-2 bac hotdoor hotd">VIP企业</div>
+    <div class="col-md-10 hotdoor door">行业名企，让您更放心的工作！</div>
+  </div>
+<!--  <ul  class="nav nav-tabs mb1" role="tablist">
+    <li role="presentation" class="active"><a href='/gongzuo/'>全国招聘企业</a></li>
+    
+    {dede:channelartlist typeid='1,43'}
+    {dede:channel type='son' noself='yes'}
+    <li role='presentation'><a href='[field:typelink/]'>[field:typename/]</a></li>
+    {/dede:channel}
+    {/dede:channelartlist}
+  </ul>
+-->  
+  <div class="pb_20 over" style="border:1px solid #eee; border-top:none;">
+    
+    {dede:arclist  flag='h'  titlelen='100' addfields='gongzi,jiezhan,baomingshu' typeid='1' limit='0,8' channelid='66'}
+      <div class="col-md-3 mt_20">
+      <div class="bac_hui">
+        <p><a href="[field:arcurl/]"><img src="[field:litpic/]" class="img-responsive" /></a></p>
+        <ul>
+          <li> <a target="_blank" href="[field:arcurl/]" class="fon">[field:title/]</a> </li>
+          <li> 月综合工资：<font color="ff6600" size="3">[field:gongzi/]元</font> </li>
+          <li> 接站：[field:jiezhan/]</li>
+          <li> <font color="#999">[field:shorttitle/]</font></li>
+          <li> <span class="btn btn-default ptii">[field:baomingshu/]人报名</span> <a class="btn btn-yellow ptii pull-right"  target="_blank" href="[field:arcurl/]">去看看</a> </li>
+        </ul>
+      </div>
+    </div>
+    {/dede:arclist}
+   
+    </div>
+    <div class="over"></div>
+    <!--最低-->
+   <!-- 工作库里-->
+	{dede:channelartlist typeid="41,150"}
+    {dede:arclist flag='h,c'  titlelen='100' row='2'  orderby='pubdate' addfields='gzname,gongzi,bmrenshu,gongzuojy,edu,zwmiaoshu,zprenshu,lasttime'  limit='0,2' channelid='81' }
+    <div class="row mt_30 pl_20">
+    
+      <div class="col-md-6 top_pa pr_0">
+        <dl>
+          <dt><a target="_blank" href="/plus/view.php?aid=[field:id /]"><u>[field:title /]</u></a>[[field:typename/]]</dt>
+          <dd><span>月薪：</span> [field:gongzi /]</dd>
+          <dd><span>经验：</span>[field:gongzuojy /]</dd>
+          <dd><span>最低学历：</span>[field:edu /]</dd>
+          <dd><span>职位诱惑：</span>[field:zwmiaoshu function='cn_substr(@me, 47)' /]</dd>
+          <dd><span>发布日期：</span>[field:senddate function=MyDate('Y-m-d',@me)/]</dd>
+        </dl>
+      </div>
+      <div class="col-md-6 top_pa">
+        <dl>
+          <dt><a target="_blank" href="/home/index.php?uid=[field:mid /]&action=archives&channelid=81">[field:gzname /]</a></dt>
+          <dd><span>领域：</span>[field:typename/]</dd>
+          <dd><span>招聘人数：</span>[field:zprenshu/]</dd>
+          <dd><span>截至时间：</span>[field:lasttime function=MyDate('Y-m-d',@me)/]</dd>
+          <ul class="mp">
+          </ul>
+        </dl>
+      </div>
+    </div>
+    {/dede:arclist}
+    {/dede:channelartlist}
+    <!----------------------------------------------c-------------------------------------------------------------->
+    
+    
+  </div>
+</div>
+<!--111111111111111-->
+
+<div class="container">
+   <div class="row mt_30 mp pb_20" style="border:1px solid #eee">
+       <div class="newzui"><h4>最新招聘职位</h4><a href="/plus/search.php?typeid=41&starttime=-1&areacode=-1&searchtype=-1">查看更多</a></div>
+     <!-- <div class="over"></div>
+       {dede:arclist flag='p' titlelen='100' orderby='pubdate' limit='0,6' idlist='' addfields='gzname,bmrenshu,zprenshu' typeid='41' channelid='81'}
+       <div class="col-md-4 mp">
+       	 <div class="column">
+            <dl>
+            	<div class="widhs"><p><a href="/plus/view.php?aid=[field:id /]" target="_blank"><img src="[field:litpic/]" class="img-responsive" /></a></p></div>
+                <dt><h4><a href="/plus/view.php?aid=[field:id /]" title="" target="_blank">[field:gzname function='cn_substr(@me, 40)'/]</a></h4></dt>
+                <dd>
+                    <a href="/plus/view.php?aid=[field:id /]">[field:title function='cn_substr(@me, 48)'/]</a>
+                    [field:zprenshu/]
+                </dd>
+                <dd>发布日期：<font color="#999">[field:senddate function=MyDate('Y-m-d',@me)/]</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+        {/dede:arclist} -->
+
+       <!-----------h---------------->
+       
+       <div class="pt_20 over"></div>
+       <!-----------------c-------------------------->
+       {dede:arclist noflag='p'  titlelen='100' orderby='pubdate' limit='0,32' addfields='gzname,bmrenshu,zprenshu,gongzi' typeid='41' channelid='81'}
+       <div class="col-md-3 mp">
+       	 <div class="column sidk">
+            
+            <dl>
+                <dt><h4><a href="/plus/view.php?aid=[field:id /]" title="" target="_blank">[field:title function='cn_substr(@me, 1000)'/]</a></h4></dt>
+                <dd>
+					
+					<a href="/home/index.php?uid=[field:mid /]&action=archives&channelid=81">[field:writer/]</a>
+                    <!-- <a href="/plus/view.php?aid=[field:id /]">[field:gongzi/][field:gongzi runphp='yes'] if(@me=='面议' ) @me=""; else @me="元/月";[/field:gongzi]</a> -->
+                    
+                </dd>
+                <dd>招聘<strong>[field:zprenshu/]人</strong>发布日期：<font color="#999">[field:senddate function=MyDate('Y-m-d',@me)/]</font></dd>
+            </dl>
+            
+         </div>
+       </div>
+       {/dede:arclist}
+		<!------------------------c-------------------------------------------------->
+       
+  </div>
+</div>
+
+
+<div class="container">
+	<section id="cards" class="h2" data-view="channel_cards" data-collection_params="{&amp;quot;category&amp;quot;:&amp;quot;Featured&amp;quot;}"
+	data-collection_name="channels">
+		<div class="row b3">
+        
+        <div class="container">
+            <div class="navbar-header row">
+                <h4 class="tose" >
+                    我们的优势
+                </h4>
+            </div>
+		</div>
+        
+        
+			<div class="col-sm-4">
+				<div class="card" data-name="安心">
+					<img src="/files/style/image/youshi1.png" class="img-responsive"  data-height="64" data-width="65">
+					</img>
+					<div class="count">
+						安心
+					</div>
+					<div class="description">
+						<h2>
+							世界500强合作伙伴
+						</h2>
+						<p>
+							壹打工网，世界500强企业指定招聘合作网站。在大企业工作，倍有面儿！
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card" data-name="贴心">
+					<img src="/files/style/image/youshi2.png" class="img-responsive"  data-height="64" data-width="65">
+					<div class="count">
+						贴心
+					</div>
+					<div class="description">
+						<h2>
+							全程服务
+						</h2>
+						<p>
+							我们帮助您便捷、快速的找到适合的岗位，全程全力支持您的工作。
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card" data-name="放心">
+					<img src="/files/style/image/youshi3.png" class="img-responsive" data-height="64" data-width="65">
+					<div class="count">
+						放心
+					</div>
+					<div class="description">
+						<h2>
+							大品牌，值得信赖
+						</h2>
+						<p>
+							壹打工网，遍布全国的服务网络。从此让你和坑爹的中介说拜拜。
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    
+</div>    
+    
+    
+<!-------baoming------->   
+{dede:include filename="baoming.htm"/}
+<!--------baoming------->
+
+<!-- /footer -->
+{dede:include filename="footer_3.htm"/}
+<!-- /footer -->
+</body>
+</html>

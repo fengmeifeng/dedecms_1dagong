@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="1jobs">
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>{dede:field.title/} - {dede:global.cfg_webname/}</title>
+		<meta name="keywords" content="{dede:field.keywords/}" />
+		<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">		
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+	<body>
+
+	{dede:include filename="inc/head.htm"/}
+
+	<div class="container">
+			<ol class="breadcrumb">
+				<li><a href="http://www.1dagong.com">网站首页</a></li>
+				<li>{dede:type}<a href="[field:typelink /]">[field:typename /]</a>{/dede:type}</li>
+				<li class="active">工作详情</li>
+			</ol>
+	</div>
+
+
+
+	<div class="container">
+		<div class="row">
+
+			<div class="col-sm-3 col-md-2 hidden-xs">
+				<div class="leftfloat pinned" style="width:165px; background:#fff; z-index:99;">
+					<ul class="nav">
+						<li class="active">
+							<a href="#1">
+								快速导航：
+							</a>
+						</li>
+						<li>
+							<a href="#title">
+								{dede:field.title/}
+							</a>
+						</li>
+						<li>
+							<a href="#1">
+								收入怎么样？
+							</a>
+						</li>
+						<li>
+							<a href="#2">
+								工作情况
+							</a>
+						</li>
+						<li>
+							<a href="#3">
+								有什么要求？
+							</a>
+						</li>
+						<li>
+							<a href="#4">
+								包吃包住吗？
+							</a>
+						</li>
+						<li>
+							<a href="#5">
+								福利怎么样？
+							</a>
+						</li>
+						<li>
+							<a href="#myTab">
+								企业真实照片
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div><!--  -->
+
+
+
+			<div class="col-sm-9 col-md-7">
+				<div class="tit">
+					<h1>&nbsp;&nbsp;{dede:field.title/}&nbsp;{dede:field name='flag' runphp="yes"}
+$a="<img src='/files/img/hot.gif' width='35' height='14' alt='强力推荐' />";
+									$b="<img src='/files/img/cj.gif' width='56' height='16' alt='春节特聘' />";
+									if(stristr(@me,'a')){
+										@me=$b; 
+									}else if(stristr(@me,'f')){  
+										@me=$a;
+									}else{
+										@me="";
+									}
+					{/dede:field}<sup>热门</sup></h1>
+                    <div class="clear"></div>
+					<strong class="full-left col-xs-10">{dede:field.miaoshu /}</strong><a href="#" class="btn btn-default  full-right cdhr">收藏企业</a>
+				</div>
+				<div class="row aimgtxt">
+					<div class="col-md-4">
+						<img src="{dede:field.litpic/}" data-src="assets/img/headroom.png" alt="Headroom.js"
+						class="img-thumbnail">
+					</div>
+					<div class="col-md-8">
+						<ul class="nav lihe">
+							<li><span>综合工资：</span><b>{dede:field.gongzi/}</b>元/月</li>
+							<li><span>工作地区：</span>{dede:field.nativeplace/}</li>
+							<li><span>接站地点：</span>{dede:field.jiezhan/}</li>
+							<li class="wid"><span>性别要求：</span>{dede:field.xingbie/}</li>
+							<li class="wid"><span>学历要求：</span>{dede:field.xueli/}</li>
+                            <div class="clear"></div>
+							<li class="wid"><span>招聘人数：</span><strong>{dede:field.zhaopinshu/}</strong>人</li>
+							<li class="wid"><span>报名人数：</span><strong>{dede:field.baomingshu/}</strong>人</li>
+                            <div class="clear"></div>
+							<li><span>报名时间：</span>{dede:field.shijian/}</li>
+                            <li><span style="float:left;">在线咨询：</span>
+                            <a style="float:left; padding:0px; padding-right:3px;" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2967555605&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2967555605:51" alt="QQ在线咨询" title="QQ在线咨询"/></a>
+                            <a style="float:left; padding:0px;" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1905131809&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1905131809:51" alt="QQ在线咨询" title="QQ在线咨询"/></a>
+                            </li>
+						</ul>
+					</div>
+				</div>
+				<div style="clear:both"></div>
+
+				<div class="panel panel-important">
+					
+					<div class="panel-heading">免费报名</div>
+
+					<div class="panel-body">
+						<form class="form-horizontal form-signin"  method="post" action="/home/baoming.php" id="regUser" role="form">
+							<input type="hidden" value="regbase" name="dopost"/>
+							<input type="hidden" value="1" name="step"/>
+							<input type="hidden" value="个人" name="mtype"/>
+							<input type="hidden" value="{dede:field.title/}" name="qym"/>
+						  <div class="form-group">
+							<label for="inputEmail3" class="col-xs-12 col-sm-2 control-label">手机/电话</label>
+							<div class="col-xs-8 col-sm-4">
+							  <input type="text" class="form-control"  placeholder="手机号码" required name="userid" maxlength="13" />
+							</div>
+							<div class="col-xs-4 col-sm-2">
+							  <button type="submit" class="btn btn-primary">免费报名</button>
+							</div>
+
+							<div class="col-xs-12 col-sm-3 btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									为什么要填写手机号码?
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="">1、用来<b>接收我们发送的预订结果短信</b>；</a></li>
+									<li><a href="">2、确认您的身份是有效的；</a></li>
+									<li><a href="">3、其它情况下方便和您联系；</a></li>
+									<li><a href="">4、仅仅为了提醒您或者和您联系，<b>不会收费、吸费</b>；</a></li>
+									<li><a href="">5、网站的一些功能手机验证后才可以使用。</a></li>
+									<li><a href="">请认真核对您的手机号码，<b>错误的手机号码将会导致账户被删除</b>。</a></li>
+								</ul>
+							</div>
+
+						  </div><!-- e -->
+
+						  </div>					  
+						 
+						</form>
+				
+				</div>			
+				
+
+				<div style="clear:both"></div>
+
+
+
+
+
+				<div id="1" class="alert nav-art">
+					<h4>
+						收入
+						<span>
+							
+						</span>
+					</h4>
+				</div>
+				<div class="col-xs-12">
+					<p>
+						{dede:field.shouru /}
+					</p>
+				</div>
+				<div style="clear:both"></div>
+
+				<div id="2" class="alert nav-art">
+					<h4>
+						工作情况
+						<span >
+							
+						</span>
+					</h4>
+				</div>
+				<div class="col-xs-12">
+					<p>
+						{dede:field.gongzuo /}
+					</p>
+				</div><div style="clear:both"></div>
+
+				<div id="3" class="alert nav-art">
+					<h4>
+						要求
+						<span >
+							
+						</span>
+					</h4>
+				</div>
+				<div class="col-xs-12">
+					<p>
+						{dede:field.yaoqiu /}
+					</p>
+				</div><div style="clear:both"></div>
+
+
+				<div id="4" class="alert nav-art">
+					<h4>
+						包吃包住吗
+						<span >
+							
+						</span>
+					</h4>
+				</div>
+				<div class="col-xs-12">
+					<p>
+						{dede:field.chizun /}
+					</p>
+				</div><div style="clear:both"></div>
+
+
+				<div id="5" class="alert nav-art">
+					<h4>
+						福利怎么样
+						<span >
+							
+						</span>
+					</h4>
+				</div>
+				<div class="col-xs-12">
+					<p>
+						{dede:field.daiyu /}
+					</p>
+				</div><div style="clear:both"></div>
+
+				<div id="6" class="alert nav-art">
+					<h4>
+						企业简介
+						<span >
+							
+						</span>
+					</h4>
+				</div>
+				<div class="col-xs-12">
+					<p>
+						{dede:field.qiye /}
+					</p>
+				</div>
+
+
+				<ul id="7" class="nav nav-tabs" id="myTab">
+					<li class="active">
+						<a href="#home" data-toggle="tab">
+							全部图片
+						</a>
+					</li>
+					<li>
+						<a href="#profile" data-toggle="tab">
+							接站现场
+						</a>
+					</li>
+					<li>
+						<a href="#messages" data-toggle="tab">
+							工作情况
+						</a>
+					</li>
+					<li>
+						<a href="#settings" data-toggle="tab">
+							吃住情况
+						</a>
+					</li>
+					<li>
+						<a href="#live" data-toggle="tab">
+							入职现场
+						</a>
+					</li>
+				</ul>
+
+
+				<div class="tab-content bord-top">
+					<div class="tab-pane active" id="home">
+						<ul class="nav">
+							
+							{dede:sql sql='select id,uid,imgtitle,imgurl,simgurl from `zjobs_gongzuoimg` where uid=~id~'}
+						<li class="col-xs-12 col-md-3">
+								<img src="[field:simgurl/]" alt="[field:imgtitle/]" class="img-thumbnail" />
+							</li>
+					{/dede:sql}
+						</ul>
+					</div>
+					<div class="tab-pane" id="profile">
+						<ul class="nav">
+							{dede:sql sql='select id,uid,imgtitle,imgurl,simgurl from `zjobs_gongzuoimg` where uid=~id~ and sort="1"'}
+						<li class="col-xs-12 col-md-3">
+								<img src="[field:simgurl/]" alt="[field:imgtitle/]" class="img-thumbnail" />
+							</li>
+					{/dede:sql}
+						</ul>
+					</div>
+					<div class="tab-pane" id="messages">
+						<ul class="nav">
+						{dede:sql sql='select id,uid,imgtitle,imgurl,simgurl from `zjobs_gongzuoimg` where uid=~id~ and sort="2"'}
+						<li class="col-xs-12 col-md-3">
+								<img src="[field:simgurl/]" alt="[field:imgtitle/]" class="img-thumbnail" />
+							</li>
+					{/dede:sql}
+						</ul>
+					</div>
+					<div class="tab-pane" id="settings">
+						<ul class="nav">
+							{dede:sql sql='select id,uid,imgtitle,imgurl,simgurl from `zjobs_gongzuoimg` where uid=~id~ and sort="4"'}
+						<li class="col-xs-12 col-md-3">
+								<img src="[field:simgurl/]" alt="[field:imgtitle/]" class="img-thumbnail" />
+							</li>
+					{/dede:sql}
+						</ul>
+					</div>
+					<div class="tab-pane" id="live">
+						<ul class="nav">
+							{dede:sql sql='select id,uid,imgtitle,imgurl,simgurl from `zjobs_gongzuoimg` where uid=~id~ and sort="3"'}
+						<li class="col-xs-12 col-md-3">
+								<img src="[field:simgurl/]" alt="[field:imgtitle/]" class="img-thumbnail" />
+							</li>
+					{/dede:sql}
+						</ul>
+					</div>
+				</div>
+            <div class="clear"></div>
+            
+            <div class="bdsharebuttonbox fr mtop-01 mtop-03">
+                <div class="fl juzh">分享：</div>
+                <a class="bds_more" href="#" data-cmd="more"></a>
+                <a class="bds_qzone" title="分享到QQ空间" href="#" data-cmd="qzone"></a>
+                <a class="bds_tqq" title="分享到腾讯微博" href="#" data-cmd="tqq"></a>
+                <a class="bds_weixin" title="分享到微信" href="#" data-cmd="weixin"></a>
+                <a class="bds_tieba" title="分享到百度贴吧" href="#" data-cmd="tieba"></a>
+                <a class="bds_tsina" title="分享到新浪微博" href="#" data-cmd="tsina"></a>
+                <a class="bds_tqf" title="分享到腾讯朋友" href="#" data-cmd="tqf"></a>
+            </div>                         
+				<!-- <script>
+				$(function() {
+				$('#myTab a:last').tab('show')
+				})
+				</script>
+				-->
+			</div><!--  -->
+
+
+			<!-- Optional: clear the XS cols if their content doesn't match in height --><div class="clearfix visible-xs"></div>
+
+			<div class="col-sm-12 col-md-3 rcon">
+            	{dede:include filename="inc/neijian.htm"/}
+				<ul class="list-group">
+					<li class="list-group-item">
+						<span class="badge">
+							<!-- <a href="">
+								我要看更多
+							</a> -->
+						</span>
+						相关的招聘企业
+					</li>
+				</ul>
+				<dl>
+				{dede:arclist row='5'}
+
+					<dt><a href='[field:arcurl/]'>[field:title/]</a></dt>
+					<dd>[field:id runphp="yes"]global $dsql;
+						$query = "SELECT miaoshu FROM `zjobs_addwork6` WHERE aid='@me' ";
+						$dsql->Execute('miaoshu',$query);
+						$row = $dsql->GetArray('miaoshu');
+						$cpsurl.= $row['miaoshu'];
+						@me=$cpsurl;
+						[/field:id]</dd>
+					<dd class="bb">已有<b>[field:id runphp="yes"]global $dsql;
+						$query = "SELECT baomingshu FROM `zjobs_addwork6` WHERE aid='@me' ";
+						$dsql->Execute('baomingshu',$query);
+						$row = $dsql->GetArray('baomingshu');
+						$cpsurl.= $row['baomingshu'];
+						@me=$cpsurl;
+						[/field:id]</b>人报名<u><a href="[field:typeurl/]">我想去</a></u></dd>
+					
+				{/dede:arclist}
+					
+					
+				</dl>
+			</div>
+			<!--  -->
+		</div>
+	</div>
+    
+ <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},
+"image":{"viewList":["qzone","tqq","weixin","tieba","tsina","tqf"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":
+["qzone","tqq","weixin","tieba","tsina","tqf"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script'))
+.src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+{dede:include filename="inc/footer.htm"/}
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+
+
+		<!-- 左侧 -->
+		<script src="/files/js/jquery.pin.js"></script>
+		<script>
+			$(".pinned").pin({containerSelector: ".container", minWidth: 992});
+		</script>
+	</body>
+</html>

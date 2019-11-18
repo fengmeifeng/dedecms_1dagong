@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+	<meta name="description" content="{dede:global.cfg_description/}" />
+	<title>{dede:global.cfg_webname/}</title>
+	<!-- head_css-->
+	{dede:include filename="inc/head_css.htm"/}
+	<!--head_css end -->	
+</head>
+<body>
+<!-- head -->
+
+{dede:include filename="head_3.htm"/}
+<!--head end -->
+<!--            列表                  -->
+<div class="container">
+    <ol class="breadcrumb mt_20">
+        <li class="active"><a href="/">首页</a></li>
+		<li><a href="/plus/search.php?typeid=41&starttime=-1&areacode=0">工作库</a></li>
+    </ol>
+</div>
+
+<div class="container">
+
+
+</div>
+<div class="container">
+	<div class="row">
+    	<div class="col-md-9">
+        	<div class="find mr_20">
+                <form action="/plus/search.php" method="get">
+                    <input type="hidden" name="typeid" value="41">
+                    <input type="hidden" name="starttime" value="-1">
+          <div class="input-group search i_suo" style="border: 2px solid #ff6600;width:800px;">
+                  <div class="left fll" style="position:relative;">
+                    <label class="change_area" style="margin-bottom:0;">
+                      <span href="javascript:;">不限</span><em class="lietou1_icon icon_down1"></em>
+                    <input type="hidden" name="areacode" value="0">
+                    </label>
+                    <div class="sou_down" style="display: none;">
+                      <ul>  
+                        <li><a rel="0" href="javascript:;">不限</a></li>
+                        <li><a rel="1" href="javascript:;">合肥</a></li>
+                        <li><a rel="2" href="javascript:;">上海</a></li>
+                        <li><a rel="3" href="javascript:;">重庆</a></li>
+                        <li><a rel="4" href="javascript:;">江苏</a></li>
+                        <li><a rel="5" href="javascript:;">湖北</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" style="width:606px;border:none;" placeholder="{dede:global.keyword/}" name="q">
+
+                  <span class="input-group-btn" style="width:100px;border-radius: 0px;float:right;margin-left:0;">
+                    <input class="btn btn-yellow pdsf" type="submit" value="搜 索" style="border-radius: 0px;margin-left:0;">搜 索
+                  </span>
+          </div>
+          </form>
+          <!--处理当前选择条件高亮显示 By Z-->
+<script type="text/javascript">
+$(document).ready(function(){
+/*$('#jingxuanku').find('li').mouseover(function(){
+$('#jingxuanku').find('.licon').attr('class', 'licon hide');
+$(this).find('.licon').removeClass('hide');
+});*/
+var areacode=_GET['areacode'];
+if(areacode.value!=''){
+    switch(areacode){
+        case '0':
+            $('.change_area span').text('不限');
+            $('.change_area input[name=areacode]').val('0');
+            break;
+        case '1':
+            $('.change_area span').text('合肥');
+            $('.change_area input[name=areacode]').val('1');
+            break;
+        case '2':
+            $('.change_area span').text('上海');
+            $('.change_area input[name=areacode]').val('2');
+            break;
+        case '3':
+            $('.change_area span').text('重庆');
+            $('.change_area input[name=areacode]').val('3');
+            break;
+        case '4':
+            $('.change_area span').text('江苏');
+            $('.change_area input[name=areacode]').val('4');
+            break;
+        case '5':
+            $('.change_area span').text('湖北');
+            $('.change_area input[name=areacode]').val('5');
+            break;
+        default:
+            $('.change_area span').text('不限');
+            $('.change_area input[name=areacode]').val('0');
+    }                                                                 
+}
+$('.change_area').mouseover(function(){
+$('.sou_down').show();
+}).mouseout(function(){
+$('.sou_down').hide();
+});
+
+$('.sou_down').mouseover(function(){
+$('.sou_down').show();
+}).mouseout(function(){
+$('.sou_down').hide();
+});
+
+$('.sou_down li a').click(function(){
+$('.change_area input[name=areacode]').val($(this).attr('rel'));
+$('.change_area span').text($(this).text());
+$('.sou_down').hide();
+});
+
+});
+</script>
+                <div class="heis mb_10">热门搜索：     
+					<a href="/plus/search.php?typeid=45&areacode={dede:global.areacode/}&starttime=-1">技工</a>
+					<a href="/plus/search.php?typeid=53&areacode={dede:global.areacode/}&starttime=-1">销售</a>
+					<a href="/plus/search.php?typeid=50&areacode={dede:global.areacode/}&starttime=-1">仓储</a>
+					<a href="/plus/search.php?typeid=46&areacode={dede:global.areacode/}&starttime=-1">服务员</a>
+					<a href="/plus/search.php?typeid=49&areacode={dede:global.areacode/}&starttime=-1">家政服务</a>
+					<a href="/plus/search.php?typeid=51&areacode={dede:global.areacode/}&starttime=-1">汽车修理</a>
+                </div>
+				<div class="over"></div>
+
+                <dl class="reset">
+                    <dt>行业领域：</dt>
+                    <dd id="hangye">
+                    <a href='/plus/search.php?typeid=41&starttime=-1&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&areacode={dede:global.areacode/}' id="41">不限</a>   
+                    {dede:channel type='son' typeid=41}
+         <a href='/plus/search.php?typeid=[field:id/]&starttime=-1&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&areacode=[field:global.areacode/]' id="[field:id/]">[field:typename/]</a>&nbsp;&nbsp;{/dede:channel}
+                    </dd>
+                </dl>
+                
+                <dl class="reset">
+                    <dt>更新时间：</dt>
+                    <dd id="shijian">
+                    <a title="" href="/plus/search.php?typeid={dede:global.typeid/}&keyword={dede:global.keyword/}&starttime=-1&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&areacode={dede:global.areacode/}" id="-1">不限</a>
+                   
+<a href="/plus/search.php?typeid={dede:global.typeid/}&keyword={dede:global.keyword/}&starttime=1&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&areacode={dede:global.areacode/}" id="1">1天内</a>
+<a href="/plus/search.php?typeid={dede:global.typeid/}&keyword={dede:global.keyword/}&starttime=3&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&areacode={dede:global.areacode/}" id="3">3天内</a>
+<a href="/plus/search.php?typeid={dede:global.typeid/}&keyword={dede:global.keyword/}&starttime=5&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&areacode={dede:global.areacode/}" id="5">5天内</a>
+<a href="/plus/search.php?typeid={dede:global.typeid/}&keyword={dede:global.keyword/}&starttime=7&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&areacode={dede:global.areacode/}" id="7">7天内</a>
+<a href="/plus/search.php?typeid={dede:global.typeid/}&keyword={dede:global.keyword/}&starttime=15&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&areacode={dede:global.areacode/}" id="15">15天内</a>
+                    </dd>
+                </dl>
+                
+            </div> 
+
+            <div class="fine mr_20 busa mt_20">     
+                <span>共为您找到 <strong>{dede:global.num_count/}</strong> 职位 </span>
+                <div class=" pull-right">
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                        &nbsp;薪酬范围选择 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+						<li><a href="/plus/search.php?typeid={dede:global.typeid/}&starttime={dede:global.starttime/}&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&keyword={dede:global.keyword/}&areacode={dede:global.areacode/}">不限</a></li>
+                        <li><a href="/plus/search.php?typeid={dede:global.typeid/}&starttime={dede:global.starttime/}&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&salary=面议&keyword={dede:global.keyword/}&areacode={dede:global.areacode/}">面议</a></li>
+                        <li><a href="/plus/search.php?typeid={dede:global.typeid/}&starttime={dede:global.starttime/}&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&salary=1000-2000&keyword={dede:global.keyword/}&areacode={dede:global.areacode/}">1000-2000</a></li>
+                        <li><a href="/plus/search.php?typeid={dede:global.typeid/}&starttime={dede:global.starttime/}&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&salary=2000-3000&keyword={dede:global.keyword/}&areacode={dede:global.areacode/}">2000-3000</a></li>
+                        <li><a href="/plus/search.php?typeid={dede:global.typeid/}&starttime={dede:global.starttime/}&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&salary=3000-5000&keyword={dede:global.keyword/}&areacode={dede:global.areacode/}">3000-5000</a></li>
+                        <li><a href="/plus/search.php?typeid={dede:global.typeid/}&starttime={dede:global.starttime/}&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&salary=5000-8000&keyword={dede:global.keyword/}&areacode={dede:global.areacode/}">5000-8000</a></li>
+                        <li><a href="/plus/search.php?typeid={dede:global.typeid/}&starttime={dede:global.starttime/}&channeltype=0&orderby=sortrank&pagesize=10&kwtype=1&searchtype=titlekeyword&salary=8000以上&keyword={dede:global.keyword/}&areacode={dede:global.areacode/}">8000以上</a></li>
+                      </ul>
+                    </div>
+                </div> 
+            </div>       
+            <div class="over"></div>
+            <div class="l_list mr_20">
+                <div class="l_lie">
+                {dede:list perpage='20'} 
+                    <a href="/plus/view.php?aid=[field:id /]" target="_blank" class="belie">
+                        <h3>[field:title/]</h3>
+                        <ul class="row">
+                        	<li class="col-md-3"><font color="#333">[field:gzname function="cn_substr(@me,32)"/]</font></li>
+                            <!--<li class="col-md-3">[field:nativeplace/]<?php //echo cn_substr(trim($v['zwmiaoshu']),30);?></li>-->
+							<li class="col-md-3"><font color="#333">招聘人数: [field:zprenshu/]</font></li>
+                            <li class="col-md-3">发布于[field:pubdate function='date("Y-m-d",@me)' /]</li>
+                            <li class="col-md-3">月薪
+								<font size="+1" color="#ff6600">[field:gongzi/]</font>								
+							</li>
+                        </ul>
+                    </a> 
+                {/dede:list}
+                </div>
+
+            <nav class="text-center">
+              <ul class="pagination pagination-lg ">
+                {dede:pagelist listsize='4'/}
+              </ul>
+            </nav>
+            </div>
+             
+        </div>
+        
+        <div class="col-md-3 col-sm-12 rcon">
+            
+            <div class="mbott mb_30 mr_10">
+                <a href="/neijian">
+                    <img class="img-responsive" title="1+2事业平台" src="/files/style/image/nei_12.jpg" data-bd-imgshare-binded="1">
+                </a>
+            </div>
+            <ul class="list-group mr_10">
+                <li class="list-group-item"><span class="badge"> </span>相关的招聘职位</li>
+            </ul>
+            
+            	<dl class="mr_10">
+             {dede:list perpage='8'}
+
+                    <dt><a href='/plus/view.php?aid=[field:id /]'>[field:title/]</a></dt>
+                    <dd>[field:id runphp="yes"]global $dsql;
+                        $query = "SELECT zwmiaoshu FROM `zjobs_addgongzuo81` WHERE aid='@me' ";
+                        $dsql->Execute('zwmiaoshu',$query);
+                        $row = $dsql->GetArray('zwmiaoshu');
+                        $cpsurl.= $row['zwmiaoshu'];
+                        @me=cn_substr($cpsurl,100)."...";
+                        [/field:id]</dd>
+                    <dd class="bb" style="height:20px;"><u><a href="/plus/view.php?aid=[field:id /]">我想去</a></u></dd>
+                    
+                {/dede:list}
+            </dl> 
+            
+            </div>            
+            
+        </div>
+        
+        
+    </div>
+    
+<!--            列表                  -->    
+
+
+
+<!-------baoming------->   
+{dede:include filename="baoming.htm"/}
+<!--------baoming------->
+
+
+<!-- /footer -->
+{dede:include filename="footer_3.htm"/}
+<!-- /footer -->
+<!--###############################################################################处理当前菜单高亮显示的JS By Z-->
+<script language="javascript" type="text/javascript">
+// var idstr=_GET['typeid'];
+eval("var _GET=new Array();var URI=location.href;var url=URI.substr(URI.indexOf('?')+1,URI.length-URI.indexOf('?'));url=url.split('&');for(var k in url){_GET[url[k].substr(0,url[k].indexOf('='))]=decodeURI(url[k].substr(url[k].indexOf('=')+1,url[k].length));}_GET=_GET?_GET:null;");
+var classstr="active";
+var idstr=_GET['typeid'];
+var idstr2=_GET['starttime'];
+    $(function(){
+        $("#hangye a").each(function(){
+            // alert("message");
+        // alert(_GET['typeid']);
+            if($(this).attr('id')==idstr){
+                // alert("111");
+            $(this).addClass(classstr);
+            // $("#41").removeClass('active');
+            }
+        
+        })
+        $("#shijian a").each(function(){
+            // alert("message");
+        // alert(_GET['typeid']);
+            if($(this).attr('id')==idstr2){
+                // alert("111");
+            $(this).addClass(classstr);
+            // $("#41").removeClass('active');
+            }
+        
+        })        
+    
+    })
+</script>
+</body>
+</html>

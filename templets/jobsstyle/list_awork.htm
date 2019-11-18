@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="1dagong">
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>{dede:field.typename/}工作|{dede:field.typename/}普工|{dede:field.typename/}招聘|{dede:field.typename/}进厂 - {dede:global.cfg_webname/}</title>
+		<meta name="keywords" content="{dede:field.keywords/}" />
+		<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">		
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+	<body>
+
+	{dede:include filename="inc/head.htm"/}
+
+	<div class="container">
+			<ol class="breadcrumb">
+				<li><a href="http://www.1dagong.com">网站首页</a></li>
+				<li>{dede:type}<a href="[field:typelink /]">[field:typename /]</a>{/dede:type}</li>
+				<li class="active">工作概况</li>
+			</ol>
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+
+			
+				<img src="/files/zt/lufei/lufei.jpg" class="img-responsive mb1" alt="世界500强企业合作伙伴" />
+
+				<ul  class="nav nav-tabs mb1" role="tablist">
+					<li role="presentation" class="active"><a href='/gongzuo/'>全国招聘企业</a></li>
+					{dede:channel channel=66 type='self' row='8' currentstyle="<li role='presentation' class='active'><a href='~typelink~'>~typename~</a> </li>"}
+						<li role='presentation'><a href='[field:typelink/]'>[field:typename/]</a></li>
+					{/dede:channel}
+				</ul>
+			
+
+
+				<div class="row">
+					
+					
+					{dede:list pagesize='6'}
+					<div class="col-sm-6 col-md-4 imgintrocon">
+						<div class="thumbnail imgintro">
+							<a href="[field:arcurl/]"><img src="[field:litpic/]" alt="[field:title/]"></a>
+							<dl>
+								<dt><a href="[field:arcurl/]">[field:title/]</a></dt>
+								<dd>月综合工资：<b>[field:gongzi/]元</b></dd>
+								<dd>接站：[field:jiezhan/]</dd>
+								<dd class="intro">[field:shorttitle/]</dd>
+								<dd>已报名人数：<em>[field:baomingshu/]</em>人<span>&nbsp;[field:flag runphp="yes"]
+									$a="<img src='/files/img/hot.gif' width='35' height='14' alt='强力推荐' />";
+									$b="<img src='/files/img/cj.gif' width='56' height='16' alt='春节特聘' />";
+									if(stristr(@me,'a')){
+										@me=$b; 
+									}else if(stristr(@me,'f')){
+										@me=$a;
+									}else{
+										@me="";
+									}
+								[/field:flag]<a href="[field:arcurl/]">去看看</a></span></dd>
+							</dl>
+						</div>
+					</div>
+					{/dede:list}
+
+
+					<div class="clearfix visible-xs"></div>
+					<hr />
+
+					<div class="container">
+						<ul class="pagination pagination-lg">
+							{dede:pagelist listitem="index,end,pre,next,pageno" listsize="5"/}
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="col-md-3 rcon">
+            	{dede:include filename="inc/neijian.htm"/}
+				<ul class="list-group">
+					<li class="list-group-item">
+						<span class="badge">
+							<!-- <a href="">我要看更多</a> -->
+						</span>
+						相关的招聘企业
+					</li>
+				</ul>
+
+
+				<dl>
+					{dede:arclist flag='c' row=6 titlelen=100 channelid=66 addfields='gongzi,baomingshu'}
+					<dt><a href="[field:arcurl/]">[field:title/]</a></dt>
+					<dd>月薪：<b>[field:gongzi/]元</b></dd>
+					<dd>说明：[field:shorttitle/]</dd>
+					<dd class="bb">已有<b>[field:baomingshu/]</b>人报名<u><a href="[field:arcurl/]">我想去</a></u></dd>
+					{/dede:arclist}										
+				</dl>
+
+
+			</div>
+		</div>
+
+
+
+    </div>
+
+
+
+
+{dede:include filename="inc/footer.htm"/}
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+
+
+		<!-- 左侧 -->
+		<script src="/files/js/jquery.pin.js"></script>
+		<script>
+			$(".pinned").pin({containerSelector: ".container", minWidth: 992});
+		</script>
+	</body>
+
+</html>

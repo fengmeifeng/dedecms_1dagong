@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<title>{dede:global.cfg_webname/}</title>
+
+<link href="{dede:global.cfg_templets_skin/}/style/css/bootstrap.css" type="text/css" rel="stylesheet" /> 
+
+<link href="{dede:global.cfg_templets_skin/}/style/css/all.css" type="text/css" rel="stylesheet" />
+
+<script src="{dede:global.cfg_templets_skin/}/style/js/jquery.min.js" language="JavaScript" type="text/javascript" ></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/bootstrap.min.js" language="JavaScript" type="text/javascript" ></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/npm.js" language="JavaScript" type="text/javascript" ></script>
+
+</head>
+
+<body>
+
+<!-- head -->
+{dede:include filename="head.htm"/}
+<!--head end -->
+
+
+
+<!--            列表                  -->
+
+<div class="container">
+    <ol class="breadcrumb mt_20">
+        <li><a href="{dede:global.cfg_cmsurl/}/">网站首页</a></li>
+		<li>{dede:type}<a href="[field:typelink /]">[field:typename /]</a>{/dede:type}</li>
+		<li class="active">工作概况</li>
+    </ol>
+</div>
+  
+
+<div class="container">
+	<div class="row">
+    	<div class="jl_mu">
+             <dl class="ji_mizi">
+             	<dt><h3>王智华</h3>（男，26岁）<span>求职求职求职</span></dt>
+                <dd>更新时间：2013-10-10</dd>
+                <dd>浏览量：<font color="#ff6600"> 69 </font>次</dd>
+                <dd>2周内：投递<font color="#ff6600"> 25 </font>次 被下载<font color="#ff6600"> 12 </font>次</dd>
+             </dl>
+             
+             <ul class="ji_xi mt_30">
+             	<li class="col-md-6">期望职位：<a href="#">其他职位</a></li>
+                <li class="col-md-6">最高学历：大专</li>
+                <li class="col-md-6">期望月薪：3000-5000元</li>
+                <li class="col-md-6">工作年限：2-3年</li>
+                <li class="col-md-6">期望地区：北京 - 丰台</li>
+                <li class="col-md-6">籍　　贯：北京 - 北京</li>
+             </ul>
+             
+             <button type="button" class="btn btn-warning ji_lixi"> 查看联系方式 </button>
+             
+             <div class="ji_jing mt_30">
+             	<p>工作经验<span>（工作了2年，做了3份工作）</span></p>
+             	<dl>
+                	<dt>苏宁电器售后服务中心</dt>
+                    <dd>工作时间：2011年4月 至 2011年9月 [5个月]</dd>
+                </dl>
+             </div>
+        </div>
+    </div>
+</div>
+    
+<!--            列表                  -->    
+
+
+
+
+<!-------baoming------->   
+{dede:include filename="baoming.htm"/}
+<!--------baoming------->
+
+<!-- /footer -->
+{dede:include filename="footer.htm"/}
+<!-- /footer -->
+
+<script src="http://www.1dagong.com/files/js/jquery.pin.js"></script>
+<script>
+			$(".pinned").pin({containerSelector: ".container", minWidth: 992});
+		</script>
+</body>
+</html>

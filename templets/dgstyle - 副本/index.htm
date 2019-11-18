@@ -1,0 +1,646 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}</title>
+
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta name="description" content="{dede:global.cfg_description/}" />
+
+<link href="/files/style/css/bootstrap.css" type="text/css" rel="stylesheet" /> 
+
+<link href="/files/style/css/all.css" type="text/css" rel="stylesheet" />
+
+<script src="/files/style/js/jquery.min.js" language="JavaScript" type="text/javascript" ></script>
+<script src="/files/style/js/bootstrap.min.js" language="JavaScript" type="text/javascript" ></script>
+<script src="/files/style/js/npm.js" language="JavaScript" type="text/javascript" ></script>
+
+</head>
+
+<body>
+<!-- head -->
+{dede:include filename="head.htm"/}
+<!--head end -->
+<div class="register">
+    <div class="container">
+        <form class="form-signin zhuce col-md-4 col-xs-12 pull-right" role="form" method="post" action="./home/baoming.php" id="regUser">
+            <div class="pull-right mren"><button type="button" class="btn btn-info"><a href="/home/register.php" target="_blank" style="color:#fff; text-decoration:none;">企业招聘服务入口</a></button></div>
+            <input type="hidden" value="regbase" name="dopost"/>
+            <input type="hidden" value="1" name="step"/>
+            <input type="hidden" value="个人" name="mtype"/>
+
+            <h3 class="form-signin-heading">免费报名 </h3>
+
+            <span class="help-block">填写您的手机号码：</span>
+
+            <input type="text" class="form-control" placeholder="手机号码" required autofocus  name="userid" maxlength="13">
+            <label class="checkbox">
+             仅仅只需一步，让工作来找你。
+            </label>
+            <button class="btn btn-lg btn-purple btn-block" type="submit">提交</button>
+       </form>
+    </div> 
+</div>
+
+<div class="container">
+	<div class="row">
+    <!--栏目-->
+    	<div class="col-md-3 mt_30 pr_0">
+        	<div class="mleft">
+            <!--循环开始-->
+            {dede:channelartlist typeid=41 row=4}
+            <dl class="mb_10">
+            	<dt><h4 class="pull-left">{dede:field name='typename'/}</h4> <a  class="btn btn-link">更多 &gt;</a></dt>
+                　{dede:channel type='son'}
+                <dd><a href="[field:typelink/]">[field:typename/]</a></dd>
+                　{/dede:channel}
+            </dl>
+            {/dede:channelartlist}
+            
+         
+            
+            
+            </div>
+        </div>
+    	<!--栏目-->
+        
+        <div class="col-md-9 mright mt_30">
+        	<div class="row">
+                <div class="col-md-9 pr_0">
+                    <div class=" malf" style="background:#ccc; height:246px;"></div>
+                </div>
+                
+                <div class="col-md-3">
+                    <ul class="nav nav-tabs nav-justified nop">
+                      <li class="active"><a href="#weixin" data-toggle="tab">微信</a></li>
+                      <li><a href="#web" data-toggle="tab">手机</a></li>
+                      <li><a href="#app" data-toggle="tab">客户端</a></li>
+                    </ul>
+        
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                      <div class="tab-pane active noppa" id="weixin">
+                        <a data-toggle="modal" href="#weixintext"><img src="{dede:global.cfg_templets_skin/}/image/weixin.jpg" class="img-responsive" alt="微信二维码" /></a>			
+                      </div>
+        
+                      <div class="tab-pane noppa" id="web">
+                        <a data-toggle="modal" href="#webtext"><img src="{dede:global.cfg_templets_skin/}/image/shouji.jpg" class="img-responsive" alt="手机访问" /></a>
+                      </div>
+        
+                      <div class="tab-pane noppa" id="app">
+                        <a data-toggle="modal" href="#apptext"><img src="{dede:global.cfg_templets_skin/}/image/duan.jpg" class="img-responsive" alt="手机客户端" /></a>
+                      </div>
+                    </div>
+        
+                    <!-- Modal -->
+                    <div class="modal fade" id="weixintext" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><font color="#ff0000">&times;</font></button>
+                            <h4 class="modal-title" id="myModalLabel">“壹打工网”微信详情</h4>
+                          </div>
+                          <div class="modal-body">
+                            微信号添加方法：<br />
+                            <br />
+                            1、登录微信&nbsp;&gt;&nbsp;扫一扫&nbsp;&gt;&nbsp;扫描二维码即可<br />
+                            <br />
+                            2、添加微信号：<b>yidagongwang</b><br />
+                            <br />
+                            3、查找公众号：<b>壹打工</b><br />
+                            <br />
+                            <br />
+                            <span style="color:#b22222;"><strong>关注“壹打工网”微信号，获得最新打工信息！</strong>&nbsp;轻松打工，自在壹打工！</span><br />
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                          </div>
+                        </div><!-- /.modal-content -->
+                      </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="webtext" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><font color="#ff0000">&times;</font></button>
+                            <h4 class="modal-title" id="myModalLabel">“壹打工网”手机访问方法</h4>
+                          </div>
+                          <div class="modal-body">
+                            手机扫描二维码或输入网址 www.1dagong.com 即可进入壹打工网官方网站<br />
+                            <br />
+                            <br />
+                            <span style="color:#b22222;"><strong>手机访问“壹打工网” 获得最新打工信息！</strong>&nbsp;轻松打工，自在壹打工！</span><br />
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                          </div>
+                        </div><!-- /.modal-content -->
+                      </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="apptext" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><font color="#ff0000">&times;</font></button>
+                            <h4 class="modal-title" id="myModalLabel">“壹打工网”手机客户端下载方法</h4>
+                          </div>
+                          <div class="modal-body">
+                            <br />
+                            一 、手机浏览器”二维码扫描功能“扫描二维码即可下载，安装即可使用 。<br />
+                            <br />
+                            二 、如果您是手机访问，<a href="http://www.1dagong.com/1dagong.apk" title="壹打工网手机客户端下载">点击这里下载</a> 。<br />
+                            <br />
+                            三 、您也可以下载客户端到电脑，连接手机，复制1dagong.apk至手机中进行安装 。<br />
+                            <br />
+                            <br />
+                            <span style="color:#b22222;"><strong>手机下载“壹打工网”客户端，获得最新打工信息！</strong>&nbsp;轻松打工，自在壹打工！</span><br />
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                          </div>
+                        </div><!-- /.modal-content -->
+                      </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                </div>
+            </div>
+            
+                <div class="key malf col-md-12 over">
+                    <a class="btn btn-default" href="">8小时工作时间</a>
+                    <a class="btn btn-default" href="">缴纳保险</a>
+                    <a class="btn btn-default" href="">双休</a>
+                    <a class="btn btn-purple" href="">世界500强企业</a>
+                    <a class="btn btn-default" href="">食宿全包</a>
+                    <a class="btn btn-default" href="">无试用期</a>
+                    <a class="btn btn-default" href="">工作餐</a>
+                    <a class="btn btn-default" href="">月薪4000以上</a>
+                    <a class="btn btn-default" href="">空调</a>
+                    <a class="btn btn-default" href="">工作舒适</a>
+                    <a class="btn btn-default" href="">带薪年假</a>
+                    <a class="btn btn-default" href="">法定节假日</a>
+                    <a class="btn btn-default" href="">培训</a>
+                    <a class="btn btn-default" href="">推荐企业</a>
+                    
+                </div>
+            
+            
+            <div class="row malf mt_30 over mr_0">
+                <div class="col-md-2 bac hotdoor hotd"><strong>热门招聘</strong></div>
+                <div class="col-md-10 hotdoor door">壹打工网，工作让生活更精彩！</div>
+    		</div>
+            
+            <div class="row malf mt_20 over mr_0">
+                <div class="col-md-4">
+                	<div class="bac_hui">
+                        <p><a href="#"><img src="{dede:global.cfg_templets_skin/}/image/01.jpg" class="img-responsive" /></a></p>
+                        <ul>
+                            <li>
+                              <a target="_blank" href="#" class="fon">合肥联宝电子科技有限公司</a>
+                            </li>
+                            <li>
+                              月综合工资：<font color="ff6600" size="3">2800～3800元</font>
+                            </li>
+                            <li>
+                              接站：合肥寅特尼人才市场
+                            </li>
+                            <li>
+                              <font color="#999">购买五险一金</font>
+                            </li>
+                            <li>
+                                <span class="btn btn-default ptii">366人报名</span>
+                                <a class="btn btn-yellow ptii pull-right" href="#">去看看</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                	<div class="bac_hui">
+                        <p><a href="#"><img src="{dede:global.cfg_templets_skin/}/image/01.jpg" class="img-responsive" /></a></p>
+                        <ul>
+                            <li>
+                              <a target="_blank" href="#" class="fon">合肥联宝电子科技有限公司</a>
+                            </li>
+                            <li>
+                              月综合工资：<font color="ff6600" size="3">2800～3800元</font>
+                            </li>
+                            <li>
+                              接站：合肥寅特尼人才市场
+                            </li>
+                            <li>
+                              <font color="#999">购买五险一金</font>
+                            </li>
+                            <li>
+                                <span class="btn btn-default ptii">366人报名</span>
+                                <a class="btn btn-yellow ptii pull-right" href="#">去看看</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                	<div class="bac_hui">
+                        <p><a href="#"><img src="{dede:global.cfg_templets_skin/}/image/01.jpg" class="img-responsive" /></a></p>
+                        <ul>
+                            <li>
+                              <a target="_blank" href="#" class="fon">合肥联宝电子科技有限公司</a>
+                            </li>
+                            <li>
+                              月综合工资：<font color="ff6600" size="3">2800～3800元</font>
+                            </li>
+                            <li>
+                              接站：合肥寅特尼人才市场
+                            </li>
+                            <li>
+                              <font color="#999">购买五险一金</font>
+                            </li>
+                            <li>
+                                <span class="btn btn-default ptii">366人报名</span>
+                                <a class="btn btn-yellow ptii pull-right" href="#">去看看</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    		</div>
+            
+            <div class="row malf mt_20">
+                <div class="col-md-6 top_pa">
+                    <dl>
+                        <dt><a target="_blank" href="#"><u>内部电视台主管</u></a>[合肥]</dt>
+                        <dd><span>月薪： </span> 6k-10k</dd>
+                        <dd><span>经验：</span>3-5年</dd>
+                        <dd><span>最低学历：</span>本科</dd>
+                        <dd><span>职位诱惑：</span>专业的电视人，成为面对7万人的企业面孔</dd>
+                        <dd><span>发布日期：</span>2015-02-02</dd>
+                    </dl>
+                </div>
+                
+                <div class="col-md-6 top_pa">
+                    <dl>
+                        <dt><a target="_blank" href="#">合肥联宝</a></dt>
+                        <dd><span>领域：</span>视频多媒体</dd>
+                        <dd><span>阶段：</span>上市公司</dd>
+                        <dd><span>规模：</span>2000人以上</dd>
+                        <ul class="mp">
+                            <li class="btn btn-default ptii">技能培训</li>
+                            <li class="btn btn-default ptii">带薪年假</li>
+                            <li class="btn btn-default ptii">绩效奖金</li>
+                        </ul>
+                    </dl>
+                </div>
+
+            </div>
+             
+            <div class="row malf mt_20 bak_ff mr_0">
+                <div class="col-md-6 top_pa">
+                    <dl>
+                        <dt><a target="_blank" href="#"><u>内部电视台主管</u></a>[合肥]</dt>
+                        <dd><span>月薪： </span> 6k-10k</dd>
+                        <dd><span>经验：</span>3-5年</dd>
+                        <dd><span>最低学历：</span>本科</dd>
+                        <dd><span>职位诱惑：</span>专业的电视人，成为面对7万人的企业面孔</dd>
+                        <dd><span>发布日期：</span>2015-02-02</dd>
+                    </dl>
+                </div>
+                
+                <div class="col-md-6 top_pa">
+                    <dl>
+                        <dt><a target="_blank" href="#">合肥联宝</a></dt>
+                        <dd><span>领域：</span>视频多媒体</dd>
+                        <dd><span>阶段：</span>上市公司</dd>
+                        <dd><span>规模：</span>2000人以上</dd>
+                        <ul class="mp">
+                            <li class="btn btn-default ptii">技能培训</li>
+                            <li class="btn btn-default ptii">带薪年假</li>
+                            <li class="btn btn-default ptii">绩效奖金</li>
+                        </ul>
+                    </dl>
+                </div>
+
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+<!--111111111111111-->
+
+<div class="container">
+  <div class="row mt_30 mp" style="border:1px solid #eee">
+       
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+    <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       <div class="col-md-3 mp">
+       	 <div class="column">
+            
+            <dl>
+                <dt><h4><a href="#" title="">合肥联宝电宝电子科技有限公司</a></h4></dt>
+                <dd>
+                    <a href="#">装修测试</a>
+                    <a href="#">建筑</a>
+                </dd>
+                <dd>发布日期：<font color="#999">2015-02-02</font></dd>
+            </dl>
+            
+         </div>
+       </div> 
+       
+  </div>
+</div>
+
+<div class="container lefr">
+    	<div class="row b4">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				我们的优势
+			</a>
+		</div>
+		<!--/.navbar-collapse -->
+        </div>
+	</div>
+
+	<section id="cards" class="h2" data-view="channel_cards" data-collection_params="{&amp;quot;category&amp;quot;:&amp;quot;Featured&amp;quot;}"
+	data-collection_name="channels">
+		<div class="row b3">
+			<div class="col-sm-4">
+				<div class="card" data-name="安心">
+					<img src="/img/s1.gif" alt="C++" data-view="channel_image" data-name="C++"
+					data-height="24" data-width="22">
+					</img>
+					<div class="count">
+						安心
+					</div>
+					<div class="description">
+						<h2>
+							世界500强合作伙伴
+						</h2>
+						<p>
+							壹打工网，世界500强企业指定招聘合作网站。在大企业工作，倍有面儿！
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card" data-name="贴心">
+					<img src="/img/s2.gif" alt="java" data-view="channel_image" data-name="java"
+					data-height="24" data-width="22">
+					</img>
+					<div class="count">
+						贴心
+					</div>
+					<div class="description">
+						<h2>
+							全程服务
+						</h2>
+						<p>
+							我们帮助您便捷、快速的找到适合的岗位，全程全力支持您的工作。
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card" data-name="放心">
+					<img src="/img/s3.gif" alt="Firebase" data-view="channel_image" data-name="Firebase"
+					data-height="24" data-width="22">
+					</img>
+					<div class="count">
+						放心
+					</div>
+					<div class="description">
+						<h2>
+							大品牌，值得信赖
+						</h2>
+						<p>
+							壹打工网，遍布全国的服务网络。从此让你和坑爹的中介说拜拜。
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    
+    
+    
+<!-------baoming------->   
+{dede:include filename="baoming.htm"/}
+<!--------baoming------->
+
+<!-- /footer -->
+{dede:include filename="footer.htm"/}
+<!-- /footer -->
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="/favicon.png">
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>{dede:field.title/} - {dede:global.cfg_webname/}</title>
+		<meta name="keywords" content="{dede:field.keywords/}" />
+		<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		 <link href="/files/css/zt/lufei.css" rel="stylesheet"><!-- 专题 -->
+
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+
+
+	{dede:include filename="inc/head.htm"/}
+
+
+	
+
+   <div id="clouds" class="lufeibg">
+    <div class="container">
+      <div class="row"> 
+        
+        <!--first column starts-->
+        <div class="col-md-6">
+
+			<div class="lfbanner">
+
+			<img src="/files/zt/lufei/money.jpg" width="590" height="380" class="img-responsive" alt="你找工作，我出路费" />
+			<div style="clear:both"></div>
+
+				<div class="panel panel-important">
+					
+					<div class="panel-heading">立即免费报名</div>
+
+					<div class="panel-body">
+						<form class="form-horizontal" class="form-signin" method="post" action="/member/baoming.php" id="regUser" role="form">
+							<input type="hidden" value="regbase" name="dopost"/>
+							<input type="hidden" value="1" name="step"/>
+							<input type="hidden" value="个人" name="mtype"/>
+						  <div class="form-group">
+							<label for="inputEmail3" class="col-xs-12 col-sm-2 control-label">手机：</label>
+							<div class="col-xs-8 col-sm-4">
+							  <input type="text" class="form-control"  placeholder="手机号码" required name="userid" maxlength="13" />
+							</div>
+							<div class="col-xs-4 col-sm-2">
+							  <button type="submit" class="btn btn-primary">免费报名</button>
+							</div>
+
+							<div class="col-xs-12 col-sm-3 btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									为什么要手机号码?
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="">1、用来<b>接收我们发送的预订结果短信</b>；</a></li>
+									<li><a href="">2、确认您的身份是有效的；</a></li>
+									<li><a href="">3、其它情况下方便和您联系；</a></li>
+									<li><a href="">4、仅仅为了提醒您或者和您联系，<b>不会收费、吸费</b>；</a></li>
+									<li><a href="">5、网站的一些功能手机验证后才可以使用。</a></li>
+									<li><a href="">请认真核对您的手机号码，<b>错误的手机号码将会导致账户被删除</b>。</a></li>
+								</ul>
+							</div>
+
+						  </div><!-- e -->
+
+						  </div>					  
+						 
+						</form>
+				
+				</div>		
+				        
+			</div>
+         
+		</div>
+        <!--first column ends--> 
+        
+        <!--second column starts-->
+        <div class="col-md-6">
+          <ul class="myunstyled features-style1">
+            <li> <img src="/files/zt/lufei/icon-clock.png" alt="icon" class="icon-bg">
+              <h2 class="heading-styled">省内200<span>.00元</span></h2>
+              <p>在本省内的企业工作，可以获得<b>200元</b>的路费，入职15天后，直接发放到银行卡。<small>以身份证户籍地为准</small></p>
+            </li>
+            <li> <img src="/files/zt/lufei/icon-chart.png" alt="icon" class="icon-bg">
+              <h2 class="heading-styled">省外300<span>.00元</span></h2>
+              <p>在省外的企业工作，可以获得<b>300元</b>的路费，入职15天后，直接发放到银行卡。<small>以身份证户籍地为准</small></p>
+            </li>
+            <li> <img src="/files/zt/lufei/icon-badge.png" alt="icon" class="icon-bg">
+              <h2 class="heading-styled">世界500强企业<span>授权招聘</span></h2>
+              <p>联合利华、健鼎科技、英业达集团、合肥联宝电子等名企授权招聘</p>
+            </li>
+			<li> <img src="/files/zt/lufei/icon-man.png" alt="icon" class="icon-bg">
+              <h2 class="heading-styled">171,536人<span>已成功入职</span></h2>
+              <p>我们已经为17,1536位用户成功提供了满意的好工作</p>
+            </li>
+          </ul>
+        </div>
+        <!--second column ends--> 
+		<div class="clearfix"></div>
+
+
+
+		<!-- <div class="alert alert-orange">路费补助流程：<b>1、输入手机号免费报名。</b>→&nbsp;<b>2、客服人员为您安排工作。</b>→&nbsp;<b>3、入职15天后，登录本网站填写银行卡号。</b>→&nbsp;<b>4、工作人员发放路费补助。</b></div> -->
+		
+		  <div class="col-xs-12 col-sm-6"><center><a class="btn btn-lg btn-success" data-toggle="modal" href="#zhaogongzuo" role="button"><b>报名找工作的步骤？</b></a>&nbsp;&nbsp;<a class="btn btn-lg btn-success" data-toggle="modal" href="#lufeibaoxiao" role="button"><b>路费如何报销？</b></a></center></div>
+		  <div class="col-xs-12 col-sm-6"></div>
+
+
+					  <!-- Modal -->
+			<div class="modal fade" id="zhaogongzuo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><font color="#ff0000">&times;</font></button>
+					<h4 class="modal-title" id="myModalLabel">报名找工作的步骤？</h4>
+				  </div>
+				  <div class="modal-body">
+					1、登录要工作网（<a href="http://www.ijobs.com">www.1jobs.com</a>）。<br />
+					<br />
+					2、<a href="http://www.1jobs.com/member/baoming.php">免费报名</a>。<br />
+					<br />
+					3、招聘客服一对一服务（推荐名企，应聘入职一站式服务，1天包上岗！）。<br />
+					<br />
+					<br />
+					<span style="color:#b22222;"><strong>上要工作网（<a href="http://www.1jobs.com">www.1jobs.com</a>），让工作来找你！&nbsp;简单，简单，上要工作网找工作就是这么简单！</strong></span><br />
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				  </div>
+				</div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+
+			<!-- Modal -->
+			<div class="modal fade" id="lufeibaoxiao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><font color="#ff0000">&times;</font></button>
+					<h4 class="modal-title" id="myModalLabel">路费如何报销？</h4>
+				  </div>
+				  <div class="modal-body">
+					1、&nbsp;通过要工作网应聘成功（我们的工作人员通过您报名时提交的手机号码，成功的联系到您）。<br />
+					<br />
+					2、&nbsp;在企业工作满15天。<br />
+					<br />
+					3、登录要工作网（<a href="http://www.1jobs.com">www.1jobs.com</a>）提交您的银行卡信息（短信验证）。<br />
+					<br />
+					4、客服审核（5个工作日）。<br />
+					<br />
+					5、 客服审核通过，为您转账（1个工作日内，省内200元，省外300元）。<br />
+					<br />
+					<span style="color:#b22222;"><strong>上要工作网（<a href="http://www.1jobs.com">www.1jobs.com</a>）找工作，你找工作，我出路费，无须提供车票即可兑现，上要工作网（<a href="http://www.1jobs.com">www.1jobs.com</a>）找工作原来可以这样！</strong></span><br />
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				  </div>
+				</div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+
+		  <div class="clearfix"></div>
+
+
+        
+        <!--spacer here-->
+        <div class="spacer-10px"></div>
+        
+        <!--boxed features starts-->
+        <div class="col-md-4">
+          <div class="box-color clearfix">
+            <h4>我们的免费接待站</h4>
+            <!-- <img src="./Megabiz by Tansh_files/img80x80-1.jpg" alt="image" class="img-left"> -->
+            <p>我们在合肥、蚌埠、芜湖、上海、重庆、湖北、苏州、常熟、无锡等地，均有“要工作网”接待中心，让您去的放心。</p>
+            <!-- <a href="#">CCB News »</a> -->
+		</div>
+        </div>
+        <div class="col-md-4">
+          <div class="box-color clearfix">
+            <h4>我们的客服中心</h4>
+            <p>客服中心免费客服电话全天候开放，随时随地拨打，均有专业客服为您提供一对一的贴心服务。免费电话：<b>400-118-5188</b></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box-color clearfix">
+            <h4>我们的网络支持</h4>
+            <p>无论您是使用电脑、智能手机、平板电脑，都可以无障碍的全天候访问要工作网（www.1jobs.com），获得最新工作信息。</p>
+           </div>
+        </div>
+        <!--boxed features ends--> 
+        
+      </div>
+    </div>
+  </div>
+  <!--clouds ends-->
+
+
+
+
+
+
+
+	{dede:include filename="inc/footer.htm"/}
+
+
+
+
+		<!-- Bootstrap core JavaScript==================================================-
+		->
+		<!-- Placed at the end of the document so the pages load faster -->
+
+		<script src="/files/js/bootstrap-carousel.min.js"></script><!-- 首页幻灯js -->
+	</body>
+
+</html>

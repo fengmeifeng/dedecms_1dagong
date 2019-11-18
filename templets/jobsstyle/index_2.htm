@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>壹打工网 - 激动人心的事业，从壹打工网开始！</title>
+		<meta name="keywords" content="打工网,手机招聘网,招工网,壹打工网" />
+		<meta name="description" content="壹打工网是专业提供各大企业招聘招工信息的大型普工类网站。我们致力于为普工提供更好的工作,为企业输送更多的普工." />
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+        <link rel="shortcut icon" href="/files/favicon.ico"/>	
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+
+		 <link href="/files/css/carousel.css" rel="stylesheet"><!-- 仅首页 -->		 
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+
+
+	{dede:include filename="inc/head.htm"/}
+
+	{dede:include filename="inc/h.htm"/}
+
+
+
+
+
+    
+
+	<!-- <div class="container">
+
+	  <div class="alert alert-warning fade in">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <font color="#ff0000">祝您在新的一年里，马上有房，马上有车，马上有钱，马上有对象，马上有健康，<strong>马上有工作</strong>！祝大家春节愉快，合家欢乐！</font> 
+      </div>
+
+	  <a href="/zt/lufei/"><img src="/files/zt/lufei/lufei_i.jpg" class="img-responsive mb1" alt="你找工作，我出路费" /></a>
+
+	 </div>
+ -->
+ 	<div class="container">
+        <div class="row" style=" padding:0 15px; margin-bottom:15px;"><a href="http://www.1dagong.com/zt/qiyehezuo/" target="_blank" ><img src="/files/image/shenqing.jpg" class="img-responsive" alt="申请合作" /></a></div>
+    </div>
+
+	<div class="container lefr">
+    	<div class="row b4">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				名企招聘
+			</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<div class="navbar-form navbar-right">
+				<a href="/home/baoming.php" class="btn btn-success" role="button">
+					立即报名
+				</a>
+			</div>
+		</div>
+		<!--/.navbar-collapse -->
+        </div>
+	</div>
+
+	
+     <div class="container mt1">
+		<ul class="nav nav-tabs" id="companytab">
+			<li class="active"><a href="#allarea" data-toggle="tab">最新招聘企业</a></li>
+			<li><a href="#hefei" data-toggle="tab">合肥</a></li>
+			<li><a href="#bengbu" data-toggle="tab">蚌埠</a></li>
+			<li><a href="#wuhu" data-toggle="tab">芜湖</a></li>
+			<li><a href="#shanghai" data-toggle="tab">上海</a></li>
+			<li><a href="#chongqing" data-toggle="tab">重庆</a></li>
+			<li><a href="#hubei" data-toggle="tab">湖北</a></li>
+			<li><a href="#suzhou" data-toggle="tab">苏州</a></li>
+			<li><a href="#changshu" data-toggle="tab">常熟</a></li>
+			<li><a href="#wuxi" data-toggle="tab">无锡</a></li>
+		</ul>
+		<div style="clear:both"></div>
+
+		<div class="tab-content mt1">
+
+			<div class="tab-pane active" id="allarea">
+				{dede:arclist row=12 titlelen=100 channelid=66 addfields='gongzi,miaoshu,jiezhan,baomingshu'}
+					<div class="col-sm-6 col-md-3 imgintrocon">
+						<div class="thumbnail imgintro">
+							<a href="[field:arcurl/]"><img src="[field:litpic/]" alt="[field:title/]"></a>
+							<dl>
+								<dt><a href="[field:arcurl/]">[field:title/]</a></dt>
+								<dd>月综合工资：<b>[field:gongzi/]元</b></dd>
+								<dd>接站：[field:jiezhan/]</dd>
+								<dd class="intro">[field:shorttitle/]</dd>								
+								<dd><em>[field:baomingshu/]</em>人报名<span>&nbsp;
+								[field:flag runphp="yes"]
+									$a="<img src='/files/img/hot.gif' width='35' height='14' alt='强力推荐' />";
+									$b="<img src='/files/img/cj.gif' width='56' height='16' alt='春节特聘' />";
+									if(stristr(@me,'a')){
+										@me=$b; 
+									}else if(stristr(@me,'f')){  
+										@me=$a;
+									}else{
+										@me="";
+									}
+								[/field:flag]
+
+<a href="[field:arcurl/]">去看看</a></span></dd>
+							</dl>
+						</div>
+					</div>
+					{/dede:arclist}
+			</div>
+
+						{dede:channelartlist typeid=1 row=10}			
+			<div class="tab-pane" id="{dede:field name='typeurl' function='str_replace("/","",@me)'/}">
+				<div class="container">
+					<div class="row">
+						{dede:arclist row=4 titlelen=100 channelid=66 addfields='gongzi,miaoshu,baomingshu'}
+						<div class="col-sm-6 col-md-3 imgintrocon">
+							<div class="thumbnail imgintro">
+								<img src="[field:litpic/]" alt="[field:title/]">
+								<dl>
+									<dt><a href="[field:arcurl/]">[field:title/]</a></dt>
+									<dd>月综合工资：<b>[field:gongzi/]元</b></dd>
+									<dd class="intro">[field:shorttitle/]</dd>
+									<dd><em>[field:baomingshu/]</em>人报名<span>&nbsp;[field:flag runphp="yes"]
+									$a="<img src='/files/img/hot.gif' width='35' height='14' alt='强力推荐' />";
+									$b="<img src='/files/img/cj.gif' width='49' height='14' alt='春节特聘' />";
+									if(stristr(@me,'a')){
+										@me=$b; 
+									}else if(stristr(@me,'f')){  
+										@me=$a;
+									}else{
+										@me="";
+									}
+								[/field:flag]<a href="[field:arcurl/]">去看看</a></span></dd>
+								</dl>
+							</div>
+						</div>
+						{/dede:arclist}						
+					</div>
+				</div>
+			</div>			
+			{/dede:channelartlist}
+
+
+		</div>					
+
+    </div> <!-- /container -->
+
+
+
+	<div class="container lefr">
+    	<div class="row b4">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				壹打工网接站
+			</a>
+		</div>
+		<!--/.navbar-collapse -->
+        </div>
+	</div>
+
+	<section id="cards" class="container lefr" data-view="channel_cards" data-collection_params="{&amp;quot;category&amp;quot;:&amp;quot;Featured&amp;quot;}"
+	data-collection_name="channels">
+		<div class="row b3">
+            <div class="col-md-12">	
+                {dede:arclist typeid=28 row=4}
+                <div class="col-sm-6 col-md-3 imgintrocon">
+                    <div class="thumbnail imgintro">
+                        <a href="[field:arcurl/]"><img src="[field:litpic/]" alt="[field:title/]"></a>
+                        <dl>
+                            <dt><a href="[field:arcurl/]">[field:title/]</a></dt>
+                        </dl>
+                    </div>
+                </div>
+                {/dede:arclist}
+
+               </div>
+
+		</div>
+	</section>
+
+
+
+	<div class="container lefr mtop-04">
+    	<div class="row b4 mb1">
+		<div class="navbar-header col-xs-12">
+			<span class="navbar-brand fl col-xs-12 pa-l pncf">
+				最新征文 :
+			</span>
+            
+            <ul class="fl inzw col-xs-12 col-md-8 mtop-05 pabott">
+				{dede:arclistsg typeid=20 row=5 titlelen=100 channelid='-68'}
+            	<li><a href="[field:arcurl/]" target="_blank">[field:title/]</a></li>
+				{/dede:arclistsg}	
+
+            </ul>
+            <div class="navbar-form navbar-right fr col-xs-12 col-md-2">
+                <a class="btn btn-success" role="button" href="/home/baoming.php" target="_blank"> 我要投稿 </a>
+            </div>
+		</div>
+		<!--/.navbar-collapse -->
+        </div>
+	</div>
+
+	<div class="container lefr">
+    	<div class="row b4">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				我们的优势
+			</a>
+		</div>
+		<!--/.navbar-collapse -->
+        </div>
+	</div>
+
+	<section id="cards" class="container lefr" data-view="channel_cards" data-collection_params="{&amp;quot;category&amp;quot;:&amp;quot;Featured&amp;quot;}"
+	data-collection_name="channels">
+		<div class="row b3">
+			<div class="col-sm-4">
+				<div class="card" data-name="安心">
+					<img src="/img/s1.gif" alt="C++" data-view="channel_image" data-name="C++"
+					data-height="24" data-width="22">
+					</img>
+					<div class="count">
+						安心
+					</div>
+					<div class="description">
+						<h2>
+							世界500强合作伙伴
+						</h2>
+						<p>
+							壹打工网，世界500强企业指定招聘合作网站。在大企业工作，倍有面儿！
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card" data-name="贴心">
+					<img src="/img/s2.gif" alt="java" data-view="channel_image" data-name="java"
+					data-height="24" data-width="22">
+					</img>
+					<div class="count">
+						贴心
+					</div>
+					<div class="description">
+						<h2>
+							全程服务
+						</h2>
+						<p>
+							我们帮助您便捷、快速的找到适合的岗位，全程全力支持您的工作。
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card" data-name="放心">
+					<img src="/img/s3.gif" alt="Firebase" data-view="channel_image" data-name="Firebase"
+					data-height="24" data-width="22">
+					</img>
+					<div class="count">
+						放心
+					</div>
+					<div class="description">
+						<h2>
+							大品牌，值得信赖
+						</h2>
+						<p>
+							壹打工网，遍布全国的服务网络。从此让你和坑爹的中介说拜拜。
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="container lefr">
+    	<div class="row b4">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				壹打工网二维码
+			</a>
+		</div>
+		<!--/.navbar-collapse -->
+        </div>
+	</div>
+
+	<section id="cards" class="container lefr" data-view="channel_cards" data-collection_params="{&amp;quot;category&amp;quot;:&amp;quot;Featured&amp;quot;}"
+	data-collection_name="channels">
+		<div class="row b3">
+			<div class="col-sm-4">
+                <div class="tab-pane active" id="weixin">
+                  <a data-toggle="modal" href="#weixintext"><img src="/files/img/weixin.png" class="img-responsive" alt="微信二维码" /></a>			
+                </div>
+			</div>
+			<div class="col-sm-4">
+                <div class="tab-pane" id="web">
+                    <a data-toggle="modal" href="#webtext"><img src="/files/img/weixin_3.jpg" class="img-responsive" alt="手机访问" /></a>
+                </div>
+			</div>
+			<div class="col-sm-4">
+                <div class="tab-pane" id="app">
+                    <a data-toggle="modal" href="#apptext"><img src="/files/img/weixin_2.jpg" class="img-responsive" alt="手机客户端" /></a>
+                </div>
+            </div>
+		</div>
+        <div class="modal fade" id="weixintext" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><font color="#ff0000">&times;</font></button>
+					<h4 class="modal-title" id="myModalLabel">“壹打工网”微信详情</h4>
+				  </div>
+				  <div class="modal-body">
+					微信号添加方法：<br />
+					<br />
+					1、登录微信&nbsp;&gt;&nbsp;扫一扫&nbsp;&gt;&nbsp;扫描二维码即可<br />
+					<br />
+					2、添加微信号：<b>yidagongwang</b><br />
+					<br />
+					3、查找公众号：<b>壹打工</b><br />
+					<br />
+					<br />
+					<span style="color:#b22222;"><strong>关注“壹打工网”微信号，获得最新打工信息！</strong>&nbsp;轻松打工，自在壹打工！</span><br />
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				  </div>
+				</div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+            
+            <!-- Modal -->
+			<div class="modal fade" id="webtext" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><font color="#ff0000">&times;</font></button>
+					<h4 class="modal-title" id="myModalLabel">“壹打工网”手机访问方法</h4>
+				  </div>
+				  <div class="modal-body">
+					手机扫描二维码或输入网址 www.1dagong.com 即可进入壹打工网官方网站<br />
+					<br />
+					<br />
+					<span style="color:#b22222;"><strong>手机访问“壹打工网” 获得最新打工信息！</strong>&nbsp;轻松打工，自在壹打工！</span><br />
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				  </div>
+				</div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+            
+            
+            <!-- Modal -->
+			<div class="modal fade" id="apptext" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><font color="#ff0000">&times;</font></button>
+					<h4 class="modal-title" id="myModalLabel">“壹打工网”手机客户端下载方法</h4>
+				  </div>
+				  <div class="modal-body">
+					<br />
+					一 、手机浏览器”二维码扫描功能“扫描二维码即可下载，安装即可使用 。<br />
+					<br />
+					二 、如果您是手机访问，<a href="http://www.1dagong.com/1dagong.apk" title="壹打工网手机客户端下载">点击这里下载</a> 。<br />
+					<br />
+					三 、您也可以下载客户端到电脑，连接手机，复制1dagong.apk至手机中进行安装 。<br />
+					<br />
+					<br />
+					<span style="color:#b22222;"><strong>手机下载“壹打工网”客户端，获得最新打工信息！</strong>&nbsp;轻松打工，自在壹打工！</span><br />
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				  </div>
+				</div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+	</section>
+
+			<div class="container projects lefr_bo">
+				<div class="row">
+					<h4>
+						我们的合作伙伴
+						<div class="navbar-form navbar-right fr col-xs-12 col-md-2">
+							<a class="btn btn-success" role="button" href="/home/company.php" target="_blank">企业合作 </a>
+						</div>
+					</h4>
+					<p>
+						我们的所有合作伙伴，每一个都是由我们根据用户的工作反馈，精挑细选出来的。您可以放心的工作。
+					</p>
+				</div>
+				<div class="row">
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b1.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b2.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b3.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b4.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b5.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b6.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b7.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b8.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b9.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b10.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b11.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+					
+					<div class="col-xs-4 col-sm-3 col-md-2">
+						<div class="thumbnail">
+							<img class="lazy" src="/images/b12.jpg" data-src="assets/img/headroom.png" alt="Headroom.js">
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+		{dede:include filename="inc/footer.htm"/}
+
+
+
+	</body>
+
+</html>

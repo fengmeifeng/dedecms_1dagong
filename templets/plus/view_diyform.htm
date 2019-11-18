@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title><?php echo $diy->name;?> - powered by dedecms</title>
+<link href="./img/nspage.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="main mceneter">
+	<div class="toplogo">
+		<div class="logo">
+				<a href="/"><img src="<?php echo $cfg_templeturl; ?>/default/images/logo.gif" /></a>		</div>
+		<div class="title">
+			<a href='diy.php?action=list&diyid=<?php echo $diy->diyid; ?>'><?php echo $diy->name; ?></a>	&gt; 详细内容
+		</div>
+	</div>
+	<div class="cmain">
+		<div class="ctitle">
+			<h1><?php echo $diy->name;?>详细内容</h1>
+			<span></span>
+		</div>
+		<div class="cbox mceneter">
+			<div class="maplist">
+			<br />
+<table class='listtable' cellspacing="1">
+<tbody>
+<tr><td bgcolor="#eeeeee" width="20%">id</td><td bgcolor="#eeeeee"><?php echo $row['id']; ?></td></tr>
+<tr><td bgcolor="#eeeeee" width="20%">生日</td><td bgcolor="#eeeeee"><?php echo $row['shengri']; ?></td></tr>
+ <tr>
+            <td>目前所在地：</td>
+            <td> 省份：
+              <?php
+   $places = GetEnumsTypes($row['nativeplace']);
+   echo ( isset($em_nativeplaces[$places['top']]) ?  $em_nativeplaces[$places['top']] : '');
+    ?>
+                城市：
+              <?php
+    echo ( isset($em_nativeplaces[$places['son']]) ?  $em_nativeplaces[$places['son']] : '');
+    ?></td>
+          </tr>
+</tbody>
+</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="copyright mceneter">
+Powered by <a href="http://www.dedecms.com" target="_blank">DedeCMS</a> &copy; 2004-2009  <a href="http://www.desdev.cn" target="_blank">DesDev</a> Inc.
+</div>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<title>{dede:field.typename/}工作|{dede:field.typename/}普工|{dede:field.typename/}招聘|{dede:field.typename/}进厂 - {dede:global.cfg_webname/}</title>
+	<meta name="keywords" content="{dede:field.keywords/}" />
+	<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+	<!-- head_css-->
+	{dede:include filename="inc/head_css.htm"/}
+	<!--head_css end -->	
+</head>
+<body>
+<!-- head -->
+{dede:include filename="head_3.htm"/}
+<!--head end -->
+
+
+
+<!--            列表                  -->
+
+<div class="container">
+    <ol class="breadcrumb mt_20">
+        <li><a href="/">网站首页</a></li>
+		<li>{dede:type}<a href="[field:typelink /]">[field:typename /]</a>{/dede:type}</li>
+    </ol>
+</div>
+    
+
+<div class="container">
+	<div class="row">
+    	<div class="col-md-9">
+            
+            <div class=" mr_20">
+				<img src="/files/zt/lufei/lufei.jpg" class="img-responsive mb1" alt="世界500强企业合作伙伴" />
+
+				<ul  class="nav nav-tabs mb1" role="tablist">
+					<li role="presentation" class="active"><a href='/gongzuo/'>全国招聘企业</a></li>
+					{dede:channel reid='43 type='self' row='8' currentstyle="<li role='presentation' class='active'><a href='~typelink~'>~typename~</a> </li>"}
+						<li role='presentation'><a href='[field:typelink/]'>[field:typename/]</a></li><!--[field:typelink/]-->
+					{/dede:channel}
+					<!--<li role='presentation'><a href='/hefei/'>合肥</a></li>
+					<li role='presentation' class='active'><a href='/wuhu/'>芜湖</a> </li>
+					<li role='presentation'><a href='/bangbu/'>蚌埠</a></li>
+					<li role='presentation'><a href='/chongqing/'>重庆</a></li>
+					<li role='presentation'><a href='/shanghai/'>上海</a></li>
+					<li role='presentation'><a href='/changshu/'>常熟</a></li>
+					<li role='presentation'><a href='/hubei/'>湖北</a></li>
+                    <li role='presentation'><a href='/suzhou/'>苏州</a></li>-->
+					
+				</ul>
+            </div>
+            
+          <div class="row over mr_20 ml_0">
+                
+                <!----------------------------------------------------------------->
+                {dede:list pagesize='6'}
+                <div class="col-md-6">
+                	<div class="bac_hui hezuo_box mt_30">
+                        <p><a href="[field:arcurl/]"><img src="[field:litpic/]" class="img-responsive" /></a></p>
+                        <ul>
+                            <li>
+                              <a target="_blank" href="[field:arcurl/]" class="fon">[field:title/]</a>
+                            </li>
+                            <li>
+                              月综合工资：<font color="ff6600" size="3">[field:gongzi/]元/月</font>
+                            </li>
+							 
+                            <!-- <li>
+                              接站:[field:jiezhan/]
+                            </li> -->
+                            <li>
+                              <font color="#999">[field:shorttitle/]</font>
+                            </li>
+                             <li>
+                                 <ul class="mp hezuo_tag">
+
+                                    [field:id function=GetTags_html(@me)/]
+									
+                                 </ul>
+							</li> 
+                            <li>
+                                <span class="btn btn-default ptii">[field:baomingshu/]人报名</span>
+                                <a class="btn btn-yellow ptii pull-right" href="[field:arcurl/]">去看看</a>
+                            </li>
+                        </ul>
+						<div class="top_img"></div>
+                    </div>
+                </div>
+                {/dede:list}
+                <!--------------------------------------------->
+                
+               
+                
+    		</div>
+
+            
+            <nav class="text-center">
+              <ul class="pagination pagination-lg "><!-- mr_20 -->
+                <!--<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2 </a></li>
+                <li><a href="#">3 </a></li>
+                <li><a href="#">4 </a></li>
+                <li><a href="#">5 </a></li>
+                <li><a href="#">6 </a></li>
+                <li><a href="#" aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>-->
+                {dede:pagelist listitem="index,end,pre,next,pageno" listsize="5"/}
+              </ul>
+            </nav>
+             
+        </div>
+        
+        <div class="col-md-3 col-sm-12 rcon">
+            
+            <div class="mbott mb_30 mr_10">
+                <a href="#">
+                    <img class="img-responsive" title="1+2事业平台" src="/files/style/image/nei_12.jpg" data-bd-imgshare-binded="1">
+                </a>
+            </div>
+            <ul class="list-group mr_10">
+                <li class="list-group-item">相关的招聘企业</li>
+            </ul>
+            
+            <dl class="mr_10">
+            	{dede:arclist flag='c' row=6 titlelen=100 channelid=66 addfields='gongzi,baomingshu,shorttitle'}
+					<dt><a href="[field:arcurl/]">[field:title/]</a></dt>
+					<dd>月薪：<b>[field:gongzi/]元</b></dd>
+					<dd>说明：[field:shorttitle/]</dd>
+					<dd class="bb">已有<b>[field:baomingshu/]</b>人报名<u><a href="[field:arcurl/]">我想去</a></u></dd>
+				{/dede:arclist}
+               <!-- <dt><a href="/hefei/012432014.html">合肥联宝电子科技有限公</a></dt>
+                <dd>待遇丰厚、24小时无尘车间</dd>
+                <dd class="bb">已有<b>736</b>人报名<u><a href="/hefei/012432014.html">我想去</a></u></dd> -->
+            </dl>
+            </div>            
+            
+        </div>
+        
+        
+    </div>
+</div>
+    
+<!--            列表                  -->    
+
+
+<!-------baoming------->   
+{dede:include filename="baoming.htm"/}
+<!--------baoming------->
+
+
+
+<!-- /footer -->
+{dede:include filename="footer_3.htm"/}
+<!-- /footer -->
+
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>
+			壹打工网 - 会员评论
+		</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/files/css/all.css" rel="stylesheet">
+		<link href="/files/css/ie7.css" rel="stylesheet">
+        <link href="/files/css/zt/pinglun.css" rel="stylesheet">
+</head>
+<body>
+{dede:include filename="inc/head.htm"/}
+
+<div class="container">
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>
+                <a href="http://www.1dagong.com">网站首页</a>
+            </li>
+            <li class="active">会员评论</li>
+        </ol>
+    </div>
+
+<div class="container">   
+
+    <div class="row">
+        <div class="col-md-8">
+			
+			{dede:list pagesize='6'}
+        	<div class="lun_list">
+            	<i class="touleft"></i>
+                <p>[field:neirong/]</p>
+                <i class="touright"></i>
+                <div class="kong"></div>
+                <div class="reply">[field:huifu/]</div>
+                <span>发表于：[field:shijian function='strftime("%Y-%m-%d %H:%M:%S","@me")' /] [field:xingming/]</span>
+            </div>
+			{/dede:list}
+            
+            <ul class="pagination pagination-lg">
+                {dede:pagelist listitem="index,end,pre,next,pageno" listsize="5"/}
+            </ul>
+        </div>
+            
+        <div class="col-md-4">
+        	{dede:include filename="inc/neijian.htm"/}
+            <div class="panel panel-info toma"><!--    列表一上背景   ---->
+                <div class="panel-heading">
+                  <h4 class="panel-title">我也有话说</h4>
+                  
+                </div>
+                <div class="list_pinglun row">
+                	<textarea class="anjs col-xs-11" value="说完提交即可..."  onfocus="this.value=''" onblur="if(this.value==''){this.value='说完提交即可...'}" ></textarea>
+                </div>
+                <div class="navbar-form">
+                    <a class="btn btn-info hrigd" role="button" href="#"> 提  交 </a>
+                </div>
+            </div>
+            
+            <div class="also">
+            	<h1>您还可以这样说：</h1>
+                <p>一、关注壹打工网为您精心准备的微信公众号，直接语音或文字留言就可以啦。赶快用微信扫描二维码关注吧。</p>
+                <div class="tab-pane wxewm" id="weixin wxewm"><img src="../../files/image/wxewm.jpg" /><a data-toggle="modal" href="#weixintext" class="btn-default btn">点击查看微信添加详情</a></div>
+                
+              
+
+                <p>二、您也可以拨打我们的全国免费服务热线： <a href="tel:400-118-5188">400-118-5188</a>，对网站进行评价。</p>
+				<p>三、使用使用手机客户端，登录“我有话说”，即可与我们进行互动。</p>
+            </div>
+        </div>
+    </div>
+<!-- Modal -->
+			<div class="modal fade" id="weixintext" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><font color="#ff0000">&times;</font></button>
+					<h4 class="modal-title" id="myModalLabel">“壹打工网”微信详情</h4>
+				  </div>
+				  <div class="modal-body">
+					微信号添加方法：<br />
+					<br />
+					1、登录微信&nbsp;&gt;&nbsp;扫一扫&nbsp;&gt;&nbsp;扫描二维码即可<br />
+					<br />
+					2、添加微信号：<b>yidagongwang</b><br />
+					<br />
+					3、查找公众号：<b>壹打工</b><br />
+					<br />
+					<br />
+					<span style="color:#b22222;"><strong>关注“壹打工网”微信号，获得最新打工信息！</strong>&nbsp;轻松打工，自在壹打工！</span><br />
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				  </div>
+				</div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+ </div>  
+ </div>
+
+{dede:include filename="inc/footer.htm"/}
+</body>
+</html>

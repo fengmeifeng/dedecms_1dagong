@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>{dede:field.title/} - {dede:global.cfg_webname/}</title>
+		<meta name="keywords" content="{dede:field.keywords/}" />
+		<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+        <link href="/files/css/zt/zhengwen.css" rel="stylesheet" />  <!--------1打工征文页面-------->        
+		 <link href="/files/css/carousel.css" rel="stylesheet"><!-- 仅首页 -->		 
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+		<script language="javascript" type="text/javascript">
+<!--
+
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("已经赞过了！"); return;}
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "{dede:global.cfg_phpurl/}/dz_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:global.cfg_phpurl/}/dz_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+
+	</head>
+
+	<body>
+
+    
+{dede:include filename="inc/head.htm"/}
+
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>
+                <a href="http://www.1dagong.com">网站首页</a>
+            </li>
+            <li>
+                <a href="/zhengwen/">征文</a>
+            </li>
+            <li class="active">会员征文投稿详情</li>
+        </ol>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 acon">
+              <div class="page-header bse-ctr">
+                <h1 class="in-toph-lzw">{dede:field.title/}</h1>
+                <div class="mtop color">发布时间 : {dede:field.pubdate function="MyDate('Y年m月d日',@me)"/} <span class="idtt">作者 : {dede:field.xingming/}</span>
+                <div class="newdigg" id="newdigg" style="display:inline">
+					<div class="btn-group btn-group-xs">
+					  <a type="button" class="btn btn-purple" onclick="javascript:postDigg('good',{dede:field.aid/})">我要点赞</a>
+					  <a type="button" class="btn btn-default">{dede:field.goodpost/}</a>
+					</div>
+				</div>
+				<script language="javascript" type="text/javascript">getDigg({dede:field.id/});</script>
+                </div>
+                
+                
+              </div>
+              <div class="lead mtop idtt fon">
+              	{dede:field.neirong/}
+              </div>
+              
+                <div class="pull-right idtt">
+                	<span type="button" class="btn btn-default btn-sm">&lt; {dede:prenext get='pre'/}</span>
+                	<span type="button" class="btn btn-default btn-sm">{dede:prenext get='next'/} &gt;</span>
+                </div>
+                
+                
+                <div class="clear"></div>
+                <div class="bdsharebuttonbox fr mtop-01">
+              	<div class="fl juzh">分享：</div>
+                    <a class="bds_more" href="#" data-cmd="more"></a>
+                    <a class="bds_qzone" title="分享到QQ空间" href="#" data-cmd="qzone"></a>
+                    <a class="bds_tqq" title="分享到腾讯微博" href="#" data-cmd="tqq"></a>
+                    <a class="bds_weixin" title="分享到微信" href="#" data-cmd="weixin"></a>
+                    <a class="bds_tieba" title="分享到百度贴吧" href="#" data-cmd="tieba"></a>
+                    <a class="bds_tsina" title="分享到新浪微博" href="#" data-cmd="tsina"></a>
+                    <a class="bds_tqf" title="分享到腾讯朋友" href="#" data-cmd="tqf"></a>
+                </div>
+                <div class="clear"></div>
+              <!--<div class="fr twen"><a href="" class="btn btn-success fon">立即报名 >></a></div>-->
+            <div class="panel panel-important shtop">
+              <div class="panel-heading">免费报名</div>
+              <div class="panel-body">
+                <form id="regUser" class="form-horizontal" role="form" action="/home/baoming.php" method="post">
+                  <input type="hidden" name="dopost" value="regbase">
+                  <input type="hidden" name="step" value="1">
+                  <input type="hidden" name="mtype" value="个人">
+                  <input type="hidden" name="qym" value="广达上海制造城上海达丰电脑">
+                  <div class="form-group">
+                    <label class="col-xs-12 col-sm-2 control-label" for="inputEmail3">手机/电话</label>
+                    <div class="col-xs-8 col-sm-4">
+                      <input class="form-control" type="text" maxlength="13" name="userid" required placeholder="手机号码">
+                    </div>
+                    <div class="col-xs-4 col-sm-2">
+                      <button class="btn btn-primary" type="submit">免费报名</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            为什么要填写手机号码?
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="">1、用来<b>接收我们发送的预订结果短信</b>；</a></li>
+                            <li><a href="">2、确认您的身份是有效的；</a></li>
+                            <li><a href="">3、其它情况下方便和您联系；</a></li>
+                            <li><a href="">4、仅仅为了提醒您或者和您联系，<b>不会收费、吸费</b>；</a></li>
+                            <li><a href="">5、网站的一些功能手机验证后才可以使用。</a></li>
+                            <li><a href="">请认真核对您的手机号码，<b>错误的手机号码将会导致账户被删除</b>。</a></li>
+                        </ul>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            </div>
+            
+            <div class="col-md-3 acon">
+				{dede:include filename="inc/neijian.htm"/}
+                <div class="panel panel-info"><!--    列表一上背景   ---->
+                    <div class="panel-heading">
+                      <h4 class="panel-title">最新的投稿征文</h4>
+                    </div>
+                    <div class="list-group">
+					{dede:arclistsg}
+                    <a class="list-group-item" href="[field:arcurl/]">[field:title/]</a></a>
+					{/dede:arclistsg}
+                    </div>
+                </div>
+            </div>
+	</div>
+ </div>
+
+
+ <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},
+"image":{"viewList":["qzone","tqq","weixin","tieba","tsina","tqf"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":
+["qzone","tqq","weixin","tieba","tsina","tqf"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script'))
+.src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+		{dede:include filename="inc/footer.htm"/}
+
+	</body>
+
+</html>

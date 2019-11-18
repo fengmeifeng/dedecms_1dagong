@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>{dede:field.title/} - {dede:global.cfg_webname/}</title>
+		<meta name="keywords" content="{dede:field.keywords/}" />
+		<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+        <link href="/files/css/zt/zhengwen.css" rel="stylesheet" />  <!--------1打工征文页面-------->        
+		 <link href="/files/css/carousel.css" rel="stylesheet"><!-- 仅首页 -->		 
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+<script language="javascript" type="text/javascript">
+<!--
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg'+aid);
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("已经赞过了！"); return;}
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "{dede:global.cfg_phpurl/}/dz_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg'+aid);
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:global.cfg_phpurl/}/dz_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+
+	</head>
+
+	<body>
+
+    
+    
+
+{dede:include filename="inc/head.htm"/}
+
+<div class="container">   
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>
+                <a href="http://www.1dagong.com">网站首页</a>
+            </li>
+            <li>
+                <a href="/zhengwen/">征文</a>
+            </li>
+            <li class="active">会员征文投稿</li>
+        </ol>
+    </div>
+
+    <div class="container">
+        <div class="row">
+        
+                
+            <div class="col-md-9 acon">
+                 <ul class="media-list tags">
+					{dede:list pagesize='6'}
+                    <li class="mar mtop-03">
+                        <div class="media-body">
+                            <h4 class="media-heading zw-title">
+                                <a href="[field:arcurl/]">[field:title/]</a>
+                            </h4>
+							<div class="pad">作者: <a href="[field:arcurl/]"><b>[field:xingming/]</b></a> 
+								
+								<div class="newdigg[field:id/]" id="newdigg[field:id/]" style="display:inline">
+									<div class="btn-group btn-group-xs">
+									  <a type="button" class="btn btn-purple" onclick="javascript:postDigg('good',[field:id/])">我要点赞</a>
+									  <a type="button" class="btn btn-default">[field:goodpost/]</a>
+									</div>
+								</div>
+								
+								<script language="javascript" type="text/javascript">getDigg([field:id/]);</script>
+                            
+							</div>
+                            <div class="zw-pco">[field:neirong function="cn_substr(@me,330)"/]...</div>
+                            <p class="pull-right mtop-02"><a href="[field:arcurl/]" class="secai">阅读全文&gt;&gt;</a></p> 
+                        
+                			<div class="clear"></div>
+                		
+							<div class="bdsharebuttonbox fr">
+								<div class="fl juzh">分享：</div>
+								<a class="bds_more" href="#" data-cmd="more"></a>
+								<a class="bds_qzone" title="分享到QQ空间" href="#" data-cmd="qzone"></a>
+								<a class="bds_tqq" title="分享到腾讯微博" href="#" data-cmd="tqq"></a>
+								<a class="bds_weixin" title="分享到微信" href="#" data-cmd="weixin"></a>
+								<a class="bds_tieba" title="分享到百度贴吧" href="#" data-cmd="tieba"></a>
+								<a class="bds_tsina" title="分享到新浪微博" href="#" data-cmd="tsina"></a>
+								<a class="bds_tqf" title="分享到腾讯朋友" href="#" data-cmd="tqf"></a>
+							</div>                         
+                 		</div>
+                    </li>
+					{/dede:list}
+                 </ul>
+
+
+				 <ul class="pagination pagination-lg">
+							{dede:pagelist listitem="index,end,pre,next,pageno" listsize="5"/}
+				</ul>
+                              
+            </div>
+                
+            <div class="col-md-3 acon">
+				{dede:include filename="inc/neijian.htm"/}
+            
+                <form id="regUser" class="form-signin form-edge" action="baoming.php" method="post" role="form">
+                  <input type="hidden" name="dopost" value="regbase">
+                  <input type="hidden" name="step" value="1">
+                  <input type="hidden" name="mtype" value="个人">
+                  <h1 class="form-signin-heading in-toph-lzw">免费报名进厂 </h1>
+                  <span class="help-block">填写您的手机号码：</span>
+                  <input class="form-control" type="text" maxlength="13" name="userid" required placeholder="手机号码">
+                  <label class="checkbox"> 仅仅只需一步，让工作来找你。 </label>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+                </form>
+            
+                <div class="panel panel-info toma"><!--    列表一上背景   ---->
+                    <div class="panel-heading">
+                      <h4 class="panel-title">最新的投稿征文</h4>
+                    </div>
+                    <div class="list-group">
+                    {dede:arclistsg titlelen="50"}
+                    <a class="list-group-item" href="[field:arcurl/]">[field:title/]</a></a>
+					{/dede:arclistsg}
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div> 
+ </div>  
+ 
+ <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},
+"image":{"viewList":["qzone","tqq","weixin","tieba","tsina","tqf"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":
+["qzone","tqq","weixin","tieba","tsina","tqf"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script'))
+.src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+		{dede:include filename="inc/footer.htm"/}
+
+	</body>
+
+</html>

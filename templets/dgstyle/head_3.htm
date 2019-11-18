@@ -1,0 +1,98 @@
+
+<div class=" beijing">
+<div class="container" >
+<div class="top_sh row">
+
+     <div class="col-xs-12 col-md-6 mp">
+        <ul class="login jidns pull-left">
+       	  <li class="pr_10 hotline dropwnd"><a data-trigger="modal" href="http://www.1dagong.com/ajax/number.html" data-title="Modal title">免费咨询</a></li>
+          <li class="phone pr_10"><a data-trigger="modal" href="http://www.1dagong.com/ajax/qrcode.html" data-title="Modal title">手机壹打工</a></li>
+        </ul>
+     </div>
+     
+     <div class="col-xs-12 col-md-6 mp">
+     	<div class="free">
+        全国免费求职热线： 
+        <a href="tel:400-118-5188">400-118-5188</a>
+        </div>
+     </div>
+</div>    
+</div>
+</div>
+
+
+<nav class="navbar navbar-default top">
+
+  <div class="container">
+    
+    <div class="navbar-header col-xs-5 col-md-2">
+      <a href="/" class="logo"><img src="/files/style/image/logo.png" height="90" width="190" class="img-responsive hidden-xs" />
+      <img src="/files/style/image/logo.jpg" class="img-responsive visible-xs sjlogo" /></a>
+    </div>
+    
+    
+    <div  id="headlogin" class="col-md-3 logint pull-right mp">
+     
+        <ul class="login pull-right bcsa">
+          <li class="pr_10 hogin dropwnd"><a href="/home/"  data-target="#denglu">登录</a></li>
+          <li><a href="/home/p_register.php" class="#denglu">注册 </a></li>
+        </ul>
+		<script language="javascript" type="text/javascript">CheckLogin();</script>
+    </div>
+    
+    
+    <div class="navbar-header pull-left" >
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse col-md-7" id="bs-example-navbar-collapse-1">
+	<script>
+	$(document).ready(function() {
+        
+        //放置特效css cclassName
+        var navUlliahover = "navUlliahover";
+        //获取当前导航的位置
+        var curl = window.location.href;
+        var chost = window.location.host;
+        var pageUrl = curl.substr(curl.lastIndexOf(chost) + chost.length);
+        //导航栏滑动事件
+        $(".navUl li a").hover(function() {
+            this.className = navUlliahover;
+            },
+            function() {
+                //当前url与导航url相匹配时，不清除特效
+                if (pageUrl != $(this).attr("href")) {
+                    this.className = "";
+                }
+            });
+        //导航列表状态
+        $(".navUl li a").each(function() {
+            if ($(this).attr("href") == pageUrl) {
+                this.className = navUlliahover;
+            }
+        });
+    });
+//-------------------------------------------------------------------------------------
+	$(document).ready(function(){  
+		$('.nav li a').each(function(){  
+			if($($(this))[0].href==String(window.location))  
+				$(this).parent().addClass('active');  
+		});  
+	})
+	</script>
+      <ul class="nav navbar-nav ">
+      	<li><a href="/">首页</a></li>
+        <li><a href="/plus/search.php?typeid=41&starttime=-1&areacode=-1&searchtype=-1">找工作</a></li>
+        <li><a href="/gongzuo/">行业名企</a></li>
+      </ul>
+    
+    </div><!-- /.navbar-collapse -->
+    
+
+  </div><!-- /.container-fluid -->
+</nav>

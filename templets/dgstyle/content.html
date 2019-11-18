@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>征文内容填写</title>
+		<meta name="keywords" content="{dede:field.keywords/}" />
+		<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+        
+        <link href="/files/css/zt/activity.css" rel="stylesheet" />  <!--------手机端------>
+        
+        <link href="/files/css/zt/zhengwen.css" rel="stylesheet" />  <!--------1打工征文页面-------->        
+        
+</head>
+
+<body>
+
+
+	{dede:include filename="inc/head.htm"/}
+    
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>
+                <a href="http://www.1dagong.com">网站首页</a>
+            </li>
+            <li>
+                <a href="/help/">帮助</a>
+            </li>
+            <li class="active">详情</li>
+        </ol>
+    </div>
+
+    <div class="container">
+        <div class="row">
+        
+                
+            <div class="col-md-9">
+                 
+                <form name="form1" action="file:///D|/FlashFXP/Cache/~flashfxp/78EA20F0_edit.tmp/info.php" method="post" role="form">
+                  <input type="hidden" name="dopost" value="save">
+                  <input type="hidden" name="modid" value="1">
+                  <h1 class="form-signin-heading in-toph-lzw">填写文章</h1>
+                  为了帮助您推荐更合适的工作，并且更快速入职， <b> <font color="#ff3300">请确保您的资料准确无误</font> </b> ： <br>
+                  <br>
+                  <span class="help-block">标题 ： </span>
+                  <div class="lform1">
+                    <input class="form-control form-tew" type="text" value="" name="fullname" autofocus required placeholder="征文标题">
+                  </div>
+                  <br>
+                  <span class="help-block">作者 ： </span>
+                  <div class="lform1">
+                    <input class="form-control form-width" type="text" value="" name="fullname" autofocus required placeholder="作者姓名">
+                  </div>
+                  <div style="height:20px;"></div>
+                  <span class="help-block">文章内容 ： </span>
+                  <div class="lform1">
+                    <textarea class="form-control form-tew" rows="5" cols="60"></textarea>
+                  </div>
+                  <div style="height:20px;"></div>
+                  <button class="btn btn-lg btn-primary btn-block  form-width" type="submit">发布文章</button>
+                  <div style="height:20px;"></div>
+                </form>
+                
+            </div>
+                
+            <div class="col-md-3 acon">
+                <div class="panel panel-info"><!--    列表一上背景   ---->
+                    <div class="panel-heading">
+                      <h4 class="panel-title">近期投稿</h4>
+                    </div>
+                    <div class="list-group">
+                    <a class="list-group-item" href="#">找工作流程</a>
+                    <a class="list-group-item" href="#">在线报名流程</a>
+                    <a class="list-group-item" href="#">关于我们</a>
+                    <a class="list-group-item" href="#">我们的工作时间</a>
+                    <a class="list-group-item" href="#">找工作流程</a>
+                    <a class="list-group-item" href="#">在线报名流程</a>
+                    <a class="list-group-item" href="#">关于我们</a>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div> 
+    
+{dede:include filename="inc/footer.htm"/}
+
+</body>
+</html>
+
