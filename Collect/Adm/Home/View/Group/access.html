@@ -1,0 +1,88 @@
+<script type="text/javascript">
+
+Ext.onReady(function() {    
+	
+	var store = Ext.create('Ext.data.TreeStore', {
+        proxy: {
+            type: 'ajax',
+            url: "{:U('Home/Group/access',array('isData' => 1,'roleid' => $roleid))}"
+        }
+    });
+	
+	
+	var hidden = new Ext.form.Hidden({
+		id:'roleid',
+		name:'roleid',
+		value:"{$roleid}"
+	});
+
+    var tree = Ext.create('Ext.tree.Panel', {
+        store: store,
+        rootVisible: false,
+        useArrows: true,
+        //frame: true,
+        //title: 'Check Tree',
+        renderTo: 'access',
+        border:0,
+        width: '100%',
+        height: '100%',
+        listeners:{
+        	checkchange:function(node, checked) {
+        		
+        		node.checked = checked;
+    			
+    			if(node.hasChildNodes()) {
+    				for(i = 0; i < node.childNodes.length; i++) {  
+                        //node.childNodes[i].getUI().checkbox.checked = checked;  
+                        node.childNodes[i].set('checked',checked);
+                    } 
+    			}else {
+    				pNode = node.parentNode;
+    				
+    				var flag = true;
+    				for(i=0; i<pNode.childNodes.length; i++) {
+    					if(pNode.childNodes[i].get('checked') == false) {
+    						flag = false;
+    						break;
+    					}
+    				}
+    				
+    				pNode.set('checked',flag);
+    				//console.log(node.previousSibling);
+    				//console.log(node.nextSibling);
+    			}
+    			
+        	}
+        }, 
+        dockedItems: [{
+            xtype: 'toolbar',
+            items: [{
+                text:'关闭',
+                iconCls:'Bulletcross',
+                listeners:{
+                	click:function() {
+                		Collect.closeWindow(0);
+                	}
+                }
+            },{
+                text: '保存后关闭',
+                iconCls:'Layoutedit',
+                handler: function(){
+                	var roleid = Ext.getCmp("roleid").getValue();
+                	
+                    var records = tree.getView().getChecked(),
+                        access = [];
+                    
+                    Ext.Array.each(records, function(rec){
+                    	access.push(rec.raw);
+                    });
+                    
+
+					Collect.ajaxSubmit("{:U('Home/Group/saveAccess')}",{access:Ext.JSON.encode(access),roleid:roleid});
+                }
+            }]
+        }]
+    });
+});
+</script>
+<div id="access"></div>	

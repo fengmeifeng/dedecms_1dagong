@@ -1,0 +1,191 @@
+<script type="text/javascript">
+Ext.define('Field', {
+    extend: 'Ext.data.Model',
+    fields: [{
+        name: 'id',
+        type: 'int',
+        useNull: true
+    }, 'name', 'field'],
+    validations: [{
+        type: 'length',
+        field: 'name',
+        min: 1,
+        message:'不能为空'
+    }, {
+        type: 'length',
+        field: 'field',
+        min: 1,
+        message:'不能为空'
+    }]
+});
+
+Ext.onReady(function(){
+
+    var store = Ext.create('Ext.data.Store', {
+        autoLoad: false,
+        autoSync: false,
+        model: 'Field',
+        /*proxy: {
+            type: 'ajax',
+            url: "{:U('Collect/Bis/showField')}",
+            reader: {
+                type: 'json',
+                root: 'data'
+            },
+            writer: {
+                type: 'json'
+            }
+        },*/
+        data:{$field}
+    });
+    
+    var rowEditing = Ext.create('Ext.grid.plugin.RowEditing',{
+    	saveBtnText:'确定',
+    	cancelBtnText:'取消',
+    	listeners:{
+    		canceledit:function() {
+    			//alert(1);
+    			var selection = grid.getView().getSelectionModel().getSelection()[0];
+                if (selection) {
+                    store.remove(selection);
+                }
+    		}
+    	}
+    });
+    
+    var grid = Ext.create('Ext.grid.Panel', {
+        renderTo: 'business-field-add',
+        plugins: [rowEditing],
+        width: '100%',
+        height: '100%',
+        //frame: true,
+        //title: 'Users',
+        store: store,
+        border:0,
+        //iconCls: 'icon-user',
+        columns: [{
+            text: 'ID',
+            width: 40,
+            cls:'grid-td-height',
+            sortable: true,
+            dataIndex: 'id'
+        },  {
+        	text: '字段名称',
+            cls:'grid-td-height',
+            width: 150,
+            sortable: false,
+            dataIndex: 'name',
+            field: {
+                xtype: 'textfield'
+            }
+        }, {
+            text: '字段标识',
+            width: 150,
+            sortable: false,
+            cls:'grid-td-height',
+            dataIndex: 'field',
+            field: {
+                xtype: 'textfield'
+            }
+        }],
+        dockedItems: [{
+            xtype: 'toolbar',
+            items: [{
+            	xtype: 'hiddenfield',
+                name: 'id',
+                id:'tagid',
+                value: "{$tagid}"
+            },{
+                text: '增加字段',
+                iconCls: 'Cogadd',
+                handler: function(){
+                    // empty record
+                    store.insert(0, new Field());
+                    rowEditing.startEdit(0, 0);
+                }
+            }, '-', {
+                itemId: 'delete',
+                text: '删除字段',
+                iconCls: 'Cogdelete',
+                disabled: true,
+                handler: function(){
+                    var selection = grid.getView().getSelectionModel().getSelection()[0];
+                    if (selection) {
+                        store.remove(selection);
+                    }
+                }
+            },'-',{
+            	text: '保存并关闭',
+                iconCls: 'Layoutedit',
+                handler: function(){
+                    var data = store.getRange();
+                    
+                    var field = [];
+                    var name = [];
+                    for(var i=0;i<data.length;i++) {
+                    	var ff = regxChinese(data[i].data.name);
+                    	console.log(ff);
+                    	if(ff != true) {
+                    		Collect.createTip(ff);
+                    		return false;
+                    	}
+                    	
+                    	var fn = regxEnglish(data[i].data.field);
+                    	if(fn != true) {
+                    		Collect.createTip(fn);
+                    		return false;
+                    	}
+                    	
+                    	field.push(data[i].data.field);
+                    	name.push(data[i].data.name);
+                    }
+                    
+                    Collect.ajaxSubmit("{:U('Collect/Bis/saveBisField')}",{"field[]":field,"name[]":name,tagid:Ext.getCmp("tagid").getValue()});
+                }
+            },"-",{
+            	xtype: 'checkboxfield',
+            	boxLabel:'载入通用',
+            	value:1,
+                listeners: {
+                	change:function() {
+                		if(this.checked === true) {
+                			//store.load();
+                			Ext.Ajax.request({
+                			    url: "{:U('Collect/Bis/showField')}",
+                			    method:'post',
+                			    success: function(response){
+                			    	var res = Ext.JSON.decode(response.responseText);
+                			    	
+                			    	var pos = 0;
+                			    	var msg = [];
+                			    	for(var i=0;i<res.data.length;i++) {
+                			    		pos = store.find("field",res.data[i].field);
+                			    		
+                			    		if(pos == -1) {
+                			    			store.add(res.data[i]);
+                			    		}else {
+                			    			msg.push(res.data[i].name);
+                			    		}
+                			    	}
+                			    	
+                			    	if(msg.length > 0) {
+                			    		msg.push("字段已载入");
+                			    		Collect.createTip(msg.join("<br>"));
+                			    	}
+                			    	
+                			    	//console.log(res.data);
+                			    },
+                			    type:'json'
+                			});
+                		}
+                	}
+                }
+            }]
+        }]
+    });
+    grid.getSelectionModel().on('selectionchange', function(selModel, selections){
+        grid.down('#delete').setDisabled(selections.length === 0);
+    });
+});
+</script>
+<div id="business-field-add"></div>	

@@ -1,0 +1,133 @@
+<script type="text/javascript">
+Ext.require(['Ext.data.*']);
+
+Ext.onReady(function() {    
+	Ext.QuickTips.init();
+	
+	var combo = Ext.create('Ext.data.Store',{
+		fields:['id','role'],
+		data:[
+			{"id":"1","role":"管理员"},
+			{"id":"2","role":"管理员111"},
+		]
+	});
+	
+	var formPanel = Ext.create('Ext.form.Panel', {
+        //frame: true,
+        //title: 'Form Fields',
+        border:0,
+        width: '100%',
+        height:'100%',
+        bodyPadding: 10,
+		
+        fieldDefaults: {
+            labelAlign: 'left',
+            labelWidth: 90,
+            msgTarget: 'side',
+            anchor: '100%',
+            blankText:'此项必须填写',
+        },
+		
+        dockedItems:[{
+        	xtype:'toolbar',
+        	dock: 'top',
+        	items: [{
+                text:'关闭',
+                iconCls:'Bulletcross',
+                listeners:{
+                	click:function() {
+                		Collect.closeWindow(0);
+                	}
+                }
+            }, '-', {
+                text:'保存后关闭',
+                iconCls:'Layoutedit',
+                listeners:{
+                	click:function() {
+                		Collect.submitForm(this,"{:U('Home/User/add')}");
+                	}
+                }
+            }]
+        }],
+        items: [{
+            xtype: 'textfield',
+            name: 'sourcename',
+            fieldLabel: '信源名称',
+            allowBlank:false,
+            layout: 'anchor',
+            defaults: {
+                anchor: '50%'
+            },
+        },{
+            xtype: 'textfield',
+            name: 'sourcelink',
+            vtype:'url',
+            fieldLabel: '信源url',
+            vtypeText:'必须为url',
+            allowBlank:false,
+        },{
+            xtype: 'textfield',
+            name: 'xpath',
+            fieldLabel: '列表块xpath',
+            fieldStyle:"width:300px;",
+            afterSubTpl:'<span class="form-tip" data-qtip="{$Think.config.XPATHLAB}"><img src="'+resourcesUrl+'help.png"></span>',
+            allowBlank:false,
+        },{
+            xtype: 'textfield',
+            name: 'titletag',
+            fieldLabel: '标题html标签',
+            fieldStyle:"width:100px;",
+            afterSubTpl:'<span class="form-tip" data-qtip="{$Think.config.TITLELAB}"><img src="'+resourcesUrl+'help.png"></span>',
+            allowBlank:false,
+        },{
+            xtype: 'textfield',
+            name: 'linktag',
+            fieldStyle:"width:100px;",
+            afterSubTpl:'<span class="form-tip" data-qtip="{$Think.config.LINKLAB}"><img src="'+resourcesUrl+'help.png"></span>',
+            fieldLabel: '链接html标签',
+            allowBlank:false,
+        },{
+            xtype: 'textfield',
+            name: 'maxpage',
+            fieldStyle:"width:60px;",
+            fieldLabel: '每次获取页数',
+            vtype:'int',
+            allowBlank:false,
+        },{
+            xtype: 'textfield',
+            name: 'urlcontains',
+            fieldLabel: 'url包含字串',
+            allowBlank:false,
+        },{
+            xtype: 'textfield',
+            name: 'urlexcept',
+            fieldLabel: 'url去除字串',
+            allowBlank:false,
+        },{
+            xtype: 'radiogroup',
+            fieldLabel: '状态',
+            columns:1,
+            items:[
+            	{boxLabel:"开启",name:"status",checked:true,inputValue:1},
+            	{boxLabel:"关闭",name:"status",inputValue:2},
+            ]
+        } ,Ext.create('Ext.form.ComboBox',{
+        	fieldLabel:'角色',
+        	store:combo,
+        	name:"role",
+        	displayField:"role",
+        	valueField:"id",
+        	editable:false,
+        	emptyText:"请选择角色",
+        	allowBlank:false,
+        }),{
+            xtype: 'textareafield',
+            name: 'remark',
+            fieldLabel: '描述'
+        }]
+    });
+
+    formPanel.render('user-add');
+});
+</script>
+<div id="user-add"></div>	

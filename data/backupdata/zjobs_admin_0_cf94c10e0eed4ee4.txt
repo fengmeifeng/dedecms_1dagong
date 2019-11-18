@@ -1,0 +1,1 @@
+INSERT INTO `zjobs_admin` VALUES('1','10','spgongzuo','76ccdd858b5d49b259f1','admin','','','0','1390181380','127.0.0.1');

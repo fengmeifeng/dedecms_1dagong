@@ -1,0 +1,108 @@
+
+<script type="text/javascript">
+
+
+Ext.onReady(function() {  
+	
+	Ext.define('GroupList', {
+        extend: 'Ext.data.Model',
+        fields: [
+            'name', 'dateline', 'remark', 'done'
+        ],
+        idProperty: 'id'
+    });
+	
+	var store = Ext.create('Ext.data.TreeStore', {
+        //pageSize: {$Think.config.WEBPAGE},
+        model: 'GroupList',
+        remoteSort: true,
+        proxy: {
+            type: 'ajax',
+            url: "{:U('Collect/Sgroup/groupList',array('isData' => 1))}"
+            /*reader: {
+                root: 'data',
+                totalProperty: 'total'
+            },
+            // sends single sort as multi parameter
+            simpleSortMode: true*/
+        }
+    });
+    
+	function handel(value, cellmeta, record, rowIndex, columnIndex, store) {
+    	var h = '';
+    	h += '<img src="'+resourcesUrl+'pencil.png" class="app-edit" title="编辑" onclick="Collect.showWindow(\'{:U(\"Collect/Sgroup/edit\")}?id='+record.raw.id+'\',\'编辑信源组\',400,230)">'
+    		   + '<img src="'+resourcesUrl+'delete.png" class="app-edit" title="删除" onclick="Collect.confirmWindow(\'{:U(\"Collect/Sgroup/del\")}\',{ids:'+record.raw.id+'})">'
+    	if(record.raw.leaf) {
+    		h += '<img src="'+resourcesUrl+'add.png" class="app-edit" title="增加信源" onclick="Collect.showWindow(\'{:U(\"Collect/Source/add\")}?id='+record.raw.id+'\',\'增加信源\',600,480)">'
+    	}
+    		   
+    	return h;
+    } 
+    
+    
+    var tree = Ext.create('Ext.tree.Panel', {
+        //title: 'Core Team Projects',
+        id:'sgrouplist',
+        width: '100%',
+        height: '100%',
+        renderTo: 'sgroup-grid',
+        //collapsible: true,
+        bodyPadding:'0',
+        useArrows: true,
+        rowLines:true,
+        columnLines:true,
+        rootVisible: false,
+        store: store,
+        //multiSelect: true,
+        //singleExpand: false,
+        //the 'columns' property is now 'headers'
+        columns: [{
+            xtype: 'treecolumn', //this is so we know which column will show the tree
+            text: '信源分组名称',
+            flex: 2,
+            dataIndex: 'name'
+        },{
+            //we must use the templateheader component so we can use a custom tpl
+            //xtype: 'templatecolumn',
+            text: '创建时间',
+            flex: 1,
+            dataIndex: 'dateline',
+            align: 'center'
+        },{
+            text: '描述',
+            flex: 1,
+            dataIndex: 'remark'
+        }, {
+        	text: '操作',
+            flex: 1,
+            dataIndex: 'user',
+            renderer:handel
+        }],
+        dockedItems:[{
+        	xtype:'toolbar',
+        	padding:'3 10 3 0',
+        	items: [{
+                iconCls:'Arrowrefresh',
+                margins:'0 0 0 3',
+                text:'重新载入',
+                listeners:{
+                	click:function() {
+                		store.load();
+                	}
+                }
+        	},"->",{
+                text:'增加信源分组',
+                iconCls:'Add',
+                listeners:{
+                	click:function() {
+                		Collect.showWindow("{:U('Collect/Sgroup/add')}"," 增加信源分组",400,230);
+                	}
+                }
+            }]
+        }]
+    });
+    
+    //store.loadPage(1);
+});
+</script>
+<div id="sgroup-grid"></div>	

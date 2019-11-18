@@ -1,0 +1,1 @@
+INSERT INTO `zjobs_member_space` VALUES('1','10','0','spgongzuo的空间','','person','','');

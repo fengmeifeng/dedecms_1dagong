@@ -1,0 +1,1 @@
+INSERT INTO `zjobs_diyforms` VALUES('1','gongzuoimg','post_diyform1.htm','view_diyform1.htm','list_diyform1.htm','zjobs_gongzuoimg','','1');

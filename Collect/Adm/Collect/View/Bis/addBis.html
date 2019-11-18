@@ -1,0 +1,114 @@
+<script type="text/javascript">
+Ext.require(['Ext.data.*']);
+
+Ext.onReady(function() {    
+	
+	var combo = Ext.create('Ext.data.Store',{
+		fields:['id','name'],
+		data:{$combo}
+	});
+	
+	var formPanel = Ext.create('Ext.form.Panel', {
+        //frame: true,
+        //title: 'Form Fields',
+        border:0,
+        width: '100%',
+        height:'100%',
+        bodyPadding: 10,
+		
+        fieldDefaults: {
+            labelAlign: 'left',
+            labelWidth: 60,
+            msgTarget: 'side',
+            anchor: '100%',
+            blankText:'此项必须填写'
+        },
+		
+        dockedItems:[{
+        	xtype:'toolbar',
+        	dock: 'top',
+        	items: [{
+                text:'关闭',
+                iconCls:'Bulletcross',
+                listeners:{
+                	click:function() {
+                		Collect.closeWindow(0);
+                	}
+                }
+            }, '-', {
+                text:'保存并继续',
+                iconCls:'Layoutedit',
+                listeners:{
+                	click:function() {
+                		//Collect.submitForm(this,"{:U('Collect/Bis/addBusiness')}");
+                		var f = this.up("form").getForm();
+
+						if(f.isValid()) {
+							//var ajaxData = Ext.JSON.encode(f.getValues());
+							f.submit({
+								url:"{:U('Collect/Bis/addBusiness')}",
+								waitMsgTarget:true,
+								waitTitle:'请稍后...',
+							    waitMsg:'正在提交数据,请稍后...',
+							    method:'post',
+							    success:function(form, action) {
+							    	Collect.createTip(action.result.msg);
+							        if(action.result.status == 1) {
+							        	Collect.closeWindow(1,action.result.target);
+							        	
+							        	//setTimeout(Collect.showWindow('{:U("Collect/Bis/addBisField")}?id=' + action.result.tagid,'配置业务字段',400,480),3500);
+							        	Collect.showWindow('{:U("Collect/Bis/addBisField")}?id=' + action.result.tagid,'配置业务字段',400,480);
+							        }else if(action.result.status == -1) {
+							        	
+							        }
+							    }
+							});
+						}
+                	}
+                }
+            }]
+        }],
+        items: [{
+            xtype: 'textfield',
+            name: 'name',
+            fieldLabel: '类别名',
+            allowBlank:false,
+            layout: 'anchor',
+            defaults: {
+                anchor: '50%'
+            }
+        },{
+            xtype: 'radiogroup',
+            fieldLabel: '状态',
+            columns:1,
+            items:[
+            	{boxLabel:"开启",name:"status",checked:true,inputValue:1},
+            	{boxLabel:"关闭",name:"status",inputValue:2}
+            ]
+        } ,Ext.create('Ext.form.ComboBox',{
+        	fieldLabel:'分组',
+        	store:combo,
+        	name:"pid",
+        	displayField:"name",
+        	valueField:"id",
+        	editable:false,
+        	emptyText:"请选择业务分组",
+        	allowBlank:false
+        }),{
+        	xtype:'checkboxfield',
+        	inputValue:1,
+        	name:'isdefault',
+            checked:true,
+            fieldLabel:'通用字段',
+            boxLabel:'勾选后默认此业务添加默认字段'
+        },{
+            xtype: 'textareafield',
+            name: 'remark',
+            fieldLabel: '描述'
+        }]
+    });
+
+    formPanel.render('business-add');
+});
+</script>
+<div id="business-add"></div>	

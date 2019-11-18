@@ -1,0 +1,91 @@
+<script type="text/javascript">
+Ext.require(['Ext.data.*']);
+
+Ext.onReady(function() {    
+	
+	var combo = Ext.create('Ext.data.Store',{
+		fields:['id','name'],
+		data:{$combo}
+	});
+	
+	var formPanel = Ext.create('Ext.form.Panel', {
+        //frame: true,
+        //title: 'Form Fields',
+        border:0,
+        width: '100%',
+        height:'100%',
+        bodyPadding: 10,
+		
+        fieldDefaults: {
+            labelAlign: 'left',
+            labelWidth: 60,
+            msgTarget: 'side',
+            anchor: '100%',
+            blankText:'此项必须填写'
+        },
+		
+        dockedItems:[{
+        	xtype:'toolbar',
+        	dock: 'top',
+        	items: [{
+                text:'关闭',
+                iconCls:'Bulletcross',
+                listeners:{
+                	click:function() {
+                		Collect.closeWindow(0);
+                	}
+                }
+            }, '-', {
+                text:'保存后关闭',
+                iconCls:'Layoutedit',
+                listeners:{
+                	click:function() {
+                		Collect.submitForm(this,"{:U('Collect/Bis/editBusiness')}");
+                	}
+                }
+            }]
+        }],
+        items: [{
+            xtype: 'hiddenfield',
+            name: 'id',
+            value: "{$info.id}"
+        },{
+            xtype: 'textfield',
+            name: 'name',
+            fieldLabel: '类别名',
+            allowBlank:false,
+            layout: 'anchor',
+            value:"{$info.name}",
+            defaults: {
+                anchor: '50%'
+            }
+        },{
+            xtype: 'radiogroup',
+            fieldLabel: '状态',
+            columns:1,
+            items:[
+            	{boxLabel:"开启",name:"status",inputValue:1<eq name="info.status" value="1">,checked:true</eq>},
+            	{boxLabel:"关闭",name:"status",inputValue:2<eq name="info.status" value="2">,checked:true</eq>}
+            ]
+        } ,Ext.create('Ext.form.ComboBox',{
+        	fieldLabel:'分组',
+        	store:combo,
+        	name:"pid",
+        	value:"{$info.pid}",
+        	displayField:"name",
+        	valueField:"id",
+        	editable:false,
+        	emptyText:"请选择业务分组",
+        	allowBlank:false
+        }),{
+            xtype: 'textareafield',
+            name: 'remark',
+            value:"{$info.remark}",
+            fieldLabel: '描述'
+        }]
+    });
+
+    formPanel.render('business-add');
+});
+</script>
+<div id="business-add"></div>	

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
+<channel>
+<title>兼职</title>
+<link>http://localhost//jianzhi80/</link>
+<description>兼职</description>
+<language>zh-cn</language>
+<generator><![CDATA[Copyright &amp;copy; 2013-2014 1dagong.com. 壹打工网 版权所有 &lt;a href=http://www.dedecms.com target='_blank'&gt;Power by DedeCms&lt;/a&gt;]]></generator>
+<webmaster>desdev@vip.qq.com</webmaster>
+<item>
+    <title><![CDATA[传单发放]]></title>
+    <link>http://localhost//jianzhi80/011a052015.html</link>
+    <description><![CDATA[]]></description>
+    <pubDate>2015-01-19</pubDate>
+    <category>兼职</category>
+    <author>秩名</author>
+    <comments>壹打工网</comments>
+</item>
+<item>
+    <title><![CDATA[征文大赛,一起为梦想打工为梦想打工]]></title>
+    <link>http://localhost//jianzhi80/011C042015.html</link>
+    <description><![CDATA[]]></description>
+    <pubDate>2015-01-16</pubDate>
+    <category>兼职</category>
+    <author>秩名</author>
+    <comments>壹打工网</comments>
+</item>
+<item>
+    <title><![CDATA[工作名称]]></title>
+    <link>http://localhost//jianzhi80/0113C62015.html</link>
+    <description><![CDATA[]]></description>
+    <pubDate>2015-01-13</pubDate>
+    <category>兼职</category>
+    <author>秩名</author>
+    <comments>壹打工网</comments>
+</item>
+
+</channel>
+</rss>

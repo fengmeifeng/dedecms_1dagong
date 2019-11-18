@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
+<channel>
+<title>首页轮番广告</title>
+<link>http://localhost//plus/list.php?tid=24</link>
+<description>广告位 / 首页轮番广告</description>
+<language>zh-cn</language>
+<generator><![CDATA[Copyright &amp;copy; 2013-2014 1dagong.com. 壹打工网 版权所有 &lt;a href=http://www.dedecms.com target='_blank'&gt;Power by DedeCms&lt;/a&gt;]]></generator>
+<webmaster>desdev@vip.qq.com</webmaster>
+<item>
+    <title><![CDATA[你该在一份工作上呆多久？]]></title>
+    <link>http://localhost//guanggaowei/shouyelunfanguanggao/112A302014.html</link>
+    <description><![CDATA[/zt/dai/index.html]]></description>
+    <pubDate>2014-11-26</pubDate>
+    <category>首页轮番广告</category>
+    <author>admin</author>
+    <comments>未知</comments>
+</item>
+<item>
+    <title><![CDATA[致广大普通劳动者的一封信]]></title>
+    <link>http://localhost//guanggaowei/shouyelunfanguanggao/0R33V2014.html</link>
+    <description><![CDATA[/zt/jiyu/index.html]]></description>
+    <pubDate>2014-11-19</pubDate>
+    <category>首页轮番广告</category>
+    <author>admin</author>
+    <comments>未知</comments>
+</item>
+<item>
+    <title><![CDATA[接站]]></title>
+    <link>http://localhost//guanggaowei/shouyelunfanguanggao/060H432014.html</link>
+    <description><![CDATA[http://www.1dagong.com/jiezhan/]]></description>
+    <pubDate>2014-09-09</pubDate>
+    <category>首页轮番广告</category>
+    <author>admin</author>
+    <comments>未知</comments>
+</item>
+<item>
+    <title><![CDATA[1+2内荐行动]]></title>
+    <link>http://localhost//guanggaowei/shouyelunfanguanggao/0415522014.html</link>
+    <description><![CDATA[http://www.1dagong.com/neijian/]]></description>
+    <pubDate>2014-06-16</pubDate>
+    <category>首页轮番广告</category>
+    <author>admin</author>
+    <comments>未知</comments>
+</item>
+<item>
+    <title><![CDATA[一起为梦想打工]]></title>
+    <link>http://localhost//guanggaowei/shouyelunfanguanggao/0415492014.html</link>
+    <description><![CDATA[http://www.1dagong.com/zhengwen/]]></description>
+    <pubDate>2014-04-15</pubDate>
+    <category>首页轮番广告</category>
+    <author>admin</author>
+    <comments>未知</comments>
+</item>
+
+</channel>
+</rss>

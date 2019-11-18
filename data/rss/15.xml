@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
+<channel>
+<title>用户提交内容</title>
+<link>http://localhost//user/</link>
+<description>用户提交内容</description>
+<language>zh-cn</language>
+<generator><![CDATA[Copyright &amp;copy; 2013-2014 1dagong.com. 壹打工网 版权所有 &lt;a href=http://www.dedecms.com target='_blank'&gt;Power by DedeCms&lt;/a&gt;]]></generator>
+<webmaster>desdev@vip.qq.com</webmaster>
+<item>
+    <title><![CDATA[内容]]></title>
+    <link>http://localhost//plus/view.php?aid=33</link>
+    <description><![CDATA[内容]]></description>
+    <pubDate>2014-04-11</pubDate>
+    <category>用户提交内容</category>
+    <author>admin</author>
+    <comments>未知</comments>
+</item>
+
+</channel>
+</rss>

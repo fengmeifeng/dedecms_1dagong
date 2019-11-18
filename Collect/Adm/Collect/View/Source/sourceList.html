@@ -1,0 +1,138 @@
+<script>
+
+var treeStore = Ext.create('Ext.data.TreeStore', {
+	proxy: {
+        type: 'ajax',
+        url: "{:U('Collect/Group/getGroups')}"
+	},
+	root: {
+        text: 'Ext JS',
+        id: 'src',
+        expanded: true
+    },
+    
+});
+
+Ext.define('UserList', {
+    extend: 'Ext.data.Model',
+    fields: [
+        'username', 'role', 'status', 'lastlogintime', 'lastloginip','remark'
+    ],
+    idProperty: 'id'
+});
+
+var gridStore = Ext.create('Ext.data.Store', {
+    pageSize: {$Think.config.WEBPAGE},
+    model: 'UserList',
+    remoteSort: true,
+    autoLoad:true,
+    proxy: {
+        type: 'ajax',
+        url: "{:U('Home/User/userList',array('isData' => 1))}",
+        reader: {
+            root: 'data',
+            totalProperty: 'total'
+        },
+        // sends single sort as multi parameter
+        simpleSortMode: true
+    },
+    sorters: [{
+        property: 'lastpost',
+        direction: 'DESC'
+    }]
+});
+
+Ext.onReady(function() {
+	
+	Ext.create('Ext.Panel', {
+	    width: '100%',
+	    height: '100%',
+	    border:0,
+	    //title: "VBoxLayout Panel",
+	    layout: {
+	        type: 'hbox'
+	    },
+	    renderTo:'source-list',
+	    items: [{
+	        xtype: 'treepanel',
+	        title: '信源分组',
+	        height:'100%',
+	        margin:'0 5 0 0',
+	        bodyPadding:'3',
+	        store: treeStore,
+	        collapsible: false,
+	        split: true,
+	        rootVisible:false,
+	        flex: 2
+	    },
+	    {
+	        xtype: 'gridpanel',
+	        title: '信源列表',
+	        id:'userlist',
+	        store: gridStore,
+	        columnLines: true,
+	        columns: [
+	            {
+	                text:'用户名',
+	                width:'10%',
+	                cls:'grid-td-height',
+	                sortable:false, 
+	                dataIndex:'username'
+	            },
+	            {
+	                text:'角色', 
+	                width:'10%', 
+	                cls:'grid-td-height',
+	                sortable:false, 
+	                dataIndex:'role'
+	            },
+	            {
+	                text:'状态', 
+	                width:'5%', 
+	                sortable:true, 
+	                cls:'grid-td-height',
+	                dataIndex:'status',
+	                //renderer:change
+	            },
+	            {
+	                text:'最后登录时间', 
+	                width:'18%', 
+	                cls:'grid-td-height',
+	                dataIndex:'lastlogintime',
+	            },
+	            {
+	                text: '最后登录ip', 
+	                width: '18%', 
+	                cls:'grid-td-height',
+	                dataIndex: 'lastloginip'
+	            },
+	            {
+	                text: '描述', 
+	                width: '30%', 
+	                cls:'grid-td-height',
+	                dataIndex: 'remark'
+	            },
+	            {
+	                text: '', 
+	                width:'6%',
+	                cls:'grid-td-height',
+	                dataIndex: 'handel',
+	               // renderer:handel
+	            }
+	        ],
+	        bbar: Ext.create('Ext.PagingToolbar', {
+	            store: store,
+	            displayInfo: true,
+	            displayMsg: '当前显示 {0} - {1} of {2}',
+	            emptyMsg: "没有数据"
+	        }),
+	        height: '100%',
+	        width: '100%',
+	        flex: 8
+	    }]
+	});
+	
+});
+</script>
+
+<div id="source-list"></div>

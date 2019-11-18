@@ -1,0 +1,442 @@
+
+<script type="text/javascript">
+var currentHost = null;
+var currentPattern = null;
+
+Ext.define('Task', {
+    extend: 'Ext.data.Model',
+    fields: [
+        {name: 'pattern', type: 'string'},
+        {name: 'type'},
+        {name: 'explame', type: 'string'},
+    ]
+});
+
+var taskstore = Ext.create('Ext.data.TreeStore', {
+    model: 'Task',
+    proxy: {
+        type: 'ajax',
+        //the store will get the content from the .json file
+        url: "{:U('Collect/Pattern/detailPattern')}"
+    },
+    autoLoad: false
+});
+
+function showSite(host,w,h) {
+	var src = '';
+	var pattern = currentPattern;
+	
+	//host格式改变
+	var srcArr = [];
+	var tmp = '';
+	var hArr = host.split("|");
+	for(var i=0;i<hArr.length;i++) {
+		var src = [];
+		src.push(hArr[i]);
+		src.push(hArr[i]);
+		
+		srcArr.push(src);
+	}
+	
+	var url = src[0];
+	//处理host
+	if(url.indexOf("http://") < 0) {
+		url = "http://" + url;
+	}
+	
+	var w = Ext.create('Ext.window.Window', {
+		id:'window-remote',
+	    title: "标注 - " + pattern,
+	    height: h,
+	    width: w,
+	    dockedItems:[{
+        	xtype:'toolbar',
+        	dock: 'top',
+        	items: [{
+                text:'关闭',
+                iconCls:'Bulletcross',
+                listeners:{
+                	click:function() {
+                		Collect.closeWindow(0);
+                	}
+                }
+            }, '-', {
+            	xtype:'combobox',
+        		store:[{$types}],
+        		id:"ptype",
+            	displayField:"value",
+            	valueField:"id",
+            	editable:false,
+            	listeners:{
+            		change:function(obj,newValue,oldValue,oOpts) {
+            			
+            		}
+            	},
+            	emptyText:'请选择标记类型',
+            	width:150
+            }, '-', {
+            	xtype:'combobox',
+        		store:srcArr,
+        		//data:[{id: 'Ed',    value: 'Spencer'}],
+            	displayField:"value",
+            	valueField:"id",
+            	editable:false,
+            	listeners:{
+            		change:function(obj,newValue,oldValue,oOpts) {
+            			//alert(newValue);
+            			var o =document.getElementById("explameUrl");
+            			o.src = newValue;
+            		}
+            	},
+            	emptyText:'请选择url',
+            	value:url,
+            	width:500
+            }, '-', {
+                text:'保存标记后关闭',
+                iconCls:'Layoutedit',
+                listeners:{
+                	click:function() {
+                		
+                		/*Ext.MessageBox.confirm("系统提示", '确定标记此类型吗？', function(action) {
+                			if(action == "yes") {
+                				mod.ajaxSubmit(url,param);
+                			}
+                		});*/
+                		var ptype = Ext.getCmp("ptype").getValue();
+                		Collect.confirmWindowOth("系统提示","确定加入黑名单？","{:U('Collect/Pattern/savePattern')}",{pattern:pattern,host:currentHost,ptype:ptype,type:'submit'})
+                		//Collect.ajaxSubmit("{:U('Collect/Pattern/saveVaild')}",{host:host,type:'submit'});
+                	}
+                }
+            }]
+        }],
+	    resizable:false,
+	    //maximizable:true,
+	    //constrain:true,
+	    modal:true,
+	    layout: 'fit',
+	    html:'<iframe width="100%" id="explameUrl" frameborder=0 height="100%" src="'+url+'"></iframe>'
+	}).show();
+	
+	
+}
+
+function showPattern(host) {
+	var obj = Ext.getCmp("patternlist");
+	obj.mask("正在加载...");
+	taskstore.load({params:{host:host,path:Ext.getCmp("hostpath").getValue()}});
+	
+	obj.unmask();
+}
+
+
+function canVaildUrl(host) {
+	Collect.confirmWindowOth("系统提示","确定取消黑名单？","{:U('Collect/Pattern/saveVaild')}",{host:host,type:'cancel'})
+}
+
+Ext.onReady(function() {  
+	
+	var combopath = Ext.create('Ext.data.Store',{
+		fields:['id','value'],
+		data:{$combopath}
+	});
+	
+	/*var comboavro = Ext.create('Ext.data.Store',{
+		fields:['id','value'],
+		data:{$comboavro}
+	});*/
+	
+	Ext.define('AvroModel', {
+	      extend: 'Ext.data.Model',
+	      fields: [
+	          {type: 'string', name: 'id'},
+	          {type: 'string', name: 'value'}
+	      ]
+	});
+	
+	var comboavro = Ext.create('Ext.data.Store', {
+	      model: 'AvroModel',
+	      proxy: {
+	          type: 'ajax',
+	          url: "{:U('Collect/Pattern/getAvroList')}" ,
+	          reader:{
+	        	  root:'data'
+	          }
+	      },
+	      autoLoad: true,
+	      remoteSort:true
+	});
+	
+	comboavro.on('load', function() {
+		
+		Ext.Ajax.request({
+			url: "{:U('Collect/Pattern/getAvroRecord')}",
+		    method:'post',
+		    success: function(response){
+		    	var res = Ext.JSON.decode(response.responseText);
+		    	Ext.getCmp("avrofile").setValue(res);
+		    	
+		    	store.loadPage(1);
+		    },
+		    type:'json'
+		});
+		
+	});
+	
+	Ext.define('hostList', {
+        extend: 'Ext.data.Model',
+        fields: [
+            'host', 'code_result', 'hum_result', 'pattern', 'remark'
+        ],
+        idProperty: 'id'
+    });
+	
+	var store = Ext.create('Ext.data.Store', {
+        pageSize: 20,
+        model: 'hostList',
+        remoteSort: true,
+        proxy: {
+            type: 'ajax',
+            url: "{:U('Collect/Pattern/hostList',array('isData' => 1))}",
+            reader: {
+                root: 'data',
+                totalProperty: 'total'
+            },
+            // sends single sort as multi parameter
+            simpleSortMode: true
+        }
+    });
+	
+	store.on('beforeload', function (store, options) {
+		
+        var new_params = {avro:Ext.getCmp("avrofile").getValue(),path:Ext.getCmp("hostpath").getValue()};  
+        Ext.apply(store.proxy.extraParams, new_params);  
+    });  
+	
+
+    function handel(value, cellmeta, record, rowIndex, columnIndex, store) {
+    	//console.log(record);
+    	return '<img src="'+resourcesUrl+'world_connect.png" class="app-edit" title="查看网页" onclick="showSite(\'标注'+record.raw.link+'\',\''+record.raw.link+'\',\'100%\',\'100%\')">'
+    			+'<img src="'+resourcesUrl+'xhtml_go.png" class="app-edit" title="查看pattern" onclick="showPattern(\''+record.raw.host+'\')">';
+    }  
+    
+    
+    function humResultHandle(value, cellmeta, record, rowIndex, columnIndex, store) {
+    	var res = '';
+    	
+    	if(value > 0) {
+    		res = '<img src="'+resourcesUrl+'bullet_cross.png" title="取消标记" style="cursor:pointer;" onclick="canVaildUrl(\''+record.raw.link+'\')">';
+    	}
+    	
+    	return res;
+    }
+    
+    function showHandleBtn(value, cellmeta, record, rowIndex, columnIndex, store) {
+    	if(!record.raw.leaf) {
+    		//console.log(store);
+    		//console.log(value);
+    		//console.log(record.raw.pattern);
+    		currentPattern = record.raw.pattern;
+    		return '<a href="javascript:void(0)" onclick="showSite(\''+value+'\',\'100%\',\'100%\')">标注pattern</a>';
+    	}
+    	
+    	return "";
+    }
+    
+    
+    function formartHost(value, cellmeta, record, rowIndex, columnIndex, store) {
+    	return '<a href="http://'+record.raw.link+'" target="_blank" title="'+value+'">'+value+'</a>';
+    }
+    
+    // create the Grid, see Ext.
+    var grid = Ext.create('Ext.grid.Panel', {
+    	id:'hostlist',
+        store: store,
+        margins:'0 10 0 0',
+        columnLines: true,
+        listeners:{
+        	itemclick:function(view, record, item, index, e, eOpts) {
+        		currentHost = record.raw.host;
+        		showPattern(record.raw.host);
+        	}
+        },
+        columns: [
+            {
+                text:'host名称',
+                width:'65%',
+                cls:'grid-td-height',
+                sortable:false, 
+                dataIndex:'host',
+                renderer:formartHost
+            },
+            {
+                text:'机器标注结果', 
+                width:'30%', 
+                //align:'center',
+                cls:'grid-td-height',
+                sortable:false, 
+                dataIndex:'code_result'
+            }
+        ],
+        bbar: Ext.create('Ext.PagingToolbar', {
+            store: store,
+            displayInfo: true,
+            displayMsg: '当前显示 {0} - {1} of {2}',
+            emptyMsg: "没有数据"
+        }),
+        height: '100%',
+        //width: '100%',
+        //renderTo: 'host-grid',
+        flex: 3,
+        viewConfig: {
+            stripeRows: true
+        },
+        dockedItems:[{
+        	xtype:'buttongroup',
+        	padding:'5',
+        	columns: 1,
+        	frame:true,
+        	items: [{
+        		xtype:'combobox',
+        		store:combopath,
+        		fieldLabel:'host目录',
+        		labelWidth:60,
+            	id:"hostpath",
+            	displayField:"value",
+            	valueField:"id",
+            	editable:false,
+            	value:"{$path}",
+            	listeners:{
+            		change:function(obj,newValue,oldValue,oOpts) {
+            			var query = {};
+            			query.path = newValue;
+            			
+            			comboavro.load({params:{path:newValue}});
+            		}
+            	},
+            	width:330
+        	},{
+        		xtype:"toolbar",
+        		border:0,
+        		items:[
+					{
+						xtype:"combo",
+					    name:'avrofile',
+					    id : 'avrofile',
+					    displayField:'value',
+					    fieldLabel:'avro文件',
+						labelWidth:60,
+					    valueField:'id',
+					    store:comboavro,
+					    triggerAction:'all',
+					    queryMode: 'local', 
+					    //selectOnFocus:true,
+					    //forceSelection: true,
+					    //allowBlank:false,
+					    editable:false
+					},{
+		        		text:'搜索',
+		                iconCls:'Search',
+		                margins:'0 0 0 3',
+		                listeners:{
+		                	click:function() {
+		                		store.load();
+		                	}
+		                }
+		        	}
+        		]
+        	}]
+        }]
+    });
+    
+    var cellEditing = Ext.create('Ext.grid.plugin.CellEditing', {
+        clicksToEdit: 1
+    });
+    
+    var typeData = [{$types}];
+    
+    function rendTypeData(value) {
+    	for(var i=0;i<typeData.length;i++) {
+    		if(typeData[i][0] == value) {
+    			return typeData[i][1];
+    		}
+    	}
+    }
+    
+    var tree = Ext.create('Ext.tree.Panel', {
+        title: 'url pattern详细信息',
+        //width: 500,
+        //height: 300,
+        //renderTo: Ext.getBody(),
+        id:"patternlist",
+        flex: 7,
+		height:'100%',
+        collapsible: true,
+        useArrows: true,
+        rootVisible: false,
+        store: taskstore,
+        multiSelect: true,
+        viewConfig:{
+
+            loadMask: true
+
+        },
+        //singleExpand: true,
+        //the 'columns' property is now 'headers'
+        columns: [{
+            xtype: 'treecolumn', //this is so we know which column will show the tree
+            text: 'Pattern / url',
+            flex: 4,
+            sortable: true,
+            dataIndex: 'pattern'
+        },{
+            text: '类型',
+            flex: 1,
+            sortable: true,
+            dataIndex: 'type',
+            editor: {
+                xtype: 'combobox',
+                typeAhead: true,
+                triggerAction: 'all',
+                selectOnTab: true,
+                displayField:"value",
+            	valueField:"id",
+                store: typeData,
+                lazyRender: true,
+                listClass: 'x-combo-list-small'
+            },
+            renderer:function(value) {
+            	//console.log(typeData);
+            	if(value > 0) {
+            		return rendTypeData(value);
+            		//console.log(typeData[value]);
+            		//return typeData[value][1]
+            	}else {
+            		return "";
+            	}
+            	//return typeData[value][1] ? typeData[value][1] : "";
+            }
+        },{
+            text: '操作',
+            flex: 1,
+            dataIndex: 'explame',
+            sortable: true,
+            renderer:showHandleBtn
+        }],
+        plugins: [cellEditing]
+    });
+    
+    Ext.create('Ext.Panel', {
+    	width: '100%',
+	    height: '100%',
+	    border:0,
+	    //title: "VBoxLayout Panel",
+	    layout: {
+	        type: 'hbox'
+	    },
+	    renderTo:'host-grid',
+	    items:[grid,tree]
+    });
+    
+});
+</script>
+<div id="host-grid"></div>	

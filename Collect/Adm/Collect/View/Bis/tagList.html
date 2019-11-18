@@ -1,0 +1,166 @@
+<script>
+
+var treeStore = Ext.create('Ext.data.TreeStore', {
+	proxy: {
+        type: 'ajax',
+        url: "{:U('Collect/Bis/getBusinessTree')}"
+	},
+	root: {
+        name: 'Ext JS',
+        id: 'src',
+        expanded: true
+    }
+    
+});
+
+Ext.define('BisList', {
+    extend: 'Ext.data.Model',
+    fields: [
+        'name', 'status', 'dateline', 'remark'
+    ],
+    idProperty: 'id'
+});
+
+var gridStore = Ext.create('Ext.data.Store', {
+    pageSize: {$Think.config.WEBPAGE},
+    model: 'BisList',
+    remoteSort: true,
+    autoLoad:true,
+    proxy: {
+        type: 'ajax',
+        url: "{:U('Collect/Bis/tagList',array('isData' => 1))}",
+        reader: {
+            root: 'data',
+            totalProperty: 'total'
+        },
+        // sends single sort as multi parameter
+        simpleSortMode: true
+    },
+    sorters: [{
+        property: 'lastpost',
+        direction: 'DESC'
+    }]
+});
+
+function handel(value, cellmeta, record, rowIndex, columnIndex, store) {
+	var h = '';
+	h += '<img src="'+resourcesUrl+'pencil.png" class="app-edit" title="编辑" onclick="Collect.showWindow(\'{:U(\"Collect/Bis/editBis\")}?id='+record.raw.id+'\',\'编辑业务\',400,280)">'
+		   + '<img src="'+resourcesUrl+'delete.png" class="app-edit" title="删除" onclick="Collect.confirmWindow(\'{:U(\"Collect/Bis/delBusiness\")}\',{ids:'+record.raw.id+'})">'
+		   + '<img src="'+resourcesUrl+'cog_add.png" class="app-edit" title="管理字段" onclick="Collect.showWindow(\'{:U(\"Collect/Bis/addBisField\")}?id='+record.raw.id+'\',\'配置业务字段\',400,480)">'
+		   
+	return h;
+} 
+
+Ext.onReady(function() {
+	
+	Ext.create('Ext.Panel', {
+	    width: '100%',
+	    height: '100%',
+	    border:0,
+	    //title: "VBoxLayout Panel",
+	    layout: {
+	        type: 'hbox'
+	    },
+	    renderTo:'source-list',
+	    items: [{
+	        xtype: 'treepanel',
+	        title: '业务分组',
+	        height:'100%',
+	        margin:'0 5 0 0',
+	        bodyPadding:'3',
+	        //displayField:'name',
+	        store: treeStore,
+	        collapsible: false,
+	        split: true,
+	        rootVisible:false,
+	        flex: 3,
+	        listeners:{
+	        	itemclick:function(view, record, item, index, e, eOpts) {
+	        		//alert(record.raw.id)
+	        		var query = {};
+	        		query.pid = record.raw.id;
+	        		Collect.searchGrid("businesslist",query);
+	        	}
+	        }
+	    },
+	    {
+	        xtype: 'gridpanel',
+	        //title: '信源列表',
+	        id:'businesslist',
+	        store: gridStore,
+	        columnLines: true,
+	        columns: [
+	            {
+	                text:'业务名称',
+	                width:'25%',
+	                cls:'grid-td-height',
+	                sortable:false, 
+	                dataIndex:'name'
+	            },
+	            {
+	                text:'状态', 
+	                width:'5%', 
+	                sortable:true, 
+	                cls:'grid-td-height',
+	                dataIndex:'status',
+	                renderer:change
+	            },
+	            {
+	                text:'添加时间', 
+	                width:'20%', 
+	                cls:'grid-td-height',
+	                dataIndex:'dateline'
+	            },
+	            {
+	                text: '描述', 
+	                width: '30%', 
+	                cls:'grid-td-height',
+	                dataIndex: 'remark'
+	            },
+	            {
+	                text: '', 
+	                width:'12%',
+	                cls:'grid-td-height',
+	                dataIndex: 'handel',
+	               	renderer:handel
+	            }
+	        ],
+	        bbar: Ext.create('Ext.PagingToolbar', {
+	            store: gridStore,
+	            displayInfo: true,
+	            displayMsg: '当前显示 {0} - {1} of {2}',
+	            emptyMsg: "没有数据"
+	        }),
+	        dockedItems:[{
+	        	xtype:'toolbar',
+	        	padding:'3 10 3 0',
+	        	items: [{
+	                iconCls:'Arrowrefresh',
+	                margins:'0 0 0 3',
+	                text:'重新载入',
+	                listeners:{
+	                	click:function() {
+	                		gridStore.load();
+	                	}
+	                }
+	        	},
+	        	"->",{
+	                text:'新建业务',
+	                iconCls:'Add',
+	                listeners:{
+	                	click:function() {
+	                		Collect.showWindow("{:U('Collect/Bis/addBis')}","新建业务-第一步",400,280);
+	                	}
+	                }
+	            }]
+	        }],
+	        height: '100%',
+	        width: '100%',
+	        flex: 17
+	    }]
+	});
+	
+});
+</script>
+
+<div id="source-list"></div>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
+<channel>
+<title>工作一览</title>
+<link>http://localhost//weixin/gongzuoyilan/</link>
+<description>微信订阅号 / 自定义菜单 / 工作一览</description>
+<language>zh-cn</language>
+<generator><![CDATA[Copyright &amp;copy; 2013-2014 1dagong.com. 壹打工网 版权所有 &lt;a href=http://www.dedecms.com target='_blank'&gt;Power by DedeCms&lt;/a&gt;]]></generator>
+<webmaster>desdev@vip.qq.com</webmaster>
+<item>
+    <title><![CDATA[壹打工网工作库，点击即可图片访问]]></title>
+    <link>http://localhost//weixin/gongzuoyilan/042c52014.html</link>
+    <description><![CDATA[壹打工网，世界500强企业指定招聘合作网站。在大企业工作，倍有面儿！]]></description>
+    <pubDate>2014-04-29</pubDate>
+    <category>工作一览</category>
+    <author>admin</author>
+    <comments>未知</comments>
+</item>
+
+</channel>
+</rss>

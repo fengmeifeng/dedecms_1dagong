@@ -1,0 +1,75 @@
+<script type="text/javascript">
+Ext.require(['Ext.data.*']);
+
+Ext.onReady(function() {    
+	
+	var combo = Ext.create('Ext.data.Store',{
+		fields:['id','name'],
+		data:{$combo}
+	});
+	
+	var formPanel = Ext.create('Ext.form.Panel', {
+        //frame: true,
+        //title: 'Form Fields',
+        border:0,
+        width: '100%',
+        height:'100%',
+        bodyPadding: 10,
+		
+        fieldDefaults: {
+            labelAlign: 'left',
+            labelWidth: 70,
+            msgTarget: 'side',
+            anchor: '100%',
+            blankText:'此项必须填写',
+        },
+		
+        dockedItems:[{
+        	xtype:'toolbar',
+        	dock: 'top',
+        	items: [{
+                text:'关闭',
+                iconCls:'Bulletcross',
+                listeners:{
+                	click:function() {
+                		Collect.closeWindow(0);
+                	}
+                }
+            }, '-', {
+                text:'保存后关闭',
+                iconCls:'Layoutedit',
+                listeners:{
+                	click:function() {
+                		Collect.submitForm(this,"{:U('Collect/Sgroup/add')}");
+                	}
+                }
+            }]
+        }],
+        items: [{
+            xtype: 'textfield',
+            name: 'name',
+            fieldLabel: '信源组名称',
+            allowBlank:false,
+            layout: 'anchor',
+            defaults: {
+                anchor: '50%'
+            },
+        },Ext.create('Ext.form.ComboBox',{
+        	fieldLabel:'上级分类',
+        	store:combo,
+        	name:"pid",
+        	displayField:"name",
+        	valueField:"id",
+        	editable:false,
+        	emptyText:"请选择上级分类",
+        }),{
+            xtype: 'textareafield',
+            name: 'remark',
+            fieldLabel: '描述'
+        }]
+    });
+
+    formPanel.render('sgroup-add');
+});
+</script>
+<div id="sgroup-add"></div>	

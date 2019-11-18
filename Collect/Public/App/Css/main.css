@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+/*
+ * author yimiao@iflytek.com
+ */
+#header {
+	background: #7F99BE url(../Image/layout-browser-hd-bg.gif) repeat-x center;
+}
+
+#header h1 {
+	font-size: 16px;
+	color: #fff;
+	font-weight: bold;
+	padding: 5px 10px;
+}
+
+.grid-td-height {
+	padding:0px 5px 5px 0px;
+}
+
+.app-edit {
+	cursor:pointer;
+	margin-right:15px;
+}
+
+.form-tip {
+	margin-left:5px;
+}
+
+/*顶部tip相关*/
+#callback-msg-div {
+    position:absolute;
+    left:50%;
+    top:10px;
+    width:100px;
+    z-index:20000;
+}
+#callback-msg-div .callback-msg {
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+	background-color: #f9edbe;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    border: 1px solid #f0c36d;
+    margin-top: 2px;
+    padding: 10px 10px;
+    font-family: tahoma,helvetica,sans-serif;
+	color: #333;
+	font-weight: bold;
+}
+
